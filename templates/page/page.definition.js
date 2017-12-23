@@ -28,45 +28,7 @@ module.exports = {
             const pagePersistence = new PagePersistence();
             let queries = [];
 
-            let options = {
-                query : {
-                    "type":"post",
-                },
-                // "sort": {"date":-1},
-                "limit": 4
-            };
-
-            let findBlogs = pagePersistence.find(options);
-            queries.push(findBlogs);
-
-            let homeOptions = {
-                query : {
-                    "type":"home",
-                },
-                "sort": { "title":1 },
-            };
-            let findHomes = pagePersistence.find(homeOptions);
-            queries.push(findHomes)
-
-            let careOptions = {
-                query : {
-                    "type":"care",
-                },
-                "sort": {"title":1},
-            };
-            let findCareitems = pagePersistence.find(careOptions);
-            queries.push(findCareitems)
-
-            Promise.all(queries).then(values => {
-
-                data.posts = values[0];
-                data.homes = values[1];
-                data.careItems = values[2];
-
-                logger.info('Get template data', correlationId);
-                resolve(data);
-            })
-
+            resolve(data);
 
         })
     },
@@ -97,11 +59,7 @@ module.exports = {
     getDependencies: (data, correlationId) => {
         return new Promise((resolve, reject) => {
             logger.info('Get template dependencies for ' + data.type, correlationId);
-            resolve([
-                { template: 'search', data: null },
-                { template: 'quality-window', data: null },
-				{ template: 'homepage', data: null },
-            ]);
+            resolve();
         })
 
     },
