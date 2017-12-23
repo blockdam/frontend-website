@@ -1,7 +1,5 @@
 const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
-const ConversationService = require('../../services/conversation.service');
-const ZorgkaartApiService = require('../../services/zorgkaart.api.service');
 const logger = require('../../../services/logger.service');
 
 const moment = require('moment');
@@ -27,10 +25,6 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
 
-			const pagePersistence = new PagePersistence();
-            const conversationService = new ConversationService();
-            const zorgkaartApiService = new ZorgkaartApiService();
-
             let postOptions = {
                 query : {
                     "type":"post",
@@ -41,91 +35,9 @@ module.exports = {
             };
             let findPosts = pagePersistence.find(postOptions)
 
-            let socialsOptions = {
-                query : {
-                    "type":"social",
-                },
-                "sort": {"date":-1},
-                "limit":8
-            };
-            let findSocials = pagePersistence.find(socialsOptions)
-
-            let careOptions = {
-                query : {
-                    "type":"care",
-                },
-                "sort": {"title":1 },
-            };
-            let findCaretypes = pagePersistence.find(careOptions)
-
-			let stickyOptions = {
-				"query" : {
-					"type":"post",
-					"sticky":true
-				}
-			};
-			let findSticky = pagePersistence.findOne(stickyOptions)
-
-            let commentPostOptions = {
-                query : {
-                    "type":"post"
-                }
-            };
-            let findCommentPosts = pagePersistence.find(commentPostOptions)
-
-            let homePageOptions = {
-                query : {
-                    "slug":"homepage"
-                }
-            };
-            let findHomepage = pagePersistence.findOne(homePageOptions)
-
-            let homeOptions = {
-                query : {
-                    "type":"home"
-                },
-                "sort": { "title":1}
-            };
-            let findHomes = pagePersistence.find(homeOptions)
-
-			let volunteersPageOptions = {
-				query : {
-					"slug":"vrijwilligers"
-				}
-			};
-			let findVolunteersPage = pagePersistence.findOne(volunteersPageOptions)
-
-			let windowPageOptions = {
-				query : {
-					"slug":"kwaliteitsvenster"
-				}
-			};
-			let findWindowPage = pagePersistence.findOne(windowPageOptions)
-
-            let fetchReviews = zorgkaartApiService.fetchAllReviews();
-
-			Promise.all([findPosts, findSocials, findCaretypes, findSticky, findCommentPosts, findHomepage ,findHomes, findVolunteersPage, findWindowPage, fetchReviews]).then(values => {
+			Promise.all([findPosts]).then(values => {
 
 				data.posts = values[0];
-				data.socials = values[1];
-				data.careItems = values[2];
-				data.sticky = values[3];
-                data.comments = conversationService.assembleThreads(values[4]);
-				data.page = values[5];
-				data.homes = values[6];
-				data.volunteersPage = values[7];
-				data.qualityWindowPage = values[8];
-				data.reviews = values[9].slice(0,8);
-
-                data.comments.sort(function (a, b) {
-                    if (a.comments[0].date < b.comments[0].date) {
-                        return 1;
-                    }
-                    if (a.comments[0].date > b.comments[0].date) {
-                        return -1;
-                    }
-                    return 0;
-                });
 
                 // data.combinedContent = data.posts.slice(2,4).concat(data.socials.slice(0,2)).concat(data.reviews.slice(0,2)).concat(data.comments.slice(0,2));
 
