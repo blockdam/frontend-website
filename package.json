@@ -1,0 +1,43 @@
+{
+  "name": "pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "style": "gulp scss-compile",
+    "scripts": "gulp js-compile",
+    "copy-assets": "gulp copy-assets",
+    "bulkrender:dev": "cd .. && node --inspect tasks/bulkrender.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tomootes@bitbucket.org/zuidas/sensire-pages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/zuidas/sensire-pages#readme",
+  "dependencies": {
+    "algoliasearch": "^3.24.5",
+    "autoprefixer": "^7.1.5",
+    "babel-core": "^6.26.0",
+    "cssnano": "^3.10.0",
+    "es6-promise": "^4.1.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^1.0.1",
+    "gulp-file": "^0.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-task-loader": "^1.4.4",
+    "gulp-watch": "^4.3.11",
+    "mapbox": "^1.0.0-beta9",
+    "merge-stream": "^1.0.1",
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-contrib-copy": "^0.1.3"
+  }
+}

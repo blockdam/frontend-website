@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+{{> head}}
+
+<body id="blog">
+
+    {{> header }}
+
+    <main id="main">
+
+        <div class="hero-image full-width">
+
+			{{#if body.relatedHome }}
+			{{#if body.relatedCaretypes }}
+            <div class="balloon more-balloon balloon--grey left" href="/">
+                <div class="text">
+                    <span class="title">Meer weten over onderwerpen uit dit artikel</span>
+                    {{#if body.relatedHome.title}}
+                        <a href="{{ body.relatedHome.url }}">{{> home-icon }} <span>{{body.relatedHome.title }}</span></a>
+                    {{/if }}
+                    {{#each body.relatedCaretypes as |caretype|}}
+                        <a href="{{ caretype.url }}">{{> stethoscope-icon }} <span>{{caretype.title}}</span></a>
+                    {{/each}}
+                </div>
+            </div>
+			{{/if }}
+			{{/if }}
+
+            <div class="large-container hero-image-container flex">
+
+                <div class="img-and-title col-plus-aside">
+                    {{> responsive-image title=body.title external_id=body.main_image.external_id filename=body.main_image.filename }}
+                    <div class="overlay-heading-wrapper">
+                        <h1 class="overlay-heading overlay-heading--narrow">{{{ body.title }}}</h1>
+                    </div>
+                </div>
+
+                <div class="side-text col-aside">
+                    <h2>{{ body.main_image.overlay_text }}</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="intro">
+
+                <div class="info">
+					<span id="author-name"><time datetime="{{formatDate body.date 'YYYY-MM-DD hh:mm'}}">{{formatDate body.date 'long'}}</time></span>
+                    <!-- <span id="author-name">{{body.author.first_name}} {{body.author.last_name}}, <time datetime="{{formatDate body.date 'YYYY-MM-DD hh:mm'}}">{{formatDate body.date 'long'}}</time></span> -->
+                    <!-- <span class="organisation orange">Wonen met zorg</span> -->
+                </div>
+
+                <div class="text">
+                    <div class="side-item left appreciation">
+                        {{> appreciation-puppet}}
+                    </div>
+                    {{{body.content}}}
+                </div>
+
+            </div>
+        </div>
+
+        {{> sections }}
+        {{> blog-rating }}
+        {{> social-buttons }}
+        {{> comment-section }}
+
+        <frame name="social-dialogue" style="position: fixed;top:0;right:0;width:600px;height:600px;"></frame>
+
+    </main>
+
+	{{> related-content class="margin-bottom" }}
+    {{> starting-points }}
+    {{> footer }}
+
+
+</body>
+
+</html>

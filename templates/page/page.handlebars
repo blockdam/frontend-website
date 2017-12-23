@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+{{> head}}
+
+<body id="page">
+
+    {{> header }}
+
+    <main id="main">
+
+    <div class="container">
+
+        <h1>{{{ body.title }}}</h1>
+		<div class="intro-text">
+			{{{body.content}}}
+		</div>
+
+    </div>
+
+    {{#ifEquals body.slug 'wonen-bij-sensire' homes=body.homes }}
+    <div class="large-container flex margin-bottom map-list-section">
+		<div class="col-plus-aside">
+			{{> map zoom=8.5 homesVisible=true areasVisible=false list=false showFilter=false }}
+		</div>
+        <div class="col-aside">
+            <div id="map-list-container">
+                <h2>Onze locaties</h2>
+                <ul>
+                    {{#each ../body.homes as |home|}}
+                        <li><a href="{{home.url}}">{{home.title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/ifEquals}}
+
+    {{#ifEquals body.slug 'bij-u-thuis'}}
+    <div class="large-container flex margin-bottom map-list-section">
+		<div class="full-width">
+			{{> teams-map zoom=8.5 homesVisible=false areasVisible=true list=false showFilter=false }}
+		</div>
+    </div>
+    {{/ifEquals}}
+
+    {{#ifEquals body.slug 'afspraakverzoek'}}
+        {{> contactform }}
+    {{/ifEquals}}
+
+    {{#ifEquals body.slug 'welke-zorg-zoekt-u'}}
+        <div class="container flex margin-bottom">
+            <div class="col-one-third">
+                <h2>Types zorg</h2>
+                {{#each ../body.careItems as |careItem|}}
+                    <a href="{{careItem.url}}" class="arrow-link-right">{{ careItem.title }} <span class="arrow"> {{> arrow-icon }} </span></a>
+                {{/each}}
+            </div>
+        </div>
+    {{/ifEquals}}
+
+    {{> sections }}
+    {{> featured-information-section map=false }}
+
+</main>
+
+{{> starting-points }}
+{{> footer }}
+
+</body>
+
+</html>
