@@ -27,34 +27,6 @@ module.exports = {
     getTemplateData: (data, correlationId) => {
         return new Promise((resolve, reject) => {
 
-            const pagePersistence = new PagePersistence();
-            let queries = []
-
-            let postOptions = {
-                query : {
-                    "type":"post",
-                },
-                "limit": 4,
-                "sort": {"date":-1},
-            };
-            let findPosts = pagePersistence.find(postOptions)
-            queries.push(findPosts);
-
-			let careOptions = {
-				query : {
-					"type":"care",
-				},
-				"sort": {"title":1 },
-			};
-			let findCaretypes = pagePersistence.find(careOptions)
-			queries.push(findCaretypes);
-
-            Promise.all(queries).then(values => {
-                data.posts = values[0];
-				data.careItems = values[1];
-                logger.info('Get template data', correlationId);
-                resolve(data);
-            })
 
         })
     },
@@ -86,8 +58,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             // logger.info('Get template dependencies for ' + data.type, correlationId);
             resolve([
-                {template: 'homepage', data: null},
-                {template: 'search', data: null},
+                {template: 'homepage', data: null}
             ]);
         })
     },
@@ -121,17 +92,8 @@ module.exports = {
                 comments: data.comments,
                 comment_count: parseInt(data.comment_count) || 0,
                 comment_status: data.comment_status,
-                last_comment_date : data.last_comment_date,
                 sections: data.sections,
                 main_image: data.main_image,
-				alternative_main_image: data.alternative_main_image,
-                square_image: data.square_image,
-                location: data.location,
-                appreciation: data.appreciation,
-                relatedCaretypes: data.relatedCaretypes,
-                area: data.area,
-                relatedHome: data.relatedHome,
-				sticky: booleanService.correct(data.sticky)
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);
