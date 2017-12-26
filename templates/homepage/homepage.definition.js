@@ -25,6 +25,8 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
 
+            let pagePersistence = new PagePersistence();
+
             let postOptions = {
                 query : {
                     "type":"post",
@@ -38,8 +40,6 @@ module.exports = {
 			Promise.all([findPosts]).then(values => {
 
 				data.posts = values[0];
-
-                // data.combinedContent = data.posts.slice(2,4).concat(data.socials.slice(0,2)).concat(data.reviews.slice(0,2)).concat(data.comments.slice(0,2));
 
 				logger.info('Get template data', correlationId)
 				resolve(data)

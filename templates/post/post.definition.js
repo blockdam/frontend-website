@@ -26,8 +26,7 @@ module.exports = {
      */
     getTemplateData: (data, correlationId) => {
         return new Promise((resolve, reject) => {
-
-
+            resolve(data);
         })
     },
 
