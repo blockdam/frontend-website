@@ -1,0 +1,77 @@
+svg#nav-shape {
+
+  position: absolute;
+  height: 9vw;
+  top: 80px;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+
+
+  rect,circle,path {
+    stroke: #000;
+    stroke-width: 1px;
+    fill: #fff;
+  }
+  #icon-construction, #icon-renovation, #icon-interior {
+    opacity: 0;
+  }
+
+  rect,circle,path {
+
+    stroke: #000;
+    stroke-width: 1px;
+    fill: #fff;
+  }
+
+  text.nav-item-title {
+
+    fill: #000;
+    //@include bodyTextBold();
+    font-style : normal;
+    font-size: .6rem;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 500ms ease;
+    transform: rotate(-27.5deg) translateY(46px);
+    cursor: pointer;
+
+  }
+
+  text.nav-item-title.hover {
+    color: $klein;
+  }
+
+  .nav-group {
+
+    circle {
+      transition: all 400ms ease;
+    }
+
+    .nav-project-list {
+
+      transform: translateY(1000px);
+
+      .nav-project-list-item {
+
+        height: 28px;
+        margin-bottom: 1px;
+        //transform: translateY(1000px);
+        //transform: translateX(500px);
+
+        > span, > a > span {
+          display: inline-block;
+          background: #fff;
+          padding: 1px .5rem;
+          font-size: .875rem;
+          font-weight: 200;
+        }
+
+        > a:hover > span {
+
+          background: #000;
+        }
+      }
+    }
+  }
+}

@@ -17,7 +17,7 @@ module.exports = function() {
     gulp.task('js-compile', function() {
 
         var post = gulp.src([
-
+            path.projectFolder + '/scripts/header.js'
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))
@@ -27,6 +27,7 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var homepage = gulp.src([
+            path.projectFolder + '/scripts/header.js'
             ])
             // .pipe(plumber())
             .pipe(concat('homepage.js'))
@@ -36,6 +37,7 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var page = gulp.src([
+            path.projectFolder + '/scripts/header.js'
             ])
             // .pipe(plumber())
             .pipe(concat('page.js'))

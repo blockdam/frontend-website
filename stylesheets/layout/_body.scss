@@ -1,0 +1,16 @@
+html, body { width: 100%; margin: 0px; padding: 0px;  }
+
+html { height: 100%;  }
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+body.fixed {
+  position: fixed;
+}
+
+.scroll_disabled {
+  height: 100%;
+  overflow: hidden;
+}

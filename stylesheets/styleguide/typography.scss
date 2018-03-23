@@ -1,0 +1,101 @@
+
+
+
+
+
+@mixin bodyText {
+
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.77;
+
+}
+
+@mixin bodyTextBold {
+
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.44rem;
+    line-height: 1.6;
+
+}
+
+@mixin lowercase-heavy {
+
+       font-family: "Gotham SSm A", "Gotham SSm B";
+
+       font-style: normal;
+       font-weight: 700;
+       font-size: 4rem;
+       line-height: 1.2;
+
+       i {
+        font-style: italic;
+       }
+
+}
+
+
+@mixin condensed-book {
+
+       font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
+       font-style: normal;
+       font-weight: 400;
+       font-size: 4rem;
+       line-height: 1.2;
+
+}
+
+@mixin condensed-header {
+
+       font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
+       font-style: normal;
+       font-weight: 600;
+       font-size: 1.125rem;
+       line-height: 1.77;
+
+}
+
+@mixin numbers-small {
+
+      font-family: "Gotham SSm A", "Gotham SSm B";
+
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 2;
+
+}
+
+.word-mark-uppercase {
+
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 15px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+
+
+body {
+
+    @include bodyText();
+}
+
+a {
+    color: $klein;
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+    background: $klein;
+}

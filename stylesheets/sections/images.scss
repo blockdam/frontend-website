@@ -1,0 +1,83 @@
+@mixin squareImage() {
+  width: calc(2 * ((100vw - 24rem - 1rem) / 5));
+}
+
+@mixin cameraImage() {
+  width: calc(3 * ((100vw - 24rem - 1rem) / 5));
+}
+
+@mixin singleImage() {
+  width: calc(100vw - 32rem);
+}
+
+.section.images {
+  display: flex;
+  flex-direction: row;
+  margin: 6rem auto;
+
+  > div {
+
+    display: flex;
+    flex-direction: column;
+
+    > .image-item-overlay {
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+
+  }
+
+  &.duo.right {
+
+    justify-content: flex-end;
+
+    > div:nth-of-type(1) {
+      @include squareImage();
+      margin-right: 2rem;
+    }
+
+    > div:nth-of-type(2) {
+      @include cameraImage();
+    }
+  }
+
+  &.duo.left {
+
+    justify-content: flex-start;
+
+    > div:nth-of-type(1) {
+      @include cameraImage();
+    }
+
+    > div:nth-of-type(2) {
+      @include squareImage();
+      margin-left: 2rem;
+    }
+  }
+
+  &.duo.center {
+
+    justify-content: center;
+
+    > div:nth-of-type(1) {
+      @include cameraImage();
+    }
+
+    > div:nth-of-type(2) {
+      @include cameraImage();
+      margin-left: 2rem;
+    }
+  }
+
+  &.single.center {
+
+    justify-content: center;
+  > div {
+      @include singleImage();
+    }
+  }
+}

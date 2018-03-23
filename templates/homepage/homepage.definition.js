@@ -29,17 +29,27 @@ module.exports = {
 
             let postOptions = {
                 query : {
-                    "type":"post",
-					"sticky":false
+                    "type":"post"
                 },
                 "sort": {"date":-1},
                 "limit":8
             };
-            let findPosts = pagePersistence.find(postOptions)
 
-			Promise.all([findPosts]).then(values => {
+            let typeInteriorOptions = {
+                query : {
+                    "type":"project"
+                },
+                "sort": {"date":1},
+                // "limit":-1
+            };
+
+            let findPosts = pagePersistence.find(postOptions);
+            let findInteriorProjects = pagePersistence.find(typeInteriorOptions);
+
+			Promise.all([findPosts,findInteriorProjects]).then(values => {
 
 				data.posts = values[0];
+				data.interiorProjects = values[1]
 
 				logger.info('Get template data', correlationId)
 				resolve(data)

@@ -1,0 +1,14 @@
+.post-header {
+
+  margin-bottom: 4rem;
+
+  .date {
+    @include numbers-small();
+  }
+
+  h2 {
+    @include lowercase-heavy();
+    max-width: 777px;
+  }
+}
+

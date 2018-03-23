@@ -1,6 +1,7 @@
 'use strict';
 
 const moment = require('moment');
+const logger = require('../../services/logger.service');
 
 module.exports = [{
         name: 'ifEquals',
@@ -80,14 +81,43 @@ module.exports = [{
     {
         name: 'containerClass',
         helper: (type) => {
-            if (type === 'image-full-width' || type === 'images-duo-full-width' || type === 'documents' || type === 'datavisplanning' || type === 'table-of-contents-heading') {
+            if (type === 'image-full-width' || type === 'images-duo-full-width' || type === 'documents') {
                 return 'full-width';
-            } else if (type === 'image-single-large' || type === 'images-trio' || type === 'image-single-left' || type === 'image-single-right' || type === 'streamer') {
-                return 'large-container';
-            } else if (type === 'quality-point') {
-                return 'col-one-third';
+            } else if (type === 'image-single-large' || type === 'images-trio' || type === 'image-single-left' || type === 'image-single-right') {
+                return 'container-large';
+            } else if (type === 'streamer') {
+                return 'container-medium';
             } else if (type === 'video' || type === 'paragraph' || type === 'images-duo' || type === 'tweet' || type === 'paragraph-plus' || type === 'quote' || type === 'story') {
-                return 'container';
+                return 'container-small';
+            }
+        }
+    },
+    {
+        name: 'imageFormat',
+        helper: (index,count,orientation) => {
+
+            logger.info('hi');
+            logger.info(index);
+            logger.info(count);
+
+
+            if (count === 'single') {
+
+                return 'camera';
+
+            } else if (count === 'duo') {
+
+                if ((orientation === 'left' && index === 0) || (orientation === 'right' && index === 1) || orientation === 'center') {
+
+                    return 'camera';
+
+                } else {
+
+                    return 'square';
+                }
+            } else if (count === 'trio') {
+
+                return'camera';
             }
         }
     },

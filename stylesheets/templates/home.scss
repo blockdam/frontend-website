@@ -1,0 +1,39 @@
+
+
+#homepage {
+
+  h1 {
+    position: relative;
+  }
+
+  article {
+    margin: 4rem 0;
+
+      .post-header {
+        margin-bottom: 3rem;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+
+      }
+
+
+    a {
+      text-decoration: none;
+      color: $klein;
+      font-family: Gotham SSm A,Gotham SSm B;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.44rem;
+      line-height: 1.6;
+      border: none;
+
+    }
+
+    a:hover {
+      background: none;
+    }
+  }
+}

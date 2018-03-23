@@ -1,0 +1,28 @@
+.img-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    width: 100%;
+    vertical-align: middle; // to avoid ghost bottom  margin
+    webkit-filter: blur(5px);
+    filter: blur(5px);
+    transition: filter 1000ms, -webkit-filter 1000ms;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+  img.lazyloaded {
+    //opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+
+  /* Prevents img without src to appear */
+  img:not([src]) {
+    visibility: hidden;
+  }
+}

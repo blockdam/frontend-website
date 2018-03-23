@@ -5,21 +5,30 @@
 
 <body id="blog">
 
+    {{> header }}
+
     <main id="main">
 
-        <div class="container">
+        <article>
 
-            <div class="post-header">
-
-                <div class="typo-date">{{formatDate body.date 'YYYY-MM-DD hh:mm'}}</div>
-                <h1>{{body.title}}</h1>
-
+            <div class="container-large">
+                <div class="post-header">
+                    <div class="date">{{formatDate body.date 'DD/MM/YYYY'}}</div>
+                    <h2 class="">{{{body.title}}}</h2>
+                </div>
             </div>
-        </div>
 
-        {{> sections }}
+            <div class="post-intro container-small">
+                {{{body.content}}}
+            </div>
+
+            {{> sections }}
+
+        </article>
 
     </main>
+
+    {{> footer }}
 
 </body>
 

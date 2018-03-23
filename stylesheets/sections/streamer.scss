@@ -1,0 +1,15 @@
+
+.section.streamer {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 4rem auto;
+
+  > div {
+
+    @include condensed-book();
+    max-width: 777px;
+  }
+
+}

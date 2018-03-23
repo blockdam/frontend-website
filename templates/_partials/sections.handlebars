@@ -1,7 +1,7 @@
 
 {{#each body.sections as |section|}}
 
-    <section class="section {{section.type}} {{containerClass section.type}} {{section.style}}">
+    <section class="section {{section.type}} {{containerClass section.type}} {{section.style}} {{section.formation}} {{section.orientation}}">
 
         {{#ifEquals section.type 'paragraph'}}
             <div class="text">{{{section.text}}}</div>
@@ -13,83 +13,25 @@
             </div>
         {{/ifEquals}}
 
-        {{#ifEquals section.type 'image-single-large'}}
+        {{#ifEquals section.type 'images'}}
 
-        <div class="col-container">
-            {{> responsive-image title=section.image.alttext external_id=section.image.external_id filename=section.image.filename }}
-        </div>
-        <div class="side-text side-text--small col-aside">
-            <span class="text">{{ section.image.caption }}</span>
-            {{#if section.image.credit}}<span class="photographer">Foto: {{section.image.credit}}</span>{{/if}}
-        </div>
+            {{section.image_count}}
+            {{section.image_orientation}}
 
-        {{/ifEquals}}
+            {{#each section.images as |image|}}
 
-        {{#ifEquals section.type 'image-single-left'}}
+                <div class="image-item">
+                    {{> responsive-image image=image format=(imageFormat @index section.formation section.orientation) }}
+                    <div class="image-item-overlay">
+                        <span class="text">{{ image.caption }}</span>
+                        {{#if image.credit}}<span class="photographer">Foto: {{image.credit}}</span>{{/if}}
+                    </div>
+                </div>
 
-          <div class="col-plus-aside">
-              {{> responsive-image title=section.image.alttext external_id=section.image.external_id filename=section.image.filename }}
-          </div>
-          <div class="side-text side-text--small col-aside">
-              <span class="text">{{ section.image.caption }}</span>
-              {{#if section.image.credit}}<span class="photographer">Foto: {{section.image.credit}}</span>{{/if}}
-          </div>
+            {{/each}}
 
         {{/ifEquals}}
 
-        {{#ifEquals section.type 'table-of-contents-heading'}}
-			{{> floating-header text=section.text class="table-of-contents-header" }}
-        {{/ifEquals}}
-
-        {{#ifEquals section.type 'image-single-right'}}
-
-            <div class="side-text side-text--small col-aside">
-                <span class="text">{{ section.image.caption }}</span>
-                {{#if section.image.credit}}<span class="photographer">Foto: {{section.image.credit}}</span>{{/if}}
-            </div>
-            <div class="col-plus-aside">
-                {{> responsive-image title=section.image.alttext external_id=section.image.external_id filename=section.image.filename }}
-            </div>
-
-        {{/ifEquals}}
-
-        {{#ifEquals section.type 'images-duo-full-width'}}
-
-            <div class="cluster-left">
-              {{> responsive-image title=section.image_left.alttext external_id=section.image_left.external_id filename=section.image_left.filename }}
-                <!-- <div class="overlay">
-                    <span class="multiline right-aligned"><span><span>{{section.image_left.caption}}</span></span></span>
-                    <span class="credits smallerfont">Foto: {{section.image_left.credit}}</span>
-                </div> -->
-            </div>
-            <div class="cluster-right">
-                {{> responsive-image title=section.image_right.alttext external_id=section.image_right.external_id filename=section.image_right.filename }}
-                <!-- <div class="overlay">
-                    <span class="multiline right-aligned"><span><span>{{section.image_right.caption}}</span></span></span></span>
-                    <span class="credits smallerfont">Foto: {{section.image_right.credit}}</span>
-                </div> -->
-            </div>
-
-        {{/ifEquals}}
-
-        {{#ifEquals section.type 'images-duo'}}
-
-            <div class="col-half">
-              {{> responsive-image title=section.image_left.alttext external_id=section.image_left.external_id filename=section.image_left.filename }}
-                <!-- <div class="legend">
-                    <span class="multiline right-aligned"><span><span>{{section.image_left.caption}}</span></span></span>
-                    <span class="credits smallerfont">Foto: {{section.image_left.credit}}</span>
-                </div> -->
-            </div>
-            <div class="col-half">
-              {{> responsive-image title=section.image_right.alttext external_id=section.image_right.external_id filename=section.image_right.filename }}
-                <!-- <div class="legend">
-                    <span class="multiline right-aligned"><span><span>{{section.image_right.caption}}</span></span></span></span>
-                    <span class="credits smallerfont">Foto: {{section.image_right.credit}}</span>
-                </div> -->
-            </div>
-
-        {{/ifEquals}}
 
         {{#ifEquals section.type 'quote'}}
             <!-- <div class="image-container">
@@ -116,18 +58,6 @@
             </div>
         {{/ifEquals}}
 
-        {{#ifEquals section.type 'story'}}
-
-            <div class="aside">
-                {{section.name}}<br/>
-                {{section.title}}
-            </div>
-
-            <div class="text">
-                {{{section.text}}}
-            </div>
-
-        {{/ifEquals}}
 
         {{#ifEquals section.type 'video'}}
 
@@ -139,121 +69,6 @@
                 </div>
             </div>
         {{/ifEquals}}
-
-    {{#ifEquals section.type 'tweet'}}
-
-        <div onclick="socialDialogue.windowpop('https://twitter.com/{{section.tweet_user_screenname}}/status/{{section.tweet_id}}',700,700)" class="tweet-wrapper">
-            <img class="thumb" src="{{ section.tweet_user_profile_image }}" />
-            <div class="content">
-              <span class="handle"><time datetime="{{formatDate section.tweet_date 'YYYY-MM-DD hh:mm'}}">{{formatDate section.tweet_date 'long'}}</time><span>
-              <span class="username">{{section.tweet_user_name}}</span>
-
-              <span class="text">{{section.tweet_content}}</span>
-              {{#if section.tweet_media}}<img src="{{section.tweet_media}}" />{{/if}}
-            </div>
-            <div class="fliebel">
-              <svg class="twitter-bird" width="89px" height="72px" viewBox="0 0 89 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <path d="M79.5400999,17.9244399 C79.5750961,18.7070832 79.594185,19.4960894 79.594185,20.2850957 C79.594185,44.3084265 61.3134196,72 27.8665547,72 C17.5999293,72 8.04277319,68.9998674 0,63.8395122 C1.4221201,64.0081304 2.86969202,64.0940303 4.33635279,64.0940303 C12.8563475,64.0940303 20.6923247,61.1861606 26.9152932,56.3121382 C18.9616013,56.1657903 12.245504,50.9099907 9.93257037,43.6848571 C11.0397243,43.8948345 12.1818744,44.0125492 13.3494764,44.0125492 C15.0070258,44.0125492 16.616853,43.7962087 18.1407803,43.3794353 C9.82440016,41.7123415 3.56007247,34.3663117 3.56007247,25.5536211 C3.56007247,25.4772657 3.56007247,25.3977288 3.56325394,25.3245548 C6.01299103,26.6830454 8.81587203,27.5038664 11.7937343,27.5961292 C6.9197119,24.3414785 3.70960187,18.7738942 3.70960187,12.4682073 C3.70960187,9.13401971 4.60359684,6.00980955 6.16888339,3.32464319 C15.1311034,14.3261897 28.5314834,21.5608678 43.6371349,22.3244223 C43.3253502,20.9913835 43.1694578,19.6074411 43.1694578,18.1789581 C43.1694578,8.14139897 51.3076753,0 61.3452344,0 C66.5755822,0 71.2937122,2.20794485 74.6151739,5.73938403 C78.7606381,4.92492599 82.6420397,3.41690601 86.1639344,1.3266758 C84.7958994,5.57394724 81.9230259,9.13401971 78.159339,11.3865052 C81.8403075,10.9474614 85.3526579,9.97392957 88.6009456,8.52635765 C86.1766603,12.165967 83.0938094,15.3697141 79.5400999,17.9244399 Z" id="Path"></path>
-
-              </svg>
-            </div>
-        </div>
-
-    {{/ifEquals}}
-
-    {{#ifEquals section.type 'instagram'}}
-
-        <div onclick="socialDialogue.windowpop('https://www.instagram.com/p/{{section.instagram_id}}',700,700)">
-
-            <!-- <img class="thumb" src="{{ section.instagram_user_profile_image }}" /> -->
-
-            <div class="img">
-              <img src="{{section.instagram_media}}" alt="Foto bij Instagram post">
-            </div>
-
-            <div class="content">
-              <span class="username">{{section.instagram_user_screenname}}</span>
-              <p class="handle"><time datetime="{{formatDate section.tweet_date 'YYYY-MM-DD hh:mm'}}">{{formatDate section.tweet_date 'long'}}</time><p>
-              <p><span class="text">'{{section.instagram_content}}'</span></p>
-            </div>
-
-            <div class="fliebel">
-
-              <svg class="icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1152 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm138 0q0 164-115 279t-279 115-279-115-115-279 115-279 279-115 279 115 115 279zm108-410q0 38-27 65t-65 27-65-27-27-65 27-65 65-27 65 27 27 65zm-502-220q-7 0-76.5-.5t-105.5 0-96.5 3-103 10-71.5 18.5q-50 20-88 58t-58 88q-11 29-18.5 71.5t-10 103-3 96.5 0 105.5.5 76.5-.5 76.5 0 105.5 3 96.5 10 103 18.5 71.5q20 50 58 88t88 58q29 11 71.5 18.5t103 10 96.5 3 105.5 0 76.5-.5 76.5.5 105.5 0 96.5-3 103-10 71.5-18.5q50-20 88-58t58-88q11-29 18.5-71.5t10-103 3-96.5 0-105.5-.5-76.5.5-76.5 0-105.5-3-96.5-10-103-18.5-71.5q-20-50-58-88t-88-58q-29-11-71.5-18.5t-103-10-96.5-3-105.5 0-76.5.5zm768 630q0 229-5 317-10 208-124 322t-322 124q-88 5-317 5t-317-5q-208-10-322-124t-124-322q-5-88-5-317t5-317q10-208 124-322t322-124q88-5 317-5t317 5q208 10 322 124t124 322q5 88 5 317z"/></svg>
-
-              </svg>
-            </div>
-        </div>
-
-    {{/ifEquals}}
-
-    {{#ifEquals section.type 'paragraph-plus'}}
-
-        <span>{{section.text_part_one}}</span>
-
-        <span class="text">
-
-            <span class="inline-comment">
-                <svg class="comment-backdrop" width="1" height="1" viewBox="0 0 1 1" preserveAspectRatio="none">
-                    <defs>
-                        <clipPath id="inline-comment-clip-path" clipPathUnits="objectBoundingBox">
-                            <polygon points="0 0, 1 0.1, 1 1, 0 .9"></polygon>
-                        </clipPath>
-                    </defs>
-                    <rect x="0" y="0" width="1" height="1" clip-path="url(#inline-comment-clip-path)"></rect>
-                </svg>
-                <span class="comment-text">“Volgens de planning zou de glazen kap vanaf 6 maart 2017 geplaatst worden. Hopelijk doet de webcam het snel weer. Eerst maken we nog een tijdelijke trap op deze plek.”</span>
-
-                <svg class="inline-comment-extension" width="46px" height="29px" viewBox="0 0 46 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
-                    <polygon id="Rectangle-8" points="0 27.265625 45.1523437 0 45.1523438 28.1542719"></polygon>
-                </svg>
-                <span class="inline-comment-author">
-                    <span class="author">Jan de Wit</span>
-                    <span class="datetime smallerfont">30 maart 2017  10:12</span>
-                </span>
-            </span>
-            {{section.text_part_two}}
-
-        </span>
-
-    {{/ifEquals}}
-
-    {{#ifEquals section.type 'documents'}}
-
-            <div class="container">
-
-                <h2>Belangrijke documenten</h2>
-
-                <ul>
-
-                {{#each section.documents as |doc| }}
-
-                    <a href="{{doc.file}}" target="_blank">
-                        <li>
-                            <svg width="34px" height="43px" viewBox="0 0 34 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <g id="Symbols" stroke="none" stroke-width="1" fill="#000" fill-rule="evenodd">
-                                    <path d="M33.223913,9.03518966 L32.6540435,8.46358621 L25.1925217,0.979362069 L24.6226522,0.407758621 C24.3646957,0.149017241 24.0069565,0 23.641087,0 L2.19004348,0 C1.31343478,0 0.369565217,0.679103448 0.369565217,2.16927586 L0.369565217,28.9137931 L0.369565217,41.1739828 L0.369565217,41.5172414 C0.369565217,42.1377759 0.991913043,42.7427414 1.72808696,42.9332759 C1.76504348,42.9429138 1.80052174,42.957 1.83895652,42.9644138 C1.95426087,42.9873966 2.07178261,43 2.19004348,43 L31.8099565,43 C31.9282174,43 32.0457391,42.9873966 32.1610435,42.9644138 C32.1994783,42.957 32.2349565,42.9429138 32.271913,42.9332759 C33.008087,42.7427414 33.6304348,42.1377759 33.6304348,41.5172414 L33.6304348,41.1739828 L33.6304348,28.9137931 L33.6304348,10.363 C33.6304348,9.79436207 33.5624348,9.37474138 33.223913,9.03518966 Z M30.9954348,8.89655172 L24.7608696,8.89655172 L24.7608696,2.64301724 L30.9954348,8.89655172 Z M2.19004348,41.5172414 C2.13756522,41.5172414 2.09026087,41.4979655 2.04369565,41.4809138 C1.9283913,41.4260517 1.84782609,41.3103966 1.84782609,41.1739828 L1.84782609,30.3965517 L32.1521739,30.3965517 L32.1521739,41.1739828 C32.1521739,41.3103966 32.0716087,41.4253103 31.9563043,41.4809138 C31.9097391,41.4979655 31.8624348,41.5172414 31.8099565,41.5172414 L2.19004348,41.5172414 Z M1.84782609,28.9137931 L1.84782609,2.16927586 C1.84782609,2.00839655 1.87221739,1.48275862 2.19004348,1.48275862 L23.3254783,1.48275862 C23.301087,1.57617241 23.2826087,1.67255172 23.2826087,1.77263793 L23.2826087,10.3793103 L31.8631739,10.3793103 C31.9629565,10.3793103 32.0583043,10.3607759 32.1514348,10.3363103 C32.1514348,10.347431 32.1521739,10.3518793 32.1521739,10.363 L32.1521739,28.9137931 L1.84782609,28.9137931 Z" id="Shape"></path>
-                                    <path d="M11.8571304,33.1722759 C11.611,32.9698793 11.333087,32.8171552 11.0233913,32.7163276 C10.7136957,32.6147586 10.4003043,32.5643448 10.0839565,32.5643448 L7.94195652,32.5643448 L7.94195652,40.0344828 L9.15486957,40.0344828 L9.15486957,37.3380862 L10.0543913,37.3380862 C10.4446522,37.3380862 10.8023913,37.281 11.1253913,37.1660862 C11.4483913,37.0511724 11.7248261,36.8888103 11.9539565,36.6797414 C12.183087,36.4706724 12.3612174,36.211931 12.4898261,35.9042586 C12.6176957,35.5965862 12.682,35.254069 12.682,34.8752241 C12.682,34.5171379 12.6058696,34.1946379 12.4543478,33.9069828 C12.3028261,33.6193276 12.1032609,33.3754138 11.8571304,33.1722759 Z M11.3973913,35.6403276 C11.3227391,35.846431 11.225913,36.006569 11.1046957,36.1214828 C10.9834783,36.2363966 10.8504348,36.319431 10.7055652,36.3698448 C10.5606957,36.4202586 10.4136087,36.4462069 10.2657826,36.4462069 L9.15413043,36.4462069 L9.15413043,33.4866207 L10.0632609,33.4866207 C10.3729565,33.4866207 10.6220435,33.5355517 10.8112609,33.6334138 C10.9997391,33.7312759 11.146087,33.8528621 11.2510435,33.9981724 C11.3552609,34.1434828 11.424,34.2954655 11.458,34.4541207 C11.4912609,34.6127759 11.5082609,34.7528966 11.5082609,34.8744828 C11.5082609,35.1791897 11.4713043,35.4342241 11.3973913,35.6403276 Z" id="Shape"></path>
-                                    <path d="M19.1833913,33.6586207 C18.87,33.3279655 18.4760435,33.0618103 18.0007826,32.8631207 C17.5255217,32.664431 16.9748696,32.5643448 16.3488261,32.5643448 L14.1055652,32.5643448 L14.1055652,40.0344828 L16.9246087,40.0344828 C17.0184783,40.0344828 17.1633478,40.0226207 17.3592174,39.9988966 C17.5543478,39.9751724 17.7701739,39.9217931 18.0059565,39.8365345 C18.2417391,39.7520172 18.4856522,39.6252414 18.7384348,39.4562069 C18.9912174,39.2871724 19.2181304,39.0558621 19.4206522,38.7615345 C19.6231739,38.4672069 19.7894783,38.1024483 19.9210435,37.6665172 C20.0526087,37.2305862 20.1183913,36.7049483 20.1183913,36.0903448 C20.1183913,35.6440345 20.0407826,35.2095862 19.8863043,34.7877414 C19.7303478,34.3666379 19.4967826,33.9900172 19.1833913,33.6586207 Z M18.2993913,38.3515517 C17.9357391,38.8786724 17.3429565,39.1418621 16.5210435,39.1418621 L15.3184783,39.1418621 L15.3184783,33.4858793 L16.0258261,33.4858793 C16.6053043,33.4858793 17.0768696,33.5622414 17.4405217,33.7142241 C17.8041739,33.8662069 18.0924348,34.0656379 18.3045652,34.3125172 C18.5166957,34.5593966 18.6593478,34.8344483 18.734,35.1384138 C18.807913,35.4423793 18.8448696,35.7500517 18.8448696,36.0606897 C18.8448696,37.0608103 18.6630435,37.8251724 18.2993913,38.3515517 Z" id="Shape"></path>
-                                    <polygon id="Shape" points="21.8767826 40.0344828 23.1096522 40.0344828 23.1096522 36.6693621 26.2221304 36.6693621 26.2221304 35.8382759 23.1096522 35.8382759 23.1096522 33.4866207 26.5347826 33.4866207 26.5347826 32.5643448 21.8767826 32.5643448"></polygon>
-                                    <path d="M23.9685217,17.0228103 C23.2892609,17.0228103 22.4555217,17.1117759 21.4865217,17.2882241 C20.133913,15.8484655 18.7221739,13.7459138 17.7258261,11.6819138 C18.7140435,7.50868966 18.2195652,6.91781034 18.0015217,6.63905172 C17.7694348,6.3425 17.442,5.86134483 17.0694783,5.86134483 C16.9135217,5.86134483 16.4877826,5.93251724 16.3185217,5.98886207 C15.8927826,6.1312069 15.6636522,6.46037931 15.4803478,6.88963793 C14.9577826,8.11513793 15.6747391,10.2043448 16.4123913,11.8146207 C15.781913,14.3301207 14.7242174,17.3408621 13.6125652,19.7844483 C10.8112609,21.0714828 9.3233913,22.3355345 9.18886957,23.5417586 C9.14008696,23.9806552 9.24356522,24.6249138 10.013,25.203931 C10.2236522,25.3618448 10.4705217,25.4456207 10.7277391,25.4456207 L10.7277391,25.4456207 C11.3744783,25.4456207 12.0278696,24.9488966 12.784,23.8835345 C13.3353913,23.106569 13.9274348,22.0471379 14.5453478,20.731931 C16.5247391,19.8637759 18.9734783,19.0793966 21.0703913,18.6397586 C22.2382174,19.764431 23.284087,20.3338103 24.1828696,20.3338103 C24.8451304,20.3338103 25.4127826,20.0283621 25.8237391,19.4508276 C26.2516957,18.849569 26.3492609,18.3113276 26.112,17.8494483 C25.8274348,17.2941552 25.126,17.0228103 23.9685217,17.0228103 Z M10.744,24.1941724 C10.398087,23.9280172 10.4180435,23.7486034 10.4254348,23.6811379 C10.4712609,23.268931 11.1150435,22.5371897 12.6945652,21.6467931 C11.4971739,23.865 10.8541304,24.1593276 10.744,24.1941724 Z M16.8048696,7.20027586 C16.8366522,7.18989655 17.5772609,8.01653448 16.8758261,9.58455172 C15.8218261,8.50287931 16.7324348,7.22474138 16.8048696,7.20027586 Z M15.277087,19.0816207 C16.0273043,17.2882241 16.7250435,15.308 17.2535217,13.4738276 C18.0835652,14.969931 19.0806522,16.4215517 20.0784783,17.5840345 C18.5011739,17.9554655 16.8218696,18.4796207 15.277087,19.0816207 Z M24.8126087,18.7265 C24.5849565,19.0460345 24.0912174,19.0534483 23.9182609,19.0534483 C23.5243043,19.0534483 23.3772174,18.818431 22.7748261,18.3535862 C23.2715217,18.2898276 23.7401304,18.2735172 24.1133913,18.2735172 C24.7704783,18.2735172 24.8909565,18.3706379 24.9818696,18.419569 C24.9656087,18.4722069 24.9227391,18.5715517 24.8126087,18.7265 Z" id="Shape"></path>
-                                </g>
-                            </svg>
-                            <span>{{doc.file-name}}</span>
-                        </li>
-                    </a>
-
-                {{/each}}
-
-                </ul>
-
-            </div>
-
-    {{/ifEquals}}
-
-    {{#ifEquals section.type 'gallery' }}
-        {{> section-gallery section=section}}
-    {{/ifEquals}}
 
     </section>
 

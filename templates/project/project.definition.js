@@ -59,9 +59,10 @@ module.exports = {
     getDependencies: (data, correlationId) => {
         return new Promise((resolve, reject) => {
             logger.info('Get template dependencies for ' + data.type, correlationId);
-            resolve([]);
+            resolve([
+                {template: 'homepage', data: null}
+            ]);
         })
-
     },
 
     /**
@@ -78,28 +79,14 @@ module.exports = {
                 url: data.url, // replace wordpress generated url for page
                 status: data.status,
                 title: data.title,
-                subtitle: data.subtitle,
                 content: data.content,
                 excerpt: data.excerpt,
                 date: data.date,
                 modified: data.modified,
-                categories: data.categories,
-                static: data.static,
-                catIds: (data.categories) ? data.categories.map( c => { return c.id }) : '',
-                catSlugs: (data.categories) ? data.categories.map( c => { return c.slug }) : '',
-                tags: data.tags,
-                author: data.author,
-                comments: data.comments,
-                comment_count: parseInt(data.commentcount) || 0,
-                comment_status: data.comment_status,
-                last_comment_date : data.last_comment_date,
-                sections: data.sections,
-                main_image: data.main_image,
-                square_image: data.square_image,
-                location: data.location,
-                information_block: data.information_block,
-                location: data.location,
-                children: data.children,
+                functions: data.functions,
+                types: data.types,
+                posts: data.posts,
+
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);

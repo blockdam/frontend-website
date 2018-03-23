@@ -1,0 +1,14 @@
+.section.paragraph {
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+
+    @include bodyTextBold();
+  }
+
+
+  h4{}
+}

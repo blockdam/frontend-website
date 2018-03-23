@@ -1,0 +1,63 @@
+
+
+
+.container-small{
+  width: calc(100vw - 2rem);
+  margin: 0 auto;
+  @media (min-width: $breakpoint-sm) {
+    width: calc(100vw - 8rem);
+  }
+  @media (min-width: $breakpoint-md) {
+    width: calc(100vw - 24rem);
+  }
+  @media (min-width: $breakpoint-bax) {
+    width: calc(100vw - 36rem);
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: calc(100vw - 48rem);
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: calc( #{$breakpoint-xl} - 50rem);
+  }
+}
+
+.container-medium{
+  width: calc(100vw - 2rem);
+  margin: 0 auto;
+  @media (min-width: $breakpoint-sm) {
+    width: calc(100vw - 8rem);
+  }
+  @media (min-width: $breakpoint-md) {
+  }
+  @media (min-width: $breakpoint-bax) {
+    width: calc(100vw - 16rem);
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: calc(100vw - 32rem);
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: calc( #{$breakpoint-xl} - 13rem);
+  }
+}
+
+.container-large{
+  width: calc(100vw - 2rem);
+  margin: 0 auto;
+  @media (min-width: $breakpoint-sm) {
+    width: calc(100vw - 6rem);
+  }
+  @media (min-width: $breakpoint-md) {
+    width: calc(100vw - 6rem);
+  }
+  @media (min-width: $breakpoint-bax) {
+    //
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: calc(100vw - 10rem);
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: calc( $breakpoint-xl - 8rem);
+  }
+}
+
+
