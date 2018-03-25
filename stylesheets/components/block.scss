@@ -33,6 +33,13 @@ a.block {
 a:hover {
 
   background: none;
+
+  svg {
+    fill: $klein;
+
+  }
+
+
 }
 
 a.block:nth-of-type(2) {
