@@ -1,21 +1,21 @@
 @mixin squareImage() {
 
   width: 100%;
-  @media (min-width : $breakpoint-sm) {
+  @media (min-width : $breakpoint-md) {
     width: calc(2 * ((100vw - 24rem - 1rem) / 5));
   }
 }
 
 @mixin cameraImage() {
   width: 100%;
-  @media (min-width : $breakpoint-sm) {
+  @media (min-width : $breakpoint-md) {
     width: calc(3 * ((100vw - 24rem - 1rem) / 5));
   }
 }
 
 @mixin singleImage() {
   width: 100%;
-  @media (min-width : $breakpoint-sm) {
+  @media (min-width : $breakpoint-md) {
     width: calc(100vw - 32rem);
   }
 }
@@ -50,7 +50,7 @@
       @include squareImage();
 
       margin-bottom: 6rem;
-      @media (min-width : $breakpoint-sm) {
+      @media (min-width : $breakpoint-md) {
         margin: 0 2rem 0 0;
       }
     }
@@ -67,14 +67,14 @@
     > div:nth-of-type(1) {
       @include cameraImage();
       margin-bottom: 6rem;
-      @media (min-width : $breakpoint-sm) {
+      @media (min-width : $breakpoint-md) {
         margin: 0;
       }
     }
 
     > div:nth-of-type(2) {
       @include squareImage();
-      @media (min-width : $breakpoint-sm) {
+      @media (min-width : $breakpoint-md) {
         margin-left: 2rem;
       }
     }
@@ -87,14 +87,14 @@
     > div:nth-of-type(1) {
       @include cameraImage();
       margin-bottom: 6rem;
-      @media (min-width : $breakpoint-sm) {
+      @media (min-width : $breakpoint-md) {
         margin: 0;
       }
     }
 
     > div:nth-of-type(2) {
       @include cameraImage();
-      @media (min-width : $breakpoint-sm) {
+      @media (min-width : $breakpoint-md) {
         margin-left: 2rem;
       }
     }
