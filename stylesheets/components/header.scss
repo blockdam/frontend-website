@@ -81,7 +81,14 @@ header {
 
   svg#woordmerk {
 
-    width: 500px;
+
+    width: calc(100% - 4rem);
+
+    @media (min-width: $breakpoint-sm) {
+      width: 500px;
+    }
+
+
     position: absolute;
     margin: 0px 0 0 0;
     transform: scale(1);

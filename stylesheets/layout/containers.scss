@@ -44,10 +44,10 @@
   width: calc(100vw - 2rem);
   margin: 0 auto;
   @media (min-width: $breakpoint-sm) {
-    width: calc(100vw - 6rem);
+    width: calc(100vw - 8rem);
   }
   @media (min-width: $breakpoint-md) {
-    width: calc(100vw - 6rem);
+    width: calc(100vw - 8rem);
   }
   @media (min-width: $breakpoint-bax) {
     //

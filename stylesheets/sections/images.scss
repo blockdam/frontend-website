@@ -1,19 +1,30 @@
 @mixin squareImage() {
-  width: calc(2 * ((100vw - 24rem - 1rem) / 5));
+
+  width: 100%;
+  @media (min-width : $breakpoint-sm) {
+    width: calc(2 * ((100vw - 24rem - 1rem) / 5));
+  }
 }
 
 @mixin cameraImage() {
-  width: calc(3 * ((100vw - 24rem - 1rem) / 5));
+  width: 100%;
+  @media (min-width : $breakpoint-sm) {
+    width: calc(3 * ((100vw - 24rem - 1rem) / 5));
+  }
 }
 
 @mixin singleImage() {
-  width: calc(100vw - 32rem);
+  width: 100%;
+  @media (min-width : $breakpoint-sm) {
+    width: calc(100vw - 32rem);
+  }
 }
 
 .section.images {
   display: flex;
   flex-direction: row;
   margin: 6rem auto;
+  flex-wrap: wrap;
 
   > div {
 
