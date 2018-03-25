@@ -3,4 +3,10 @@ a.block {
   display: block;
   text-decoration: none;
   width: 33%;
+  color: black;
+
+  svg {
+    height: 100px;
+    width: auto;
+  }
 }
