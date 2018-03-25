@@ -1,11 +1,12 @@
 svg#nav-shape {
 
   position: absolute;
-  height: 9vw;
-  top: 80px;
+  height: 8vw;
+  top: 50px;
   left: 0;
   z-index: 4;
   width: 100%;
+  //transition: all 50ms ease;
 
 
   rect,circle,path {

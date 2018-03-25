@@ -3,6 +3,7 @@ class Header {
     constructor() {
 
         this.body = document.getElementsByTagName('body')[0];
+        this.article = document.getElementsByTagName('article')[0];
         this.header = document.getElementsByTagName('header')[0];
         this.main = document.getElementsByTagName('main')[0];
         this.backgroundImage = document.getElementById('background-img');
@@ -52,25 +53,25 @@ class Header {
         let self = this;
 
         let wp_close = new Waypoint({
-            element: self.main,
+            element: self.article,
             handler: function(direction) {
-                if(self.expanded && direction === 'down') {
+                if(direction === 'down') {  // self.expanded &&
                     console.log('close1');
                     self._close();
                 }
             },
-            offset : 160
+            offset : -10
         })
 
         let wp_open = new Waypoint({
-            element: self.main,
+            element: self.article,
             handler: function(direction) {
-                if(!self.expanded && direction === 'up') {
+                if(direction === 'up') {  // !self.expanded &&
                     console.log('open');
                     self._open();
                 }
             },
-            offset : 160
+            offset : -10
         })
 
         let offset = window.innerHeight * 0.8;
@@ -93,23 +94,25 @@ class Header {
 
         console.log('open');
         let self = this;
-        self.expanded = true;
-        self.header.classList.add("expanded");
-        self.main.style.transform = 'translateY(100vh)';
-        self._expandNav();
-        self._initWaypoints();
+        // self.expanded = true;
+        // self.header.classList.add("expanded");
+        // self.main.style.transform = 'translateY(100vh)';
+        // self._expandNav();
+        // self._initWaypoints();
+        self.header.classList.remove("shrunk");
     }
 
     _close() {
 
         let self = this;
         self.expanded = false;
-        self.header.classList.remove("expanded");
+        // self.header.classList.remove("expanded");
+        self.header.classList.add("shrunk");
         // self._collapseNav();
-        self._snapNav();
-        self.navGroups.forEach((g) => {
-            g.querySelector('circle').setAttribute("r", 6);
-        });
+        // self._snapNav();
+        // self.navGroups.forEach((g) => {
+        //     g.querySelector('circle').setAttribute("r", 6);
+        // });
     }
 
     showBackground() {

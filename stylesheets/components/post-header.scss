@@ -8,6 +8,7 @@
 
   h2 {
     @include lowercase-heavy();
+    color: $klein;
     max-width: 777px;
   }
 }

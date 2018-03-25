@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1.125rem;
-    line-height: 1.77;
+    line-height: 1.7;
 
 }
 
@@ -19,7 +19,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 1.44rem;
-    line-height: 1.6;
+    line-height: 1.5;
 
 }
 
@@ -30,7 +30,7 @@
        font-style: normal;
        font-weight: 700;
        font-size: 4rem;
-       line-height: 1.2;
+       line-height: 1.05;
 
        i {
         font-style: italic;
@@ -42,10 +42,11 @@
 @mixin condensed-book {
 
        font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
+       text-transform: uppercase;
        font-style: normal;
        font-weight: 400;
        font-size: 4rem;
-       line-height: 1.2;
+       line-height: 1.1;
 
 }
 
