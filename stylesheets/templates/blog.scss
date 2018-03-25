@@ -7,6 +7,9 @@
 
 #related-posts {
 
+  display: block;
+  margin-top: 10rem;
+
   .large-container {
     display: flex;
     flex-direction: row;
@@ -18,6 +21,7 @@
 
       position: relative;
       width: calc((100% / 3) - (1.5rem));
+      padding: 1rem;
     }
   }
 }
