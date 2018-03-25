@@ -6,13 +6,21 @@ a.block {
   border: none;
 
   svg {
-    height: 100px;
+    height: 200px;
     width: auto;
     position: absolute;
   }
 
   h3, span.date {
     padding-left: 60px;
+  }
+
+  h3 {
+    line-height: 1.35;
+  }
+
+  span.date {
+    margin-top: 2rem;
   }
 }
 
