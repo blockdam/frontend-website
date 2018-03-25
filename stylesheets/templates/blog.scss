@@ -12,10 +12,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
 
     .block {
 
-
+      position: relative;
       width: calc((100% / 3) - (1.5rem));
     }
   }
