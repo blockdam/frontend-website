@@ -2,13 +2,17 @@ a.block {
 
   display: block;
   text-decoration: none;
-  width: 33%;
   color: black;
   border: none;
 
   svg {
     height: 100px;
     width: auto;
+    position: absolute;
+  }
+
+  h3, span.date {
+    padding-left: 60px;
   }
 }
 
