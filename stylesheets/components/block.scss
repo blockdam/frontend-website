@@ -6,7 +6,7 @@ a.block {
   border: none;
 
   svg {
-    height: 200px;
+    height: 220px;
     width: auto;
     position: absolute;
   }
@@ -20,11 +20,30 @@ a.block {
   }
 
   span.date {
-    margin-top: 2rem;
+    margin-top: 3.5rem;
+    display: inline-block;
+    font-size: .875rem;
+    line-height: 1;
   }
 }
 
 a:hover {
 
   background: none;
+}
+
+a.block:nth-of-type(2) {
+
+  svg {
+    transform: rotate(0deg);
+    //right: 0;
+  }
+}
+
+a.block:nth-of-type(3) {
+
+  svg {
+    transform: scaleX(-1);
+    right: 0;
+  }
 }
