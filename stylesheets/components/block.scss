@@ -1,6 +1,8 @@
 a.block {
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
   color: black;
   border: none;
@@ -36,7 +38,7 @@ a.block:nth-of-type(2) {
 
   svg {
     transform: rotate(0deg);
-    //right: 0;
+    display: none;
   }
 }
 
