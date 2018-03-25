@@ -37,9 +37,11 @@ a:hover {
 
 a.block:nth-of-type(2) {
 
+  display: none;
+
   svg {
     transform: rotate(0deg);
-    display: none;
+
   }
 }
 
