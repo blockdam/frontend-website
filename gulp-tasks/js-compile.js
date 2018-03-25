@@ -17,13 +17,9 @@ module.exports = function() {
     gulp.task('js-compile', function() {
 
         var post = gulp.src([
-<<<<<<< HEAD
-            path.projectFolder + '/scripts/header.js'
-=======
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/menu.js'
->>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))
@@ -33,14 +29,11 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var homepage = gulp.src([
-<<<<<<< HEAD
-            path.projectFolder + '/scripts/header.js'
-=======
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js'
->>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
+
             ])
             // .pipe(plumber())
             .pipe(concat('homepage.js'))
@@ -50,13 +43,10 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var page = gulp.src([
-<<<<<<< HEAD
-            path.projectFolder + '/scripts/header.js'
-=======
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/menu.js'
->>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
+
             ])
             // .pipe(plumber())
             .pipe(concat('page.js'))

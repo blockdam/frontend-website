@@ -64,7 +64,7 @@ module.exports = {
                 "limit":1
             };
 
-<<<<<<< HEAD
+
             let typeInteriorOptions = {
                 query : {
                     "type":"project"
@@ -79,23 +79,7 @@ module.exports = {
 			Promise.all([findPosts,findInteriorProjects]).then(values => {
 
 				data.posts = values[0];
-				data.interiorProjects = values[1]
-=======
-
-            let findHome = pagePersistence.findOne(homeOptions);
-            let findTestimonials = pagePersistence.find(testimonialsOptions);
-            let findExpertise = pagePersistence.find(expertiseOptions);
-            let findCases = pagePersistence.find(casesOptions);
-            let findPosts = pagePersistence.findOne(postOptions);
-
-			Promise.all([findHome,findTestimonials,findExpertise,findCases,findPosts]).then(values => {
-
-                data.homepage = values[0];
-                data.testimonials = values[1];
-                data.expertise = values[2];
-                data.cases = values[3];
-				data.blog = values[4];
->>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
+				data.interiorProjects = values[1];
 
 				logger.info('Get template data', correlationId)
 				resolve(data)
