@@ -76,9 +76,9 @@
 
     > div:nth-of-type(1) {
       @include cameraImage();
-      margin: 0;
+      margin-bottom: 2rem;
       @media (min-width : $breakpoint-sm) {
-        margin-bottom: 2rem;
+        margin: 0;
       }
     }
 
