@@ -44,7 +44,9 @@
         align-items: center;
         cursor: pointer;
         border-radius: 50%;
-        background: $klein;
+        background: rgb(180, 181, 180);
+        transition: all 250ms ease;
+
         margin-left: .5rem;
         height: 3.5rem;
         width: 3.5rem;
@@ -72,7 +74,7 @@
       //}
 
       li:hover {
-        background: rgb(180, 181, 180);
+        background: $klein;
       }
     }
 }

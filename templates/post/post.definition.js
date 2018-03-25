@@ -26,7 +26,23 @@ module.exports = {
      */
     getTemplateData: (data, correlationId) => {
         return new Promise((resolve, reject) => {
-            resolve(data);
+
+            let postOptions = {
+                query : {
+                    "type":"post"
+                },
+                "sort": {"date":-1},
+                "limit":1
+            };
+            let findPosts = pagePersistence.find(postOptions);
+
+            Promise.all([findPosts]).then(values => {
+
+                data.related_posts = values[0];
+                logger.info('Get template data', correlationId)
+                resolve(data)
+
+            });
         })
     },
 
