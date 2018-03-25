@@ -23,7 +23,7 @@
   @media(min-width: $breakpoint-lg) {
 
   }
-  
+
 }
 
 #social-buttons {
@@ -44,30 +44,35 @@
         align-items: center;
         cursor: pointer;
         border-radius: 50%;
-        background: white;
+        background: $klein;
         margin-left: .5rem;
         height: 3.5rem;
         width: 3.5rem;
-        @media(min-width: 1200px) {
-          background: white;
-        }
+        border-radius: 50%;
+        //@media(min-width: 1200px) {
+        //  background: white;
+        //}
       }
 
       svg  {
 
         height: 3rem;
         width: 3rem;
-        fill: $klein;
+        fill: white;
 
         transition: all 250ms ease;
       }
 
-      svg:hover {
+      //svg:hover {
+      //
+      //  fill: black;
+      //  @media(min-width: 1200px) {
+      //    fill: black;
+      //  }
+      //}
 
-        fill: black;
-        @media(min-width: 1200px) {
-          fill: black;
-        }
+      li:hover {
+        background: black;
       }
     }
 }
