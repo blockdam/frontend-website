@@ -27,6 +27,8 @@ module.exports = {
     getTemplateData: (data, correlationId) => {
         return new Promise((resolve, reject) => {
 
+            let pagePersistence = new PagePersistence();
+
             let postOptions = {
                 query : {
                     "type":"post"
