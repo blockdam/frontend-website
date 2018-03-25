@@ -13,6 +13,9 @@ svg#nav-shape {
     height: 16vw;
   }
   @media (min-width : $breakpoint-md) {
+    height: 12vw;
+  }
+  @media (min-width : $breakpoint-lg) {
     height: 8vw;
   }
 
