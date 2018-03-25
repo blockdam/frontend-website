@@ -100,6 +100,11 @@ module.exports = {
                 information_block: data.information_block,
                 location: data.location,
                 children: data.children,
+                korte_titel: data.korte_titel,
+                chapeau: data.chapeau,
+                cover: data.cover,
+                covertext: data.covertext,
+                co_author: data.co_auteur
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);

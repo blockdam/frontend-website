@@ -97,7 +97,9 @@ module.exports = {
                 chapeau: data.chapeau,
                 cover: data.cover,
                 covertext: data.covertext,
-                co_author: data.co_auteur
+                co_author: data.co_auteur,
+                opdrachtgever: data.opdrachtgever,
+                partner: data.partner,
 
             };
             // logger.info('Mapped post fields', correlationId);

@@ -1,0 +1,29 @@
+<div id="featuredblog">
+    <div class="container">
+
+        <div id="blog" [routerLink]="['/blog/', blog.slug]">
+
+            <!--<responsiveimage [content]="blog.cover"></responsiveimage>-->
+
+            <div id="overlay">
+
+                <span class="uppercase">blog</span>
+
+                <div id="title">
+
+                    {{body.blog.title}}
+
+                </div>
+
+                <div id="text">
+
+                    {{body.blog.covertext}}
+
+                </div>
+
+                <a href="">Lees verder</a>
+
+            </div>
+        </div>
+    </div>
+</div>

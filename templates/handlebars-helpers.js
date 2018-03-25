@@ -238,6 +238,34 @@ module.exports = [{
         }
     },
     {
+        name: 'triangulizer',
+        helper: (content) => {
+
+            if (content) {
+                var text = content.replace(/<(?:.|\n)*?>/gm, '');
+                // if (screen === 'tablet' || screen === 'desktop' || screen === 'landscape') {
+                    text = text.replace(/^(.{57}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{118}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{168}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{218}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{265}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{306}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{355}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{390}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{420}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{460}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{490}[^\s]*)/, "$1<br>");
+                    text = text.replace(/^(.{520}[^\s]*)/, "$1<br>");
+                // }
+                return text;
+            }
+            else {
+                return '';
+            }
+
+        }
+    },
+    {
         name: 'index_of',
         helper: (context, index) => {
             return context[index];

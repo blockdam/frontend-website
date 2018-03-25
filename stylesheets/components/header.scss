@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 header {
@@ -135,3 +136,92 @@ header.shrunk {
     }
 }
 
+=======
+#logo {
+
+  //transition: all 1000ms ease-in;
+  display: block;
+  height: auto;
+  //width: 60%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+
+  fill: $geel;
+
+}
+
+logo.loaded {
+
+  display: block;
+  height: 50px;
+  width: 70px;
+}
+
+header {
+
+  @extend .uni-sans;
+  font-size: 38px;
+  //transition: height 400ms ease-in;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1,h1 a {
+
+    transition: all 250ms ease-in;
+    @extend .uni-sans;
+    margin: 0;
+    font-size: 1px;
+    padding: 8px 0 2px 0;
+  }
+
+
+  h2 {
+
+    transition: all 250ms ease-in;
+    opacity: 0;
+    @extend .avenir-light;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1.loaded { font-size: 44px; }
+
+  h2.loaded { opacity: 1; }
+
+
+
+  menu {
+
+    display: block;
+    height: 100%;
+    width: calc(100% - 60px);
+    position: absolute;
+    bottom: -140px;
+  }
+
+
+  menu.loaded {
+
+    transition: all 1000ms ease-in;
+    bottom: -40px;
+  }
+}
+
+//header.loaded {
+//
+//  height: 200px;
+//
+//}
+>>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90

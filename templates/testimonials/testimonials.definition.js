@@ -93,12 +93,12 @@ module.exports = {
                 comment_status: data.comment_status,
                 sections: data.sections,
                 main_image: data.main_image,
-                korte_titel: data.korte_titel,
-                chapeau: data.chapeau,
-                cover: data.cover,
-                covertext: data.covertext,
-                co_author: data.co_auteur
-
+                korte_tekst: data.korte_tekst,
+                quote1: data.quote1,
+                quote2: data.quote2,
+                kop_quote: data.kop_quote,
+                auteur: data.auteur,
+                organisatie: data.organisatie
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);

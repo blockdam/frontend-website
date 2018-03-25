@@ -93,12 +93,8 @@ module.exports = {
                 comment_status: data.comment_status,
                 sections: data.sections,
                 main_image: data.main_image,
-                korte_titel: data.korte_titel,
                 chapeau: data.chapeau,
-                cover: data.cover,
-                covertext: data.covertext,
-                co_author: data.co_auteur
-
+                cases: data.cases
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);

@@ -1,0 +1,12 @@
+<div id="expertise" class="container">
+
+    {{#each body.expertise as |subject| }}
+
+        <div class="quarter">
+            <h3>{{subject.title.rendered}}</h3>
+            <div class='text'>{{{subject.excerpt.rendered}}}</div>
+            <a href="">Lees meer</a>
+        </div>
+    {{/each}}
+
+</div>

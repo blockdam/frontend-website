@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Header {
 
     constructor() {
@@ -16,10 +17,17 @@ class Header {
         this.animations.collapseMenu.offsetTop = 0;
         this.animations.collapseMenu.offsetLeft = 0;
 
+=======
+
+class Header {
+
+    constructor() {
+>>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
     }
 
     init() {
 
+<<<<<<< HEAD
         let self = this;
         self._initWaypoints();
 
@@ -272,5 +280,93 @@ class Header {
 }
 
 
+=======
+        var internal = document.referrer.indexOf(window.location.host) !== -1;
+
+        console.log(window.location.host);
+        console.log(document.referrer);
+        console.log(internal);
+
+        let self = this;
+
+        if(detect.ie()) {
+            self.skip();
+        } else if (!internal && (window.location.pathname === '' || window.location.pathname === '/' )) {
+            self.intro();
+        } else {
+            self.skip();
+        }
+    }
+
+    intro() {
+
+        var intro = anime.timeline();
+
+        intro
+            .add({
+                targets: '#logo',
+                scale: [22,2],  ////??????
+                translateY: [0,'-10px'],
+                easing: 'easeOutExpo',
+                duration: 1200,
+                offset: 2000
+            })
+            .add({
+                targets: 'header',
+                height: ['800px','200px'],  ////??????
+                easing: 'easeOutExpo',
+                duration: 1200,
+                offset: 2000
+            })
+            // .add({
+            //     targets: '#logo',
+            //     translateY: [0,'-10px'],
+            //     easing: 'easeOutExpo',
+            //     duration: 100,
+            //     offset: 0
+            // })
+            .add({
+                targets: 'h1.header-text a',
+                opacity: [0,1],
+                fontSize: ['1px','44px'],
+                easing: 'easeOutExpo',
+                duration: 200,
+                offset: 3500
+            })
+            .add({
+                targets: 'h2.header-text',
+                opacity: [0,1],
+                easing: 'easeOutExpo',
+                duration: 200,
+                offset: 3500
+            })
+            .add({
+                targets: '#menu',
+                opacity: [0,1],
+                easing: 'easeOutExpo',
+                duration: 200,
+                offset: 4000
+            })
+         ;
+    }
+
+    skip() {
+
+        var skip = anime.timeline();
+
+        document.querySelector('.header').classList.add('compact');
+
+        skip
+            .add({
+                targets: '#naast_logo .man-blue',
+                opacity: [0,1],
+                easing: 'easeOutExpo',
+                duration: 1000
+            })
+        ;
+    }
+}
+
+>>>>>>> 520bbbdde1a47787279b15241fc2535f63369e90
 var header = new Header();
 header.init();

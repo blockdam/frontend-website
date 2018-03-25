@@ -1,0 +1,44 @@
+<div id="testimonials">
+    <div class="container" id="testimonial_container">
+
+        {{#each body.testimonials as |testimonial| }}
+        <div>
+            <div class="single-testimonial {{#ifEquals @index 0}}active{{/ifEquals}}">
+                <h3 class="uni-sans">"Bij Manon heb je geen zorgen over losse eindjes"</h3>
+                <div class="testimonial-image">
+                    <!---<img src="http://manonraats.com/wordpress/wp-content/uploads/2016/10/Hoite-250x250.jpg" alt="foto van Hoite Detmar" title="foto van Hoite Detmar">-->
+                </div>
+                <div class="testimonial-text">
+                    <div>
+                        {{{testimonial.content.rendered}}}
+                    </div>
+                    <span class="auteur">Hoite Detmar | Directeur Noord/Zuidlijn</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div id="TOCContainer">
+
+        <div id="TOC">
+            <!--&lt;!&ndash;&ndash;&gt;<responsiveicon color="#000" type="plus" _nghost-c508=""><div _ngcontent-c508="" class="icon-container">-->
+
+            <svg xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svg-icon" height="20px" version="1.1" viewBox="0 0 20 20" width="20px" xmlns="http://www.w3.org/2000/svg">
+                <g style="fill:#000;">
+                    <path d="M15.5 10h-5.5v-5.5c0-0.276-0.224-0.5-0.5-0.5s-0.5 0.224-0.5 0.5v5.5h-5.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5h5.5v5.5c0 0.276 0.224 0.5 0.5 0.5s0.5-0.224 0.5-0.5v-5.5h5.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5z"></path>
+                </g>
+            </svg>
+
+            <span class="uppercase">Meer testimonials</span>
+            <ul>
+                {{#each body.testimonials as |testimonial| }}
+                <li>
+                    <span>{{testimonial.auteur}} | {{testimonial.organisatie}}</span>
+                    <div class="bold">{{ testimonial.korte_text}}</div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
