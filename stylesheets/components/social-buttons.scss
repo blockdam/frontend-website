@@ -23,14 +23,7 @@
   @media(min-width: $breakpoint-lg) {
 
   }
-
-  .question {
-    font-size: 1.06rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    font-family: Cabrito Sans W01 Norm Bold;
-
-  }
+  
 }
 
 #social-buttons {
@@ -64,16 +57,16 @@
 
         height: 3rem;
         width: 3rem;
-        fill: $blauw;
+        fill: $klein;
 
         transition: all 250ms ease;
       }
 
       svg:hover {
 
-        fill: $donkergeel;
+        fill: black;
         @media(min-width: 1200px) {
-          fill: $donkergeel;
+          fill: black;
         }
       }
     }
