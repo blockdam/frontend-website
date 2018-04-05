@@ -31,8 +31,8 @@ module.exports = {
 
             let postOptions = {
                 query : {
-                    "type":"post",
-                    "slug ": { $ne : data.slug }
+                    type:"post",
+                    slug: { $ne : data.slug }
                 },
                 "sort": {"date":-1},
                 "limit":3
