@@ -93,9 +93,13 @@ header {
 
     position: absolute;
     margin: 0px 0 0 0;
-    transform: scale(1);
 
-    transition: all 250ms ease;
+
+    svg {
+      width: 100%;
+      transform: scale(1);
+      transition: all 250ms ease;
+    }
   }
 
   h1 {
