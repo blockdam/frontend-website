@@ -1,6 +1,6 @@
 footer {
 
-  background: $grey;
+  background: $klein;
   display: block;
   margin-top: 9rem;
   padding: 3rem 0;
@@ -15,5 +15,10 @@ footer {
   div.half {
 
     width: calc(50% - 2rem);
+    color: white;
+
+    a {
+      $white;
+    }
   }
 }
