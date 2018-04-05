@@ -12,6 +12,17 @@
 @mixin cameraImage() {
   width: 100%;
   @media (min-width : $breakpoint-md) {
+    width: calc(3 * ((100vw - 12rem - 1rem) / 5));
+  }
+  @media (min-width : $breakpoint-lg) {
+    width: calc(3 * ((100vw - 24rem - 1rem) / 5));
+  }
+
+}
+
+@mixin cameraEqualSizes() {
+  width: 100%;
+  @media (min-width : $breakpoint-md) {
     width: calc(3 * ((100vw - 18rem - 1rem) / 5));
   }
   @media (min-width : $breakpoint-lg) {
@@ -95,7 +106,7 @@
     justify-content: center;
 
     > div:nth-of-type(1) {
-      @include cameraImage();
+      @include cameraEqualSizes();
       margin-bottom: 6rem;
       @media (min-width : $breakpoint-md) {
         margin: 0;
@@ -103,7 +114,7 @@
     }
 
     > div:nth-of-type(2) {
-      @include cameraImage();
+      @include cameraEqualSizes();
       @media (min-width : $breakpoint-md) {
         margin-left: 2rem;
       }
