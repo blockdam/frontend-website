@@ -1,0 +1,16 @@
+footer {
+
+  background: $grey;
+
+  > div {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div.half {
+
+    width: calc(50% - 2rem);
+  }
+}
