@@ -19,6 +19,15 @@ footer {
 
     a {
       color: white;
+      text-decoration: none;
+      border: none;
     }
+
+    a:hover {
+
+      border: 1px solid #fff;
+    }
+
+
   }
 }
