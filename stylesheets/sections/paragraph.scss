@@ -4,6 +4,13 @@
     margin-bottom: 1.5rem;
   }
 
+
+  h2 {
+    @include condensed-header();
+
+
+  }
+
   h3 {
 
 
@@ -13,4 +20,13 @@
 
 
   h4{}
+
+
+  ul {
+    list-style: circle;
+  }
+
+  li {
+
+  }
 }
