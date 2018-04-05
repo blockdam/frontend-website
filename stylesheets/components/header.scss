@@ -85,6 +85,7 @@ header {
 
     width: calc(100% - 4rem);
     border: none;
+    cursor: pointer;
 
     @media (min-width: $breakpoint-sm) {
       width: 500px;
