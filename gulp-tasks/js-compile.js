@@ -19,7 +19,8 @@ module.exports = function() {
         var post = gulp.src([
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
-            path.projectFolder + '/scripts/menu.js'
+            path.projectFolder + '/scripts/menu.js',
+            path.projectFolder + '/scripts/social-dialogue.js'
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))
@@ -32,7 +33,8 @@ module.exports = function() {
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/homepage.js',
-            path.projectFolder + '/scripts/menu.js'
+            path.projectFolder + '/scripts/menu.js',
+            path.projectFolder + '/scripts/social-dialogue.js'
 
             ])
             // .pipe(plumber())
@@ -45,7 +47,8 @@ module.exports = function() {
         var page = gulp.src([
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
-            path.projectFolder + '/scripts/menu.js'
+            path.projectFolder + '/scripts/menu.js',
+            path.projectFolder + '/scripts/social-dialogue.js'
 
             ])
             // .pipe(plumber())
