@@ -58,6 +58,7 @@ module.exports = {
 			Promise.all([findPosts,findInteriorProjects,findAbout]).then(values => {
 
 			    data = values[2];
+			    data.type = 'homepage';
 				data.posts = values[0];
 				data.interiorProjects = values[1];
 
