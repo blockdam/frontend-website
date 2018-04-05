@@ -16,7 +16,7 @@ header {
   //justify-content: flex-start;
   //align-items: center;
 
-  //transition: height 1000ms ease;
+  transition: all 200ms ease;
 
   #header-container {
 
@@ -86,14 +86,15 @@ header {
     width: calc(100% - 4rem);
     border: none;
     cursor: pointer;
+    transition: all 200ms ease;
 
     @media (min-width: $breakpoint-sm) {
-      width: 500px;
+      width: 600px;
     }
 
 
     position: absolute;
-    margin: 0px 0 0 0;
+    margin: 20px 0 0 0;
 
 
     svg {
@@ -132,6 +133,7 @@ header.expanded {
 header.shrunk {
 
     height: 100px;
+    margin: 0px 0 0 0;
 
     #header-container {
       height: 100px;
