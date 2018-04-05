@@ -12,7 +12,7 @@
 @mixin cameraImage() {
   width: 100%;
   @media (min-width : $breakpoint-md) {
-    width: calc(3 * ((100vw - 12rem - 1rem) / 5));
+    width: calc(3 * ((100vw - 16rem - 1rem) / 5));
   }
   @media (min-width : $breakpoint-lg) {
     width: calc(3 * ((100vw - 24rem - 1rem) / 5));
