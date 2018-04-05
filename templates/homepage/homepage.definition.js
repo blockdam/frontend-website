@@ -27,33 +27,11 @@ module.exports = {
 
             let pagePersistence = new PagePersistence();
 
-            let homeOptions = {
+            let aboutOptions = {
                 query : {
                     "type":"page",
-                    "slug": "homepage"
+                    "slug": "over-studio-c-architecten"
                 }
-            };
-
-            let testimonialsOptions = {
-                query : {
-                    "type":"testimonials"
-                },
-                "sort": {"date":-1},
-                "limit": 4
-            };
-
-            let casesOptions = {
-                query : {
-                    "type":"case"
-                },
-                "sort": {"date":-1},
-            };
-
-            let expertiseOptions = {
-                query : {
-                    "type":"expertise"
-                },
-                "sort": {"date":-1},
             };
 
             let postOptions = {
@@ -75,9 +53,11 @@ module.exports = {
 
             let findPosts = pagePersistence.find(postOptions);
             let findInteriorProjects = pagePersistence.find(typeInteriorOptions);
+            let findAbout = pagePersistence.find(aboutOptions);
 
-			Promise.all([findPosts,findInteriorProjects]).then(values => {
+			Promise.all([findPosts,findInteriorProjects,findAbout]).then(values => {
 
+			    data = values[2];
 				data.posts = values[0];
 				data.interiorProjects = values[1];
 
