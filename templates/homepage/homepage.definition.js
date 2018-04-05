@@ -61,7 +61,7 @@ module.exports = {
                     "type":"post"
                 },
                 "sort": {"date":-1},
-                "limit":1
+                "limit":12
             };
 
 
