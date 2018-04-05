@@ -1,6 +1,6 @@
 .post-header {
 
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
   .date {
     @include numbers-small();
@@ -10,6 +10,7 @@
     @include lowercase-heavy();
     color: $klein;
     max-width: 777px;
+    font-size: 3.4rem;
   }
 }
 
