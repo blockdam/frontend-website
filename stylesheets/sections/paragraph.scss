@@ -6,8 +6,9 @@
 
 
   h2 {
-    @include condensed-header();
-    font-size: 1.8rem;
+    //@include condensed-header();
+    @include bodyTextBold();
+    font-size: 1.7rem;
     line-height: 1.5;
 
   }
