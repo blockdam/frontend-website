@@ -1,0 +1,28 @@
+#blog {
+
+  article {
+    margin: 4rem 0;
+  }
+}
+
+#related-posts {
+
+  display: block;
+  margin-top: 14rem;
+  margin-bottom: 6rem;
+
+  .container-large {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+
+    .block {
+
+      position: relative;
+      width: calc((100% / 2) - (2rem));
+      padding: 1rem;
+    }
+  }
+}

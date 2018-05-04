@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+{{> head}}
+
+<script>
+    function showBackground() {
+        document.getElementById('background-img').classList.add('visible');
+    }
+</script>
+<body id="blogpage">
+
+<header>
+
+    <div id="header-container">
+
+        <!--<img id="background-img" src="https://ucarecdn.com/f841f9e6-526a-435c-993d-1444343ccafb/leidseplein.png" onload="showBackground();"  />-->
+
+        <!--<div id="background-veneer"></div>-->
+
+        {{> woordmerk }}
+
+
+
+    </div>
+
+    {{> nav-shape-expanded }}
+
+    <div id="header-gradient">
+
+
+    </div>
+
+</header>
+
+<main>
+
+    {{#each body.posts as |post|}}
+
+        <article>
+
+            <div class="container-large">
+                <div class="post-header">
+                    <div class="date">{{formatDate post.date 'DD/MM/YYYY'}}</div>
+                    <h2 class="">{{{post.title}}}</h2>
+                </div>
+            </div>
+
+            <div class="post-intro container-small">
+                {{{post.content}}}
+
+                <a href="{{post.url}}">Lees verder</a>
+            </div>
+
+
+        </article>
+
+    {{/each}}
+</main>
+
+{{> footer }}
+</body>
+</html>
