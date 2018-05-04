@@ -6,7 +6,7 @@
 module.exports = function() {
 
     return {
-        distFolder: '/var/www/html/',
+        distFolder: '../dist/',
         projectFolder: './../pages/',
     }
 };

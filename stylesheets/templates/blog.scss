@@ -1,28 +1,51 @@
-#blog {
+
+
+#blogpage {
+
+  h1 {
+    position: relative;
+  }
 
   article {
-    margin: 4rem 0;
-  }
-}
 
-#related-posts {
+    margin: 6rem 0;
 
-  display: block;
-  margin-top: 14rem;
-  margin-bottom: 6rem;
+    .post-header {
+      margin-bottom: 2.4rem;
 
-  .container-large {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
+      h2 {
+        font-size: 3rem;
+      }
+    }
 
-    .block {
+    .post-intro {
 
-      position: relative;
-      width: calc((100% / 2) - (2rem));
-      padding: 1rem;
+      p {
+        margin-bottom: 1rem;
+      }
+
+      p:first-of-type {
+
+        @include bodyText();
+      }
+    }
+
+
+    a {
+      text-decoration: none;
+      color: $klein;
+      font-family: Gotham SSm A,Gotham SSm B;
+      font-style: normal;
+      font-weight: 600;
+      //font-size: 1rem;
+      //line-height: 1.6;
+      border: none;
+      text-transform: lowercase;
+
+    }
+
+    a:hover {
+      background: none;
     }
   }
 }

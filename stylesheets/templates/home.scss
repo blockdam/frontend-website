@@ -1,51 +1,220 @@
 
-
 #homepage {
 
-  h1 {
-    position: relative;
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @media (min-width : $breakpoint-sm) {
+      margin-top: 3rem;
+    }
   }
 
-  article {
+  .third {
 
-    margin: 6rem 0;
+    width: 100vw;
 
-      .post-header {
-        margin-bottom: 2.4rem;
 
-        h2 {
-          font-size: 3rem;
-        }
+    @media (min-width : $breakpoint-sm) {
+
+      width: calc(100vw / 2);
+    }
+
+
+    @media (min-width : $breakpoint-lg) {
+
+      width: calc(100vw / 3);
+    }
+
+
+
+      h2 {
+        color: $klein;
+        @include bodyTextBold();
+        text-transform: uppercase;
+        margin-bottom: 3rem;
       }
 
-      .post-intro {
 
-        p {
-          margin-bottom: 1rem;
-        }
+    &#about-section {
 
-        p:first-of-type {
+      @media (min-width : $breakpoint-sm) {
 
-          @include bodyText();
-        }
+        width: calc(100vw);
+        display: flex;
+        flex-direction: row;
+
+          > div  {
+            width: calc(50% - 4rem);
+          }
+
+          > div:first-of-type {
+            width: 50%;
+          }
       }
 
 
-    a {
-      text-decoration: none;
-      color: $klein;
-      font-family: Gotham SSm A,Gotham SSm B;
-      font-style: normal;
-      font-weight: 600;
-      //font-size: 1rem;
-      //line-height: 1.6;
+      @media (min-width : $breakpoint-lg) {
+
+        width: calc(100vw / 3);
+        flex-direction: column;
+
+        > div {
+          width: calc(100% - 4rem);
+        }
+
+        > div:first-of-type  {
+          width: 100%;
+        }
+
+      }
+    }
+  }
+
+  .third-top-image {
+
+    width: 100%;
+
+    height: calc(2 * (100vw / 3));
+
+
+    @media (min-width : $breakpoint-sm) {
+
+      height: calc(2 * (50vw / 3));
+    }
+
+    @media (min-width : $breakpoint-lg) {
+      height: calc(2 * (100vw / 9));
+    }
+
+    overflow: hidden;
+
+      > img  { height: 100%;  width: auto; }
+
+  }
+
+  .third-list {
+
+    padding: 2rem 2rem;
+
+
+    .more-link {
+
       border: none;
       text-transform: lowercase;
-
+      background: $klein;
+      color: white;
+      border-radius: 4px;
+      padding: .25rem .75rem;
+      font-size: .8rem;
+      text-transform: uppercase;
+      transition: all 250ms ease;
     }
 
-    a:hover {
-      background: none;
+    .more-link:hover {
+      padding: .25rem 1.25rem .25rem .75rem;
+      color: white !important;
+    }
+
+    &.blog-list {
+
+      text-align: right;
+      border-right: 1px solid #999;
+
+        a.blog_teaser {
+          display: block;
+          margin: 0rem 0 3rem 0;
+          text-decoration: none;
+          border: none;
+          color: black;
+          padding-left: 4rem;
+
+          .date {
+
+           @include numbers-small();
+
+          }
+          h3 {
+
+            @include bodyTextBold();
+            //color: $klein;
+            margin-bottom: 1rem;
+
+          }
+
+          p {
+            font-size: 1rem;
+            line-height: 1.55;
+            margin: 0;
+          }
+
+
+        }
+
+        a:hover  {
+          color: black;
+        }
+
+        .more-link {
+          text-align: right;
+        }
+    }
+
+    &.project-list {
+
+      h3 {
+
+        @include bodyTextBold();
+        //color: $klein;
+        margin-bottom: 1rem;
+
+      }
+
+      ul {
+        list-style: none;
+        margin-bottom: 3rem;
+
+          li {
+            font-size: 1rem;
+            line-height: 1.55;
+          }
+      }
+    }
+
+    &.about-list {
+
+      text-align: right;
+
+      .quote {
+
+        display: block;
+        @include bodyTextBold();
+        color: $klein;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+      }
+
+      ul {
+        list-style: none;
+        margin-bottom: 3rem;
+
+        li {
+          font-size: 1rem;
+          line-height: 1.55;
+        }
+      }
+
+      a {
+        color: black;
+        border: none;
+        text-decoration: none;
+      }
+      a:hover  {
+        color: black;
+      }
+
     }
   }
+
 }

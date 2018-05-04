@@ -9,8 +9,11 @@ svg#nav-shape {
   //transition: all 50ms ease;
   height: 22vw;
 
+  display: none;
+
   @media (min-width : $breakpoint-sm) {
     height: 16vw;
+    display: block;
   }
   @media (min-width : $breakpoint-md) {
     height: 12vw;
