@@ -20,11 +20,13 @@ footer {
   div.footer_half {
 
     width: calc(100% - 4rem);
+    text-align: center;
 
 
     @media (min-width : $breakpoint-sm) {
 
       width: calc(50% - 4rem);
+      text-align: left;
     }
 
     color: white;

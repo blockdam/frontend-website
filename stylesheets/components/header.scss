@@ -139,7 +139,10 @@ header.shrunk {
     }
 
     #woordmerk {
-      width: 400px;
+
+      @media (min-width: $breakpoint-sm) {
+        width: 400px;
+      }
       margin: 0;
     }
 
