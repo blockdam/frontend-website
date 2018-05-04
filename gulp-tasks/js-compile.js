@@ -44,6 +44,21 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
+        var blog = gulp.src([
+            path.projectFolder + '/scripts/detect.js',
+            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/homepage.js',
+            path.projectFolder + '/scripts/menu.js',
+            path.projectFolder + '/scripts/social-dialogue.js'
+
+        ])
+        // .pipe(plumber())
+            .pipe(concat('blog.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
         var page = gulp.src([
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
@@ -58,7 +73,7 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page);
+        return merge(post, homepage, blog, page);
 
     });
 }
