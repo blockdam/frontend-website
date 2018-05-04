@@ -3,8 +3,11 @@ footer {
   background: $klein;
   display: block;
   margin-top: 9rem;
-  padding: 3rem 0;
+  padding: 4rem 0 3rem 0;
   overflow: hidden;
+  -webkit-clip-path: polygon(50% 0%, 100% 14%, 100% 100%, 0 100%, 0 11%);
+  clip-path: polygon(50% 0%, 100% 14%, 100% 100%, 0 100%, 0 11%);
+
 
   > div {
 
@@ -16,14 +19,13 @@ footer {
 
   div.footer_half {
 
-    width: calc(100% - 2rem);
+    width: calc(100% - 4rem);
 
 
     @media (min-width : $breakpoint-sm) {
 
-      width: calc(50% - 2rem);
+      width: calc(50% - 4rem);
     }
-
 
     color: white;
     font-size: 1rem;
@@ -35,10 +37,15 @@ footer {
     }
 
     a:hover {
-
       border-bottom: 1px solid #fff;
     }
+  }
 
 
+  div.footer_half:first-of-type {
+
+    @media (min-width : $breakpoint-sm) {
+      text-align: right;
+    }
   }
 }
