@@ -12,11 +12,7 @@ let gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    // file = require('gulp-file'),
     path = require('../local-path')();
-    ;
-    // rename = require('gulp-rename'),
-    //
 
 
     var processors = [
