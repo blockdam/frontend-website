@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06bb0995-ce2b-4948-affa-19f46199d0d4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/stylesheets/templates/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/templates/home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheets/styleguide/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/styleguide/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage/homepage.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/homepage.handlebars" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,13 +20,22 @@
       <file leaf-file-name="homepage.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/homepage/homepage.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="345">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/layout.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stylesheets/templates/home.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="634">
@@ -57,15 +67,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
               <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stylesheets/templates/blog.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -147,8 +148,9 @@
         <option value="$PROJECT_DIR$/stylesheets/styleguide/typography.scss" />
         <option value="$PROJECT_DIR$/stylesheets/components/header.scss" />
         <option value="$PROJECT_DIR$/stylesheets/layout/_main.scss" />
-        <option value="$PROJECT_DIR$/templates/homepage/homepage.handlebars" />
         <option value="$PROJECT_DIR$/stylesheets/templates/home.scss" />
+        <option value="$PROJECT_DIR$/templates/homepage/homepage.handlebars" />
+        <option value="$PROJECT_DIR$/stylesheets/styleguide/layout.scss" />
       </list>
     </option>
   </component>
@@ -286,12 +288,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542222725900</updated>
       <workItem from="1542222727696" duration="189000" />
-      <workItem from="1542736615573" duration="4348000" />
+      <workItem from="1542736615573" duration="4432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4537000" />
+    <option name="totallyTimeSpent" value="4621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="48" width="1680" height="967" extended-state="0" />
@@ -337,9 +339,6 @@
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/layout.scss">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/_partials/head-scripts.handlebars">
       <provider selected="true" editor-type-id="text-editor" />
@@ -476,17 +475,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/homepage/homepage.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/templates/home.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
           <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/homepage/homepage.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
