@@ -1,12 +1,7 @@
 
-
-
-
-
-
 @mixin bodyText {
 
-    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-family: "Mercury SSm A", "Mercury SSm B";
     font-style: normal;
     font-weight: 400;
     font-size: 1.125rem;
@@ -16,15 +11,16 @@
 
 @mixin bodyTextBold {
 
-    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-family: "Mercury SSm A", "Mercury SSm B";
     font-style: normal;
+    font-weight: 700;
     font-weight: 600;
     font-size: 1.44rem;
     line-height: 1.5;
 
 }
 
-@mixin lowercase-heavy {
+@mixin heavy {
 
        font-family: "Gotham SSm A", "Gotham SSm B";
 
@@ -71,26 +67,13 @@
 
 }
 
-.word-mark-uppercase {
-
-    font-family: "Gotham SSm A", "Gotham SSm B";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 15px;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-
-
 body {
 
     @include bodyText();
 }
 
 a {
-    color: $klein;
+    color: black;
     border-bottom: 1px solid #000;
     text-decoration: none;
 
@@ -99,5 +82,5 @@ a {
 a:hover {
     color: #fff;
     text-decoration: none;
-    background: $klein;
+    background: black;
 }

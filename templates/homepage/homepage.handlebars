@@ -2,125 +2,14 @@
 <html>
 {{> head}}
 
-<script>
-    function showBackground() {
-        document.getElementById('background-img').classList.add('visible');
-    }
-</script>
+
 <body id="homepage">
 
-<header>
-
-    <div id="header-container">
-
-        {{> woordmerk }}
-
-    </div>
-
-    {{> nav-shape-expanded }}
-
-    <div id="header-gradient"></div>
-
-</header>
+{{> header }}
 
 <main>
 
-        <section id="blog-section" class="third">
 
-            <div class="third-top-image">
-
-                {{> responsive-image image=body.posts.[0].main_image }}
-
-            </div>
-
-            <div class="third-list blog-list">
-
-                <h2>Inspiratie</h2>
-
-                {{#each body.posts as |blog| }}
-
-                    <a href="{{blog.url}}" class="blog_teaser">
-                        <article>
-                            <span class="date">{{formatDate blog.date 'DD MMMM YYYY'}}</span>
-                            <h3>{{blog.title}}</h3>
-                            <p>{{{excerpt blog.content}}}</p>
-                        </article>
-                    </a>
-
-                {{/each}}
-
-                <a class="more-link">Meer inspiratie</a>
-
-            </div>
-
-
-        </section>
-
-
-        <section id="project-section" class="third">
-
-            <div class="third-top-image">
-
-                <img src="https://ucarecdn.com/17b51a95-3fd7-4ae9-a975-6783a3dac5b2/-/resize/900x/AmsterdamNSO_Gallery_01.jpg"  />
-
-            </div>
-
-            <div class="third-list project-list">
-
-                <h2>Projecten</h2>
-
-                <h3>Kantoren</h3>
-                <ul>
-                    <li>Walenweeshuis, Vijzelgracht
-                    <li>Hirschgebouw, Amsterdam</li>
-                    <li>Baker & McKenzie, advocaten, Amsterdam</li>
-                    <li>Dexia bank Nederland, afbouw en interieur nieuwbouw, Amsterdam</li>
-                    <li>Syntens, afbouw en interieur hoofdkantoor, Nieuwegein</li>
-                </ul>
-                <h3>Cafė, restaurant, theater</h3>
-                <ul>
-                    <li>Bimhuis Interieur, Amsterdam</li>
-                    <li>Walem, café-restaurant, Amsterdam</li>
-                    <li>Schiphol diverse horecavoorzieningen</li>
-                </ul>
-                <h3>Musea</h3>
-                <ul>
-                    <li>Van Gogh museum, tentoonstelling Van Goghs Utopia</li>
-                    <li>New Metropolis (Nemo) Inrichting gedeelte van, Amsterdam</li>
-                </ul>
-
-                <a class="more-link" href="/projecten">Meer projecten</a>
-            </div>
-
-
-        </section>
-
-
-        <section id="about-section" class="third">
-
-            <div class="third-top-image">
-
-                <img src="https://ucarecdn.com/3ea946f7-a26b-4d99-8a28-bb62d5e8d985/-/resize/900x/DSC5015.jpg"  />
-
-            </div>
-
-            <div class="third-list about-list">
-
-                <quote class="quote">
-                    "Met Studio C Architecten kijk ik op een frisse en professionele manier naar bestaande gebouwen"
-                </quote>
-
-                <ul>
-                    <li><a href="/over-studio-c-architecten">Over Studio C Architecten</a></li>
-                    <li><a href="/over-christian-bouma">Over Christian Bouma</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-
-
-            </div>
-
-
-        </section>
 
 </main>
 

@@ -1,26 +1,23 @@
 <head>
     <base href="/">
-    <title>Studio C Architecten - {{body.title}}</title>
+    <title>BLOCKDAM - {{body.title}}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{or (excerpt body.content) 'Studio C Architecten, het bureau van ir. Christian Bouma, bestaat sinds 2008. Wij richten ons op het oplossen van ruimtelijke, functionele en esthetische vragen van diverse opdrachtgevers, zoals ontwikkelaars, investeerders, huurders, eigenaren van zakelijk vastgoed (kantoren, winkels, bedrijven, horeca, scholen) en particulieren.'}}">
+    <meta name="description" content="{{or (excerpt body.content) ''}}">
 
-    <meta property="og:url"content="{{or body.url 'http://www.studiocarchitecten.nl/'}}" />
-    <meta property="og:title"content="{{or body.title 'Studio C Architecten'}}" />
-
+    <meta property="og:url"content="{{or body.url 'http://blockdam.publikaan.nl/'}}" />
+    <meta property="og:title"content="{{or body.title 'BLOCKDAM'}}" />
     <meta property="og:image"content="https://ucarecdn.com/{{or body.main_image.external_id body.homeContent.main_image.external_id}}/-/resize/600x/{{or body.main_image.filename body.homeContent.main_image.filename}}" />
-
     <meta property="og:description" content="{{excerpt body.content}}" />
     <meta property="og:type" content="article" />
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@christianbouma">
-    <meta name="twitter:creator" content="@christianbouma">
-    <meta name="twitter:title" content="{{or body.title 'Studio C Architecten'}}">
+    <meta name="twitter:site" content="@blockdam">
+    <meta name="twitter:creator" content="@blockdam">
+    <meta name="twitter:title" content="{{or body.title 'BLOCKDAM'}}">
     <meta name="twitter:description" content="{{or (excerpt body.content) (excerpt body.page.content)}}">
     <meta name="twitter:image" content="https://ucarecdn.com/{{or body.main_image.external_id body.homeContent.main_image.external_id}}/-/resize/600x/{{or body.main_image.filename body.homeContent.main_image.filename}}">
-
 
     {{> head-scripts }}
 
