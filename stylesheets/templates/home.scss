@@ -17,11 +17,12 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     .section-half {
 
-      width: 50%;
+      width: calc(50% - .5rem);
       position: relative;
     }
 
