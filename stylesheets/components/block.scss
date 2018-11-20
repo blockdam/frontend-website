@@ -23,10 +23,12 @@ a.block {
   }
 
   span.date {
-    //margin-top: 3.5rem;
+
+
+    @include numbers-small();
     display: inline-block;
     font-size: .875rem;
-    //line-height: 1;
+
   }
 }
 
