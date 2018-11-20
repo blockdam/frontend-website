@@ -1,0 +1,174 @@
+<noscript>
+    <img src="https://ucarecdn.com/{{image/external_id}}/-/resize/1700x/{{image/filename}}" alt="{{image/alttext}}" title="{{image/caption}}" />
+</noscript>
+
+{{#ifEquals format 'camera'}}
+
+    <div id='{{../id}}' class="img-container camera {{../class}} {{../image/alignment}}">
+
+        <img src="https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/60x40/center/{{../image/filename}}"
+             data-src="https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/600x400/center/{{../image/filename}}"
+             data-srcset="
+            https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/600x400/center/{{../image/filename}} 760w,
+            https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/900x600/center/{{../image/filename}} 900w,
+            https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/1200x900/center/{{../image/filename}} 1200w,
+            https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/1800x1200/center/{{../image/filename}} 1700w,
+            https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/2400x1600/center/{{../image/filename}} 2500w"
+
+            {{#ifEquals size 'half'}}
+             sizes="(min-width: 900px) 50vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'third'}}
+             sizes="(min-width: 900px) 33vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'fourth'}}
+             sizes="(min-width: 900px) 25vw, 100vw"
+            {{/ifEquals}}
+
+             alt="{{../image/alttext}}"
+             title="{{../image/caption}}"
+             class="lazyload"
+             data-sizes="auto"/>
+
+        {{{ @partial-block }}}
+
+    </div>
+
+{{else ifEquals ../format 'square'}}
+
+    <div id='{{../id}}' class="img-container square {{../class}}">
+
+        <img
+             src="https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/40x40/center/{{../image/filename}}"
+             data-src="https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/400x400/center/{{../image/filename}}"
+             data-srcset="
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/760x760/center/{{../image/filename}} 760w,
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/800x800/center/{{../image/filename}} 800w,
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/1300x1300/center/{{../image/filename}} 1300w,
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/1600x1600/center/{{../image/filename}} 1600w,
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/2500x2500/center/{{../image/filename}} 2500w"
+
+            {{#ifEquals size 'half'}}
+             sizes="(min-width: 900px) 50vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'third'}}
+             sizes="(min-width: 900px) 33vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'fourth'}}
+             sizes="(min-width: 900px) 25vw, 100vw"
+            {{/ifEquals}}
+
+             alt="{{../image/alttext}}"
+             title="{{../image/caption}}"
+             class="lazyload"
+             data-sizes="auto"/>
+
+        {{{ @partial-block }}}
+
+    </div>
+
+{{else ifEquals ../format 'main'}}
+
+    <div id='{{../id}}' class="img-container main {{../image/alignment}}">
+
+        <img
+                src="https://ucarecdn.com/{{../image/external_id}}/-/resize/90x/{{../image/filename}}"
+                data-src="https://ucarecdn.com/{{../image/external_id}}/-/resize/1700x/{{../image/filename}}"
+                data-srcset="
+                https://ucarecdn.com/{{../image/external_id}}/-/scale_crop/760x760/center/{{../filename}} 760w,
+                https://ucarecdn.com/{{../image/external_id}}/-/resize/900x/{{../image/filename}} 900w,
+                https://ucarecdn.com/{{../image/external_id}}/-/resize/1300x/{{../image/filename}} 1300w,
+                https://ucarecdn.com/{{../image/external_id}}/-/resize/1700x/{{../image/filename}} 1700w,
+                https://ucarecdn.com/{{../image/external_id}}/-/resize/2500x/{{../image/filename}} 2500w"
+
+            {{#ifEquals size 'half'}}
+                sizes="(min-width: 900px) 50vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'third'}}
+                sizes="(min-width: 900px) 33vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals size 'fourth'}}
+                sizes="(min-width: 900px) 25vw, 100vw"
+            {{/ifEquals}}
+
+                alt="{{../image/alttext}}"
+                title="{{../image/caption}}"
+                class="lazyload {{../class}}"
+                {{#ifEquals class 'rellax'}}data-rellax-speed="{{../rellax-speed}}"{{/ifEquals}}
+                data-sizes="auto"/>
+
+        {{{ @partial-block this=this }}}
+
+    </div>
+
+{{else ifEquals ../format 'fit'}}
+
+    <div id='{{../id}}' class="img-container object-fit {{../class}}">
+
+        <img
+                src="https://ucarecdn.com/{{../external_id}}/-/scale_crop/45x40/center/{{../filename}}"
+                data-src="https://ucarecdn.com/{{../external_id}}/-/resize/1700x/{{../filename}}"
+                data-srcset="
+                https://ucarecdn.com/{{../external_id}}/-/resize/760x/{{../filename}} 760w,
+                https://ucarecdn.com/{{../external_id}}/-/resize/900x/{{../filename}} 900w,
+                https://ucarecdn.com/{{../external_id}}/-/resize/1300x/{{../filename}} 1300w,
+                https://ucarecdn.com/{{../external_id}}/-/resize/1700x/{{../filename}} 1700w,
+                https://ucarecdn.com/{{../external_id}}/-/resize/2500x/{{../filename}} 2500w"
+
+            {{#ifEquals ../size 'half'}}
+                sizes="(min-width: 900px) 50vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals ../size 'third'}}
+                sizes="(min-width: 900px) 33vw, 100vw"
+            {{/ifEquals}}
+            {{#ifEquals ../size 'fourth'}}
+                sizes="(min-width: 900px) 25vw, 100vw"
+            {{/ifEquals}}
+
+                alt="Foto bij {{../title}}"
+                title="Foto bij {{../title}}"
+                class="lazyload"
+                data-sizes="auto"/>
+
+
+    </div>
+
+
+{{else}}
+
+
+
+    <div id='{{../id}}' class="img-container {{../image/alignment}}">
+
+        <img src="https://ucarecdn.com/{{../image/external_id}}/-/resize/34x/{{../image/filename}}"
+             data-src="https://ucarecdn.com/{{../image/external_id}}/-/resize/1700x/{{../image/filename}}"
+             data-srcset="
+        https://ucarecdn.com/{{../image/external_id}}/-/resize/760x/{{../image/filename}} 760w,
+        https://ucarecdn.com/{{../image/external_id}}/-/resize/900x/{{../image/filename}} 900w,
+        https://ucarecdn.com/{{../image/external_id}}/-/resize/1300x/{{../image/filename}} 1300w,
+        https://ucarecdn.com/{{../image/external_id}}/-/resize/1700x/{{../image/filename}} 1700w,
+        https://ucarecdn.com/{{../image/external_id}}/-/resize/2500x/{{../image/filename}} 2500w"
+
+        {{#ifEquals size 'half'}}
+             sizes="(min-width: 900px) 50vw, 100vw"
+        {{/ifEquals}}
+        {{#ifEquals size 'third'}}
+            sizes="(min-width: 900px) 33vw, 100vw"
+        {{/ifEquals}}
+        {{#ifEquals size 'fourth'}}
+             sizes="(min-width: 900px) 25vw, 100vw"
+        {{/ifEquals}}
+
+         alt="{{../image/alttext}}"
+         title="{{../image/caption}}"
+         class="lazyload {{../class}} "
+
+         {{#ifEquals ../class 'rellax'}}data-rellax-speed="{{../rellax-speed}}"{{/ifEquals}}
+
+         data-sizes="auto"/>
+
+        {{{ @partial-block }}}
+
+    </div>
+
+{{/ifEquals}}
