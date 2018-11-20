@@ -7,7 +7,7 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100px;
+  height: 120px;
   display: block;
   background: #fff;
   //overflow: hidden;
@@ -45,6 +45,7 @@ header {
   h2 {
     font-weight: 400;
     font-style: italic;
+    line-height: 1;
   }
 
   nav ul {
