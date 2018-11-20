@@ -3,6 +3,9 @@
 
   main {
 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     @media (min-width : $breakpoint-sm) {
       margin-top: 3rem;
