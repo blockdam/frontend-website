@@ -7,7 +7,7 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 160px;
+  height: 100px;
   display: block;
   background: #fff;
   //overflow: hidden;
@@ -25,6 +25,7 @@ header {
     //top: 0;
     //left: 0;
     //width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
