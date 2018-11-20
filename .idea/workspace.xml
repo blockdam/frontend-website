@@ -28,8 +28,8 @@
       <file leaf-file-name="streamer.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stylesheets/sections/streamer.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -295,12 +295,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542222725900</updated>
       <workItem from="1542222727696" duration="189000" />
-      <workItem from="1542736615573" duration="9889000" />
+      <workItem from="1542736615573" duration="9984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10078000" />
+    <option name="totallyTimeSpent" value="10173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="48" width="1680" height="967" extended-state="0" />
@@ -523,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/sections/streamer.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="165">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
