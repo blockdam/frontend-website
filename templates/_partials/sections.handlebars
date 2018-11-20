@@ -1,13 +1,12 @@
 <div class="sections">
 
-    {{json body.sections}}
 
     {{#each body.sections as |section|}}
 
         <section class="section {{section.type}} {{containerClass section.type section}} {{section.style}} {{section.orientation}}">
 
             {{#ifEquals section.type 'paragraph'}}
-                <div class="text">{{{section.paragraph}}}</div>
+                <div class="text">{{{section.text}}}</div>
             {{/ifEquals}}
 
             {{#ifEquals section.type 'streamer'}}
