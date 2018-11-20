@@ -34,33 +34,15 @@ header {
 
 
 
-  #woordmerk {
-
-
-    width: calc(100% - 4rem);
-    border: none;
-    cursor: pointer;
-    transition: all 200ms ease;
-
-    @media (min-width: $breakpoint-sm) {
-      width: 600px;
-    }
-
-
-    position: absolute;
-    margin: 20px 0 0 0;
-
-
-    svg {
-      width: 100%;
-      transform: scale(1);
-      transition: all 250ms ease;
-    }
-  }
 
   h1 {
 
       padding-top: 2rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
   }
 
 }
@@ -74,14 +56,7 @@ header.expanded {
   #header-container {
     height: 100vh;
   }
-  #background-veneer {
-    opacity: .75;
-  }
 
-  //svg#woordmerk {
-  //  margin: 2rem 0;
-  //  transform: scale(1);
-  //}
 }
 
 header.shrunk {
@@ -101,8 +76,5 @@ header.shrunk {
       margin: 0;
     }
 
-    #nav-shape {
-      opacity: 0;
-    }
 }
 
