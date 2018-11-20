@@ -17,7 +17,7 @@
     width: calc(100vw - 48rem);
   }
   @media (min-width: $breakpoint-xl) {
-    width: calc( #{$breakpoint-xl} - 50rem);
+    //width: calc( #{$breakpoint-xl} - 50rem);
   }
 }
 
@@ -36,7 +36,7 @@
     width: calc(100vw - 32rem);
   }
   @media (min-width: $breakpoint-xl) {
-    width: calc( #{$breakpoint-xl} - 13rem);
+    //width: calc( #{$breakpoint-xl} - 13rem);
   }
 }
 
@@ -56,7 +56,7 @@
     width: calc(100vw - 10rem);
   }
   @media (min-width: $breakpoint-xl) {
-    width: calc( $breakpoint-xl - 8rem);
+    //width: calc( $breakpoint-xl - 8rem);
   }
 }
 
