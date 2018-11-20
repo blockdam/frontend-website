@@ -2,21 +2,29 @@
 #homepage {
 
   main {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
 
     @media (min-width : $breakpoint-sm) {
       margin-top: 3rem;
     }
   }
 
-  .section-half {
+  .container-medium {
 
-    width: 50%;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .section-half {
+
+      width: 50%;
+      position: relative;
+    }
+
   }
+
+
 
   .third {
 
