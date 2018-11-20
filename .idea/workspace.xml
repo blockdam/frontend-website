@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06bb0995-ce2b-4948-affa-19f46199d0d4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/stylesheets/components/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/components/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheets/styleguide/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/styleguide/typography.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="typography.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="typography.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/typography.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="12" />
+            <state relative-caret-position="404">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -97,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stylesheets/components/header.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
@@ -131,7 +131,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/stylesheets/styleguide/colours.scss" />
-        <option value="$PROJECT_DIR$/stylesheets/styleguide/typography.scss" />
         <option value="$PROJECT_DIR$/stylesheets/styleguide/fonts.scss" />
         <option value="$PROJECT_DIR$/templates/post/post.definition.js" />
         <option value="$PROJECT_DIR$/stylesheets/components/footer.scss" />
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/stylesheets/layout/containers.scss" />
         <option value="$PROJECT_DIR$/templates/_partials/header.handlebars" />
         <option value="$PROJECT_DIR$/stylesheets/components/header.scss" />
+        <option value="$PROJECT_DIR$/stylesheets/styleguide/typography.scss" />
       </list>
     </option>
   </component>
@@ -284,12 +284,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542222725900</updated>
       <workItem from="1542222727696" duration="189000" />
-      <workItem from="1542736615573" duration="2604000" />
+      <workItem from="1542736615573" duration="2672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2793000" />
+    <option name="totallyTimeSpent" value="2861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="52" width="1680" height="967" extended-state="0" />
@@ -460,17 +460,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/typography.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/components/header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/styleguide/typography.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
         </state>
       </provider>
     </entry>
