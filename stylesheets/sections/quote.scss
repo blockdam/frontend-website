@@ -1,9 +1,15 @@
-.quote__text {
 
-  font-family: "Mercury Display A", "Mercury Display B";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  text-align: center;
+.section.quote {
+
+  padding: 2rem 0;
+
+  .quote__text {
+
+    font-family: "Mercury Display A", "Mercury Display B";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.25;
+    text-align: center;
+  }
 }
