@@ -16,11 +16,13 @@
   h3 {
 
     //@include bodyTextBold();
-    font-family: "Gotham SSm A", "Gotham SSm B";
+   // font-family: Gotham SSm A,Gotham SSm B;
     font-style: normal;
     font-weight: 700;
     line-height: 1.35;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
+    letter-spacing: .5px;
 
   }
 
