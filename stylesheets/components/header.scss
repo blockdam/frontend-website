@@ -9,13 +9,13 @@ header {
   width: 100vw;
   height: 120px;
   display: block;
-  background: #fff;
+  background: $creme;
   //overflow: hidden;
   //flex-direction: column;
   //justify-content: flex-start;
   //align-items: center;
 
-  transition: all 200ms ease;
+  transition: background-color 500ms ease;
 
   #header-container {
 
@@ -78,8 +78,9 @@ header.expanded {
 
 header.shrunk {
 
-    height: 100px;
-    margin: 0px 0 0 0;
+    //height: 100px;
+    //margin: 0px 0 0 0;
+    background: darken($creme,20%);
 
     #header-container {
       height: 100px;
