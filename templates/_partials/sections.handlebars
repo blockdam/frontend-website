@@ -4,19 +4,19 @@
 
     {{#each body.sections as |section|}}
 
-        <section class="section {{section.acf_fc_layout}} {{containerClass section.acf_fc_layout section}} {{section.style}} {{section.orientation}}">
+        <section class="section {{section.type}} {{containerClass section.type section}} {{section.style}} {{section.orientation}}">
 
-            {{#ifEquals section.acf_fc_layout 'paragraph'}}
+            {{#ifEquals section.type 'paragraph'}}
                 <div class="text">{{{section.paragraph}}}</div>
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'streamer'}}
+            {{#ifEquals section.type 'streamer'}}
                 <div>
                     {{{section.text}}}
                 </div>
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'quote'}}
+            {{#ifEquals section.type 'quote'}}
                 <div class="quote__image">
                     {{> responsive-image image=section.quote.image }}
                 </div>
@@ -26,7 +26,7 @@
                 </div>
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'documents'}}
+            {{#ifEquals section.type 'documents'}}
                 <div class="container">
 
                     {{#if section.header}}
@@ -59,7 +59,7 @@
                 </div>
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'video'}}
+            {{#ifEquals section.type 'video'}}
                 <div class="video-wrapper">
                     <iframe width="560" height="349" src="https://www.youtube.com/embed/{{section.youtube_id}}" frameborder="0" allowfullscreen></iframe>
                     <img class="still-image" src="https://i1.ytimg.com/vi/{{section.youtube_id}}/sddefault.jpg" />
@@ -69,7 +69,7 @@
                 </div>
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'images'}}
+            {{#ifEquals section.type 'images'}}
 
                 <div class="container">
 
@@ -92,19 +92,19 @@
 
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'staticmap'}}
+            {{#ifEquals section.type 'staticmap'}}
 
                 {{> static-map }}
 
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'form'}}
+            {{#ifEquals section.type 'form'}}
 
                 {{> form section=section}}
 
             {{/ifEquals}}
 
-            {{#ifEquals section.acf_fc_layout 'three-d-object'}}
+            {{#ifEquals section.type 'three-d-object'}}
 
                 {{> three-d-object }}
 
