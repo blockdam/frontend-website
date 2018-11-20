@@ -37,6 +37,7 @@ header {
 
   h1 {
       @include heavy();
+      font-size: 4rem;
       //padding-top: 2rem;
   }
 
