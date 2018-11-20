@@ -1,5 +1,7 @@
 <div class="sections">
 
+    {{json body.sections}}
+
     {{#each body.sections as |section|}}
 
         <section class="section {{section.acf_fc_layout}} {{containerClass section.acf_fc_layout section}} {{section.style}} {{section.orientation}}">
