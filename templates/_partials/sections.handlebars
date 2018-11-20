@@ -16,12 +16,12 @@
             {{/ifEquals}}
 
             {{#ifEquals section.type 'quote'}}
-                <div class="quote__image">
-                    {{> responsive-image image=section.quote.image }}
-                </div>
+                <!--<div class="quote__image">-->
+                    <!--{{> responsive-image image=section.quote.image }}-->
+                <!--</div>-->
                 <div class="quote__text">
-                    <p><span class="quote_quote__symbol">"</span>{{section.quote.text}}<span class="quote_quote__symbol">"</span></p>
-                    <span class="quote__text__name">{{section.quote.name}}{{#if section.quote.organisation}}<span>, {{section.quote.organisation}}</span>{{/if}}</span>
+                    <p><span class="quote_quote__symbol">"</span>{{section.text}}<span class="quote_quote__symbol">"</span></p>
+                    <span class="quote__text__name">{{section.name}}{{#if section.organisation}}<span>, {{section.organisation}}</span>{{/if}}</span>
                 </div>
             {{/ifEquals}}
 
