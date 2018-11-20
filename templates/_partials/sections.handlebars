@@ -1,0 +1,122 @@
+<div class="sections">
+
+    {{#each body.sections as |section|}}
+
+        <section class="section {{section.acf_fc_layout}} {{containerClass section.acf_fc_layout section}} {{section.style}} {{section.orientation}}">
+
+            {{#ifEquals section.acf_fc_layout 'paragraph'}}
+                <div class="text">{{{section.paragraph}}}</div>
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'streamer'}}
+                <div>
+                    {{{section.text}}}
+                </div>
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'quote'}}
+                <div class="quote__image">
+                    {{> responsive-image image=section.quote.image }}
+                </div>
+                <div class="quote__text">
+                    <p><span class="quote_quote__symbol">"</span>{{section.quote.text}}<span class="quote_quote__symbol">"</span></p>
+                    <span class="quote__text__name">{{section.quote.name}}{{#if section.quote.organisation}}<span>, {{section.quote.organisation}}</span>{{/if}}</span>
+                </div>
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'documents'}}
+                <div class="container">
+
+                    {{#if section.header}}
+                        <h3>{{section.header}}</h3>
+                    {{ else }}
+                        <h3>Documenten</h3>
+                    {{/if}}
+
+                    <ul>
+
+                        {{#each section.documents as |doc| }}
+
+                            <a href="{{doc.url}}" target="_blank">
+                                <li>
+                                    <svg width="71px" height="90px" viewBox="0 0 71 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="document" transform="translate(-14.000000, -1.000000)" fill="#000000" fill-rule="nonzero">
+                                                <path d="M73.9,1 L14.7,1 L14.7,91 L84.5,91 L84.5,11.7 L73.9,1 Z M21,16.8 L70.7,16.8 L70.7,19.6 L21,19.6 L21,16.8 Z M21,22.7 L70.7,22.7 L70.7,25.5 L21,25.5 L21,22.7 Z M21,40 L65.9,40 L65.9,42.8 L21,42.8 L21,40 Z M21,45.8 L65.9,45.8 L65.9,48.6 L21,48.6 L21,45.8 Z M21,51.7 L60,51.7 L60,54.5 L21,54.5 L21,51.7 Z M21,57.5 L60,57.5 L60,60.3 L21,60.3 L21,57.5 Z M69.1,72 L21,72 L21,69.2 L69.1,69.2 L69.1,72 Z M69.1,66.2 L21,66.2 L21,63.4 L69.1,63.4 L69.1,66.2 Z M78.3,36.8 L21,36.8 L21,34 L78.3,34 L78.3,36.8 Z M78.3,31 L21,31 L21,28.2 L78.3,28.2 L78.3,31 Z" id="Shape"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span>{{doc.name}}</span>
+                                </li>
+                            </a>
+
+                        {{/each}}
+
+                    </ul>
+
+                </div>
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'video'}}
+                <div class="video-wrapper">
+                    <iframe width="560" height="349" src="https://www.youtube.com/embed/{{section.youtube_id}}" frameborder="0" allowfullscreen></iframe>
+                    <img class="still-image" src="https://i1.ytimg.com/vi/{{section.youtube_id}}/sddefault.jpg" />
+                    <div class="play-knop" onclick="video.play(this)">
+                        <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm384 823q32-18 32-55t-32-55l-544-320q-31-19-64-1-32 19-32 56v640q0 37 32 56 16 8 32 8 17 0 32-9z"/></svg>
+                    </div>
+                </div>
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'images'}}
+
+                <div class="container">
+
+                    {{#each section.images as |image|}}
+
+                        {{> responsive-image image=image format=(imageFormat @index section.formation section.orientation) }}
+
+                    {{/each}}
+
+                    {{#each section.images as |image|}}
+
+                        <div class="image-item-overlay">
+                            {{#if image.photo.caption}}<span class="text">{{ image.photo.caption }}</span>{{/if}}
+                            {{#if image.photo.credits}}<span class="photographer">{{image.photo.credits}}</span>{{/if}}
+                        </div>
+
+                    {{/each}}
+
+                </div>
+
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'staticmap'}}
+
+                {{> static-map }}
+
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'form'}}
+
+                {{> form section=section}}
+
+            {{/ifEquals}}
+
+            {{#ifEquals section.acf_fc_layout 'three-d-object'}}
+
+                {{> three-d-object }}
+
+            {{/ifEquals}}
+
+
+
+
+
+
+
+
+        </section>
+
+    {{/each}}
+
+</div>
