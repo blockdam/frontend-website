@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06bb0995-ce2b-4948-affa-19f46199d0d4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/_partials/sections.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/sections.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/post.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/post.handlebars" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,16 +43,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post.handlebars" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/post/post.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="96" selection-start-line="17" selection-start-column="96" selection-end-line="17" selection-end-column="96" />
+              <caret line="17" column="123" selection-start-line="17" selection-start-column="123" selection-end-line="17" selection-end-column="123" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sections.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sections.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/_partials/sections.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1815">
@@ -149,8 +149,8 @@
         <option value="$PROJECT_DIR$/stylesheets/templates/home.scss" />
         <option value="$PROJECT_DIR$/templates/homepage/homepage.handlebars" />
         <option value="$PROJECT_DIR$/stylesheets/components/post-header.scss" />
-        <option value="$PROJECT_DIR$/templates/post/post.handlebars" />
         <option value="$PROJECT_DIR$/templates/_partials/sections.handlebars" />
+        <option value="$PROJECT_DIR$/templates/post/post.handlebars" />
       </list>
     </option>
   </component>
@@ -288,12 +288,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542222725900</updated>
       <workItem from="1542222727696" duration="189000" />
-      <workItem from="1542736615573" duration="7020000" />
+      <workItem from="1542736615573" duration="7066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7209000" />
+    <option name="totallyTimeSpent" value="7255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="48" width="1680" height="967" extended-state="0" />
@@ -486,17 +486,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/post/post.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="96" selection-start-line="17" selection-start-column="96" selection-end-line="17" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/_partials/sections.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
           <caret line="121" column="6" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/post/post.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="123" selection-start-line="17" selection-start-column="123" selection-end-line="17" selection-end-column="123" />
         </state>
       </provider>
     </entry>
