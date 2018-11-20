@@ -8,9 +8,16 @@
 
   h2 {
     @include heavy();
-    color: black;
-    max-width: 777px;
-    font-size: 3.4rem;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1.05;
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    background: #333;
+    padding: .5rem 1rem;
+    display: inline-block;
   }
 }
 
