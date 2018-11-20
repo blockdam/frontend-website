@@ -78,10 +78,14 @@ header.expanded {
 
 header.shrunk {
 
-    //height: 100px;
+    height: 70px;
     //margin: 0px 0 0 0;
     background: darken($creme,3%);
     border-bottom: 1px solid darken($creme,7%);
+
+    h1 {
+      font-size: 2rem;
+    }
 
     h2 {
       display: none;
