@@ -13,8 +13,9 @@
 
             <div class="container-large">
                 <div class="post-header">
-                    <div class="date">{{formatDate body.date 'DD/MM/YYYY'}}</div>
+
                     <h2 class="">{{{body.title.rendered}}}</h2>
+                    <div class="date">{{formatDate body.date 'DD-MM-YYYY'}} | {{body.author}}</div>
                 </div>
             </div>
 
