@@ -11,7 +11,7 @@
 
   h2 {
     @include heavy();
-    font-family: "Gotham Cond SSm A,Gotham Cond SSm B";
+    font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
     font-style: normal;
     font-weight: 800;
     font-size: 6rem;
