@@ -33,15 +33,28 @@
     .block {
       min-height: 300px;
       background: $grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   #section-community {
 
-    #community-block {
-      min-height: 600px;
+    #community-block, #dao-block {
+      min-height: 1000px;
       background: $grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
+    #dao-block {
+      min-height: 600px;
+    }
+
   }
 
 
