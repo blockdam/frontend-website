@@ -39,6 +39,18 @@
       align-items: center;
       margin-bottom: 1rem;
     }
+
+    #blog-list {
+
+      width: calc(65% - .5rem);
+      background: $grey;
+    }
+
+    #curated-list {
+
+      width: calc(35% - .5rem);
+      background: $grey;
+    }
   }
 
   #section-community {
