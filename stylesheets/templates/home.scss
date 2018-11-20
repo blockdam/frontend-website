@@ -2,6 +2,7 @@
 #homepage {
 
   main {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -9,6 +10,12 @@
     @media (min-width : $breakpoint-sm) {
       margin-top: 3rem;
     }
+  }
+
+  .section-half {
+
+    width: 50%;
+    position: relative;
   }
 
   .third {
