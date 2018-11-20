@@ -22,7 +22,7 @@ a.block {
     max-width: 250px;
   }
 
-  span.date {
+  span.date, span.author {
 
 
     @include numbers-small();
