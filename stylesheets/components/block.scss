@@ -16,8 +16,8 @@ a.block {
 
 
     @include numbers-small();
-    display: inline-block;
-    font-size: .875rem;
+    display: block;
+    //font-size: .875rem;
 
   }
 }
