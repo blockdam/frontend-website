@@ -50,6 +50,10 @@ header {
     letter-spacing: .5px;
     font-size: .85rem;
     line-height: 1;
+
+    &.shrunk {
+      display: none;
+    }
   }
 
   nav ul {
@@ -95,8 +99,11 @@ header.shrunk {
       font-size: 2rem;
     }
 
-    h2 {
+    h2.expanded {
       display: none;
+    }
+    h2.shrunk {
+      display: block;
     }
 
     //#header-container {
