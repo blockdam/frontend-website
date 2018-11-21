@@ -44,7 +44,11 @@ header {
 
   h2 {
     font-weight: 400;
-    font-style: italic;
+    //font-style: italic;
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: .85rem;
     line-height: 1;
   }
 
@@ -60,6 +64,10 @@ header {
         line-height: 1.25;
       }
     }
+  }
+
+  a#woordmerk {
+    border: none;
   }
 
 }
