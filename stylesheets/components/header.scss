@@ -1,7 +1,5 @@
 header {
 
-
-
   position: fixed;
   z-index: 3;
   top: 0;
@@ -88,10 +86,9 @@ header.expanded {
 
 }
 
-header.shrunk {
+#blog header, header.shrunk {
 
     height: 70px;
-    //margin: 0px 0 0 0;
     background: darken($creme,3%);
     border-bottom: 1px solid darken($creme,7%);
 
@@ -104,18 +101,6 @@ header.shrunk {
     }
     h2.shrunk {
       display: block;
-    }
-
-    //#header-container {
-    //  height: 100px;
-    //}
-
-    #woordmerk {
-
-      @media (min-width: $breakpoint-sm) {
-        width: 400px;
-      }
-      margin: 0;
     }
 
 }
