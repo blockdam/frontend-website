@@ -49,8 +49,6 @@ module.exports = {
 
 			Promise.all([findPosts,linkRecommendations]).then(values => {
 
-                logger.info('1');
-
 				data.posts = values[0];
 				data.links = values[1];
 				logger.info('Get template data', correlationId)
