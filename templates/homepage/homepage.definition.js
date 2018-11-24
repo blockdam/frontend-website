@@ -47,7 +47,11 @@ module.exports = {
             let findPosts = pagePersistence.find(postOptions);
             let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
 
+            logger.info('0');
+
 			Promise.all([findPosts,linkRecommendations]).then(values => {
+
+                logger.info('1');
 
 				data.posts = values[0];
 				data.linkRecommendations = values[1];
