@@ -92,7 +92,7 @@
 
         .recommendation--title {
 
-          //@include bodyTextBold();
+          @include bodyTextBold();
           font-size: 1rem;
 
         }
