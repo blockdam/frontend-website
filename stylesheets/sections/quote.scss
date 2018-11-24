@@ -4,12 +4,13 @@
   padding: 3rem 0;
 
   svg {
-    width: 2rem;
+    width: 3rem;
     height: auto;
+    margin: 0 1rem;
   }
 
   svg:first-of-type {
-    transform: translateX(-1);
+    transform: scaleY(-1);
   }
 
   .quote__text {
