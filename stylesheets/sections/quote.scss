@@ -4,17 +4,22 @@
   padding: 3rem 0;
 
   svg {
-    width: 3rem;
+    position: absolute;
+    width: 7rem;
     height: auto;
     margin: 0 1rem;
   }
 
   svg:first-of-type {
+    top: 0;
+    left: -8rem;
     transform: scaleY(-1);
   }
 
   svg:last-of-type {
     transform: scale(-1);
+    bottom: 0;
+    right: -8rem;
   }
 
   .quote__text {
