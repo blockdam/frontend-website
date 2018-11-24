@@ -64,7 +64,7 @@ module.exports = {
      */
     getPath: (data, correlationId) => { // path generator for path/url of the page
         return new Promise((resolve, reject) => {
-            resolve('/');
+            resolve('/hi');
         })
     },
 
