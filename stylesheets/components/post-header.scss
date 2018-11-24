@@ -60,12 +60,25 @@
     justify-content: flex-start;
     align-items: center;
 
+    > div {
+
+      @include uppercase();
+
       svg {
 
         width: 100%;
         height: auto;
         fill: black;
+        width: 1.5rem;
+        height: auto;
       }
+      &.post-intro--stats--votes--down {
+
+        svg {
+          transform: scaleY(-1);
+        }
+      }
+    }
   }
 
 
