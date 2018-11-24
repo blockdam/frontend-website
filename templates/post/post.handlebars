@@ -17,7 +17,7 @@
                     {{> author-post-top }}
 
                     <div class="post-intro--title">
-                        {{#each body.taxonomies.category as |cat|}}
+                        {{#each body.taxonomies.categories as |cat|}}
                         <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
                         {{/each}}
                         <h2 class="">{{{body.title.rendered}}}</h2>
