@@ -11,17 +11,18 @@
     flex-direction: column;
     align-items: center;
     width: 320px;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 
     .post-intro--author--name {
 
       @include numbers-small();
+
       //border-bottom: 4px double black;
     }
 
     .post-intro--author--description {
       text-align: center;
-      padding: .5rem 1.5rem;
+      padding: 0 1.5rem;
       @include small-sans();
     }
   }
