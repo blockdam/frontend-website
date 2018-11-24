@@ -27,43 +27,32 @@ module.exports = {
 
             let pagePersistence = new PagePersistence();
 
-            let aboutOptions = {
-                query : {
-                    "type":"page",
-                    "slug": "over-studio-c-architecten"
-                }
-            };
 
             let postOptions = {
                 query : {
                     "type":"post"
                 },
                 "sort": {"date":-1},
-                "limit":2
+                "limit": 6
             };
 
 
-            let typeInteriorOptions = {
+            let linkRecommendationOptions = {
                 query : {
-                    "type":"project"
+                    "type":"link-recommendations"
                 },
-                "sort": {"date":1},
-                // "limit":-1
+                "sort": {"date":-1}
             };
 
             let findPosts = pagePersistence.find(postOptions);
-            let findInteriorProjects = pagePersistence.find(typeInteriorOptions);
-            let findAbout = pagePersistence.find(aboutOptions);
+            let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
 
-			Promise.all([findPosts,findInteriorProjects,findAbout]).then(values => {
-			    // data = values[2];
-			    // data.type = 'post';
+			Promise.all([findPosts,linkRecommendations]).then(values => {
+
 				data.posts = values[0];
-				data.interiorProjects = values[1];
-
+				data.linkRecommendations = values[1];
 				logger.info('Get template data', correlationId)
 				resolve(data)
-
 			})
 
             logger.info('Get template data', correlationId);

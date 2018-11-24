@@ -52,6 +52,17 @@
 
                     crypto artikelen
 
+                    {{#each body.linkRecommendations.recommendations as | link | }}
+
+                        <div class="recommendation">
+
+                        {{link.title}}
+
+                        </div>
+
+
+                    {{/each}}
+
                 </div>
 
             </div>
