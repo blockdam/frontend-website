@@ -14,8 +14,7 @@
   }
 
   svg:last-of-type {
-    //transform: scaleY(-1);
-    transform: scaleX(-1);
+    transform: scale(-1);
   }
 
   .quote__text {
