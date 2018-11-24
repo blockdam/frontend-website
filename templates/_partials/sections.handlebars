@@ -17,15 +17,15 @@
 
             {{#ifEquals section.type 'quote'}}
 
-                {{> icon-quote-square}}
+
                 <!--<div class="quote__image">-->
                     <!--{{> responsive-image image=section.quote.image }}-->
                 <!--</div>-->
                 <div class="quote__text">
-                    <p><span class="quote_quote__symbol">"</span>{{section.text}}<span class="quote_quote__symbol">"</span></p>
+                    <p>{{> icon-quote-square}}{{section.text}}{{> icon-quote-square}}</p>
                     <span class="quote__text__name">{{section.name}}{{#if section.organisation}}<span>, {{section.organisation}}</span>{{/if}}</span>
                 </div>
-                {{> icon-quote-square}}
+
             {{/ifEquals}}
 
             {{#ifEquals section.type 'documents'}}
