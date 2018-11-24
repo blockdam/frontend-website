@@ -2,7 +2,7 @@
 
   margin-bottom: 3rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
 
   .post-intro--author {
@@ -21,6 +21,7 @@
   }
 
   .date {
+    display: block;
     @include numbers-small();
   }
 
