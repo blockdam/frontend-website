@@ -72,12 +72,19 @@
     #curated-list {
 
       width: calc(40% - .5rem);
-      background: $grey;
+      //background: $grey;
       min-height: 600px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+
+      h2 {
+        @include uppercase();
+        font-size: 2rem;
+        margin-bottom: 1rem;
+
+      }
 
       > div.recommendation {
 
