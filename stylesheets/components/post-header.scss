@@ -21,9 +21,7 @@
 
     .post-intro--author--description {
       text-align: center;
-      padding: 1rem 1.5rem;
-      font-size: .85rem;
-      line-height: 1.33;
+      @include small-sans();
     }
   }
 

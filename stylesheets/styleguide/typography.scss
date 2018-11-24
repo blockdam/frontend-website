@@ -69,6 +69,15 @@
 
 }
 
+@mixin small-sans {
+
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 300;
+  font-size: .85rem;
+  line-height: 1.66;
+
+}
+
 body {
 
     @include bodyText();
