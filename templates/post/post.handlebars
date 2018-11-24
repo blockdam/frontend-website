@@ -14,8 +14,10 @@
             <div class="container-large">
                 <div class="post-header">
 
+                    {{> author-post-top }}
+
                     <h2 class="">{{{body.title.rendered}}}</h2>
-                    <div class="date">{{formatDate body.date 'DD-MM-YYYY'}} | {{body.author.first_name}} {{body.author.last_name}}</div>
+                    <div class="date">{{formatDate body.date 'DD-MM-YYYY'}}</div>
                 </div>
             </div>
 
