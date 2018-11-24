@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 240px;
+    width: 320px;
     margin-bottom: .5rem;
 
     .post-intro--author--name {
@@ -23,6 +23,8 @@
 
 
  .post-intro--title {
+
+   width: calc(100% - 320px);
 
 
    .taxonomy-tab {
