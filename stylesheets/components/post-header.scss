@@ -59,13 +59,14 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    margin-right: 10px;
 
     > div {
 
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
       background: $secondary;
       padding: 0 .25rem;
 
