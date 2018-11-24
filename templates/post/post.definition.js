@@ -101,22 +101,12 @@ module.exports = {
                 excerpt: data.excerpt,
                 date: data.date,
                 modified: data.modified,
-                categories: data.categories,
-                static: data.static,
-                catIds: (data.categories) ? data.categories.map( c => { return c.id }) : '',
-                catSlugs: (data.categories) ? data.categories.map( c => { return c.slug }) : '',
-                tags: data.tags,
                 author: data.author,
-                comments: data.comments,
-                comment_count: parseInt(data.comment_count) || 0,
-                comment_status: data.comment_status,
+                taxonomies: data.taxonomies,
+                interaction: data.interaction,
                 sections: data.sections,
                 main_image: data.main_image,
-                korte_titel: data.korte_titel,
-                chapeau: data.chapeau,
-                cover: data.cover,
-                covertext: data.covertext,
-                co_author: data.co_auteur
+
 
             };
             // logger.info('Mapped post fields', correlationId);
