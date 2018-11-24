@@ -31,7 +31,7 @@ module.exports = {
 
             let postOptions = {
                 query : {
-                    type:"post",
+                    type:"link-recommendations",
                     slug: { $ne : data.slug }
                 },
                 "sort": {"date":-1},
@@ -58,7 +58,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             const date = moment(data.date, 'YYYY').format('YYYY');
             const pathService = new PathService();
-            const path = 'nieuws/' + date + '/' + pathService.cleanString(data.slug);
+            const path = 'crypto-artikelen/' + pathService.cleanString(data.slug);
             // logger.info('Generated post path: ' + path, correlationId);
             resolve(path);
         })
