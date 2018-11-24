@@ -62,6 +62,11 @@
 
     > div {
 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+
       @include uppercase();
 
       svg {
