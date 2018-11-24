@@ -87,17 +87,19 @@
         .recommendation--tag {
 
             @include uppercase();
+            font-size: .85rem;
          }
 
         .recommendation--title {
 
-          @include bodyTextBold();
+          //@include bodyTextBold();
+          font-size: 1rem;
 
         }
 
         .recommendation--subtitle {
 
-          @include bodyText();
+          @include small-sans();
         }
 
       }
