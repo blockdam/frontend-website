@@ -76,7 +76,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             // logger.info('Get template dependencies for ' + data.type, correlationId);
             resolve([
-                {template: 'homepage', data: {}}
+                {template: 'homepage', data: null}
             ]);
         })
     },
