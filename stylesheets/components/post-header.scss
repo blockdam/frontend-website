@@ -25,6 +25,12 @@
       padding: 0 1.5rem;
       @include small-sans();
     }
+
+    .icon {
+      width: 2rem;
+      height: auto;
+      cursor: pointer;
+    }
   }
 
 

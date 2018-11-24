@@ -9,6 +9,13 @@
     <div class="post-intro--author--description">
 
         {{body.author.bio}}
+
+        {{#if body.author.twitter}}
+            <a href="https://twitter/{{body.author.twitter}}" target="_blank">
+                {{icon-twitter}}
+            </a>
+
+        {{/if}}
     </div>
 
 </div>
