@@ -81,6 +81,8 @@
 
       > div.recommendation {
 
+        margin-bottom: 1rem;
+
         .recommendation--tag {
 
             @include uppercase();
