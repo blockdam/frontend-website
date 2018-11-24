@@ -32,16 +32,7 @@
   }
 
 
-  .post-intro--author {
 
-    margin-bottom: .5rem;
-
-    .post-intro--author--name {
-
-      @include numbers-small();
-      //border-bottom: 4px double black;
-    }
-  }
 
   article {
     margin: 4rem 0;
