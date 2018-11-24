@@ -1,0 +1,30 @@
+
+.diamond  {
+
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  transform: rotate(45deg);
+  //margin-left: 1.75rem;
+  margin-bottom: 1.5rem;
+  border: 4px double black;
+
+  > div {
+
+    position: relative;
+    width: calc(100% - .5rem);
+    height: calc(100% - .5rem);
+    margin : .25rem;
+    overflow: hidden;
+
+    > * {
+      transform: rotate(-45deg);
+      width: 150%;
+      height: 150%;
+      max-width: 200%;
+      margin-top: -25%;
+      margin-left: -25%;
+      filter : grayscale(1);
+    }
+  }
+}
