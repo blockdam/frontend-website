@@ -30,10 +30,16 @@
     }
   }
 
-  .post-intro--author--name {
 
-    @include numbers-small();
-    border-bottom: 4px double black;
+  .post-intro--author {
+
+    margin-bottom: 1.5rem;
+
+    .post-intro--author--name {
+
+      @include numbers-small();
+      //border-bottom: 4px double black;
+    }
   }
 
   article {
