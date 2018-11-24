@@ -25,6 +25,10 @@
     @include numbers-small();
   }
 
+  > div.post-intro--title > * {
+    padding-left: 1rem;
+  }
+
   h2 {
     @include heavy();
     font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
@@ -42,8 +46,6 @@
     //text-align: center;
   }
 
-  > * {
-    padding-left: 1rem;
-  }
+
 }
 
