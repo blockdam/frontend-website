@@ -47,20 +47,15 @@ module.exports = {
             let findPosts = pagePersistence.find(postOptions);
             let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
 
-            logger.info('0');
-
 			Promise.all([findPosts,linkRecommendations]).then(values => {
 
                 logger.info('1');
 
 				data.posts = values[0];
-				data.linkRecommendations = values[1];
+				data.links = values[1];
 				logger.info('Get template data', correlationId)
 				resolve(data)
 			})
-
-            logger.info('Get template data', correlationId);
-
         })
     },
 
@@ -113,21 +108,6 @@ module.exports = {
                 excerpt: data.excerpt,
                 date: data.date,
                 modified: data.modified,
-                categories: data.categories,
-                static: data.static,
-                catIds: (data.categories) ? data.categories.map( c => { return c.id }) : '',
-                catSlugs: (data.categories) ? data.categories.map( c => { return c.slug }) : '',
-                tags: data.tags,
-                author: data.author,
-                comments: data.comments,
-                comment_count: parseInt(data.commentcount) || 0,
-                comment_status: data.comment_status,
-                last_comment_date : data.last_comment_date,
-                sections: data.sections,
-                main_image: data.main_image,
-                square_image: data.square_image,
-                location: data.location,
-                appreciation: data.appreciation
             };
             // logger.info('Mapped post fields', correlationId);
             resolve(page);
