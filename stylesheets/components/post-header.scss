@@ -18,6 +18,11 @@
       @include numbers-small();
       //border-bottom: 4px double black;
     }
+
+    .post-intro--author--description {
+      text-align: center;
+      padding: 0 1.5rem;
+    }
   }
 
 
