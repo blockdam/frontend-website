@@ -9,7 +9,7 @@
   margin-bottom: 1.5rem;
   border: 4px double black;
 
-  > div {
+  > div.img-container  {
 
     position: relative;
     width: calc(100% - .5rem);
@@ -17,7 +17,7 @@
     margin : .25rem;
     overflow: hidden;
 
-    > * {
+    > img {
       transform: rotate(-45deg);
       width: 150%;
       height: 150%;
