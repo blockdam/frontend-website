@@ -16,6 +16,8 @@
 
                     {{> author-post-top }}
 
+                    {{json body.taxonomies}}
+
                     <div class="post-intro--title">
                         {{#each body.taxonomies.categories as |cat|}}
                         <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
