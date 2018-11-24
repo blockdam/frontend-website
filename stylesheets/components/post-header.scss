@@ -5,53 +5,6 @@
   flex-direction: row;
   align-items: center;
 
-  .post-intro--author {
-
-    position: fixed;
-    right: 2rem;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 320px;
-    margin-bottom: 1rem;
-
-    .post-intro--author--name {
-
-      @include uppercase();
-
-      //border-bottom: 4px double black;
-    }
-
-    .post-intro--author--description {
-      text-align: center;
-      padding: 0 1.5rem;
-      @include small-sans();
-    }
-
-    .post-intro--author--links {
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin: .5rem 0 0 0;
-
-        .icon {
-          width: 1.25rem;
-          height: auto;
-          cursor: pointer;
-          fill: $secondary;
-
-          &:hover {
-            fill: black;
-          }
-        }
-    }
-
-
-  }
-
   .post-intro--stats {
 
     width: 80px;
