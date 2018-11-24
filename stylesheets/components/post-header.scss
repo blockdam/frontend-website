@@ -64,11 +64,12 @@
     > div {
 
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       align-items: center;
       margin-bottom: .5rem;
       background: $secondary;
       padding: 0 .25rem;
+      line-height: 2.25;
 
 
 
