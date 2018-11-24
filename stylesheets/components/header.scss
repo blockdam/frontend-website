@@ -89,8 +89,8 @@ header.expanded {
 #blog header, header.shrunk {
 
     height: 70px;
-    background: darken($creme,3%);
-    border-bottom: 1px solid darken($creme,7%);
+    background: $secondary;
+
 
     h1 {
       font-size: 2rem;
