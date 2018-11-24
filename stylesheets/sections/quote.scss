@@ -39,7 +39,7 @@
 
     display: block;
     margin-top: 1.25rem;
-    @include numbers-small();
+    @include uppercase();
     border-bottom: 4px double black;
   }
 }
