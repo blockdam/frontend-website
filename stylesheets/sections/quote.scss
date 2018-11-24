@@ -11,14 +11,14 @@
   }
 
   svg:first-of-type {
-    top: 3rem;
+    top: 3.65rem;
     left: -8rem;
     transform: scaleY(-1);
   }
 
   svg:last-of-type {
     transform: scale(-1);
-    bottom: 3rem;
+    bottom: 3.65rem;
     right: -8rem;
   }
 
@@ -30,5 +30,10 @@
     font-size: 2rem;
     line-height: 1.25;
     text-align: center;
+  }
+
+  quote__text__name {
+
+    @include numbers-small();
   }
 }
