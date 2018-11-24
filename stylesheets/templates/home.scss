@@ -96,13 +96,13 @@
         .recommendation--tag {
 
             @include uppercase();
-            font-size: .8rem;
+            font-size: .85rem;
          }
 
         .recommendation--title {
 
           @include bodyTextBold();
-          font-size: 1rem;
+          font-size: 1.125rem;
           line-height: 1.33;
 
         }
