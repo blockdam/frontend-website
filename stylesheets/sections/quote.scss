@@ -5,7 +5,7 @@
 
   svg {
     position: absolute;
-    width: 5rem;
+    width: 4.5rem;
     height: auto;
     margin: 0 1rem;
   }
@@ -34,6 +34,8 @@
 
   .quote__text__name {
 
+    display: block;
+    margin-top: 2rem;
     @include numbers-small();
   }
 }
