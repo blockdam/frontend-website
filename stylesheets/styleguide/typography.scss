@@ -83,10 +83,15 @@ body {
     @include bodyText();
 }
 
+.cursor_pointer {
+  cursor: pointer;
+}
+
 a {
     color: black;
     border-bottom: 1px solid #000;
     text-decoration: none;
+    cursor: pointer;
 
     &.no_border {
       border: none;
@@ -94,7 +99,7 @@ a {
 }
 
 a:hover {
-    color: #fff;
+    color: black;
     text-decoration: none;
-    background: black;
+    //background: black;
 }
