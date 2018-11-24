@@ -15,7 +15,7 @@
 
     .post-intro--author--name {
 
-      @include numbers-small();
+      @include uppercase();
 
       //border-bottom: 4px double black;
     }
@@ -59,7 +59,7 @@
    }
    .date {
      display: block;
-     @include numbers-small();
+     @include uppercase();
      margin-left: calc(1rem + 10px);
    }
  }

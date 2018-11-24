@@ -223,7 +223,7 @@
 
           .date {
 
-           @include numbers-small();
+           @include uppercase();
 
           }
           h3 {
