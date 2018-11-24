@@ -22,10 +22,11 @@
       margin-bottom: .5rem;
       background: $secondary;
       padding: 0 .25rem;
-      line-height: 2.25;
-
       @include uppercase();
       font-size: .85rem;
+      line-height: 2.25;
+
+
 
       svg {
 
