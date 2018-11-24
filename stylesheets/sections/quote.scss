@@ -5,20 +5,20 @@
 
   svg {
     position: absolute;
-    width: 7rem;
+    width: 5rem;
     height: auto;
     margin: 0 1rem;
   }
 
   svg:first-of-type {
-    top: 0;
+    top: 3rem;
     left: -8rem;
     transform: scaleY(-1);
   }
 
   svg:last-of-type {
     transform: scale(-1);
-    bottom: 0;
+    bottom: 3rem;
     right: -8rem;
   }
 
