@@ -20,31 +20,34 @@
     }
   }
 
-  .date {
-    display: block;
-    @include numbers-small();
-  }
 
-  > div.post-intro--title > * {
-    padding-left: 1rem;
-  }
 
-  h2 {
-    @include heavy();
-    font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 6rem;
-    line-height: .95;
-    border-left: 10px solid black;
+ .post-intro--title {
 
-    //color: white;
-    text-transform: uppercase;
-    //background: #333;
-    //padding: .5rem 1rem;
-    //display: inline-block;
-    //text-align: center;
-  }
+   h2 {
+     @include heavy();
+     font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
+     font-style: normal;
+     font-weight: 800;
+     font-size: 6rem;
+     line-height: .95;
+     border-left: 10px solid black;
+     padding-left: 1rem;
+
+     //color: white;
+     text-transform: uppercase;
+     //background: #333;
+     //padding: .5rem 1rem;
+     //display: inline-block;
+     //text-align: center;
+   }
+   .date {
+     display: block;
+     @include numbers-small();
+     margin-left: calc(1rem + 10px);
+   }
+ }
+
 
 
 }
