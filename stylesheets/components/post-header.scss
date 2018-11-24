@@ -24,6 +24,13 @@
 
  .post-intro--title {
 
+
+   .tab {
+     margin-left: calc(1rem + 10px);
+     display: inline-block;
+     margin-bottom: .25rem;
+   }
+
    h2 {
      @include heavy();
      font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
