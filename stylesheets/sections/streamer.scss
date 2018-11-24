@@ -10,10 +10,26 @@
 
     font-family: "Mercury Display A", "Mercury Display B";
     font-size: 4rem;
-    line-height: 1;
+    line-height: .85;
     font-weight: 400;
-    font-style: italic;
+    //font-style: italic;
     max-width: 777px;
+    padding-left: 1.5rem;
+    border-left: 6px double black;
+  }
+
+  &.right {
+
+    justify-content: flex-end;
+
+    > div {
+      text-align: right;
+      padding-left : 0;
+      padding-right: 1.5rem;
+      border-left: 0px double black;
+      border-right: 6px double black;
+
+    }
   }
 
 }
