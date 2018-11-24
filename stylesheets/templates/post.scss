@@ -7,9 +7,16 @@
     height: 6rem;
     transform: rotate(45deg);
     overflow: hidden;
+    margin-top: 2rem;
+    border: 6px double black;
 
     > * {
       transform: rotate(-45deg);
+      width: 150%;
+      height: 150%;
+      max-width: 200%;
+      margin-top: -25%;
+      margin-left: -25%;
     }
 
   }
