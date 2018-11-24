@@ -2,11 +2,14 @@
 
   margin-bottom: 3rem;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
 
   .post-intro--author {
 
+    position: fixed;
+    right: 2rem;
+    top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,11 +52,19 @@
 
   }
 
+  .post-intro--stats {
+
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
 
  .post-intro--title {
 
-   width: calc(100% - 320px);
+   width: calc(100% - 60px);
 
 
    .taxonomy-tab {
