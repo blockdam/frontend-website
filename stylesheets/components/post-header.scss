@@ -35,9 +35,14 @@
       margin: .5rem 0 0 0;
 
         .icon {
-          width: 1.5rem;
+          width: 1.25rem;
           height: auto;
           cursor: pointer;
+          fill: #ccc;
+
+          &:hover {
+            fill: black;
+          }
         }
     }
 
