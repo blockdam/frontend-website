@@ -9,7 +9,7 @@
     transform: rotate(45deg);
 
     margin-bottom: 2rem;
-    border: 6px double black;
+    border: 4px double black;
 
     > div {
 
@@ -28,6 +28,12 @@
         margin-left: -25%;
       }
     }
+  }
+
+  .post-intro--author--name {
+
+    @include numbers-small();
+    border-bottom: 4px double black;
   }
 
   article {

@@ -40,8 +40,6 @@
     display: block;
     margin-top: 1.25rem;
     @include numbers-small();
-
-    line-height: 1.66;
     border-bottom: 4px double black;
   }
 }
