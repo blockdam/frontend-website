@@ -9,8 +9,6 @@
 
     <main id="main">
 
-
-
         <article>
 
             <div class="container-large">
@@ -23,7 +21,7 @@
 
                     <div class="post-intro--title">
                         {{#each body.taxonomies.categories as |cat|}}
-                        <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
+                            <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
                         {{/each}}
                         <h2 class="">{{{body.title.rendered}}}</h2>
                         <div class="date">{{formatDate body.date 'D MMMM YYYY'}}</div>

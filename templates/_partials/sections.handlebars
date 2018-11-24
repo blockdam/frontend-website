@@ -25,7 +25,9 @@
                     <p>{{section.text}}</p>
 
                 </div>
-                <span class="quote__text__name">{{section.name}}{{#if section.organisation}}<span>, {{section.organisation}}</span>{{/if}}</span>
+                <span class="quote__text__name">{{section.name}}</span>
+
+                {{#if section.organisation}}<span class="quote__text__organization">{{section.organisation}}</span>{{/if}}
 
                 <!--{{> icon-quote-square}}-->
 
