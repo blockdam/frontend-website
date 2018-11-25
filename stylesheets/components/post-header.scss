@@ -67,7 +67,7 @@
      line-height: .95;
      border-left: 10px solid black;
      padding-left: 1rem;
-     max-width: 1000px;
+     max-width: calc(100% - 240px - 2rem);
 
      //color: white;
      text-transform: uppercase;
