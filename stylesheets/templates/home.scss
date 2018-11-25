@@ -125,13 +125,15 @@
           //@include bodyTextBold();
           font-family: Mercury Display A,Mercury Display B;
           font-size: 1.3rem;
-          line-height: 1.2;
+          line-height: 1.05;
+          margin: .5rem 0;
 
         }
 
         .recommendation--subtitle {
 
           @include small-sans();
+          line-height: 1.3;
         }
 
       }
