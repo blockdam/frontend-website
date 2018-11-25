@@ -42,14 +42,8 @@
   .datetime {
 
     display: block;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    @media (max-width: $breakpoint-sm) {
-      position: relative;
-      top: auto;
-      right: auto;
-    }
+    @include uppercase();
+    font-size: .85rem;
 
   }
 
