@@ -4,11 +4,11 @@
   main {
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 
     @media (min-width : $breakpoint-sm) {
-      //margin-top: 3rem;
+      flex-direction: row;
     }
   }
 
@@ -21,9 +21,12 @@
     flex-wrap: wrap;
 
     .section-half {
-
-      width: calc(50% - .5rem);
+      
       position: relative;
+
+      @media (min-width : $breakpoint-sm) {
+        width: calc(50% - .5rem);
+      }
     }
 
   }
