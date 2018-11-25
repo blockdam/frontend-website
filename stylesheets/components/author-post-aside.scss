@@ -3,9 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 240px;
-  margin-bottom: 1rem;
-  border-left: 4px double $secondary;
+
+  width: 100%;
+  border: none;
+  margin-top: 10rem;
+
+  @media (min-width: $breakpoint-sm) {
+
+    width: 240px;
+    margin-bottom: 1rem;
+    border-left: 4px double $secondary;
+  }
+
 
   .post-intro--author--name {
 
