@@ -1,0 +1,29 @@
+
+
+<a href="{{body.post.url}}#comment-{{body.comment_ID}}" class="card-comment thread row row--wrap {{class}}">
+
+    <div class="comment-icon">
+        {{> icon-comment}}
+        <div class="overlay">
+            <span class="comment-count">{{body.comment_count}}</span>
+        </div>
+        <span class="comment-date">{{formatDate body.comment_date 'D MMM YYYY'}}</span>
+
+    </div>
+    <div class="comment-card__text">
+
+        <span class="comment-author">{{body.comment_author}}: </span>
+        <p>{{{searchExcerpt body.comment_content}}}</p>
+
+        {{#ifMoreThan body.comment_count 1}}
+            <div>+ reactie{{#ifMoreThan ../body.comment_count 2}}s{{/ifMoreThan}} van o.a.
+                {{#each (limit ../body.comment_children 3) as |comment| }}
+                    <span class="tab">{{comment.comment_author}}</span>
+                {{/each}}
+            </div>
+        {{/ifMoreThan}}
+
+    </div>
+
+</a>
+
