@@ -18,7 +18,11 @@
 }
 
 .flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
+  @media (min-width: $breakpoint-sm) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 }
