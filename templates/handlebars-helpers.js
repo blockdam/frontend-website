@@ -330,4 +330,34 @@ module.exports = [{
             return ret;
         }
     },
+    {
+        name: 'translate',
+        helper: (text, lan) => {
+
+            if (lan === 'en') {
+
+                let array = [
+
+                    {'Reacties' : 'Comments'},
+                    {'Agenda' : 'Calendar'}
+                ];
+
+                let match = array.find ( (pair) => {
+                    if (Object.keys(pair)[0] === text) {
+                        // Object.values(pair) werkt vanaf node 7.0
+                        return pair;
+                    }
+                });
+
+                if (match) {
+                    return match[text];
+                } else {
+                    return text;
+                }
+
+            } else {
+                return text;
+            }
+        }
+    },
 ];
