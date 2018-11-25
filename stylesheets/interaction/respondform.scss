@@ -14,12 +14,6 @@
     padding-left: 2rem;
   }
 
-  textarea {
-    width: 100%;
-    min-height: 50px;
-    min-width: 100%;
-  }
-
   .half {
 
     width: calc(50% - 1rem);
@@ -79,6 +73,10 @@
     background: $light-grey;
     outline: none;
     max-width: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    min-width: calc(100% - 2rem);
+    min-height: 80px;
+
     padding: 1rem;
     border: 1px solid $secondary;
 
@@ -188,10 +186,7 @@
 
 #openform svg { transform: rotate(45deg); }
 
-#dashboard #respondform {
 
-  input, textarea { width: calc(100% - 1rem); }
-}
 
 #comment-template-new, #comment-template-reply {
 
