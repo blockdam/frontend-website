@@ -21,7 +21,7 @@
     flex-wrap: wrap;
 
     .section-half {
-      
+
       position: relative;
 
       @media (min-width : $breakpoint-sm) {
@@ -76,18 +76,24 @@
 
     #blog-list {
 
-      width: calc(60% - .5rem);
+      @media (min-width: $breakpoint-sm) {
+        width: calc(60% - .5rem);
+      }
     }
 
     #curated-list {
 
-      width: calc(40% - .5rem);
+
       //background: $grey;
       min-height: 600px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+
+      @media (min-width: $breakpoint-sm) {
+        width: calc(40% - .5rem);
+      }
 
       h2 {
         @include uppercase();
