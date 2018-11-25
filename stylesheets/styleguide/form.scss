@@ -54,6 +54,7 @@ input:-ms-input-placeholder {
   -webkit-appearance: none;
   @include bodyText();
   padding: 0 .5rem;
+  background: $creme;
 
 
 }
