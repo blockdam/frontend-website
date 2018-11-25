@@ -1,0 +1,41 @@
+<form id="respondform" class="respondform" action="#">
+
+    <div class="textarea-container">
+
+	    <textarea required id="respondMessage" rows="1"  placeholder="{{ translate 'Schrijf een reactie ...' language.code }}" onfocus="respond.onFocus(); this.placeholder = ''"></textarea>
+        <div class="comment-shape-container"><div class="comment-shape"></div></div>
+    </div>
+
+    <div id="left-side" class="half">
+
+        <label>{{ translate 'Uw naam' language.code}}</label>
+        <input required minlength="2" type="text" name="author" id="respondAuthor" size="22">
+
+        <label>{{ translate 'Uw emailadres' language.code}}</label>
+        <input required type="email" name="email" id="respondEmail"  size="22" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Ongeldig email adres">
+
+        <input id="respondPostId" type="hidden" value="{{body.objectID}}">
+        <input id="respondPostSlug" type="hidden" value="{{body.slug}}">
+        <input id="respondPostTitle" type="hidden" value="{{body.title}}">
+        <input id="respondPostCommentCount" type="hidden" value="{{body.comment_count}}">
+
+        <div id="formerror" aria-live="assertive" role="alert"></div>
+
+        <button class="large" type="submit">{{translate 'Plaats reactie' language.code}}</button>
+        <span id="warning" style="display:none">{{translate 'Over maximaal 15 seconden kunt u weer een keer reageren' language.code}}</span>
+
+
+    </div>
+
+    <div id="right-side" class="half">
+
+        <div id="checkbox-section">
+            <div class="checkbox" onclick=""><input id="subscribeToAlerts" type="checkbox" /><label for="subscribeToAlerts"></label></div>
+            <span>{{ translate 'Hou me op de hoogte van reacties op dit artikel' language.code}}</span>
+        </div>
+    </div>
+</form>
+
+<div id="comment-template-new" class='thread'><div class='comment'><div class='header'><span class='datetime smallerfont'></span><h4></h4></div><p id="commment-template-text"></p><div class='rating-container'><span class='rating-value smallerfont'></span><!-- <div class='rating-button'><div class='circle'></div><span>+1</span></div>--></div><div class='comment-shape-container'><div class='comment-shape'></div></div></div></div>
+
+<div id="comment-template-reply" class='comment'><div class='header'><span class='datetime smallerfont'></span><h4></h4></div><p id="commment-template-text"></p><div class='comment-shape-container'><div class='comment-shape'></div></div></div>
