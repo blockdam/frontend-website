@@ -50,13 +50,14 @@
   .thread-reply {
 
     display: none;
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
+    position: relative;
+    margin-top: 1rem;
     background: $secondary;
     height: 1.875rem;
     line-height: 1.875rem;
     padding: 0 .5rem;
+    @include uppercase();
+    cursor: pointer;
   }
 
   .rating-container {
@@ -126,29 +127,28 @@
 
   width: calc(100% - 6rem);
   align-self: flex-end;
-  border-color: $black;
   margin-right: 0;
   padding: 1rem 1rem 2rem 1rem;
   @media (max-width: $breakpoint-sm) {
     width: calc(100% - 2rem);
   }
 
-  .comment-shape-container {
+  //.comment-shape-container {
+  //
+  //  left: -.6rem;
+  //  right: auto;
+  //  transform: scaleX(1.25) scaleY(1.25);
+  //}
 
-    left: -.6rem;
-    right: auto;
-    transform: scaleX(1.25) scaleY(1.25);
-  }
-
-  .comment-shape {
-
-    border-color: $secondary;
-
-  }
+  //.comment-shape {
+  //
+  //  border-color: $secondary;
+  //
+  //}
 
   .thread-reply {
 
-      display: block;
+      display: inline-block;
   }
 
   .rating-container  {
