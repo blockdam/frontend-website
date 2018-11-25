@@ -1,8 +1,8 @@
 .comment {
 
   position: relative;
-  width: calc(100% - 18rem);
-  margin-right: 6rem;
+  width: calc(100% - 12rem);
+  //margin-right: 6rem;
   align-self: flex-end;
   margin-bottom: 1rem;
   padding: 0rem 0rem 0rem 1.5rem;
@@ -48,6 +48,8 @@
     //font-size: .85rem;
     margin-bottom: .5rem;
     display: inline-block;
+    background: #d5d5d5;
+    padding: 0 .5rem;
 
   }
 
