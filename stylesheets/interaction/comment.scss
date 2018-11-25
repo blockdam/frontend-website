@@ -58,12 +58,21 @@
     display: none;
     position: relative;
     margin-top: 1rem;
-    background: $secondary;
+    //background: $secondary;
 
     padding: 0 .75rem;
     @include uppercase();
     font-size: .85rem;
     cursor: pointer;
+    padding-left: 2rem;
+
+    svg {
+      width: 1.5rem;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   .rating-container {
