@@ -57,6 +57,13 @@
         line-height: 1;
         font-weight: 400;
         margin-bottom: .75rem;
+
+
+        &.longTitle {
+
+          font-size: 1.6rem;
+          line-height: 1.1;
+        }
       }
 
       svg {
@@ -119,9 +126,10 @@
 
         .recommendation--title {
 
-          @include bodyTextBold();
-          font-size: 1.125rem;
-          line-height: 1.33;
+          //@include bodyTextBold();
+          font-family: Mercury Display A,Mercury Display B;
+          font-size: 1.3rem;
+          line-height: 1.2;
 
         }
 
