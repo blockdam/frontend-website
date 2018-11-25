@@ -30,14 +30,7 @@
 
                 <div id="blog-list">
 
-                    <a href="{{body.posts.[1].url}}" class="block">
-
-                        <span class="date">{{formatDate body.posts.[1].date 'D MMMM YYYY'}}</span>
-                        <h2 class="longTitle">{{body.posts.[1].title.rendered}}</h2>
-                        <span class="author">{{body.posts.[1].author.first_name}} {{body.posts.[1].author.last_name}}</span>
-
-                    </a>
-
+                    {{> block item=body.posts.[1] }}
 
                     <a href="{{body.posts.[2].url}}" class="block">
 

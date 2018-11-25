@@ -144,6 +144,18 @@ module.exports = [{
         }
     },
     {
+        name: 'longTitle',
+        helper: (content) => {
+            if (content !== null && content !== undefined && content.length > 40) {
+
+                return 'longTitle';
+
+            } else {
+                return '';
+            }
+        }
+    },
+    {
         name: 'trimmed',
             helper: (content) =>
         {
