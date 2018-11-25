@@ -43,9 +43,16 @@ header {
 
   h1 {
       @include heavy();
-      font-size: 4rem;
+
       //padding-top: 2rem;
-    color: $dark-grey;
+      font-size: 3rem;
+      color: $dark-grey;
+
+      @media (min-width: $breakpoint-sm) {
+
+        font-size: 4rem;
+      }
+
   }
 
   h2 {
