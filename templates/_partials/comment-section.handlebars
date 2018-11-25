@@ -4,6 +4,9 @@
         {{ translate 'Reacties' language.code}}
     </h2>
 
+
+    {{ json body.interaction.nested_comments }}
+
    {{> blog-rating language=language}}
 
     <section id="commenting">
