@@ -1,0 +1,33 @@
+<div class="thread {{ class }}" id="comment-{{ comment_ID }}" data-id="{{ comment_ID }}">
+
+    <!--<div class="comment-icon">-->
+        <!--{{> icon-comment}}-->
+
+    <!--</div>-->
+    <date  class="comment__date">{{formatDate comment_date 'D MMMM YYYY'}}</date>
+    <div class="main_comment">
+        <span class="comment__text">
+            <span class="comment__author">{{ comment_author }}: </span>
+            {{{ comment_content }}}
+        </span>
+    </div>
+    {{#each comment_children as |comment|}}
+        <div class="reply" id="comment-{{ comment.comment_ID }}">
+            {{#if has_author}}
+                {{#ifEquals author.image.external_id false }}
+                    {{!-- Do nothing --}}
+                {{else}}
+                    <span class="profile-image" style="background-image: url(https://ucarecdn.com/{{../author.image.external_id}}/-/scale_crop/100x100/center/{{../author.image.filename}})"></span>
+                {{/ifEquals}}
+            {{/if}}
+            <span class="comment__text">
+                <date  class="comment__date">{{formatDate comment.comment_date 'DD/MM hh:mm'}}</date>
+                <span class="comment__author">{{ comment.comment_author }}: </span>
+                {{{ comment.comment_content }}}
+            </span>
+        </div>
+    {{/each}}
+    <div class="comment-form-wrapper">
+        <button class="button comment-reply">Reageren</button>
+    </div>
+</div>

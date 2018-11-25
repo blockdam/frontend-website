@@ -1,0 +1,37 @@
+<section id="section-respond-form">
+    <div class="container">
+        {{> comment-form}}
+    </div>
+</section>
+
+
+<section class="comments" id="comments-wrapper">
+    <div class="container gutter-bottom" id="comments-inner">
+        {{#each body.interaction.comments as |comment|}}
+            {{> comment class="comment-parent" }}
+        {{/each}}
+    </div>
+</section>
+
+
+<!-- START Comment templates --->
+<div class="comment-templates" style="display: none;">
+    <div id="comment-template-new" class="thread" id="comment-">
+        <date  class="comment__date"></date>
+        <div class="main_comment">
+            <span class="comment__text">
+                <span class="comment__author"></span>
+                <span class="comment-template-text"></span>
+            </span>
+        </div>
+    </div>
+
+    <div id="comment-template-reply" class="reply" id="comment-">
+        <span class="comment__text">
+            <date class="comment__date"></date>
+            <span class="comment__author"></span>
+            <span class="comment-template-text"></span>
+        </span>
+    </div>
+</div>
+<!-- END Comment templates --->

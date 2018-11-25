@@ -1,0 +1,36 @@
+<div class="comment-form-wrapper" data-extended="true" id="respondform">
+    <h2>Vragen? Laat een reactie achter</h2>
+    <form id="comment-form">
+        <div class="comment-textarea">
+            <textarea name="comment" id="respondMessage" class="respond-message" placeholder="Uw bericht.."></textarea>
+        </div>
+        <div class="submit">
+            <div class="form-half">
+                <div class="user-info">
+                    <label for="author"><input type="text" placeholder="naam" id="respondAuthor" class="respond-author" name="author" /></label>
+                    <label for="email"><input type="text" placeholder="email" id="respondEmail" class="respond-email" name="email" /></label>
+                </div>
+                <input type="hidden" id="respondPostParentId" class="respond-parent-id" name="parent_comment" value="0" />
+                <input type="hidden" id="respondPostId" name="post_ID" class="respond-post-id" value="{{ body._id }}" />
+                {{!-- <input type="wp_nonce" id="wp_nonce" name="wp_nonce" value="" /> --}}
+            </div>
+            <div class="form-half">
+                <div class="user-preferences checkbox">
+                    <label for="subscribe_to_newsletter">
+                        <input type="checkbox" name="subscribe_to_newsletter" id="subscribe_to_newsletter" />
+                        Onthoud mijn naam en email. Dit gebeurt met een cookie.
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="get_notifications">
+                        <input type="checkbox" name="get_notifications" id="get_notifications" />
+                        Hou mij per mail op de hoogte van nieuwe reacties.
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button class="button" id="submit-comment">Verstuur reactie</button>
+            </div>
+        </div>
+    </form>
+</div>
