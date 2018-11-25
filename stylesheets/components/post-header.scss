@@ -83,7 +83,7 @@
      font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
      font-style: normal;
      font-weight: 800;
-     font-size: 6rem;
+     font-size: 4rem;
      line-height: .9;
      border-left: 10px solid black;
      padding-left: 1rem;
@@ -97,7 +97,7 @@
      //text-align: center;
 
      @media (min-width: $breakpoint-sm){
-
+       font-size: 6rem;
        max-width: calc(100% - 240px - 2rem);
      }
    }
