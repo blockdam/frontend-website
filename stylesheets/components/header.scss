@@ -58,8 +58,12 @@ header {
   }
 
   nav ul {
-    display: flex;
+    display: none;
     flex-direction: row;
+
+    @media(min-width: $breakpoint-sm) {
+      display: flex;
+    }
 
     li {
       padding: 0 2rem;

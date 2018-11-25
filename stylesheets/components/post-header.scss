@@ -16,10 +16,16 @@
 
     width: 80px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
     margin-right: 10px;
+
+    @media (min-width: $breakpoint-sm) {
+
+      flex-direction: column;
+    }
+
 
     > div {
 
