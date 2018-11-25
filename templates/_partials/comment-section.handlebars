@@ -1,0 +1,32 @@
+<section id="comment-section" class="container">
+
+    <h2>
+        {{ translate 'Reacties' language.code}}
+    </h2>
+
+    {{> blog-rating language=language}}
+
+    {{> social-buttons }}
+
+    <h3>
+        {{ translate 'Geef uw mening' language.code}}
+    </h3>
+
+    <section id="commenting">
+
+        <div class="container">
+
+            <div id="respondcontainer">
+
+                <!--<span id="closeform" onclick="respond.close()">{{> close}}</span>-->
+
+                {{> respond-form language=language}}
+
+            </div>
+
+            <div id="comments-wrapper">
+                {{> comment-list comments=body.interaction.nested_comments}}
+            </div>
+        </div>
+    </section>
+</div>
