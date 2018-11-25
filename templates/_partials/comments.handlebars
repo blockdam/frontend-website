@@ -7,7 +7,7 @@
 
 <section class="comments" id="comments-wrapper">
     <div class="container gutter-bottom" id="comments-inner">
-        {{#each body.interaction.comments as |comment|}}
+        {{#each body.interaction.nested_comments as |comment|}}
             {{> comment class="comment-parent" }}
         {{/each}}
     </div>
