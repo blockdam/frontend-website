@@ -38,7 +38,11 @@
       @include uppercase();
       font-size: .85rem;
       line-height: 2.25;
+      margin-right: .5rem;
 
+      @media (min-width: $breakpoint-sm) {
+        margin-right: 0;
+      }
 
 
       svg {
