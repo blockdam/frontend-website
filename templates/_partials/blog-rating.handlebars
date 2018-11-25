@@ -1,0 +1,37 @@
+<div id="blog-rating">
+
+    <h3>
+        {{ translate "Vond u dit artikel nuttig?" language.code}}
+    </h3>
+
+    <div id="appreciation-row">
+
+        <figure class="chart animate">
+            <svg role="img" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle-background" r="42px" cx="50%" cy="50%" />
+
+                <circle class="circle-foreground" r="42px" cx="50%" cy="50%"/> <!--  hidden-on-phone -->
+
+                <!--<circle class="circle-foreground visible-on-phone" r="42px" cx="37%" cy="67%"/>-->
+
+            </svg>
+            <figcaption><span id="appreciation-percentage"></span><span class="symbol">%</span><span class="qualifier">{{translate 'Nuttig' language.code}}</span></figcaption>
+        </figure>
+
+        <div id="appreciation-block">
+
+            <div id="appreciation-buttons" class="smallerfont">
+                <button class="smallerfont" onclick="appreciation.ratePositive({{body._id}})">{{ translate 'Ja' language.code}}</button>
+                <button class="smallerfont" onclick="appreciation.rateNegative({{body._id}})">{{ translate 'Nee' language.code}}</button>
+                <span id="warning" style="display:none">{{ translate 'U heeft dit artikel al beoordeeld' language.code}}.</span>
+            </div>
+
+            <div class="smallerfont">
+                <span id="text-positive-count"></span> {{ translate 'van de' language.code}} <span id="text-total-count"></span> {{ translate 'mensen vonden dit nuttig' language.code }}.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
