@@ -146,6 +146,7 @@ module.exports = [{
     {
         name: 'longTitle',
         helper: (content) => {
+
             if (content !== null && content !== undefined && content.length > 80) {
 
                 return 'longTitle';

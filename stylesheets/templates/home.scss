@@ -78,29 +78,6 @@
     #blog-list {
 
       width: calc(60% - .5rem);
-      min-height: 600px;
-
-      .block {
-        min-height: 200px;
-        background: $dark-grey;
-        color: white;
-
-        h2 {
-          font-family: Gotham Cond SSm A ,Gotham Cond SSm B;
-          font-size: 2.4rem;
-          line-height: 1.05;
-          font-weight: 400;
-          margin-bottom: .25rem;
-          letter-spacing: .5px;
-
-          &.longTitle {
-
-            font-size: 1.7rem;
-            line-height: 1.12;
-          }
-        }
-
-      }
     }
 
     #curated-list {
