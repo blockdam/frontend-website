@@ -1,5 +1,4 @@
 #respondcontainer {
-
   margin-bottom: 4rem;
 }
 
@@ -15,7 +14,7 @@
     height: 7.5rem;
     overflow: hidden;
     width : calc(100% - 2rem);
-    
+
     @media (max-width: $breakpoint-sm) {
       padding-left: 2rem;
     }
@@ -225,4 +224,3 @@
     }
 
   }
-}
