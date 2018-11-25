@@ -11,7 +11,7 @@
   height: 4.5rem;
   overflow: hidden;
   padding-left: 6rem;
-  @media (max-width: $mobile-max) {
+  @media (max-width: $breakpoint-sm) {
     padding-left: 2rem;
   }
 
@@ -24,7 +24,7 @@
   .half {
 
     width: calc(50% - 1rem);
-    @media (max-width: $mobile-max) {
+    @media (max-width: $breakpoint-sm) {
       width: 100%;
     }
     display: flex;
@@ -44,7 +44,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    @media (max-width: $mobile-max) {
+    @media (max-width: $breakpoint-sm) {
       display: none;
     }
 
@@ -221,7 +221,7 @@
 .thread .respondform  {
 
   padding-left: 12rem;
-  @media (max-width: $mobile-max) {
+  @media (max-width: $breakpoint-sm) {
     padding-left: 2rem;
   }
 

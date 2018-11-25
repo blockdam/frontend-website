@@ -7,10 +7,10 @@
   margin-right: 6rem;
   align-self: flex-end;
   margin-bottom: 1rem;
-  @media (max-width: $landscape-max) {
+  @media (max-width: $breakpoint-bax) {
     width: calc(100% - 12rem);
   }
-  @media (max-width: $mobile-max) {
+  @media (max-width: $breakpoint-sm) {
     width: calc(100% - 4rem);
     margin-right: 2rem;
   }
@@ -45,7 +45,7 @@
     position: absolute;
     right: 1rem;
     top: 1rem;
-    @media (max-width: $mobile-max) {
+    @media (max-width: $breakpoint-sm) {
       position: relative;
       top: auto;
       right: auto;
@@ -135,7 +135,7 @@
   border-color: $black;
   margin-right: 0;
   padding: 1rem 1rem 2rem 1rem;
-  @media (max-width: $mobile-max) {
+  @media (max-width: $breakpoint-sm) {
     width: calc(100% - 2rem);
   }
 
@@ -168,31 +168,3 @@
     left: -6rem;
   }
 }
-
-
-//.comment.reply {
-//
-//  border-color: $grey;
-//  width: calc(100% - 20rem);
-//  align-self: center;
-//  margin-left: 8rem;
-//
-//
-//  .text-balloon {
-//
-//    position: absolute;
-//    top: 2rem;
-//    left: auto;
-//    right: -.8rem;
-//    width: 1.5rem;
-//    height: 1.5rem;
-//    border-bottom: 0px solid $black;
-//    border-left: 0px solid $black;
-//    border-top: 1px solid $grey;
-//    border-right: 1px solid $grey;
-//
-//    background: $white;
-//    transform: rotate(45deg);
-//  }
-//
-//}
