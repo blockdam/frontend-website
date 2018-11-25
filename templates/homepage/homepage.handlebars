@@ -18,6 +18,8 @@
                 <h2>{{body.posts.[0].title.rendered}}</h2>
                 <span class="author">{{body.posts.[0].author.first_name}} {{body.posts.[0].author.last_name}}</span>
                 <span class="date">{{formatDate body.posts.[1].date 'D MMMM YYYY'}}</span>
+
+                {{> icon-energy }}
             </a>
 
             <div id="recent-comments" class="block">

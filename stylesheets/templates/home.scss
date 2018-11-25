@@ -58,6 +58,14 @@
         font-weight: 400;
         margin-bottom: .75rem;
       }
+
+      svg {
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        fill: white;
+      }
     }
 
     #blog-list {
