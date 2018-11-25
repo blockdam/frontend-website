@@ -58,12 +58,6 @@
         font-weight: 400;
         margin-bottom: .75rem;
 
-
-        &.longTitle {
-
-          font-size: 1.6rem;
-          line-height: 1.1;
-        }
       }
 
       svg {
@@ -89,6 +83,12 @@
           line-height: 1.05;
           font-weight: 400;
           margin-bottom: .5rem;
+
+          &.longTitle {
+
+            font-size: 1.6rem;
+            line-height: 1.1;
+          }
         }
 
       }
