@@ -157,6 +157,13 @@ module.exports = [{
         }
     },
     {
+        name: 'indexBump',
+        helper: (index) => {
+
+           return parseInt(index + 1);
+        }
+    },
+    {
         name: 'trimmed',
             helper: (content) =>
         {
