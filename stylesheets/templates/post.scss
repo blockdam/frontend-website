@@ -2,7 +2,10 @@
 
 
   article {
-    margin: 4rem 0;
+
+    @media (min-width: $breakpoint-sm) {
+      margin: 4rem 0;
+    }
   }
 
   aside {
