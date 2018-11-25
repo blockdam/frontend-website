@@ -52,6 +52,8 @@ input:-ms-input-placeholder {
   transition: all 250ms ease;
   border-radius: 0;
   -webkit-appearance: none;
+  @include bodyText();
+  padding: 0 .5rem;
 
 
 }
