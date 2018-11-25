@@ -5,7 +5,7 @@
   margin-right: 6rem;
   align-self: flex-end;
   margin-bottom: 1rem;
-  padding: 0rem 1rem 0rem;
+  padding: 0rem 0rem 0rem 1.5rem;
   border-left: 4px double #d5d5d5;
 
 
@@ -131,7 +131,7 @@
   width: calc(100% - 6rem);
   align-self: flex-end;
   margin-right: 0;
-  padding: 0rem 1rem 0rem 1rem;
+
   @media (max-width: $breakpoint-sm) {
     width: calc(100% - 2rem);
   }
