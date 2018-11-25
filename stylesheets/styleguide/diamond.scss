@@ -2,12 +2,11 @@
 .diamond  {
 
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   transform: rotate(45deg);
-  //margin-left: 1.75rem;
   margin-bottom: 1.5rem;
-  border: 4px double black;
+  border: 4px double $secondary;
 
   > div.img-container  {
 
