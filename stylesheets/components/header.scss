@@ -12,7 +12,7 @@ header {
   //flex-direction: column;
   //justify-content: flex-start;
   //align-items: center;
-  color: $dark-grey;
+
 
   transition: all 500ms ease;
 
@@ -39,6 +39,7 @@ header {
       @include heavy();
       font-size: 4rem;
       //padding-top: 2rem;
+    color: $dark-grey;
   }
 
   h2 {
@@ -49,6 +50,7 @@ header {
     letter-spacing: .5px;
     font-size: .85rem;
     line-height: 1;
+    color: $dark-grey;
 
     &.shrunk {
       display: none;
