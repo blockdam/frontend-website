@@ -9,17 +9,17 @@
   //min-height: 30rem;
   padding: 3rem 0;
 
-  .social-buttons-wrapper {
-
-    position: absolute;
-    top: 5rem;
-    right: 0;
-    display: block;
-  }
-
   #respondcontainer {
 
       width: 100%;
+  }
+
+  svg {
+
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    transform: scaleX(-1);
   }
 
 

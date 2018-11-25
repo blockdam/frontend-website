@@ -5,12 +5,11 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 1rem 0 1rem 0;
   position: relative;
 
   height: 4.5rem;
   overflow: hidden;
-  padding-left: 6rem;
+  width : calc(100% - 2rem);
   @media (max-width: $breakpoint-sm) {
     padding-left: 2rem;
   }
