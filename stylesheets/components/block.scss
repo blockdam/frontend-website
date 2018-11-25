@@ -29,7 +29,11 @@ a.block {
 
     @include uppercase();
     display: block;
-    font-size: .875rem;
+    font-size: 1rem;
+  }
+
+  span.date {
+    font-size: .725rem;
   }
 
   &.longTitle h2 {
