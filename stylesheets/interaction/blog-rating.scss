@@ -1,0 +1,25 @@
+#blog-rating {
+
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  transition: opacity 500ms ease;
+
+  min-height: 12rem;
+
+    #rating-container {
+
+      display: flex;
+      flex-direction: row;
+
+      #chart {
+
+      }
+    }
+
+  &.visible {
+    opacity: 1;
+  }
+}
