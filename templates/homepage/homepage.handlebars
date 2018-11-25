@@ -30,24 +30,12 @@
 
                 <div id="blog-list">
 
-                    {{> block item=body.posts.[1] }}
+                    {{#each body.posts as |post| }}
 
-                    <a href="{{body.posts.[2].url}}" class="block">
+                        {{> block item=post }}
 
-                        <span class="date">{{formatDate body.posts.[2].date 'D MMMM YYYY'}}</span>
-                        <h2>{{body.posts.[2].title.rendered}}</h2>
-                        <span class="author">{{body.posts.[2].author.first_name}} {{body.posts.[2].author.last_name}}</span>
-
-                    </a>
-
-                    <div class="block">
-                        blog 4
-                    </div>
-
-                    <div class="block">
-                        blog 5
-                    </div>
-
+                    {{/each}}
+                    
                 </div>
 
 
