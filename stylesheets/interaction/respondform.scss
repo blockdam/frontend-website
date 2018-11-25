@@ -15,6 +15,7 @@
     height: 7.5rem;
     overflow: hidden;
     width : calc(100% - 2rem);
+    
     @media (max-width: $breakpoint-sm) {
       padding-left: 2rem;
     }
@@ -74,18 +75,13 @@
 
     textarea {
 
-
-      background: $light-grey;
       outline: none;
       max-width: calc(100% - 2rem);
       width: calc(100% - 2rem);
       min-width: calc(100% - 2rem);
       min-height: 80px;
-
       padding: 1rem;
       border: 1px solid $secondary;
-
-
 
     }
 
