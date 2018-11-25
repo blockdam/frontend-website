@@ -6,12 +6,17 @@
   }
 
   aside {
-    position: fixed;
-    z-index: 9;
-    top: 13.5rem;
-    right: 2rem;
+
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $breakpoint-sm){
+
+      position: fixed;
+      z-index: 9;
+      top: 13.5rem;
+      right: 2rem;
+    }
   }
 }
 
