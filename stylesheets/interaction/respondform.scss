@@ -66,9 +66,9 @@
 
   .textarea-container {
 
-    margin: 1rem 0 .25rem 0;
+    //margin: 1rem 0 .25rem 0;
     position: relative;
-    width: 100%;
+    width: calc(100% - 1rem);
 
 
   }
@@ -78,7 +78,9 @@
 
     background: $light-grey;
     outline: none;
-    max-width: 100%;
+    max-width: calc(100% - 2rem);
+    padding: 1rem;
+    border: 1px solid $secondary;
 
   }
 
