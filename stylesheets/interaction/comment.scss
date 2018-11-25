@@ -53,9 +53,8 @@
     position: relative;
     margin-top: 1rem;
     background: $secondary;
-    height: 1.875rem;
-    line-height: 1.875rem;
-    padding: 0 .5rem;
+
+    padding: 0 .75rem;
     @include uppercase();
     cursor: pointer;
   }
