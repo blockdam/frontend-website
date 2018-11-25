@@ -1,16 +1,13 @@
 #blog {
 
 
-
-
-
-
   article {
     margin: 4rem 0;
   }
 
   aside {
     position: fixed;
+    z-index: 9;
     top: 13.5rem;
     right: 2rem;
     display: flex;
