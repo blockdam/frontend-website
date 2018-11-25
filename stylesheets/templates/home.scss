@@ -31,13 +31,9 @@
   #section-magazine {
 
     .block {
-      position: relative;
-      min-height: 300px;
-      background: $grey;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+
+      //min-height: 300px;
+
       margin-bottom: 1rem;
 
       > * {

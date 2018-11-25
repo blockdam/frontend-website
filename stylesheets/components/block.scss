@@ -1,8 +1,10 @@
 a.block {
 
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   text-decoration: none;
   color: black;
   border: none;
@@ -17,7 +19,7 @@ a.block {
     margin-bottom: .25rem;
     letter-spacing: .5px;
   }
-  
+
   span.date, span.author {
 
     @include uppercase();
