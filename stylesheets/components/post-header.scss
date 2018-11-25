@@ -43,6 +43,13 @@
           transform: scaleY(-1);
         }
       }
+
+      &.post-intro--stats--commentcount {
+
+        svg {
+          width: 1.75rem;
+        }
+      }
     }
   }
 
