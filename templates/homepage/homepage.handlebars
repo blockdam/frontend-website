@@ -13,11 +13,10 @@
 
         <section id="section-magazine" class="section-half">
 
-            <a href="/nieuws/2018/a-vision-for-the-blockdam-dao" id="featured-blog" class="block">
-                <!--featured blog-->
+            <a href="{{body.posts.[0].url}}" id="featured-blog" class="block">
 
-                <h2>A vision for the BlockDam DAO!</h2>
-                <span class="author">Bert Bosman | 12-10-2018</span>
+                <h2>{{body.posts.[0].title.rendered}}</h2>
+                <span class="author">{{body.posts.[0].author_first_name}} {{body.posts.[0].author_last_name}}| 12-10-2018</span>
                 <span class="date"></span>
             </a>
 
@@ -29,9 +28,13 @@
 
                 <div id="blog-list">
 
-                    <div class="block">
-                        blog 2
-                    </div>
+                    <a href="{{body.posts.[1].url}}" class="block">
+
+                        <h2>{{body.posts.[1].title.rendered}}</h2>
+                        <span class="author">{{body.posts.[1].author_first_name}} {{body.posts.[1].author_last_name}}| 12-10-2018</span>
+                        <span class="date"></span>
+                    </a>
+
 
                     <div class="block">
                         blog 3
