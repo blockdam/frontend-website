@@ -13,7 +13,7 @@
 
         <section id="section-magazine" class="section-half">
 
-            <a href="{{body.posts.[0].url}}" id="featured-blog" class="block">
+            <a href="{{body.posts.[0].url}}" id="featured-blog" class="block blog">
 
                 <h2>{{body.posts.[0].title.rendered}}</h2>
                 <span class="author">{{body.posts.[0].author.first_name}} {{body.posts.[0].author.last_name}}</span>
@@ -22,7 +22,7 @@
                 {{> icon-energy }}
             </a>
 
-            <div id="recent-comments" class="block">
+            <div id="recent-comments" class="block activity">
 
 
                 <a href="{{body.activities.[0].url}}" id="featured-blog" class="block">
@@ -42,7 +42,11 @@
 
                     {{#each body.posts as |post| }}
 
-                        {{> block item=post }}
+                        {{# unlessEquals @index 1}}
+
+                            {{> block item=post }}
+
+                        {{/unlessEquals}}
 
                     {{/each}}
 
