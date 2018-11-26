@@ -1,74 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {{> head}}
-</head>
-<body id="blog" class="activity" lang="{{body.language.code}}">
 
-    {{> header content=body}}
-    {{> beeldmerk content=body }}
-    {{#unless preview}}
-            {{> map-navigation active=body language=body.language}}
-    {{/unless}}
+{{> head}}
 
-    <main>
-        <div class="scroll-flap">
-            <div id="intro" class="container">
-                <a href="{{#ifEquals ../body.language.code 'en'}}/en/calendar{{else}}/agenda{{/ifEquals}}/" class="category-tab">{{ translate 'Agenda' ../body.language.code }}</a>
-                    {{#each (sanitizeCategories body.taxonomies.categories) as |category| }}
-                        <a href="{{#ifEquals ../body.language.code 'en'}}/en{{/ifEquals}}/{{category.slug}}" class="category-tab">{{category.name}}</a>
+<body id="blog">
+
+{{> header }}
+
+<main id="main">
+
+    <article>
+
+        <div class="container-large">
+            <div class="post-header">
+
+                <div class="post-intro--stats">
+                    <div class="post-intro--stats--votes--up">{{>icon-thumbs-up}}10</div>
+                    <div class="post-intro--stats--votes--down">{{>icon-thumbs-up}}2</div>
+                    <div class="post-intro--stats--commentcount">{{> icon-comments }}3</div>
+                </div>
+
+                <div class="post-intro--title">
+                    {{#each body.taxonomies.categories as |cat|}}
+                        <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
                     {{/each}}
-                    {{#each (sanitizeCategories body.taxonomies.construction_projects) as |related_project| }}
-                        <a href="{{#ifEquals ../body.language.code 'en'}}/en{{/ifEquals}}/project/{{related_project.slug}}" class="category-tab">{{related_project.name}}</a>
-                    {{/each}}
+                    <h2 class="">{{{body.title.rendered}}}</h2>
+                    <div class="date">{{formatDate body.date 'D MMMM YYYY'}}</div>
 
-                <h1>{{{ or body.title.rendered body.title}}}</h1>
+                </div>
 
-                <div class="byline {{#if body.language.translation_id}}has_language_link{{/if}}" >
-
-                            <div class="date_sign">
-                                <span class="activity-snippet-day"><span>{{formatDate body.sessions.[0].date.date 'DD'}}</span></span><br/>
-                                <span class="activity-snippet-month"><span>{{formatDate body.sessions.[0].date.date 'MMMM'}}</span></span>
-                            </div>
-
-                            <address class="author"><span id="author-name">{{translate body.author.first_name body.language.code}}</span>{{#if body.author.organisation}}, {{body.author.organisation}}{{/if}}</address>
-                            <span>, {{translate 'laatst bijgewerkt op' body.language.code}}</span>
-                            <time datetime="{{formatDate body.modified 'YYYY-MM-DD hh:mm' body.language.code }}">{{formatDate body.date 'long' body.language.code}}</time>
-                            {{#if body.language.translation_id}}<div class="language-link"><a  href="{{body.language.translation_url}}">{{translate 'Read in English' body.language.code}}</a></div>{{/if}}
-                        </div>
-
-                {{{ or body.content.rendered body.content}}}
             </div>
         </div>
 
-            {{#> responsive-image id='featured-image-container' class='rellax' rellax-speed="2" format='main' size='full' image=body.main_image}}
-                {{#if this.data.root.body.main_image.photographer}}
-                    <div class="overlay">
-                        <span class="credits evensmallerfont">{{translate 'Foto:' this.data.root.body.language.code}} {{this.data.root.body.main_image.photographer}}</span>
-                    </div>
-                {{/if}}
-            {{/responsive-image }}
+        <div class="post-intro container-small">
+            {{{body.content.rendered}}}
+        </div>
 
-            <div class="scroll-flap">
-                {{> social-buttons}}
-
-                {{#> sections language=body.language}}
-                    {{> activity-info-block }}
-                {{/sections}}
-
-                {{> form-rsvp }}
-
-                {{> comment-section language=body.language}}
-            </div>
-    </main>
+        {{> sections }}
 
 
-        <!--{{> tag-footer}}-->
-        <!--{{> related-content items=body.relatedPosts language=body.language}}-->
+        {{> comment-section}}
 
-        {{{ prerendered 'footer' body.language.code}}}
 
-        {{> popup }}
+    </article>
+
+</main>
+
+<aside>
+    {{> author-post-top }}
+</aside>
+
+<section id="related-posts">
+
+    <div class="container-large">
+        <!--<h2>Lees ook</h2>-->
+
+
+    </div>
+
+</section>
+
+{{> footer }}
+
 </body>
-{{> foot-scripts }}
+
 </html>
