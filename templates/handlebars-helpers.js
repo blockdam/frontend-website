@@ -48,6 +48,16 @@ module.exports = [{
         }
     },
     {
+        name: 'offset',
+        helper: (arr, offset) => {
+            if(arr && arr.constructor === Array) {
+                return arr.slice(offset, arr.length);
+            } else {
+                return;
+            }
+        }
+    },
+    {
         name: 'ifMoreThan',
         helper: (a, b, options) => {
             if (parseInt(a) > b) {
