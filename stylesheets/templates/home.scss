@@ -166,6 +166,10 @@
       position: relative;
       padding: 0;
 
+        .subheader {
+          text-align: left;
+        }
+
         .comment {
           width: calc(100% - 2rem);
           background: $grey;
