@@ -24,7 +24,8 @@
 
             <a href="{{body.activities.[0].url}}" id="coming-event" class="block activity">
 
-                <!--<span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>-->
+                <span>Next event:</span>
+                <span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>
                 <h2>{{body.activities.[0].title}}</h2>
                 <div>{{{body.activities.[0].content}}}</div>
 
