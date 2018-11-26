@@ -27,7 +27,9 @@
                 <!--<span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>-->
                 <h2>{{body.activities.[0].title.rendered}}</h2>
                 <div>{{{body.activities.[0].content.rendered}}}</div>
-                
+
+                {{json body.activities}}
+
             </a>
 
             <div class="flex-row">
