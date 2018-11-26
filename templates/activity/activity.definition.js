@@ -10,7 +10,7 @@ const moment = require('moment');
 
 module.exports = {
 
-    searchSnippetTemplate: 'activity-snippet', // filename of the handlebars template,
+    searchSnippetTemplate: 'search-snippet', // filename of the handlebars template,
 
     /**
      * Gets the data for the search snippet
