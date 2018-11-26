@@ -2,6 +2,8 @@ const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
 const logger = require('../../../services/logger.service');
 const BooleanService = require('../../services/boolean.service');
+const TranslationService = require('../../services/translation.service');
+
 
 
 const moment = require('moment');
@@ -50,19 +52,7 @@ module.exports = {
     getPath: (data, correlationId) => { // path generator for path/url of the page
         return new Promise((resolve, reject) => {
 
-            let path;
-
-            if (data.render_as_blog) {
-
-                const year = moment(data.sessions[0].date.date, 'YYYY').format('YYYY');
-                const pathService = new PathService();
-                const translationService = new TranslationService();
-                path = translationService.path(data.language.code,'calendar/' + year + '/' + pathService.cleanString(data.slug));
-
-            } else {
-
-                path = null;
-            }
+            let path = translationService.path(data.language.code,'calendar/' + year + '/' + pathService.cleanString(data.slug));
 
             resolve(path);
         })
