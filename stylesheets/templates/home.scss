@@ -165,6 +165,7 @@
 
         .date {
           @include uppercase();
+          font-size: .85rem;
         }
     }
 
