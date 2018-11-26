@@ -35,10 +35,7 @@
     .block {
 
       min-height: 200px;
-
       margin-bottom: 1rem;
-
-
     }
 
     #featured-blog {
@@ -87,8 +84,6 @@
 
     #curated-list {
 
-
-      //background: $grey;
       min-height: 600px;
       display: flex;
       flex-direction: column;
@@ -163,6 +158,10 @@
     #dao-block {
       min-height: 500px;
       margin-bottom: 1rem;
+    }
+
+    #community-block {
+      justify-content: flex-start;
     }
 
   }
