@@ -163,6 +163,10 @@
     #community-block {
       justify-content: flex-start;
 
+        .comment {
+          width: 100%;
+        }
+
         .date {
           @include uppercase();
           font-size: .85rem;
