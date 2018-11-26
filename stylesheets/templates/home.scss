@@ -171,6 +171,10 @@
           @include uppercase();
           font-size: .85rem;
         }
+
+        .comment-text {
+          @include small-sans();
+        }
     }
 
   }
