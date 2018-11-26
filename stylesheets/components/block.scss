@@ -57,8 +57,12 @@ a.block {
 
     svg {
 
-      right: auto;
-      left: -1rem;
+      position: absolute;
+      fill: $creme;
+      left: -2rem;
+      bottom: -5px;
+      width: 110px;
+      height: auto;
     }
   }
 }
