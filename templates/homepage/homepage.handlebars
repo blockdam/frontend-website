@@ -40,13 +40,9 @@
 
                 <div id="blog-list">
 
-                    {{#each body.posts as |post| }}
-
-                        {{# unlessEquals @index 1}}
+                    {{#each (offset body.posts 1) as |post| }}
 
                             {{> block item=post }}
-
-                        {{/unlessEquals}}
 
                     {{/each}}
 
