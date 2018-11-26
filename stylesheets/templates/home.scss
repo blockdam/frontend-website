@@ -162,9 +162,11 @@
 
     #community-block {
       justify-content: flex-start;
+      position: relative;
+      padding: 1rem;
 
         .comment {
-          width: 100%;
+          width: calc(100% - 2rem);
         }
 
         .date {
