@@ -20,8 +20,8 @@ module.exports = {
 
             data.calendar.startDate = data.calendar.startDate['date'];
             data.calendar.unix_startDate = moment(data.calendar.startDate).unix();
-            data.calendar.endDate = data.calendar.endDate['date'];
-            data.calendar.unix_endDate = moment(data.calendar.endDate['date']).unix();
+            // data.calendar.endDate = data.calendar.endDate['date'];
+            // data.calendar.unix_endDate = moment(data.calendar.endDate['date']).unix();
             data.calendar.year = moment(data.calendar.startDate).format('YYYY');
             data.calendar.month = moment(data.calendar.startDate).format('MMMM');
             data.parentID = null;
