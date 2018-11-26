@@ -26,6 +26,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             let pagePersistence = new PagePersistence();
+            let discussionService = new DiscussionService();
 
 
             let postOptions = {
