@@ -2,8 +2,6 @@ const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
 const logger = require('../../../services/logger.service');
 const BooleanService = require('../../services/boolean.service');
-const TranslationService = require('../../services/translation.service');
-const DependenciesService = require('../../services/dependencies.service');
 
 
 const moment = require('moment');
