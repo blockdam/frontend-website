@@ -162,6 +162,10 @@
 
     #community-block {
       justify-content: flex-start;
+
+        .date {
+          @include uppercase();
+        }
     }
 
   }
