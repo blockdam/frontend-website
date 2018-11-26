@@ -54,6 +54,12 @@ a.block {
     > * {
       text-align: right;
     }
+
+    svg {
+
+      right: auto;
+      left: -1rem;
+    }
   }
 }
 
