@@ -45,5 +45,15 @@ a.block {
   .content {
     @include small-sans();
   }
+
+  &.activity {
+
+    align-items: flex-end;
+    padding-left: 8rem;
+
+    > * {
+      text-align: right;
+    }
+  }
 }
 
