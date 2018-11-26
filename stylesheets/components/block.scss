@@ -59,11 +59,12 @@ a.block {
 
       position: absolute;
       fill: $creme;
-      left: -2rem;
-      bottom: -5px;
-      width: 110px;
+      left: -4.5rem;
+      bottom: -15px;
+      width: 120px;
       height: auto;
-      transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1) rotate(15deg);
     }
   }
 }
