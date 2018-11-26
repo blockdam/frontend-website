@@ -108,6 +108,10 @@
 
       }
 
+      .week {
+        @include small-sans();
+      }
+
       > div.recommendation {
 
         margin-bottom: 1rem;
