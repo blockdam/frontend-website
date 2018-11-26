@@ -36,6 +36,14 @@ module.exports = {
                 "limit": 6
             };
 
+            let activityOptions = {
+                query : {
+                    "type":"activity"
+                },
+                "sort": {"date":-1},
+                "limit": 6
+            };
+
 
             let linkRecommendationOptions = {
                 query : {
@@ -45,12 +53,14 @@ module.exports = {
             };
 
             let findPosts = pagePersistence.find(postOptions);
+            let findActivities = pagePersistence.find(activityOptions);
             let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
 
-			Promise.all([findPosts,linkRecommendations]).then(values => {
+			Promise.all([findPosts,findActivities,linkRecommendations]).then(values => {
 
 				data.posts = values[0];
-				data.links = values[1];
+                data.activities = values[1];
+				data.links = values[2];
 				logger.info('Get template data', correlationId)
 				resolve(data)
 			})

@@ -17,13 +17,23 @@
 
                 <h2>{{body.posts.[0].title.rendered}}</h2>
                 <span class="author">{{body.posts.[0].author.first_name}} {{body.posts.[0].author.last_name}}</span>
-                <span class="date">{{formatDate body.posts.[1].date 'D MMMM YYYY'}}</span>
+                <span class="date">{{formatDate body.posts.[0].date 'D MMMM YYYY'}}</span>
 
                 {{> icon-energy }}
             </a>
 
             <div id="recent-comments" class="block">
-                recent comments
+
+
+                <a href="{{body.activities.[0].url}}" id="featured-blog" class="block">
+
+                    <span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>
+                    <h2>{{body.activities.[0].title.rendered}}</h2>
+                    <div>{{{body.activities.[0].content.rendered}}}</div>
+
+
+                </a>
+
             </div>
 
             <div class="flex-row">
