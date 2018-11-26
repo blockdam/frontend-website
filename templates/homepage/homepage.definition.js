@@ -1,5 +1,6 @@
 const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
+const DiscussionService = require('../../services/discussion.service');
 const logger = require('../../../services/logger.service');
 
 const moment = require('moment');
