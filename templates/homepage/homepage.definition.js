@@ -55,12 +55,16 @@ module.exports = {
             let findPosts = pagePersistence.find(postOptions);
             let findActivities = pagePersistence.find(activityOptions);
             let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
+            let getDiscussion = discussionService.get();
 
-			Promise.all([findPosts,findActivities,linkRecommendations]).then(values => {
+
+			Promise.all([findPosts,findActivities,linkRecommendations,getDiscussion]).then(values => {
 
 				data.posts = values[0];
                 data.activities = values[1];
 				data.links = values[2];
+                data.discussion = values[3];
+
 				logger.info('Get template data', correlationId)
 				resolve(data)
 			})
