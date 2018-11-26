@@ -25,10 +25,8 @@
             <a href="{{body.activities.[0].url}}" id="coming-event" class="block activity">
 
                 <!--<span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>-->
-                <h2>{{body.activities.[0].title.rendered}}</h2>
-                <div>{{{body.activities.[0].content.rendered}}}</div>
-
-                {{json body.activities.[0]}}
+                <h2>{{body.activities.[0].title}}</h2>
+                <div>{{{body.activities.[0].content}}}</div>
 
             </a>
 
@@ -90,6 +88,9 @@
     </div>
 
 </main>
+
+
+{{json body.activities.[0]}}
 
 
 {{> footer }}
