@@ -22,19 +22,15 @@
                 {{> icon-energy }}
             </a>
 
-            <div id="recent-comments" class="block activity">
+            <a href="{{body.activities.[0].url}}" id="coming-event" class="block activity">
 
+                <!--<span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>-->
+                <h2>{{body.activities.[0].title.rendered}}</h2>
+                <div>{{{body.activities.[0].content.rendered}}}</div>
 
-                <a href="{{body.activities.[0].url}}" id="featured-blog" class="block">
+                {{json body.activities}}
 
-                    <!--<span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>-->
-                    <h2>{{body.activities.[0].title.rendered}}</h2>
-                    <div>{{{body.activities.[0].content.rendered}}}</div>
-
-
-                </a>
-
-            </div>
+            </a>
 
             <div class="flex-row">
 
