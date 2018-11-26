@@ -1,0 +1,26 @@
+<div class="blog-card-small snippet {{body.type}} {{explode body.categories}} {{explode body.tags}} {{#if body.render_as_blog }}rendered-as-blog{{/if}}">
+
+        <a class="image-container" href="{{#if body.render_as_blog }}{{body.url}}{{else}}{{body.contact.url}}{{/if}}" {{#if body.render_as_blog }}{{else}} target="_blank"{{/if}}>
+
+                <span class="activity-snippet-day"><span>{{formatDate body.calendar.startDate 'DD'}}</span></span><br/>
+                <span class="activity-snippet-month"><span>{{formatDate body.calendar.startDate 'MMMM'}}</span></span>
+
+
+         </a>
+    <div class="card-text">
+
+        <!--<a href="{{#if body.render_as_blog }}{{body.url}}{{else}}{{body.contact.url}}{{/if}}">-->
+            {{#if body.taxonomies.events.[0]}}<span class="evensmallerfont lightyellow">{{body.taxonomies.events.[0].name}}</span>{{/if}}
+            <span class="evensmallerfont">{{body.sessions.[0].location.name}}</span>
+            <h3>{{{body.title}}}</h3>
+            <div class="search-excerpt smallerfont">{{{body.content}}}</div>  <!-- longerSearchExcerpt  -->
+            <span class="smallerfont grey">{{body.sessions.[0].location.submitted_address}}</span>
+            <span class="smallerfont grey">{{body.sessions.[0].start_time}} t/m  {{endTime body.sessions}} uur</span>
+
+
+            <a class="underlined_link smallerfont" href="{{#if body.render_as_blog }}{{body.url}}{{else}}{{body.contact.url}}{{/if}}">Lees verder op {{#if body.render_as_blog }}zuidas.nl{{else}}{{body.contact.url}}{{/if}}</a>
+        <!--</a>-->
+
+
+    </div>
+</div>
