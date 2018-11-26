@@ -72,6 +72,12 @@
       }
     }
 
+    #coming-event {
+
+      background: $grey;
+      color: black;
+    }
+
     #blog-list {
 
       @media (min-width: $breakpoint-sm) {
