@@ -41,5 +41,9 @@ a.block {
     font-size: 1.85rem;
     line-height: 1;
   }
+
+  .content {
+    @include small-sans();
+  }
 }
 

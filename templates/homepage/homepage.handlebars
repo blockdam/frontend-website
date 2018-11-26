@@ -24,10 +24,9 @@
 
             <a href="{{body.activities.[0].url}}" id="coming-event" class="block activity">
 
-                <span class="author">Next event:</span>
+                <span class="author">Next event: {{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>
                 <h2>{{body.activities.[0].title}}</h2>
-                <span class="date">{{formatDate body.activities.[0].calendar.startDate 'DD MMMM'}}</span>
-                <div>{{{body.activities.[0].content}}}</div>
+                <div class="content">{{{body.activities.[0].content}}}</div>
 
             </a>
 
