@@ -5,8 +5,8 @@
   //margin-right: 6rem;
   align-self: flex-end;
   margin-bottom: 1rem;
-  padding: 0rem 0rem 0rem 1.5rem;
-  border-left: 4px double #d5d5d5;
+  padding: .5rem 0 1rem 1.5rem;
+  border: 1px double #d5d5d5;
 
 
   @media (max-width: $breakpoint-bax) {
@@ -56,7 +56,8 @@
   .thread-reply {
 
     display: none;
-    position: relative;
+    position: absolute;
+    bottom: -2.5rem;
     margin-top: 1rem;
     //background: $secondary;
 
