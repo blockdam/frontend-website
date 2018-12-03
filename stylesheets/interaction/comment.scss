@@ -8,6 +8,7 @@
   padding: .5rem 1.5rem 1rem 1.5rem;
   margin-bottom: .75rem;
   border: 1px double #d5d5d5;
+  @include small-sans();
 
 
   @media (max-width: $breakpoint-bax) {
