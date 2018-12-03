@@ -6,7 +6,7 @@ class Appreciation {
         this.post_id = null;
 
     }
-    
+
 
     init(post_id) {
 
@@ -40,6 +40,25 @@ class Appreciation {
         if(self.isRated(this.url)) {
            // self.disableRatingButtons(); // disable rating buttons
         }
+
+        this.get();
+    }
+
+    get() {
+
+        let self = this,
+            url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id;
+
+        axios.get(url)
+            .then(function(response){
+                if (response.status !== 200) {
+                    console.log('foutje bedankt')
+                }
+                self.rating = response.data;
+
+            }).catch((error) => {
+            console.log(error);
+        });
     }
 
     ratePositive() {
