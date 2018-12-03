@@ -151,13 +151,11 @@ class Respond extends Commenting {
 
         let self = this;
         let tempComment = self.commentTemplateNew.cloneNode(true);
-        tempComment.querySelector('h4').innerHTML = this.response.author;
-        tempComment.querySelector('.datetime').innerHTML = moment().format('D MMMM YYYY | HH:mm');
+        tempComment.querySelector('.datetime').innerHTML = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
         tempComment.querySelector('#commment-template-text').innerHTML = this.response.content;
         tempComment.removeAttribute('id');
         this.commentsWrapper.insertBefore(tempComment, this.commentsWrapper.firstChild);
         this.onFocusOut();
-        // this.init();
 
         setTimeout(function(){
             tempComment.classList.add('visible');
