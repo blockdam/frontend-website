@@ -4,6 +4,7 @@ class Appreciation {
 
         // this.ip = null;
         this.rating = {};
+        this.post_id = null;
 
     }
 
@@ -12,6 +13,7 @@ class Appreciation {
         let self = this;
 
         self.url = window.location.href;
+        this.post_id = post_id;
 
         this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
@@ -22,11 +24,11 @@ class Appreciation {
         this.buttonsPostive.forEach( (b) => {
 
             b.addEventListener('click',
-                self.ratePositive(post_id), true);
+                self.ratePositive(self.post_id), true);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.addEventListener('click', self.rateNegative(post_id), true);
+            b.addEventListener('click', self.rateNegative(self.post_id), true);
         });
 
 
@@ -34,32 +36,32 @@ class Appreciation {
             self.disableRatingButtons(); // disable rating buttons
         }
 
-        this.get(post_id);
+        // this.get(self.post_id);
     }
 
-    get(post_id) {
-
-        let self = this,
-            url = '/wp-json/wp/v2/post_rating?post_ID=' + post_id;
-
-        axios.get(url)
-            .then(function(response){
-                if (response.status !== 200) {
-                    console.log('foutje bedankt')
-                }
-                self.rating = response.data;
-
-            }).catch((error) => {
-                console.log(error);
-
-            });
-    }
+    // get(post_id) {
+    //
+    //     let self = this,
+    //         url = '/wp-json/wp/v2/post_rating?post_ID=' + post_id;
+    //
+    //     axios.get(url)
+    //         .then(function(response){
+    //             if (response.status !== 200) {
+    //                 console.log('foutje bedankt')
+    //             }
+    //             self.rating = response.data;
+    //
+    //         }).catch((error) => {
+    //             console.log(error);
+    //
+    //         });
+    // }
 
     ratePositive(postID) {
 
         let self = this,
             newPercentage,
-            url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=positive';
+            url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id + '&value=positive';
 
         axios.post(url)
             .then(function(response){
@@ -79,7 +81,7 @@ class Appreciation {
     rateNegative(postID) {
 
         let self = this,
-            url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=negative';
+            url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id + '&value=negative';
 
         axios.post(url)
             .then(function(response){
@@ -159,11 +161,11 @@ class Appreciation {
         let self = this;
 
         this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', self.ratePositive(post_id),true);
+            b.removeEventListener('click', self.ratePositive(self.post_id),true);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', self.rateNegative(post_id),true);
+            b.removeEventListener('click', self.rateNegative(self.post_id),true);
         });
     }
 }
