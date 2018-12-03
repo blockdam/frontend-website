@@ -20,10 +20,10 @@ class Appreciation {
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
         this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
 
-        this.buttonsPostive.forEach( (b) => {
-
-            b.addEventListener('click', self.ratePositive(),false);
-        });
+        // this.buttonsPostive.forEach( (b) => {
+        //
+        //     b.addEventListener('click', self.ratePositive(),false);
+        // });
 
         this.buttonsNegative.forEach( (b) => {
 
