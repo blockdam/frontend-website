@@ -22,13 +22,14 @@ class Appreciation {
         // this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
         // this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
 
-        this.buttonsPostive = [].slice.call(document.querySelectorAll('post-intro--stats--votes--up'));
-        this.buttonsNegative = [].slice.call(document.querySelectorAll('post-intro--stats--votes--down'));
+        this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
+        this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
 
         this.buttonsPostive.forEach( (b) => {
+           
             b.addEventListener('click', function(event,errors) {
                 console.log(post_id);
-                    self.ratePositive(post_id);
+                self.ratePositive(post_id);
             });
         });
 
