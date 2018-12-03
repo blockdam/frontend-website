@@ -79,11 +79,13 @@
 
   .rating-container {
 
-    display: none;
-    position: absolute;
-    left: -4rem;
-    top: -.25rem;
+    //display: none;
     cursor: pointer;
+
+    display: flex;
+    left: auto;
+    right: -3rem;
+    top: -2rem;
 
     flex-direction: row;
 
@@ -175,6 +177,9 @@
   .rating-container  {
 
     display: flex;
+    position: absolute;
+    left: -4rem;
+    top: -.25rem;
   }
 
   .author-thumbnail-container {
