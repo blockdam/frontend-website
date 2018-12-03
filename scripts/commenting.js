@@ -119,11 +119,11 @@ class Respond extends Commenting {
         this.response.email = document.getElementById("respondEmail").value;
         this.response.content = document.getElementById("respondMessage").value;
         this.response.postId = document.getElementById("respondPostId").value;
-        this.response.subscription = '';
+        // this.response.subscription = '';
 
-        if (document.getElementById("subscribeToAlerts").checked) {
-            this.response.subscription = 'yes';
-        }
+        // if (document.getElementById("subscribeToAlerts").checked) {
+        //     this.response.subscription = 'yes';
+        // }
 
         document.getElementById("respondMessage").value = '';
 

@@ -10,11 +10,13 @@ button {
   background: $secondary;
   @include uppercase();
   font-size: .75rem;
+  transition: all 250ms ease;
 
   &:hover {
 
     background: $black;
     border-color: $black;
+    color: white;
     box-shadow: none;
     outline: none;
   }

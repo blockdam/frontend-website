@@ -11,14 +11,14 @@
         <div class="flex-column">
 
             <label>{{ translate 'Naam' language.code}}*</label>
-            <input required minlength="2" type="text" name="author" id="respondAuthor" size="22" required>
+            <input required minlength="2" type="text" name="author" id="respondAuthor" size="22">
 
         </div>
 
         <div class="flex-column">
 
             <label>{{ translate 'E-mail' language.code}}</label>
-            <input required type="email" name="email" id="respondEmail"  size="22" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Ongeldig email adres">
+            <input type="email" name="email" id="respondEmail"  size="22" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Ongeldig email adres">
 
             <input id="respondPostId" type="hidden" value="{{body.objectID}}">
             <input id="respondPostSlug" type="hidden" value="{{body.slug}}">
