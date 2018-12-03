@@ -42,7 +42,7 @@
 
     display: block;
     @include uppercase();
-    //font-size: .85rem;
+    font-size: .85rem;
     margin-bottom: .5rem;
     display: inline-block;
     //background: #d5d5d5;
@@ -109,7 +109,7 @@
           transition: all 250ms ease;
 
           &:hover {
-            transform: rotate(15deg);
+            transform: rotate(10deg);
           }
         }
 
