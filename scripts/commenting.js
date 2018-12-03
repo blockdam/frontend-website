@@ -181,6 +181,7 @@ class Respond extends Commenting {
 
         this.threadElement.appendChild(tempComment);
 
+
         setTimeout(function(){
             tempComment.classList.add('visible');
             self.commentParent = null;
