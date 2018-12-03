@@ -20,7 +20,8 @@ module.exports = function() {
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/social-dialogue.js'
+            path.projectFolder + '/scripts/commenting.js',
+            path.projectFolder + '/scripts/appreciation.js'
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))
@@ -33,8 +34,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/homepage.js',
-            path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/social-dialogue.js'
+            path.projectFolder + '/scripts/menu.js'
 
             ])
             // .pipe(plumber())
@@ -47,9 +47,9 @@ module.exports = function() {
         var blog = gulp.src([
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
-            path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/social-dialogue.js'
+            path.projectFolder + '/scripts/commenting.js',
+            path.projectFolder + '/scripts/appreciation.js'
 
         ])
         // .pipe(plumber())
@@ -63,7 +63,8 @@ module.exports = function() {
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/social-dialogue.js'
+            path.projectFolder + '/scripts/commenting.js',
+            path.projectFolder + '/scripts/appreciation.js'
 
             ])
             // .pipe(plumber())
