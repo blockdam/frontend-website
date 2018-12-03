@@ -2,12 +2,7 @@ class Appreciation {
 
     constructor() {
 
-        this.ip = null;
-        this.appreciationRow = null;
-        this.arc = null
-        this.positiveButton = null;
-        this.negativeButton = null;
-        this.percentage = 0;
+        // this.ip = null;
 
     }
 
