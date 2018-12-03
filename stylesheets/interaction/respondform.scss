@@ -74,7 +74,7 @@
     }
 
     .flex-column {
-
+      position: relative;
       width: calc(50% - 1rem;);
 
       &:nth-child(2) {
