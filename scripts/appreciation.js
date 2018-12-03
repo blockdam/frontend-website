@@ -3,6 +3,7 @@ class Appreciation {
     constructor() {
 
         // this.ip = null;
+        this.rating = {};
 
     }
 
@@ -10,17 +11,7 @@ class Appreciation {
 
         let self = this;
 
-
-
-        // this.postID = document.querySelector('#post-id');
         self.url = window.location.href;
-
-        // this.appreciationContainer = document.getElementById('blog-rating');
-        // this.appreciationRow = document.querySelector('#appreciation-row');
-        // this.arc = this.appreciationRow.querySelector('.circle-foreground');
-        // this.percentageValue = this.appreciationRow.querySelector('#appreciation-percentage');
-        // this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
-        // this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
 
         this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
@@ -39,9 +30,7 @@ class Appreciation {
             });
         });
 
-        // this.rating = {};
 
-        // disable conrating if already rated this page
         if(self.isRated(this.url)) {
             self.disableRatingButtons(); // disable rating buttons
         }
@@ -89,6 +78,8 @@ class Appreciation {
 
         console.log(self.rating);
 
+        document.querySelectorAll('post-intro--stats--votes--up span').innerHTML = parseInt(self.rating.positive_count) + 1;
+
         this.setRated(self.url);
     }
 
@@ -107,7 +98,7 @@ class Appreciation {
                 }
             });
 
-        document.querySelectorAll('post-intro--stats--votes--down span').innerHTML = self.rating;
+        document.querySelectorAll('post-intro--stats--votes--down span').innerHTML = parseInt(self.rating.negative_count) + 1;
 
         this.setRated(self.url);
     }
