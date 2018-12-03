@@ -67,6 +67,8 @@ class Appreciation {
 
     ratePositive(postID) {
 
+        console.log(postID);
+
         let self = this,
             newPercentage,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=positive';
@@ -89,6 +91,8 @@ class Appreciation {
     }
 
     rateNegative(postID) {
+
+
 
         let self = this,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=negative';
