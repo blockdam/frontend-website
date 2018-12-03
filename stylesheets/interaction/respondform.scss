@@ -84,15 +84,15 @@
       border: 1px solid $secondary;
       background: transparent;
 
+      &:focus {
+
+        background: transparent;
+        border-color: black;
+        transition: height 1000ms ease-out;
+      }
+
     }
 
-    textarea:focus {
-
-      background: $white;
-      transition: height 1000ms ease-out;
-
-
-    }
 
     textarea:focus + .comment-shape-container .comment-shape {
       background: $white;
