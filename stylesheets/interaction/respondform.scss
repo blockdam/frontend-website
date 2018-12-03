@@ -68,6 +68,10 @@
       }
     }
 
+    label {
+      @include uppercase();
+    }
+
     .flex-column:nth-child(odd) {
       margin-left: 2rem;
     }
