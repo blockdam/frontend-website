@@ -32,10 +32,6 @@ class Appreciation {
             }, true);
         });
 
-        this.handlerRateNegative = function() {
-            self.rateNegative();
-        }
-
         this.buttonsNegative.forEach( (b) => {
             b.addEventListener('click', function handlerRateNegative() {
                 self.rateNegative();
@@ -132,13 +128,13 @@ class Appreciation {
     disableRatingButtons() {
 
         let self = this;
-
-        this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', handlerRatePositive, true);
-        });
-
-        this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', handlerRateNegative, true);
-        });
+        //
+        // this.buttonsPostive.forEach( (b) => {
+        //     b.removeEventListener('click', handlerRatePositive, true);
+        // });
+        //
+        // this.buttonsNegative.forEach( (b) => {
+        //     b.removeEventListener('click', handlerRateNegative, true);
+        // });
     }
 }
