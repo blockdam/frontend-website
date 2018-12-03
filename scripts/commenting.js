@@ -212,7 +212,7 @@ class Respond extends Commenting {
         if (isNaN(previousValue)) { previousValue = 0; }
 
         let newValue = previousValue + 1;
-        valueContainer.innerHTML = newValue;
+        valueContainer.innerHTML = ' | +' + newValue;
         this._setRated(commentID);
 
     }
