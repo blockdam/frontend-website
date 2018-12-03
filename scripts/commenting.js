@@ -207,7 +207,7 @@ class Respond extends Commenting {
                 console.log(response);
             });
 
-        let valueContainer= el.parentNode.parentNode.querySelector('.rating-value');
+        let valueContainer= el.parentNode.querySelector('.rating-value');
         let previousValue = parseInt(valueContainer.innerHTML.replace(' | +',''));
         if (isNaN(previousValue)) { previousValue = 0; }
 
