@@ -179,8 +179,9 @@
           width: calc(100% - 2rem);
           border: 1px solid $secondary;
           padding: .5rem 1rem;
-          margin: 0;
-          margin-bottom: 1px;
+          //margin: 0;
+          //margin-bottom: 1px;
+          margin: .25rem 0 .25rem 0;
         }
 
         .date {
