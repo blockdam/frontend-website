@@ -96,10 +96,10 @@
                                 {{#each blog.interaction.nested_comments as |thread| }}
                                     {{#each thread as |comment| }}
                                         <div class="comment {{#ifEquals @index 0}}threadhead{{/ifEquals}}">
-                                            <span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }}</span></h4>
+                                            <span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }}</span>
 
                                             <div class="comment-text">
-                                                {{{ excerpt comment.content}}}
+                                                {{{ comment.content}}}
                                             </div>
                                         </div>
                                     {{/each}}
