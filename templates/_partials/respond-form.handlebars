@@ -20,20 +20,20 @@
             <label>{{ translate 'E-mail' language.code}}</label>
             <input required type="email" name="email" id="respondEmail"  size="22" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Ongeldig email adres">
 
+            <input id="respondPostId" type="hidden" value="{{body.objectID}}">
+            <input id="respondPostSlug" type="hidden" value="{{body.slug}}">
+            <input id="respondPostTitle" type="hidden" value="{{body.title}}">
+            <input id="respondPostCommentCount" type="hidden" value="{{body.comment_count}}">
         </div>
 
-        <input id="respondPostId" type="hidden" value="{{body.objectID}}">
-        <input id="respondPostSlug" type="hidden" value="{{body.slug}}">
-        <input id="respondPostTitle" type="hidden" value="{{body.title}}">
-        <input id="respondPostCommentCount" type="hidden" value="{{body.comment_count}}">
+
 
     </div>
 
     <div class="flex-row">
-
-        <div id="formerror" aria-live="assertive" role="alert"></div>
-
+        
         <button class="large" type="submit">{{translate 'Plaats reactie' language.code}}</button>
+        <div id="formerror" aria-live="assertive" role="alert"></div>
         <span id="warning" style="display:none">{{translate 'Over maximaal 15 seconden kunt u weer een keer reageren' language.code}}</span>
 
     </div>
