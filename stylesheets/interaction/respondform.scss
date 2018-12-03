@@ -72,7 +72,7 @@
       @include uppercase();
     }
 
-    .flex-column:nth-child(odd) {
+    .flex-column:nth-child(3) {
       margin-left: 2rem;
     }
 
