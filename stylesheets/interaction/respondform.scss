@@ -68,7 +68,7 @@
 
       //margin: 1rem 0 .25rem 0;
       position: relative;
-      width: calc(100% - 1rem);
+      width: calc(100% - 0rem);
 
 
     }
@@ -76,9 +76,9 @@
     textarea {
 
       outline: none;
-      max-width: calc(100% - 2rem);
-      width: calc(100% - 2rem);
-      min-width: calc(100% - 2rem);
+      max-width: calc(100% - 0rem);
+      width: calc(100% - 0rem);
+      min-width: calc(100% - 0rem);
       min-height: 80px;
       padding: 1rem;
       border: 1px solid $secondary;
