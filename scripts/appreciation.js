@@ -21,16 +21,12 @@ class Appreciation {
 
         this.buttonsPostive.forEach( (b) => {
 
-            b.addEventListener('click', function(event,errors) {
-                console.log(post_id);
-                self.ratePositive(post_id);
-            });
+            b.addEventListener('click',
+                self.ratePositive(post_id), true);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.addEventListener('click', function(event,errors) {
-                self.rateNegative(post_id);
-            });
+            b.addEventListener('click', self.rateNegative(post_id), true);
         });
 
 
@@ -160,16 +156,14 @@ class Appreciation {
      */
     disableRatingButtons() {
 
+        let self = this;
+
         this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', function(event,errors) {
-                self.ratePositive(post_id);
-            });
+            b.removeEventListener('click', self.ratePositive(post_id),true);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', function(event,errors) {
-                self.rateNegative(post_id);
-            });
+            b.removeEventListener('click', self.rateNegative(post_id),true);
         });
     }
 }
