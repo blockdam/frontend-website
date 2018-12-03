@@ -168,10 +168,7 @@
   //
   //}
 
-  .thread-reply {
 
-      display: inline-block;
-  }
 
   .rating-container  {
 
@@ -183,4 +180,9 @@
     right: auto;
     left: -6rem;
   }
+}
+
+.comment:last-of-type .thread-reply  {
+
+    display: inline-block;
 }
