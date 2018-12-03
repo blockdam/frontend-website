@@ -15,7 +15,9 @@ class Appreciation {
 
         let self = this;
 
-        this.postID = document.querySelector('#post-id');
+        console.log(post_id);
+
+        // this.postID = document.querySelector('#post-id');
         self.url = window.location.href;
 
         // this.appreciationContainer = document.getElementById('blog-rating');
