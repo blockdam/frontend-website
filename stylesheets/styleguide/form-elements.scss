@@ -5,4 +5,64 @@ button {
   line-height: 2.5rem;
   cursor: pointer;
   background: $secondary;
+  border: 1px solid $secondary;
+  width: auto;
+  background: $secondary;
+  @include uppercase();
+  font-size: .85rem;
+
+  &:hover {
+
+    background: $black;
+    border-color: $black;
+    box-shadow: none;
+    outline: none;
+  }
 }
+
+label {
+  @include uppercase();
+  font-size: .85rem;
+}
+
+input {
+
+  border: 1px solid $secondary;
+  padding: 0 .5rem;
+  width: calc(100% - 1rem - 2px); // has padding en border
+  background: transparent;
+
+  &:focus {
+    border-color: black;
+  }
+}
+
+textarea {
+
+  outline: none;
+  max-width: calc(100% - 2rem - 2px);
+  width: calc(100% - 2rem - 2px);
+  min-width: calc(100% - 2rem - 2px);
+
+  padding: 1rem;
+  border: 1px solid $secondary;
+  background: transparent;
+
+  &:focus {
+
+    background: transparent;
+    border-color: black;
+    transition: height 1000ms ease-out;
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: $grey;
+  }
+
+  &:focus::placeholder {
+    display: none;
+  }
+
+}
+
