@@ -1,9 +1,13 @@
 class Appreciation {
 
     constructor() {
-        
+
         this.rating = {};
         this.post_id = null;
+
+    }
+
+   handlerRatePositive = function() {
 
     }
 
@@ -19,12 +23,12 @@ class Appreciation {
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
         this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
 
-        this.handlerRatePositive = function() {
-            self.ratePositive();
-        }
+
 
         this.buttonsPostive.forEach( (b) => {
-            b.addEventListener('click', self.handlerRatePositive ,false);
+            b.addEventListener('click', function handlerRatePositive() {
+                self.ratePositive();
+            }, true);
         });
 
         this.handlerRateNegative = function() {
@@ -32,7 +36,9 @@ class Appreciation {
         }
 
         this.buttonsNegative.forEach( (b) => {
-            b.addEventListener('click', self.handlerRateNegative, false);
+            b.addEventListener('click', function handlerRateNegative() {
+                self.rateNegative();
+            }, true);
         });
 
 
@@ -126,11 +132,11 @@ class Appreciation {
         let self = this;
 
         this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', self.handlerRatePositive, false);
+            b.removeEventListener('click', handlerRatePositive, true);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', self.rateNegative(), false);
+            b.removeEventListener('click', handlerRateNegative, true);
         });
     }
 }
