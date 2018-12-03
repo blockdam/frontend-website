@@ -9,7 +9,7 @@ button {
   width: auto;
   background: $secondary;
   @include uppercase();
-  font-size: .85rem;
+  font-size: .75rem;
 
   &:hover {
 
@@ -22,31 +22,60 @@ button {
 
 label {
   @include uppercase();
-  font-size: .85rem;
+  font-size: .75rem;
 }
 
-input {
+input[type=text], input[type=email], input[type=password], input[type=tel], input[type=url], input[type=time], input[type=date] {
 
-  border: 1px solid $secondary;
+  display: inline-block;
+  height: 2.5rem;
+  line-height: 2.5rem;
   padding: 0 .5rem;
+  border: 1px solid $secondary;
   width: calc(100% - 1rem - 2px); // has padding en border
   background: transparent;
+  box-shadow: none !important;
+  border-radius: 0;
+  -webkit-appearance: none;
+  @include bodyText();
+  cursor: pointer;
+  transition: all 250ms ease;
 
   &:focus {
     border-color: black;
   }
+  &::-moz-focus-inner { border: 0; padding: 0; }
+  &::-webkit-input-placeholder { color: $black !important; }
+  &:-moz-placeholder { color: $black !important; } /* Firefox 18- */
+  &::-moz-placeholder {  color: $black !important; } /* Firefox 19+ */
+  &:-ms-input-placeholder { color: $black !important; }
+}
+
+input[type=file] {
+
+  display: block;
+  height: 4rem;
+  background: $light-grey;
+  border: none !important;
+  padding: 1rem;
 }
 
 textarea {
 
   outline: none;
-  max-width: calc(100% - 2rem - 2px);
-  width: calc(100% - 2rem - 2px);
-  min-width: calc(100% - 2rem - 2px);
-
-  padding: 1rem;
+  max-width: calc(100% - 1rem - 2px);
+  width: calc(100% - 1rem - 2px);
+  min-width: calc(100% - 1rem - 2px);
   border: 1px solid $secondary;
   background: transparent;
+  word-wrap: break-word;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  transition: all 250ms ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+  @include bodyText();
 
   &:focus {
 
@@ -65,4 +94,16 @@ textarea {
   }
 
 }
+
+select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 0px;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+}
+
+
 
