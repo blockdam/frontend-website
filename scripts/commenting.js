@@ -199,6 +199,8 @@ class Respond extends Commenting {
 
         let url = '/wp-json/wp/v2/comment_rating?comment_id=' + commentID;
 
+        console.log('huh');
+
         axios.post(url)
             .then(function(response){
                 if (response.status !== 200) {
@@ -208,7 +210,7 @@ class Respond extends Commenting {
             });
 
         let valueContainer= el.parentNode.parentNode.querySelector('.rating-value');
-        let previousValue = parseInt(valueContainer.innerHTML);
+        let previousValue = parseInt(valueContainer.innerHTML.replace(' | +',''));
         if (isNaN(previousValue)) { previousValue = 0; }
 
         let newValue = previousValue + 1;
