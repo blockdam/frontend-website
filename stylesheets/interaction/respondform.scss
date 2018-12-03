@@ -57,11 +57,19 @@
       //visibility: hidden;
       /*		width: calc(50% - .5rem);*/
       margin-top: 0;
-      width: calc(50% - 2rem);
-      border: 1px solid $black;
+      width: calc(100% - 2rem);
+      border: 1px solid $secondary;
       background: transparent;
       //opacity: 0;
       //transition: opacity 1000ms ease-out;
+
+      &:nth-child(odd) {
+        margin-left: 2rem;
+      }
+
+      &:focus {
+        border-color: black;
+      }
     }
 
     .textarea-container {
