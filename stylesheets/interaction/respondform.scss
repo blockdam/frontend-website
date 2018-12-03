@@ -78,6 +78,10 @@
 
     }
 
+    .thread .respondform {
+      width: calc(100% - 7rem);
+    }
+
     textarea {
       min-height: 80px;
     }
