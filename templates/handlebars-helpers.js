@@ -96,7 +96,7 @@ module.exports = [{
             } else if (type === 'image-single-large' || type === 'images-trio' || type === 'image-single-left' || type === 'image-single-right') {
                 return 'container-large';
             } else if (type === 'streamer') {
-                return 'container-medium';
+                return 'container-small';
             } else if (type === 'video' || type === 'paragraph' || type === 'images-duo' || type === 'tweet' || type === 'paragraph-plus' || type === 'quote' || type === 'story') {
                 return 'container-small';
             }
