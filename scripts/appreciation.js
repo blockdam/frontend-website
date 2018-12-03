@@ -13,22 +13,23 @@ class Appreciation {
         let self = this;
 
         self.url = window.location.href;
-        this.post_id = post_id;
+        self.post_id = post_id;
 
         this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
         this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
 
-
         this.buttonsPostive.forEach( (b) => {
 
-            b.addEventListener('click',
-                self.ratePositive(self.post_id), true);
+            b.addEventListener('click', self.ratePositive(),false);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.addEventListener('click', self.rateNegative(self.post_id), true);
+
+            b.addEventListener('click', function(event,errors) {
+                self.rateNegative();
+            });
         });
 
 
@@ -36,7 +37,7 @@ class Appreciation {
             self.disableRatingButtons(); // disable rating buttons
         }
 
-        // this.get(self.post_id);
+        // this.get(post_id);
     }
 
     // get(post_id) {
@@ -57,28 +58,32 @@ class Appreciation {
     //         });
     // }
 
-    ratePositive(postID) {
+    ratePositive() {
 
-        let self = this,
-            newPercentage,
-            url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id + '&value=positive';
 
-        axios.post(url)
-            .then(function(response){
+        function() {
 
-                if (response.status !== 200) {
-                    console.log('foutje bedankt')
-                }
+            let self = this,
+                newPercentage,
+                url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id + '&value=positive';
+
+            axios.post(url)
+                .then(function (response) {
+
+                    if (response.status !== 200) {
+                        console.log('foutje bedankt')
+                    }
+                });
+
+            this.countsPositive.forEach((span) => {
+                span.innerHTML = parseInt(self.rating.positive_count) + 1;
             });
 
-        this.countsPositive.forEach( (span) => {
-            span.innerHTML = parseInt(self.rating.positive_count) + 1;
-        });
-
-        this.setRated(self.url);
+            this.setRated(self.url);
+        }
     }
 
-    rateNegative(postID) {
+    rateNegative() {
 
         let self = this,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + self.post_id + '&value=negative';
@@ -158,14 +163,16 @@ class Appreciation {
      */
     disableRatingButtons() {
 
-        let self = this;
-
         this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', self.ratePositive(self.post_id),true);
+            b.removeEventListener('click', function(event,errors) {
+                self.ratePositive();
+            });
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', self.rateNegative(self.post_id),true);
+            b.removeEventListener('click', function(event,errors) {
+                self.rateNegative();
+            });
         });
     }
 }
