@@ -199,8 +199,6 @@ class Respond extends Commenting {
 
         let url = '/wp-json/wp/v2/comment_rating?comment_id=' + commentID;
 
-        console.log('huh');
-
         axios.post(url)
             .then(function(response){
                 if (response.status !== 200) {
