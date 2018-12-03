@@ -25,16 +25,16 @@ class Appreciation {
         // this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
         // this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
 
-        let buttonsPostive = [].slice.call(document.querySelectorAll('post-intro--stats--votes--up'));
-        let buttonsNegative = [].slice.call(document.querySelectorAll('post-intro--stats--votes--down'));
+        this.buttonsPostive = [].slice.call(document.querySelectorAll('post-intro--stats--votes--up'));
+        this.buttonsNegative = [].slice.call(document.querySelectorAll('post-intro--stats--votes--down'));
 
-        buttonsPostive.forEach( (b) => {
+        this.buttonsPostive.forEach( (b) => {
             b.addEventListener('click', function(event,errors) {
                     self.ratePositive(post_id);
             });
         });
 
-        buttonsNegative.forEach( (b) => {
+        this.buttonsNegative.forEach( (b) => {
             b.addEventListener('click', function(event,errors) {
                 self.rateNegative(post_id);
             });
@@ -68,24 +68,6 @@ class Appreciation {
             });
     }
 
-    draw() {
-
-        let self = this;
-            // c =  (100 - 16) * 3.14,
-            // arcOffset = (self.rating.percentage / 100) * c;
-
-
-
-        // this.arc.style.strokeDasharray =  arcOffset + ' ' + c;
-        // this.arc.style.strokeDashoffset = arcOffset;
-        //
-        // this.percentageValue.innerHTML = self.rating.percentage;
-        // this.textPositiveCount.innerHTML = self.rating.positive_count;
-        // this.textTotalCount.innerHTML = self.rating.total_count;
-        //
-        // this.appreciationContainer.classList.add('visible');
-    }
-
     ratePositive(postID) {
 
         let self = this,
@@ -106,11 +88,6 @@ class Appreciation {
 
         console.log(self.rating);
 
-       // document.querySelectorAll('post-intro--stats--votes--up span').innerHTML = self.rating;
-
-        // // self.rating.total_count = self.rating.total_count + 1;
-        // self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
-       // this.draw();
         this.setRated(self.url);
     }
 
@@ -129,10 +106,6 @@ class Appreciation {
 
         document.querySelectorAll('post-intro--stats--votes--down span').innerHTML = self.rating;
 
-        // self.rating.total_count = self.rating.total_count + 1;
-        // self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
-        // console.log(self.rating);
-        // this.draw();
         this.setRated(self.url);
     }
 
@@ -195,11 +168,17 @@ class Appreciation {
      * Removes rating buttons from DOM
      */
     disableRatingButtons() {
-        let buttons = [].slice.call(document.querySelectorAll('#appreciation-buttons button'));
 
-        buttons.forEach ( (b) => {
-            b.style.display = 'none';
+        this.buttonsPostive.forEach( (b) => {
+            b.removeEventListener('click', function(event,errors) {
+                self.ratePositive(post_id);
+            });
         });
-        document.querySelector('#appreciation-buttons span').style.display = 'block';
+
+        this.buttonsNegative.forEach( (b) => {
+            b.removeEventListener('click', function(event,errors) {
+                self.rateNegative(post_id);
+            });
+        });
     }
 }
