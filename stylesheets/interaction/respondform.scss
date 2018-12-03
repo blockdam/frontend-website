@@ -57,7 +57,7 @@
       //visibility: hidden;
       /*		width: calc(50% - .5rem);*/
       margin-top: 0;
-      width: 100%;
+      width: calc(100% - 1rem); // has padding
       border: 1px solid $secondary;
       background: transparent;
       //opacity: 0;
