@@ -76,12 +76,13 @@
     textarea {
 
       outline: none;
-      max-width: calc(100% - 0rem);
-      width: calc(100% - 0rem);
-      min-width: calc(100% - 0rem);
+      max-width: calc(100% - 2rem - 2px);
+      width: calc(100% - 2rem - 2px);
+      min-width: calc(100% - 2rem - 2px);
       min-height: 80px;
       padding: 1rem;
       border: 1px solid $secondary;
+      background: transparent;
 
     }
 
