@@ -24,23 +24,19 @@
     margin-top: -5rem;
   }
 
-  h4 {
 
-    margin-bottom: .5rem;
-  }
-
-  .text-balloon {
-
-    position: absolute;
-    top: 2rem;
-    left: -.8rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-bottom: 1px solid $black;
-    border-left: 1px solid $black;
-    background: $white;
-    transform: rotate(45deg);
-  }
+  //.text-balloon {
+  //
+  //  position: absolute;
+  //  top: 2rem;
+  //  left: -.8rem;
+  //  width: 1.5rem;
+  //  height: 1.5rem;
+  //  border-bottom: 1px solid $black;
+  //  border-left: 1px solid $black;
+  //  background: $white;
+  //  transform: rotate(45deg);
+  //}
 
   .datetime {
 
@@ -81,8 +77,8 @@
 
     //display: none;
     cursor: pointer;
-
     display: flex;
+    position: absolute;
     left: auto;
     right: -3rem;
     top: -2rem;
