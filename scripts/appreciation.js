@@ -28,6 +28,7 @@ class Appreciation {
         this.buttonsPostive.forEach( (b) => {
             b.addEventListener('click', function handlerRatePositive() {
                 self.ratePositive();
+                b.removeEventListener('click', handlerRatePositive, true);
             }, true);
         });
 
@@ -38,12 +39,13 @@ class Appreciation {
         this.buttonsNegative.forEach( (b) => {
             b.addEventListener('click', function handlerRateNegative() {
                 self.rateNegative();
+                b.removeEventListener('click', handlerRateNegative, true);
             }, true);
         });
 
 
         if(self.isRated(this.url)) {
-            self.disableRatingButtons(); // disable rating buttons
+           // self.disableRatingButtons(); // disable rating buttons
         }
     }
 
