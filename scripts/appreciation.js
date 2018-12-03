@@ -10,7 +10,7 @@ class Appreciation {
 
         let self = this;
 
-        console.log(post_id);
+
 
         // this.postID = document.querySelector('#post-id');
         self.url = window.location.href;
@@ -27,6 +27,7 @@ class Appreciation {
 
         this.buttonsPostive.forEach( (b) => {
             b.addEventListener('click', function(event,errors) {
+                console.log(post_id);
                     self.ratePositive(post_id);
             });
         });
