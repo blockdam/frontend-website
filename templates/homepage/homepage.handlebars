@@ -96,7 +96,7 @@
                                 {{#each blog.interaction.nested_comments as |thread| }}
                                     {{#each thread as |comment| }}
                                         <div class="comment {{#ifEquals @index 0}}threadhead{{/ifEquals}}">
-                                            <span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }}</span>
+                                            <span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }} <span class='rating-value'>{{#ifMoreThan rating 0}} | +{{../rating}}{{/ifMoreThan}}</span></span>
 
                                             <div class="comment-text">
                                                 {{{ comment.content}}}
