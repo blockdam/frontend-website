@@ -203,6 +203,3 @@ class Appreciation {
         document.querySelector('#appreciation-buttons span').style.display = 'block';
     }
 }
-
-
-
