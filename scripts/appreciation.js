@@ -78,7 +78,7 @@ class Appreciation {
 
         console.log(self.rating);
 
-        document.querySelectorAll('post-intro--stats--votes--up span').innerHTML = parseInt(self.rating.positive_count) + 1;
+        document.querySelectorAll('.post-intro--stats--votes--up span').innerHTML = parseInt(self.rating.positive_count) + 1;
 
         this.setRated(self.url);
     }
@@ -98,7 +98,7 @@ class Appreciation {
                 }
             });
 
-        document.querySelectorAll('post-intro--stats--votes--down span').innerHTML = parseInt(self.rating.negative_count) + 1;
+        document.querySelectorAll('.post-intro--stats--votes--down span').innerHTML = parseInt(self.rating.negative_count) + 1;
 
         this.setRated(self.url);
     }
