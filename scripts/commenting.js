@@ -168,8 +168,7 @@ class Respond extends Commenting {
 
         let self = this;
         let tempComment = self.commentTemplateReply.cloneNode(true);
-        tempComment.querySelector('h4').innerHTML = this.response.author;
-        tempComment.querySelector('.datetime').innerHTML = moment().format('D MMMM YYYY | HH:mm');
+        tempComment.querySelector('.datetime').innerHTML = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
         tempComment.querySelector('#commment-template-text').innerHTML = this.response.content;
         tempComment.style.display = 'flex';
         // return respondForm to top
@@ -180,7 +179,7 @@ class Respond extends Commenting {
         this.onFocusOut();
         this.init();
 
-        this.threadElement.insertBefore(tempComment,this.threadElement.children[2]);
+        this.threadElement.appendChild(tempComment);
 
         setTimeout(function(){
             tempComment.classList.add('visible');
