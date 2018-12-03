@@ -182,7 +182,12 @@
   }
 }
 
-.comment:last-of-type .thread-reply  {
+.comment:last-of-type {
+
+  margin-bottom: 3.5rem;
+
+  .thread-reply  {
 
     display: inline-block;
+  }
 }
