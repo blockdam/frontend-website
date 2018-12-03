@@ -61,31 +61,21 @@ class Appreciation {
 
     ratePositive(postID) {
 
-        console.log(postID);
-
         let self = this,
             newPercentage,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=positive';
 
-
         axios.post(url)
             .then(function(response){
-
-                console.log(response);
-
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
                 }
             });
 
-        console.log(self.rating);
-
         this.countsPositive.forEach( (span) => {
             span.innerHTML = parseInt(self.rating.positive_count) + 1;
         });
-
-
 
         this.setRated(self.url);
     }
