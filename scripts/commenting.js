@@ -43,7 +43,8 @@ class Respond extends Commenting {
         let newForm = self.respondForm.cloneNode(true);
         this.respondForm.remove();
         newForm.style.display = 'flex';
-        this.threadElement.insertBefore(newForm,this.threadElement.children[2]);
+       // this.threadElement.insertBefore(newForm,this.threadElement.children[2]);
+        this.threadElement.appendChild(newForm,this.threadElement);
         // this.onFocusOut();
 
         this.init();
