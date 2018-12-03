@@ -16,7 +16,7 @@ class Appreciation {
         this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
-        this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
+        this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
 
 
         this.buttonsPostive.forEach( (b) => {
