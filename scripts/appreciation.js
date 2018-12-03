@@ -1,11 +1,9 @@
 class Appreciation {
 
     constructor() {
-
-        // this.ip = null;
+        
         this.rating = {};
         this.post_id = null;
-
 
     }
 
@@ -42,24 +40,6 @@ class Appreciation {
             self.disableRatingButtons(); // disable rating buttons
         }
     }
-
-    // get(post_id) {
-    //
-    //     let self = this,
-    //         url = '/wp-json/wp/v2/post_rating?post_ID=' + post_id;
-    //
-    //     axios.get(url)
-    //         .then(function(response){
-    //             if (response.status !== 200) {
-    //                 console.log('foutje bedankt')
-    //             }
-    //             self.rating = response.data;
-    //
-    //         }).catch((error) => {
-    //             console.log(error);
-    //
-    //         });
-    // }
 
     ratePositive() {
 
@@ -104,16 +84,6 @@ class Appreciation {
         this.setRated(self.url);
     }
 
-
-
-
-
-
-    /**
-     * Add postId of page to ratedPages in local storage
-     * Keeps track of pages that have been rated by the user
-     * @param url
-     */
     setRated(url) {
         let self = this;
         if (typeof(Storage) !== 'undefined') { // check if local stage is supported by browser
@@ -137,12 +107,6 @@ class Appreciation {
         }
     }
 
-
-    /**
-     * Check if page is already rated
-     * Chack agains the localStorage property ratedPages
-     * @param url
-     */
     isRated(url) {
 
         let ratedPages = null;
@@ -157,11 +121,6 @@ class Appreciation {
         return false;
     }
 
-
-    /**
-     * Disable rating buttons
-     * Removes rating buttons from DOM
-     */
     disableRatingButtons() {
 
         let self = this;
