@@ -15,6 +15,9 @@ class Appreciation {
 
         this.buttonsPostive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up'));
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
+        this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
+        this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
+
 
         this.buttonsPostive.forEach( (b) => {
 
@@ -78,14 +81,16 @@ class Appreciation {
 
         console.log(self.rating);
 
-        document.querySelectorAll('.post-intro--stats--votes--up span').innerHTML = parseInt(self.rating.positive_count) + 1;
+        this.countsPositive.forEach( (span) => {
+            span.innerHTML = parseInt(self.rating.positive_count) + 1;
+        });
+
+
 
         this.setRated(self.url);
     }
 
     rateNegative(postID) {
-
-
 
         let self = this,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=negative';
@@ -98,7 +103,9 @@ class Appreciation {
                 }
             });
 
-        document.querySelectorAll('.post-intro--stats--votes--down span').innerHTML = parseInt(self.rating.negative_count) + 1;
+        this.countsNegative.forEach( (span) => {
+            span.innerHTML = parseInt(self.rating.negative_count) + 1;
+        });
 
         this.setRated(self.url);
     }
