@@ -193,8 +193,8 @@ class Respond extends Commenting {
         var self = this;
 
         if(self._isRated(commentID)) {
-         //   self._disableRatingButtons(el); // disable rating buttons
-         //   return;
+           self._disableRatingButtons(el); // disable rating buttons
+           return;
         }
 
         let url = '/wp-json/wp/v2/comment_rating?comment_id=' + commentID;
