@@ -6,10 +6,7 @@ class Appreciation {
         this.post_id = null;
 
     }
-
-   handlerRatePositive = function() {
-
-    }
+    
 
     init(post_id) {
 
