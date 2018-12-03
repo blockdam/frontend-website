@@ -18,14 +18,29 @@ class Appreciation {
         this.postID = document.querySelector('#post-id');
         self.url = window.location.href;
 
-        this.appreciationContainer = document.getElementById('blog-rating');
+        // this.appreciationContainer = document.getElementById('blog-rating');
         // this.appreciationRow = document.querySelector('#appreciation-row');
         // this.arc = this.appreciationRow.querySelector('.circle-foreground');
         // this.percentageValue = this.appreciationRow.querySelector('#appreciation-percentage');
-        this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
-        this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
+        // this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
+        // this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
 
-        this.rating = {};
+        let buttonsPostive = [].slice.call(document.querySelectorAll('post-intro--stats--votes--up'));
+        let buttonsNegative = [].slice.call(document.querySelectorAll('post-intro--stats--votes--down'));
+
+        buttonsPostive.forEach( (b) => {
+            b.addEventListener('click', function(event,errors) {
+                    self.ratePositive(post_id);
+            });
+        });
+
+        buttonsNegative.forEach( (b) => {
+            b.addEventListener('click', function(event,errors) {
+                self.rateNegative(post_id);
+            });
+        });
+
+        // this.rating = {};
 
         // disable conrating if already rated this page
         if(self.isRated(this.url)) {
@@ -46,7 +61,7 @@ class Appreciation {
                     console.log('foutje bedankt')
                 }
                 self.rating = response.data;
-                self.draw();
+
             }).catch((error) => {
                 console.log(error);
 
@@ -55,18 +70,20 @@ class Appreciation {
 
     draw() {
 
-        let self = this,
-            c =  (100 - 16) * 3.14,
-            arcOffset = (self.rating.percentage / 100) * c;
+        let self = this;
+            // c =  (100 - 16) * 3.14,
+            // arcOffset = (self.rating.percentage / 100) * c;
 
-        this.arc.style.strokeDasharray =  arcOffset + ' ' + c;
-        this.arc.style.strokeDashoffset = arcOffset;
 
-        this.percentageValue.innerHTML = self.rating.percentage;
-        this.textPositiveCount.innerHTML = self.rating.positive_count;
-        this.textTotalCount.innerHTML = self.rating.total_count;
 
-        this.appreciationContainer.classList.add('visible');
+        // this.arc.style.strokeDasharray =  arcOffset + ' ' + c;
+        // this.arc.style.strokeDashoffset = arcOffset;
+        //
+        // this.percentageValue.innerHTML = self.rating.percentage;
+        // this.textPositiveCount.innerHTML = self.rating.positive_count;
+        // this.textTotalCount.innerHTML = self.rating.total_count;
+        //
+        // this.appreciationContainer.classList.add('visible');
     }
 
     ratePositive(postID) {
@@ -74,22 +91,26 @@ class Appreciation {
         let self = this,
             newPercentage,
             url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=positive';
-            url = '/wp-json/wp/v2/post_rating?post_ID=' + postID + '&value=positive';
+
 
         axios.post(url)
             .then(function(response){
 
                 console.log(response);
 
+
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
                 }
             });
 
-        self.rating.positive_count = self.rating.positive_count + 1;
-        self.rating.total_count = self.rating.total_count + 1;
-        self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
-        this.draw();
+        console.log(self.rating);
+
+       // document.querySelectorAll('post-intro--stats--votes--up span').innerHTML = self.rating;
+
+        // // self.rating.total_count = self.rating.total_count + 1;
+        // self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
+       // this.draw();
         this.setRated(self.url);
     }
 
@@ -106,10 +127,12 @@ class Appreciation {
                 }
             });
 
-        self.rating.total_count = self.rating.total_count + 1;
-        self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
-        console.log(self.rating);
-        this.draw();
+        document.querySelectorAll('post-intro--stats--votes--down span').innerHTML = self.rating;
+
+        // self.rating.total_count = self.rating.total_count + 1;
+        // self.rating.percentage = Math.round((self.rating.positive_count / self.rating.total_count) * 100);
+        // console.log(self.rating);
+        // this.draw();
         this.setRated(self.url);
     }
 
