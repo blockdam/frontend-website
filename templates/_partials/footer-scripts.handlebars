@@ -1,2 +1,13 @@
 <!-- page specific script -->
 <script src="{{baseUrl}}/assets/scripts/{{{body.type}}}.js" async=""></script>
+
+{{#ifEquals body.type 'post' }}
+
+    <script>
+        var appreciation = new Appreciation;
+        appreciation.init({{../body._id}});
+    </script>
+
+{{/ifEquals}}
+
+

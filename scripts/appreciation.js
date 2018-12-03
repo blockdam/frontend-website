@@ -14,21 +14,14 @@ class Appreciation {
     init(post_id) {
 
         let self = this;
-        // findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
-        //
-        // findIP.then(ip => {
-        //
-        //     self.ip = ip;
-        //     console.log(self.ip);
-        // })
 
         this.postID = document.querySelector('#post-id');
         self.url = window.location.href;
 
         this.appreciationContainer = document.getElementById('blog-rating');
-        this.appreciationRow = document.querySelector('#appreciation-row');
-        this.arc = this.appreciationRow.querySelector('.circle-foreground');
-        this.percentageValue = this.appreciationRow.querySelector('#appreciation-percentage');
+        // this.appreciationRow = document.querySelector('#appreciation-row');
+        // this.arc = this.appreciationRow.querySelector('.circle-foreground');
+        // this.percentageValue = this.appreciationRow.querySelector('#appreciation-percentage');
         this.textPositiveCount = this.appreciationRow.querySelector('#text-positive-count');
         this.textTotalCount = this.appreciationRow.querySelector('#text-total-count');
 
@@ -187,4 +180,6 @@ class Appreciation {
         document.querySelector('#appreciation-buttons span').style.display = 'block';
     }
 }
+
+
 
