@@ -26,3 +26,13 @@
   }
 
 }
+
+.flex-column {
+
+  @media (min-width: $breakpoint-sm) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+}
