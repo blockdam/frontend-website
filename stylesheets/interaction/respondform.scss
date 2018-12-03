@@ -13,7 +13,7 @@
 
     height: 7.5rem;
     overflow: hidden;
-    width : calc(100% - 0rem);
+    width: calc(100% - 6rem);
 
     @media (max-width: $breakpoint-sm) {
       padding-left: 2rem;
