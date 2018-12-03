@@ -13,7 +13,7 @@
 
     height: 7.5rem;
     overflow: hidden;
-    width : calc(100% - 2rem);
+    width : calc(100% - 0rem);
 
     @media (max-width: $breakpoint-sm) {
       padding-left: 2rem;
@@ -57,8 +57,9 @@
       //visibility: hidden;
       /*		width: calc(50% - .5rem);*/
       margin-top: 0;
-      width: 100%;
+      width: calc(50% - 2rem);
       border: 1px solid $black;
+      background: transparent;
       //opacity: 0;
       //transition: opacity 1000ms ease-out;
     }
