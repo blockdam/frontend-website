@@ -6,6 +6,7 @@ class Appreciation {
         this.rating = {};
         this.post_id = null;
 
+
     }
 
     init(post_id) {
@@ -20,24 +21,26 @@ class Appreciation {
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
         this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
 
-        // this.buttonsPostive.forEach( (b) => {
-        //
-        //     b.addEventListener('click', self.ratePositive(),false);
-        // });
+        this.handlerRatePositive = function() {
+            self.ratePositive();
+        }
+
+        this.buttonsPostive.forEach( (b) => {
+            b.addEventListener('click', self.handlerRatePositive ,false);
+        });
+
+        this.handlerRateNegative = function() {
+            self.rateNegative();
+        }
 
         this.buttonsNegative.forEach( (b) => {
-
-            b.addEventListener('click', function(event,errors) {
-                self.rateNegative();
-            });
+            b.addEventListener('click', self.handlerRateNegative, false);
         });
 
 
         if(self.isRated(this.url)) {
             self.disableRatingButtons(); // disable rating buttons
         }
-
-        // this.get(post_id);
     }
 
     // get(post_id) {
@@ -161,16 +164,14 @@ class Appreciation {
      */
     disableRatingButtons() {
 
+        let self = this;
+
         this.buttonsPostive.forEach( (b) => {
-            b.removeEventListener('click', function(event,errors) {
-                self.ratePositive();
-            });
+            b.removeEventListener('click', self.handlerRatePositive, false);
         });
 
         this.buttonsNegative.forEach( (b) => {
-            b.removeEventListener('click', function(event,errors) {
-                self.rateNegative();
-            });
+            b.removeEventListener('click', self.rateNegative(), false);
         });
     }
 }
