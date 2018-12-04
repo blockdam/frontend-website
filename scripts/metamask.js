@@ -22,7 +22,7 @@ class MetaMask {
 
                     web3.eth.getGasPrice(function(error, result){
                         if(!error)
-                            document.querySelector('#metamask_private span span').innerHTML = result;
+                            document.querySelector('#metamask_private span').innerHTML = result;
                         else
                             console.error(error);
                     });
