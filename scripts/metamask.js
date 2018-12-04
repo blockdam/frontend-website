@@ -16,7 +16,7 @@ class MetaMask {
                     await ethereum.enable();
                     // Acccounts now exposed
                   //  web3.eth.sendTransaction({/* ... */});
-                    console.log(web3.eth);
+                 
                     document.querySelector('#metamask_private').classList.add("visible");
                     // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
@@ -28,6 +28,8 @@ class MetaMask {
                     });
 
                     let bdc = new web3js.eth.Contract({}, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+
+                    console.log(bdc);
 
                 } catch (error) {
                     // User denied account access...
