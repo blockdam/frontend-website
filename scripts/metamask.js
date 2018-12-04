@@ -17,8 +17,7 @@ class MetaMask {
                     // Acccounts now exposed
                   //  web3.eth.sendTransaction({/* ... */});
                     console.log(web3.eth);
-                    document.querySelector('#metamask_private').style.display = "block";
-                    document.querySelector('#metamask_private').style.height = "auto";
+                    document.querySelector('#metamask_private').classList.add("visible");
                     document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
 
