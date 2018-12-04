@@ -20,6 +20,10 @@ class MetaMask {
                     document.querySelector('#metamask_private').classList.add("visible");
                     document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
+                    web3.eth.getGasPrice().then((price) =>{
+                        document.querySelector('#metamask_private span').innerHTML = price
+
+                    });
 
                 } catch (error) {
                     // User denied account access...
