@@ -16,7 +16,7 @@ class MetaMask {
                     await ethereum.enable();
                     // Acccounts now exposed
                   //  web3.eth.sendTransaction({/* ... */});
-                 
+
                     document.querySelector('#metamask_private').classList.add("visible");
                     // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
