@@ -18,12 +18,16 @@ class MetaMask {
                   //  web3.eth.sendTransaction({/* ... */});
                     console.log(web3.eth);
                     document.querySelector('#metamask_private').classList.add("visible");
-                    document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
+                    // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    web3.eth.getGasPrice().then((price) =>{
+                    let showGasPrice = function(price) {
+
                         document.querySelector('#metamask_private span').innerHTML = price
+                    }
 
-                    });
+                    web3.eth.getGasPrice(showGasPrice);
+
+
 
                 } catch (error) {
                     // User denied account access...
