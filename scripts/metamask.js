@@ -20,12 +20,9 @@ class MetaMask {
                     document.querySelector('#metamask_private').classList.add("visible");
                     // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    let showGasPrice = function(price) {
-
-                        document.querySelector('#metamask_private span').innerHTML = price
-                    }
-
-                    web3.eth.getGasPrice().then(console.log);
+                    web3.eth.getGasPrice().then(gasPrice => {
+                        console.log('gasPrice = ' + gasPrice);
+                    });
 
 
 
