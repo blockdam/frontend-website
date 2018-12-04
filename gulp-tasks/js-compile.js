@@ -32,6 +32,7 @@ module.exports = function() {
 
         var homepage = gulp.src([
             path.projectFolder + '/scripts/detect.js',
+            path.projectFolder + '/scripts/metamask.js',
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js'
