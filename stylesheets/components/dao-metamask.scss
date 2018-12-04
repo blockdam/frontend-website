@@ -11,8 +11,9 @@
   //display: block;
   height: auto;
   padding: .5rem 1rem;
-  background: $secondary;
+  background: $grey;
   color: white;
+  margin-bottom: 1rem;
 
   span {
     @include uppercase();
