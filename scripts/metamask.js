@@ -25,7 +25,7 @@ class MetaMask {
                         document.querySelector('#metamask_private span').innerHTML = price
                     }
 
-                    web3.eth.getGasPrice(showGasPrice);
+                    web3.eth.getGasPrice().then(showGasPrice);
 
 
 
