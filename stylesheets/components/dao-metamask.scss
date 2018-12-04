@@ -1,12 +1,14 @@
 #metamask_private {
 
-  display: none;
+  //display: none;
   height: 0;
   transition: height 500ms ease;
+  overflow: hidden;
 
 }
 
 #metamask_private.visible {
+  //display: block;
   height: auto;
   padding: .5rem 1rem;
   background: $secondary;
