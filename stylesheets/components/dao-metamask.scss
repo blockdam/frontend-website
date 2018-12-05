@@ -14,7 +14,8 @@
     left: .5rem;
     height: 1.5rem;
     width: auto;
-    filter: grayscale();
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
   }
 
 }
