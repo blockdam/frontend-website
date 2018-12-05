@@ -5,6 +5,17 @@
   transition: height 500ms ease;
   overflow: hidden;
   @include small-sans();
+  padding-left: 4rem;
+
+
+  svg  {
+
+    position: absolute;
+    left: .5rem;
+    height: 1.5rem;
+    width: auto;
+    filter: grayscale();
+  }
 
 }
 
