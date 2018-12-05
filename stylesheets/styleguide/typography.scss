@@ -66,6 +66,13 @@
       line-height: 1.66;
       text-transform: uppercase;
       letter-spacing: 1.5px;
+}
+
+@mixin uppercase-large {
+
+  @include uppercase;
+  font-size: 1.3rem;
+  line-height: 1.4;
 
 }
 
