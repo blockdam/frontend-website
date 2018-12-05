@@ -8,6 +8,7 @@
   align-items: flex-end;
   width : 100%;
   min-height: 400px;
+  flex-wrap: wrap;
 
   h2 {
     width: 100%;
@@ -17,6 +18,7 @@
   > div.flex-half {
 
     padding: 1rem;
+    width : calc(50% - 2rem);
 
 
     ul {
