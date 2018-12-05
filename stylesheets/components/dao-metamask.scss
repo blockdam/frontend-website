@@ -9,6 +9,7 @@
 
   svg  {
 
+    display: none;
     position: absolute;
     top: .25rem;
     left: -.4rem;
@@ -26,6 +27,10 @@
   padding: .5rem 1rem .5rem 3rem;
   //background: $grey;
   //margin-bottom: 1rem;
+
+  svg {
+    display: block;
+  }
 
   span {
     @include uppercase();
