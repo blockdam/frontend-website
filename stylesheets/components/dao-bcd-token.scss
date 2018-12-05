@@ -9,4 +9,14 @@
   width : 100%;
   min-height: 400px;
 
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  > div.flex-half {
+
+    padding: 1rem;  
+  }
+
 }
