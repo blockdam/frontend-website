@@ -1,0 +1,16 @@
+
+.manifest-point-count {
+
+  svg {
+
+    width: 3rem;
+    height: auto;
+
+  }
+
+  > span {
+
+    @include heavy();
+  }
+
+}
