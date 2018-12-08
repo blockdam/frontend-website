@@ -6,15 +6,6 @@
 
   margin-bottom: 2.5rem;
   margin-left: -4rem;
-}
-
-.manifest-point-body {
-  width: calc(100% - 4rem);
-}
-
-
-.manifest-point-count {
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -39,18 +30,22 @@
     margin-right: .5rem;
   }
 
-  .manifest-point-heading {
-    @include condensed-header();
-    font-size: 2rem;
-    line-height: .9;
-  }
+  .manifest-point-body {
+    width: calc(100% - 4rem);
 
+    .manifest-point-heading {
+      @include condensed-header();
+      font-size: 2rem;
+      line-height: .9;
+    }
+
+    .manifest-point-text {
+
+      padding: 0;
+      line-height: 1.35;
+      width: 100%;
+
+    }
+  }
 }
 
-  .manifest-point-text {
-
-    padding: 0;
-    line-height: 1.35;
-    width: 100%;
-
-  }
