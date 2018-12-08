@@ -86,6 +86,7 @@ module.exports = {
                 author: data.author,
                 sections: data.sections,
                 main_image: data.main_image,
+                interaction: data.interaction,
                 children: data.children,
                 manifest: data.manifest
 
