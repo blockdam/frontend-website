@@ -1,25 +1,22 @@
 <section id="comment-section" class="container-medium">
 
-    <!--<h2>-->
-        <!--{{ translate 'Reacties' language.code}}-->
-    <!--</h2>-->
+    <h2>
+     Leave a comment ...
+    </h2>
 
 </section>
 
+<section id="commenting">
 
+    <div class="container-small">
 
-    <section id="commenting">
-
-        <div class="container-small">
-
-            <div id="respondcontainer">
-                {{> respond-form language=language}}
-            </div>
-
-            <div id="comments-wrapper">
-                {{> comment-list comments=body.interaction.nested_comments}}
-            </div>
+        <div id="respondcontainer">
+            {{> respond-form language=language}}
         </div>
 
-    </section>
-</div>
+        <div id="comments-wrapper">
+            {{> comment-list comments=body.interaction.nested_comments}}
+        </div>
+    </div>
+
+</section>
