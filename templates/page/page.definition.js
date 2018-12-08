@@ -87,6 +87,7 @@ module.exports = {
                 sections: data.sections,
                 main_image: data.main_image,
                 children: data.children,
+                manifest: data.manifest
 
             };
             // logger.info('Mapped post fields', correlationId);
