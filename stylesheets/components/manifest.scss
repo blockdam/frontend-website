@@ -12,8 +12,8 @@
 
   svg {
 
-    width: 3rem;
-    height: auto;
+    width: auto;
+    height: 2.5rem;
     margin-right: .25rem;
 
   }
@@ -23,14 +23,14 @@
     display: inline-block;
     @include heavy();
     font-weight: 500;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     line-height: .9;
     margin-right: .5rem;
   }
 
   .manifest-point-heading {
     @include condensed-header();
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     line-height: .9;
   }
 
