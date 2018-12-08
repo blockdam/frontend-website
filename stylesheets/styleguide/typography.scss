@@ -49,11 +49,13 @@
 
 @mixin condensed-header {
 
-       font-family: "Gotham Cond SSm A", "Gotham Cond SSm B";
-       font-style: normal;
-       font-weight: 600;
-       font-size: 1.125rem;
-       line-height: 1.77;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.35;
+        font-size: 1.8rem;
+        font-family: Gotham Cond SSm A,Gotham Cond SSm B;
+        letter-spacing: .5px;
+        padding-bottom: .125rem;
 
 }
 
