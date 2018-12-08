@@ -27,4 +27,8 @@
     line-height: .9;
   }
 
+  .manifest-point-heading {
+    @include condensed-header();
+  }
+
 }
