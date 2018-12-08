@@ -1,6 +1,10 @@
 
 .manifest-point-count {
 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
   svg {
 
     width: 3rem;
