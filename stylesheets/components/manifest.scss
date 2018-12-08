@@ -25,10 +25,13 @@
     font-weight: 500;
     font-size: 3.5rem;
     line-height: .9;
+    margin-right: .5rem;
   }
 
   .manifest-point-heading {
     @include condensed-header();
+    font-size: 3.5rem;
+    line-height: .9;
   }
 
 }
