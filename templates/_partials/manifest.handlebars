@@ -3,10 +3,11 @@
     {{#each body.manifest as |point|}}
 
         <div>
+            <span class="manifest-point-count"> {{> icon-hash }} <span>{{@index}}</span></span>
             <span class="manifest-point-heading">{{ point.heading }}</span>
             <span class="manifest-point-text"> {{ point.text }}</span>
         </div>
-        
+
     {{/each}}
 
 </section>
