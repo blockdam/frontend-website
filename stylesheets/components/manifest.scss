@@ -1,3 +1,8 @@
+.manifest-point {
+
+  margin-bottom: 3rem;
+}
+
 
 .manifest-point-count {
 
@@ -9,7 +14,7 @@
 
     width: 3rem;
     height: auto;
-    margin-right: .5rem;
+    margin-right: .25rem;
 
   }
 
@@ -19,6 +24,7 @@
     @include heavy();
     font-weight: 500;
     font-size: 3.5rem;
+    line-height: .9;
   }
 
 }
