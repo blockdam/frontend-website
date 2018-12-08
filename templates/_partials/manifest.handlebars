@@ -6,10 +6,13 @@
             <div class="manifest-point-count">
                 {{> icon-hash }}
                 <span>{{indexBump @index}}</span>
-                 <span class="manifest-point-heading">{{ point.heading }}</span>
+                <div class="manifest-point-body">
+                     <span class="manifest-point-heading">{{ point.heading }}</span>
+                    <div class="manifest-point-text"> {{{ point.text }}}</div>
+                </div>
             </div>
 
-            <div class="manifest-point-text"> {{{ point.text }}}</div>
+
         </div>
 
     {{/each}}
