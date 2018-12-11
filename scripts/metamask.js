@@ -33,11 +33,16 @@ class MetaMask {
                             console.error(error);
                     });
 
-                    console.log(self.contractBCDToken.abi);
+                    // console.log(self.contractBCDToken.abi);
 
-                    let bdc = web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    let bdc = web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7', function(error,result){
+                        if(!error)
+                            console.log(result);
+                        else
+                            console.error(error);
+                    });
 
-                    console.log(bdc);
+          
 
                 } catch (error) {
                     // User denied account access...
