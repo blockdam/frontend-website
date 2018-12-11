@@ -36,12 +36,17 @@ class MetaMask {
                             console.error(error);
                     });
 
+                    var myAbi = web3.eth.contract(self.contractBCDToken.abi);
+                    var myfunction = myAbi.at('0x788A378e7F82e36B3719644e042102d68BF597C7');
 
-                    let bcd = new web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    console.log(myfunction);
 
-                    console.log(bcd);
-                    console.log('2');
-
+                    // myfunction.get.call(function (err, xname) {
+                    //     if (err) { console.log(err) }
+                    //     if (xname) {
+                    //
+                    //         document.getElementById(“xbalance”).innerHTML = “last inserted value into the blockchain is : “ + xname;
+                    //     }
 
 
                 } catch (error) {
