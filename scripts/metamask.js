@@ -41,6 +41,11 @@ class MetaMask {
 
                     console.log(bcd);
 
+                    bcd.totalSupply.call().then( (result) => {
+
+                        console.log(result);
+                    })
+
                     // myfunction.get.call(function (err, xname) {
                     //     if (err) { console.log(err) }
                     //     if (xname) {
