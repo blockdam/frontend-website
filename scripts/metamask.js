@@ -57,7 +57,7 @@ class MetaMask {
                         }
                     })
 
-                    bcd.balanceOf.call(function (err, data) {
+                    bcd.balanceOf.call('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78', function (err, data) {
                         if (err) {
                             console.log(err)
                         }
