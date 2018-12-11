@@ -14,17 +14,11 @@
 
     <script>
 
-        setTimeout( function() {
-
-            loadJSON("./assets/smartcontracts/abi.json", function(response) {
-                var metaMask = new MetaMask(JSON.parse(response));
-                metaMask.init();
-            });
-
-        },2000)
-
-
-
+        loadJSON("./assets/smartcontracts/abi.json", function(response) {
+            var metaMask = new MetaMask(response);
+            metaMask.init();
+        });
+        
     </script>
 
 
