@@ -35,14 +35,14 @@ class MetaMask {
 
                     // console.log(self.contractBCDToken.abi);
 
-                    let bdc = web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7', function(error,result){
+                    web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7', function(error,result){
                         if(!error)
                             console.log(result);
                         else
                             console.error(error);
                     });
 
-          
+
 
                 } catch (error) {
                     // User denied account access...
