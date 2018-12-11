@@ -16,11 +16,9 @@
 
         setTimeout( function() {
 
-
-            loadJSON("http://blockdam.publikaan.nl/assets/smartcontracts/abi.json", function(response) {
-                console.log(response);
-                // var metaMask = new MetaMask(response);
-                // metaMask.init();
+            loadJSON("./assets/smartcontracts/abi.json", function(response) {
+                var metaMask = new MetaMask(JSON.parse(response));
+                metaMask.init();
             });
 
         },2000)
