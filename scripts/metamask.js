@@ -36,9 +36,8 @@ class MetaMask {
                             console.error(error);
                     });
 
-                    //
 
-                    let bcd = web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    let bcd = new web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
 
                     console.log(bcd);
 
