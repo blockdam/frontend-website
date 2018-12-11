@@ -39,13 +39,15 @@ module.exports = {
             };
             let findPosts = pagePersistence.find(postOptions);
 
-            Promise.all([findPosts]).then(values => {
+            // Promise.all([findPosts]).then(values => {
+            //
+            //     data.linkrecommendations = values[0];
+            //     logger.info('Get template data', correlationId)
+            //
+            //
+            // });
 
-                data.related_posts = values[0];
-                logger.info('Get template data', correlationId)
-                resolve(data)
-
-            });
+            resolve(data)
         })
     },
 
