@@ -21,11 +21,8 @@
                 </div>
 
                 <div class="post-intro--title">
-                    {{#each body.taxonomies.categories as |cat|}}
-                        <span class="post-intro--category taxonomy-tab">{{cat.name}}</span>
-                    {{/each}}
                     <h2 class="">{{{body.title.rendered}}}</h2>
-                    <div class="date">{{formatDate body.date 'D MMMM YYYY'}}</div>
+                    <div class="date">Last iupdated at {{formatDate body.modified 'D MMMM YYYY'}}</div>
 
                 </div>
 
@@ -46,9 +43,6 @@
 
 </main>
 
-<aside>
-    {{> author-post-top }}
-</aside>
 
 <section id="related-posts">
 
