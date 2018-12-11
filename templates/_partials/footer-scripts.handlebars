@@ -14,8 +14,8 @@
 
     <script>
 
-        loadJSON('./assets/smartcontracts/abi.json',function(response) {
-            console.log(response)
+        loadJSON('./assets/smartcontracts/abi.json', function(response) {
+            console.log(response);
             var metaMask = new MetaMask(response);
             metaMask.init();
         });
