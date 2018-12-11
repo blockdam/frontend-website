@@ -37,11 +37,14 @@ class MetaMask {
 
 
                     bcd.totalSupply.call(function (err, data) {
-                        if (err) { console.log(err) }
+                        if (err) {
+                            console.log(err)
+                        }
                         if (data) {
 
                             console.log(data);
                         }
+                    })
 
                 } catch (error) {
                     // User denied account access...
