@@ -5,7 +5,7 @@ class MetaMask {
 
         console.log(abi);
 
-        this.abi = abi;
+        this.contractBCDToken = abi;
     }
 
 
@@ -33,9 +33,9 @@ class MetaMask {
                             console.error(error);
                     });
 
+                    console.log(self.contractBCDToken.abi);
 
-
-                    let bdc = new web3js.eth.Contract(self.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    let bdc = new web3js.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
 
                     console.log(bdc);
 
