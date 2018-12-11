@@ -36,10 +36,10 @@ class MetaMask {
                             console.error(error);
                     });
 
-                    var myAbi = web3.eth.contract(self.contractBCDToken.abi);
-                    var myfunction = myAbi.at('0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    let bcd = web3.eth.contract(self.contractBCDToken.abi).at('0x788A378e7F82e36B3719644e042102d68BF597C7');
 
-                    console.log(myfunction);
+
+                    console.log(bcd);
 
                     // myfunction.get.call(function (err, xname) {
                     //     if (err) { console.log(err) }
