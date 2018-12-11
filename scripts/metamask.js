@@ -16,6 +16,7 @@ class MetaMask {
         // window.addEventListener('load', async () => {
 
             console.log('2');
+            
             // Modern dapp browsers...
             if (window.ethereum) {
                 window.web3 = new Web3(ethereum);
