@@ -114,12 +114,13 @@
         @include small-sans();
       }
 
-      > div.recommendation {
+      > a.recommendation {
 
         margin-bottom: 1rem;
         text-align: center;
         padding: 0 .5rem 1rem .5rem;
         border-bottom: 1px solid $secondary;
+        text-decoration: none;
 
         .recommendation--tag {
 
