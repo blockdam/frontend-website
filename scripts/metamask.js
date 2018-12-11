@@ -15,7 +15,7 @@ class MetaMask {
 
         // window.addEventListener('load', async () => {
 
-            console.log('2');
+
 
             // Modern dapp browsers...
             if (window.ethereum) {
@@ -40,6 +40,7 @@ class MetaMask {
                     let bcd = new web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
 
                     console.log(bcd);
+                    console.log('2');
 
 
 
