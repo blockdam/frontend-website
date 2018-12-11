@@ -13,7 +13,7 @@ class MetaMask {
 
         console.log('1');
 
-        window.addEventListener('load', async () => {
+        // window.addEventListener('load', async () => {
 
             console.log('2');
             // Modern dapp browsers...
@@ -60,7 +60,7 @@ class MetaMask {
             else {
                 console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
             }
-        });
+        // });
 
     }
 
