@@ -48,7 +48,6 @@ class MetaMask {
                     //         document.getElementById(“xbalance”).innerHTML = “last inserted value into the blockchain is : “ + xname;
                     //     }
 
-
                 } catch (error) {
                     // User denied account access...
                 }
