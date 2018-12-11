@@ -64,7 +64,7 @@ module.exports = {
 
 				data.posts = values[0];
                 data.activities = values[1];
-				data.links = values[2][0]; 
+				data.links = values[2][0];
                 data.discussion = values[3];
 
 				logger.info('Get template data', correlationId)
