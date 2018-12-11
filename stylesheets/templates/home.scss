@@ -143,6 +143,10 @@
           @include small-sans();
           line-height: 1.3;
         }
+        
+        &:hover {
+          background: $secondary;
+        }
 
       }
     }
