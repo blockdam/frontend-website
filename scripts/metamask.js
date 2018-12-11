@@ -11,11 +11,8 @@ class MetaMask {
 
         let self = this;
 
-        console.log('1');
 
         // window.addEventListener('load', async () => {
-
-
 
             // Modern dapp browsers...
             if (window.ethereum) {
@@ -39,12 +36,9 @@ class MetaMask {
                     let bcd = web3.eth.contract(self.contractBCDToken.abi).at('0x788A378e7F82e36B3719644e042102d68BF597C7');
 
 
-                    console.log(bcd);
+                    console.log(bcd.totalSupply);
 
-                    bcd.totalSupply.call().then( (result) => {
-
-                        console.log(result);
-                    })
+                    // bcd.totalSupply
 
                     // myfunction.get.call(function (err, xname) {
                     //     if (err) { console.log(err) }
