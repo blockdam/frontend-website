@@ -109,7 +109,6 @@ module.exports = {
                 eventIds: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.id }) : [],
                 eventSlugs: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.slug }) : [],
                 contact : data.contact,
-                render_as_blog: booleanService.correct(data.render_as_blog),
                 eventDate: data.sessions[0].date.date,
                 calendar: data.calendar
 
