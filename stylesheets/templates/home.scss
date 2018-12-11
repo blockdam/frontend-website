@@ -118,7 +118,7 @@
 
         margin-bottom: 1rem;
         text-align: center;
-        padding: 0 .5rem 1rem .5rem;
+        padding: .5rem .5rem .5rem .5rem;
         border-bottom: 1px solid $secondary;
         text-decoration: none;
 
@@ -143,7 +143,7 @@
           @include small-sans();
           line-height: 1.3;
         }
-        
+
         &:hover {
           background: $secondary;
         }
