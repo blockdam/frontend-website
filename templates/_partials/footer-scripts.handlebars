@@ -14,11 +14,18 @@
 
     <script>
 
-        loadJSON("http://blockdam.publikaan.nl/assets/smartcontracts/abi.json", function(response) {
-            console.log(response);
-            // var metaMask = new MetaMask(response);
-            // metaMask.init();
-        });
+        setTimeout( function() {
+
+
+            loadJSON("http://blockdam.publikaan.nl/assets/smartcontracts/abi.json", function(response) {
+                console.log(response);
+                // var metaMask = new MetaMask(response);
+                // metaMask.init();
+            });
+
+        },2000)
+
+
 
     </script>
 
