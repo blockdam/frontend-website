@@ -47,7 +47,17 @@ class MetaMask {
                         }
                     })
 
-                    bcd.balance.call(function (err, data) {
+                    bcd.totalSupply.getData(function (err, data) {
+                        if (err) {
+                            console.log(err)
+                        }
+                        if (data) {
+
+                            console.log(data);
+                        }
+                    })
+
+                    bcd.balanceOf.call(function (err, data) {
                         if (err) {
                             console.log(err)
                         }
