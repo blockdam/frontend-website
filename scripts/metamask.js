@@ -35,7 +35,7 @@ class MetaMask {
 
                     console.log(self.contractBCDToken.abi);
 
-                    let bdc = new web3js.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
+                    let bdc = web3.eth.Contract(self.contractBCDToken.abi, '0x788A378e7F82e36B3719644e042102d68BF597C7');
 
                     console.log(bdc);
 
