@@ -16,13 +16,13 @@ class MetaMask {
         // window.addEventListener('load', async () => {
 
             console.log('2');
-            
+
             // Modern dapp browsers...
             if (window.ethereum) {
                 window.web3 = new Web3(ethereum);
                 try {
                     // Request account access if needed
-                    await ethereum.enable();
+                    ethereum.enable();
                     // Acccounts now exposed
                   //  web3.eth.sendTransaction({/* ... */});
 
