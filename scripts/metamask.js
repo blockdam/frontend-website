@@ -3,8 +3,6 @@ class MetaMask {
 
     constructor(abi) {
 
-        console.log(abi);
-
         this.contractBCDToken = abi;
     }
 
@@ -13,7 +11,11 @@ class MetaMask {
 
         let self = this;
 
+        console.log('1');
+
         window.addEventListener('load', async () => {
+
+            console.log('2');
             // Modern dapp browsers...
             if (window.ethereum) {
                 window.web3 = new Web3(ethereum);
