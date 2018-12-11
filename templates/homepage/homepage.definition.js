@@ -56,7 +56,7 @@ module.exports = {
 
             let findPosts = pagePersistence.find(postOptions);
             let findActivities = pagePersistence.find(activityOptions);
-            let linkRecommendations = pagePersistence.findOne(linkRecommendationOptions);
+            let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
             let getDiscussion = discussionService.get();
 
 
@@ -64,7 +64,7 @@ module.exports = {
 
 				data.posts = values[0];
                 data.activities = values[1];
-				data.links = values[2];
+				data.links = values[2][0]; 
                 data.discussion = values[3];
 
 				logger.info('Get template data', correlationId)
