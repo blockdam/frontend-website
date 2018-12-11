@@ -31,6 +31,7 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var homepage = gulp.src([
+            path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
             path.projectFolder + '/scripts/header.js',
