@@ -115,7 +115,7 @@ class MetaMask {
 
             transfers.forEach( (t) => {
 
-                console.log(args);
+                console.log(t.args);
             });
     }
 
