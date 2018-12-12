@@ -38,6 +38,13 @@
         height: 120px;
         margin-bottom: 1rem;
 
+        .total-axis {
+
+          path.domain {
+            stroke: none;
+          }
+        }
+
         .line {
           fill: none;
           stroke : black;
