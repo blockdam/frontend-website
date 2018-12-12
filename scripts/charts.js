@@ -85,7 +85,7 @@ var Charts = function charts() {
                 top: 10,
                 bottom: 20,
                 left: 0,
-                right: 0
+                right: 20
             },
 
             padding: {
