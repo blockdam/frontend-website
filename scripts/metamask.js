@@ -62,7 +62,7 @@ class MetaMask {
             if (data) {
 
                 self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
-                document.querySelector('#general_info span#total_supply').innerHTML = val;
+                document.querySelector('#general_info span#total_supply').innerHTML = self.bcd.totalSupply;
             }
         });
 
