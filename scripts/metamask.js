@@ -37,6 +37,14 @@ class MetaMask {
 
                     console.log(bcd);
 
+                     let network =  web3.version.network
+
+                    let myAccounts = web3.eth.accounts;
+
+                    console.log(network);
+
+                    console.log(myAccounts);
+
 
                     bcd.totalSupply.call(function (err, data) {
                         if (err) {
