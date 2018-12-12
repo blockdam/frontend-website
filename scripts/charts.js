@@ -16,4 +16,4 @@ class Charts {
 
 }
 
-var charts = new Charts();
+

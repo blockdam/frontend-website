@@ -30,7 +30,10 @@
             });
         }
 
+        var charts = new Charts();
+
         loadJSON("./assets/smartcontracts/bcdSupply.json", function (response) {
+
             charts.bcdSupply(JSON.parse(response));
         });
 
