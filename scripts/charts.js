@@ -32,6 +32,19 @@ var Charts = function charts() {
 
     }
 
+    let setScale = function setScale(data) {
+
+        xScale = d3.scaleTime()
+            .range([config.margin.left, width - config.margin.right])
+            .domain([d3.min(data, d => d.date),d3.max(data, d => d.date)]);
+        //
+        // // y scale
+        yScale = d3.scaleLinear()
+            .range([height - config.margin.bottom, config.margin.top])
+            .domain([0,d3.max(data, d => d.total)]).nice();
+
+    }
+
 
     let bcdSupply = function bcdSupply(el,data) {
 
@@ -61,6 +74,7 @@ var Charts = function charts() {
 
         renderSVG(element,config);
         renderLayers();
+        setScale(data);
 
     }
 
@@ -68,7 +82,8 @@ var Charts = function charts() {
     return {
         bcdSupply : bcdSupply,
         renderSVG : renderSVG,
-        renderLayers : renderLayers
+        renderLayers : renderLayers,
+        setScale : setScale
 
     }
 
