@@ -14,11 +14,11 @@ var Charts = function charts() {
 
     let renderSVG = function createSVG(element) {
 
-        svg = d3.select(element)
+        svg = d3.select(element,config)
             .append('svg')
             // .attr('width', (this.width + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
-            .attr('width', (containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
-            .attr('height', (height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
+            .attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
+            .attr('height', (config.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
         //     .offset("zero")
@@ -29,10 +29,6 @@ var Charts = function charts() {
 
         let element = el;
         let dataset = data;
-
-        console.log(d3.select(element).node().getBoundingClientRect().width);
-
-        let containerWidth = d3.select(element).node().getBoundingClientRect().width;
 
         let config = {
 
@@ -51,10 +47,11 @@ var Charts = function charts() {
             }
         };
 
-        let height = 100;
-        let width = containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+        config.height = 100;
+        config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
-        renderSVG(element);
+        renderSVG(element,config);
 
     }
 
