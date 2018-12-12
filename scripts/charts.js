@@ -55,7 +55,7 @@ var Charts = function charts() {
             .call(totalAxis);
     }
 
-    let renderXAxis = function renderYAxis() {
+    let renderXAxis = function renderXAxis(config) {
 
         let statusAxis = d3.axisBottom(xScale);
 
@@ -94,7 +94,7 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
         setScale(data,config);
-        renderYAxis(config);
+        renderYAxis();
         renderXAxis(config);
 
     }
