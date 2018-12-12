@@ -61,7 +61,9 @@ var Charts = function charts() {
 
         let timeAxis = d3.axisBottom(xScale);
 
-        timeAxis.ticks(d3.timeMonth.every(1));
+        timeAxis
+            .ticks(d3.timeMonth.every(1))
+            .tickFormat(d3.timeFormat("%b"));
 
         layers.axis.append("g")
             .attr('class', 'time-axis')
@@ -79,7 +81,7 @@ var Charts = function charts() {
             margin: {
                 top: 0,
                 bottom: 20,
-                left: 0,
+                left: 20,
                 right: 0
             },
 
