@@ -73,6 +73,8 @@ class MetaMask {
 
                 let val = data.toNumber().toString();
 
+                console.log(val);
+
                 document.querySelector('#personal_info').style.display = 'flex';
                 document.querySelector('#personal_info span').innerHTML = web3.utils.fromWei(val);
             }
