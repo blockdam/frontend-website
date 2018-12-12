@@ -68,6 +68,16 @@ module.exports = [{
         }
     },
     {
+        name: 'ifLongerThan',
+        helper: (a, b, options) => {
+            if (a.length > parseInt(b)) {
+                return options.fn(this);
+            } else {
+                return options.inverse(this);
+            }
+        }
+    },
+    {
         name: 'formatDate',
         helper: (datetime, format) => {
             let DateFormats = {
