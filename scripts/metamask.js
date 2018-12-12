@@ -31,7 +31,7 @@ class MetaMask {
                 document.querySelector('#metamask_private').classList.add("visible");
                 document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                console.log(self.metaMask);
+                // console.log(self.metaMask);
 
                 if (self.metaMask.network  !== '4')  {
                     document.querySelector('#network_warning').style.display = 'block';
@@ -102,7 +102,7 @@ class MetaMask {
 
         let bcdBondingCurve = web3.eth.contract(self.bcd.bondingCurveAbi).at(self.bcdBondingCurveAddress);
 
-        console.log(bcdBondingCurve);
+        // console.log(bcdBondingCurve);
 
     }
 
