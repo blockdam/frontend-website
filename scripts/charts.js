@@ -104,7 +104,7 @@ var Charts = function charts() {
             .enter()
             .append("path")
             .attr("d", area)
-            .attr("fill", "black") // "#f6f5f2"
+            .attr("fill", "#f6f5f2")
             .attr('class', 'flow');
     }
 
