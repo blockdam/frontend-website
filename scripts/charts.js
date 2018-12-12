@@ -74,7 +74,7 @@ var Charts = function charts() {
 
             margin: {
                 top: 0,
-                bottom: 0,
+                bottom: 20,
                 left: 0,
                 right: 0
             },
