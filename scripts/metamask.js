@@ -72,7 +72,7 @@ class MetaMask {
             if (data) {
 
                 document.querySelector('#personal_info').style.display = 'flex';
-                document.querySelector('#personal_info span').innerHTML = data.toNumber();
+                document.querySelector('#personal_info span').innerHTML = web3.utils.fromWei(data.toNumber(), 'ether');
             }
         });
 
