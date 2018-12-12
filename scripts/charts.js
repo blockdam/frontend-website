@@ -4,9 +4,15 @@
  *
  */
 
-var Charts = function charts(el,data) {
+var Charts = function charts() {
 
-    let renderSVG = function createSVG() {
+    let svg = null;
+    let layers = {};
+    let xScale;
+    let yScale;
+    let colourMap;
+
+    let renderSVG = function createSVG(element) {
 
         svg = d3.select(element)
             .append('svg')
@@ -24,12 +30,6 @@ var Charts = function charts(el,data) {
         let element = el;
         let dataset = data;
 
-        let svg = null;
-        let layers = {};
-        let xScale;
-        let yScale;
-        let colourMap;
-
         console.log(d3.select(element));
 
         let containerWidth = d3.select(element).node().getBoundingClientRect().width;
@@ -37,9 +37,9 @@ var Charts = function charts(el,data) {
         let config = {
 
             margin: {
-                top: 60,
-                bottom: 60,
-                left: 60,
+                top: 0,
+                bottom: 0,
+                left: 0,
                 right: 0
             },
 
@@ -54,7 +54,7 @@ var Charts = function charts(el,data) {
         let height = 100;
         let width = containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
-        renderSVG();
+        renderSVG(element);
 
     }
 
