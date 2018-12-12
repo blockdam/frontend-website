@@ -37,13 +37,17 @@ class MetaMask {
 
                     console.log(bcd);
 
-                     let network =  web3.version.network
+                    let network =  web3.version.network
 
                     let myAccounts = web3.eth.accounts;
+
+                    let coinbase = web3.eth.coinbase;
 
                     console.log(network);
 
                     console.log(myAccounts);
+
+                    console.log(coinbase);
 
 
                     bcd.totalSupply.call(function (err, data) {
@@ -72,7 +76,7 @@ class MetaMask {
                     //
                     // });
 
-                    bcd.balanceOf.address('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
+                    web3.eth.balanceOf.address('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
                         if (err) {
                             console.log(err)
                         }
