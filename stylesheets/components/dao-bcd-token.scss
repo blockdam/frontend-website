@@ -43,6 +43,14 @@
           path.domain {
             stroke: none;
           }
+
+          text {
+            fill: $creme;
+          }
+
+          line, path {
+            stroke : $creme;
+          }
         }
 
         .time-axis {
