@@ -43,11 +43,11 @@ class MetaMask {
             }
     }
 
-    getBCDToken(abi) {
+    getBCDToken(json) {
 
         let self = this;
 
-        this.bcd.tokenAbi = abi;
+        this.bcd.tokenAbi = json.abi;
 
         let bcdInfo = web3.eth.contract(self.bcd.tokenAbi).at(self.bcdTokenAddress);
 
@@ -85,10 +85,10 @@ class MetaMask {
         console.log(self.bcdToken);
     }
 
-    getBCDBondingCurve(abi) {
+    getBCDBondingCurve(json) {
 
         let self = this;
-        this.bcd.bondingCurveAbi = abi;
+        this.bcd.bondingCurveAbi = json.abi;
 
         let bcdBondingCurve = web3.eth.contract(self.bcd.bondingCurveAbi).at(self.bcdBondingCurveAddress);
 
