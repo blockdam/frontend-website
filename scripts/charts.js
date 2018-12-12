@@ -94,8 +94,8 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
         setScale(data);
-        renderYAxis();
-        renderXAxis();
+        renderYAxis(config);
+        renderXAxis(config);
 
     }
 
