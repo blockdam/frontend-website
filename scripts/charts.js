@@ -129,7 +129,8 @@ var Charts = function charts() {
         renderLayers : renderLayers,
         setScale : setScale,
         renderYAxis : renderYAxis,
-        renderXAxis : renderXAxis
+        renderXAxis : renderXAxis,
+        drawLine : drawLine
     }
 
 }
