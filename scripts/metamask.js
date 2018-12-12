@@ -92,7 +92,7 @@ class MetaMask {
         setTimeout( function() {
 
             self.countGrants(self.bcd.eventList);
-        },5000);
+        },15000);
     }
 
     getBCDBondingCurve(json) {
