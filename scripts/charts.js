@@ -97,7 +97,7 @@ var Charts = function charts() {
             .y1((d) => { return yScale(d.totalGrants); });
 
 
-        layers.bars.selectAll('.flow')
+        layers.data.selectAll('.flow')
             .data([data])
             .enter()
             .append("path")
