@@ -74,7 +74,7 @@ class MetaMask {
                     //
                     // });
 
-                    web3.eth.balanceOf.address('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
+                    web3.eth.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
                         if (err) {
                             console.log(err)
                         }
