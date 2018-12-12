@@ -28,6 +28,9 @@
 
       padding:  1rem 1rem 1rem 0;
       width : calc(50% - 2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
 
       .chart {
 
