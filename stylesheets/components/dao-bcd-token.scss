@@ -47,8 +47,18 @@
 
   #personal_info {
 
-      display: none;
-      border-top: 1px solid black;
-      @include small-sans();
+    flex-direction: column;
+    display: none;
+    border-top: 1px solid black;
+    @include small-sans();
+
+    > div > span {
+      display: inline-block;
+      margin: 0 .5rem;
+
+    }
+
+
+
   }
 }
