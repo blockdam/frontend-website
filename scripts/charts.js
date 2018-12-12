@@ -79,9 +79,9 @@ var Charts = function charts() {
         let config = {
 
             margin: {
-                top: 0,
+                top: 10,
                 bottom: 20,
-                left: 20,
+                left: 30,
                 right: 0
             },
 
@@ -94,7 +94,7 @@ var Charts = function charts() {
         };
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-        config.height = 100;
+        config.height = 120;
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
         renderSVG(element,config);
