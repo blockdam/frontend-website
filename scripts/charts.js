@@ -40,7 +40,7 @@ var Charts = function charts() {
         //
         // // y scale
         yScale = d3.scaleLinear()
-            .range([height - config.margin.bottom, config.margin.top])
+            .range([config.height - config.margin.bottom, config.margin.top])
             .domain([0,d3.max(data, d => d.total)]).nice();
 
     }
