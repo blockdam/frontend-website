@@ -110,7 +110,7 @@ class MetaMask {
 
 
             let transfers = events.filter( (e) => {
-                return e.event = transfer;
+                return e.event = 'transfer';
             })
 
             transfers.forEach( (t) => {
