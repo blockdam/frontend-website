@@ -15,6 +15,8 @@ var Charts = function charts(el,data) {
     let yScale;
     let colourMap;
 
+    console.log(d3.select(element));
+
     let containerWidth = d3.select(element).node().getBoundingClientRect().width;
 
     let config = {
