@@ -56,10 +56,18 @@ class MetaMask {
                     //     }
                     // })
 
-                    let myBalance = bcd.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78');
+                    bcd.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
+                        if (err) {
+                            console.log(err)
+                        }
+                        if (data) {
+
+                            console.log(data);
+                        }
+                    });
 
 
-                    console.log(myBalance);
+                    // console.log(myBalance);
                 }
 
                  catch (error) {
