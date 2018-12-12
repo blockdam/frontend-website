@@ -129,7 +129,7 @@ class MetaMask {
 
                             let date = new Date(data.timestamp * 1000);
 
-                            console.log(val + ' ' + data.timestamp + ' ' + date);
+                            console.log(val + ' ' + date.toJSON);
                         }
                     });
 
