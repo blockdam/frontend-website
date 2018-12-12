@@ -32,7 +32,7 @@ var Charts = function charts() {
 
     }
 
-    let setScale = function setScale(data) {
+    let setScale = function setScale(data,config) {
 
         xScale = d3.scaleTime()
             .range([config.margin.left, width - config.margin.right])
@@ -93,7 +93,7 @@ var Charts = function charts() {
 
         renderSVG(element,config);
         renderLayers();
-        setScale(data);
+        setScale(data,config);
         renderYAxis(config);
         renderXAxis(config);
 
