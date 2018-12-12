@@ -87,6 +87,8 @@
 
             <div id="community-block">
 
+                {{#ifMoreThan body.discussion 0}}
+
                 <h2 class="subheader">Discussion</h2>
 
                 {{#each body.discussion as |blog|}}
@@ -112,6 +114,8 @@
 
                     </article>
                 {{/each}}
+
+                {{/ifMoreThan}}
 
             </div>
 
