@@ -61,7 +61,8 @@ class MetaMask {
             }
             if (data) {
 
-                self.bcd.totalSupply = web3.utils.fromWei(data.toNumber(), 'ether');
+                self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
+                document.querySelector('#general_info span#total_supply').innerHTML = val;
             }
         });
 
