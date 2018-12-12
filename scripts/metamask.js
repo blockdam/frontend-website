@@ -89,7 +89,7 @@ class MetaMask {
             }
         });
 
-        console.log(self.bcd);
+        this.countGrants(self.bcd.eventList);
     }
 
     getBCDBondingCurve(json) {
@@ -101,6 +101,19 @@ class MetaMask {
 
         console.log(bcdBondingCurve);
 
+    }
+
+    countGrants(events) {
+
+
+            let transfers = events.filter( (e) => {
+                return e.event = transfer;
+            })
+
+            transfers.forEach( (t) => {
+
+                console.log(args);
+            });
     }
 
 
