@@ -5,37 +5,44 @@
     {
       "date" : "2018-09-18T23:59:59.000Z",
       "granted" : 1700,
-      "totalGrants": 1700
+      "sold" : 400,
+      "totalGrants": 1300
     },
     {
       "date" : "2018-09-20T23:59:59.000Z",
       "granted" : 100,
-      "totalGrants": 1800
+      "sold" : 0,
+      "totalGrants": 1400
     },
     {
       "date" : "2018-10-09T23:59:59.000Z",
       "granted" : 100,
-      "totalGrants": 1900
+      "sold" : 0,
+      "totalGrants": 1500
     },
     {
       "date" : "2018-10-30T23:59:59.000Z",
       "granted" : 100,
-      "totalGrants": 2000
+      "sold" : 0,
+      "totalGrants": 1600
     },
     {
       "date" : "2018-11-09T23:59:59.000Z",
       "granted" : 200,
-      "totalGrants": 2200
+      "sold" : 0,
+      "totalGrants": 1800
     },
     {
       "date" : "2018-11-30T23:59:59.000Z",
       "granted" : 70,
-      "totalGrants": 2270
+      "sold" : 0,
+      "totalGrants": 1870
     },
     {
       "date" : "2018-11-30T23:59:59.000Z",
       "granted" : 130,
-      "totalGrants": 2400
+      "sold" : 0,
+      "totalGrants": 2000
     }
   ]
 }
