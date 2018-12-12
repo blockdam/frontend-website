@@ -87,6 +87,25 @@ var Charts = function charts() {
 
     }
 
+    let drawArea = function drawArea(data) {
+
+        let area = d3.area()
+            // .curve(d3.curveCardinal)
+            .x0((d,i) => { return xScale(new Date(d.date))})
+            .x1((d,i) => { return xScale(new Date(d.date))})
+            .y0(yScale(0))
+            .y1((d) => { return yScale(d.totalGrants); });
+
+
+        layers.bars.selectAll('.flow')
+            .data([data])
+            .enter()
+            .append("path")
+            .attr("d", area)
+            .attr("fill", "#ccc")
+            .attr('class', 'flow');
+    }
+
     let bcdSupply = function bcdSupply(el,data) {
 
         let element = el;
