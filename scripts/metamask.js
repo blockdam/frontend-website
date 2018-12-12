@@ -108,8 +108,6 @@ class MetaMask {
 
     countGrants(events) {
 
-            console.log(events);
-
 
             let transfers = events.filter( (e) => {
                 return e.event = transfer;
