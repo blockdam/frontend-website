@@ -121,9 +121,15 @@ class MetaMask {
 
                     let val = t.args.value.toNumber() / 1000000000000000000;
 
-                    total = total + val;
+                    let block = web3.eth.getBlock(t.blockNumber)
 
-                    console.log(val + ' ' + t.blockNumber);
+
+
+                    console.log(val + ' ');
+
+                    console.log(block);
+
+                    total = total + val;
 
                 }
             });
