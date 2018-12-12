@@ -89,7 +89,10 @@ class MetaMask {
             }
         });
 
-        this.countGrants(self.bcd.eventList);
+        setTimeout( function() {
+
+            self.countGrants(self.bcd.eventList);
+        },5000);
     }
 
     getBCDBondingCurve(json) {
