@@ -6,6 +6,8 @@ class MetaMask {
         this.bcdTokenAddress = '0x788A378e7F82e36B3719644e042102d68BF597C7';
         this.bcdBondingCurveAddress = '0x5c5d2c96f62b41ebd4ca420884146b33ba3d75c7';
 
+        0xb6ca51ca72c689b720235aca37e579f821fa05ee
+
         this.metaMask = {};
         this.bcd = {};
 
