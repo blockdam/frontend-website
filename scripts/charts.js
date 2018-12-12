@@ -45,7 +45,7 @@ var Charts = function charts() {
         // // y scale
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
-            .domain([0,d3.max(data, d => d.totalGrants)]).nice();
+            .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
 
     }
 
@@ -80,7 +80,7 @@ var Charts = function charts() {
 
         var line = d3.line()
             .x(function(d) { return xScale(new Date(d.date)); })
-            .y(function(d) { console.log(d); return yScale(d.totalGrants); });
+            .y(function(d) { console.log(d); return yScale(d[config.yParameter]); });
 
         layers.data.append("path")
             .data([data])
@@ -96,7 +96,7 @@ var Charts = function charts() {
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
             .y0(yScale(0))
-            .y1((d) => { return yScale(d.totalGrants); });
+            .y1((d) => { return yScale(d[config.yParameter]); });
 
 
         layers.data.selectAll('.flow')
@@ -133,6 +133,8 @@ var Charts = function charts() {
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
         config.height = 120;
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+
+        config.yParameter = 'totalGrants';
 
         renderSVG(element,config);
         renderLayers();
