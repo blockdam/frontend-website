@@ -76,7 +76,7 @@ var Charts = function charts() {
             .call(timeAxis);
     }
 
-    let drawLine = function drawLine(data) {
+    let drawLine = function drawLine(data,config) {
 
         var line = d3.line()
             .x(function(d) { return xScale(new Date(d.date)); })
@@ -89,7 +89,7 @@ var Charts = function charts() {
 
     }
 
-    let drawArea = function drawArea(data) {
+    let drawArea = function drawArea(data,config) {
 
         let area = d3.area()
             // .curve(d3.curveCardinal)
@@ -142,7 +142,7 @@ var Charts = function charts() {
         renderYAxis(config);
         renderXAxis(config);
         // drawLine(data);
-        drawArea(data);
+        drawArea(data,config);
 
     }
 
@@ -179,7 +179,7 @@ var Charts = function charts() {
         setScale(data,config);
         renderYAxis(config);
         renderXAxis(config);
-        drawLine(data);
+        drawLine(data,config);
         // drawArea(data);
     }
 
