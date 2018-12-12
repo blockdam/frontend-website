@@ -129,18 +129,11 @@ class MetaMask {
 
                             let date = new Date(data.timestamp * 1000);
 
-                            console.log(date);
+                            console.log(val + ' ' + date);
                         }
                     });
 
-
-
-                    console.log(val + ' ');
-
-                    // console.log(block);
-
                     total = total + val;
-
                 }
             });
 
