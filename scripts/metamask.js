@@ -20,34 +20,32 @@ class MetaMask {
                 // try {
                     // Request account access if needed
                     ethereum.enable();
-                    // Acccounts now exposed
-                    //  web3.eth.sendTransaction({/* ... */});
+
+
+                    let metaMask = {};
+                    metaMask.network =  web3.version.network;
+                    metaMask.accounts = web3.eth.accounts;
+                    metaMask.coinbase = web3.eth.coinbase;
+
+                    console.log(metaMask);
 
                     document.querySelector('#metamask_private').classList.add("visible");
-                    // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
+                    document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    web3.eth.getGasPrice(function (error, result) {
-                        if (!error)
-                            document.querySelector('#metamask_private span').innerHTML = result;
-                        else
-                            console.error(error);
-                    });
+                    if (metaMask.network  !== 4)  {
+                        document.querySelector('#network_warning').style.display = 'block';
+                    }
+
+                    // web3.eth.getGasPrice(function (error, result) {
+                    //     if (!error)
+                    //         document.querySelector('#metamask_private span').innerHTML = result;
+                    //     else
+                    //         console.error(error);
+                    // });
 
                     let bcd = web3.eth.contract(self.contractBCDToken.abi).at('0x788A378e7F82e36B3719644e042102d68BF597C7');
 
-                    console.log(bcd);
 
-                    let network =  web3.version.network
-
-                    let myAccounts = web3.eth.accounts;
-
-                    let coinbase = web3.eth.coinbase;
-
-                    console.log(network);
-
-                    console.log(myAccounts);
-
-                    console.log(coinbase);
 
 
                     bcd.totalSupply.call(function (err, data) {
