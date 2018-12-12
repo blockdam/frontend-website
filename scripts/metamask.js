@@ -116,7 +116,10 @@ class MetaMask {
             transfers.forEach( (t) => {
 
                 if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
-                    console.log(t);
+
+                    let val = t.args.value.toNumber() / 1000000000000000000;
+
+                    console.log(val);
                 }
 
 
