@@ -68,6 +68,15 @@ class MetaMask {
                         }
                     });
 
+                    bcd.allEvents({fromBlock: 0, toBlock: 'latest'}, function (err, data) {
+                        if (err) {
+                            console.log(err)
+                        }
+                        if (data) {
+                            console.log(data);
+                        }
+                    });
+
 
                     // console.log(myBalance);
                 // }
