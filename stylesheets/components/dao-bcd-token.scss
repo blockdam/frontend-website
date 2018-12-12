@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
   background: $grey;
   display: flex;
-  padding: 1rem;
+  padding: .5rem 1rem;
   justify-content: space-between;
 
   width : calc(100% - 2rem);
@@ -27,7 +27,7 @@
 
     > div.flex-half {
 
-      padding:  0rem 0rem 1rem 0rem;
+      padding:  0;
       width : calc(50% - 0rem);
       display: flex;
       flex-direction: column;
@@ -100,7 +100,7 @@
     justify-content: center;
     display: none;
     border-top: 1px solid black;
-    padding-top: 1rem;
+    padding-top: .5rem;
     @include small-sans();
 
     > div > span {
