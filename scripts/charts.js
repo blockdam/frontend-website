@@ -144,9 +144,47 @@ var Charts = function charts() {
 
     }
 
+    let bcdEthValue = function bcdEthValue(el,data) {
+
+        let element = el;
+        let dataset = data;
+
+        let config = {
+
+            margin: {
+                top: 10,
+                bottom: 20,
+                left: 0,
+                right: 20
+            },
+
+            padding: {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0
+            }
+        };
+
+        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+        config.height = 120;
+        config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+
+        config.yParameter = 'ethValue';
+
+        renderSVG(element,config);
+        renderLayers();
+        setScale(data,config);
+        renderYAxis(config);
+        renderXAxis(config);
+        drawLine(data);
+        // drawArea(data);
+    }
+
 
     return {
         bcdSupply : bcdSupply,
+        bcdEthValue : bcdEthValue,
         renderSVG : renderSVG,
         renderLayers : renderLayers,
         setScale : setScale,

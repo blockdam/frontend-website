@@ -1,90 +1,104 @@
 {
 
-  "supply" : [
+  "bcd" : [
 
     {
       "date" : "2018-09-18T23:59:59.000Z",
       "granted" : 1700,
       "sold" : 400,
-      "totalGrants": 1300
+      "totalGrants": 1300,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-09-19T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1300
+      "totalGrants": 1300,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-09-20T23:59:59.000Z",
       "granted" : 100,
       "sold" : 0,
-      "totalGrants": 1400
+      "totalGrants": 1400,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-10-08T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1400
+      "totalGrants": 1400,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-10-09T23:59:59.000Z",
       "granted" : 100,
       "sold" : 0,
-      "totalGrants": 1500
+      "totalGrants": 1500,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-10-29T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1500
+      "totalGrants": 1500,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-10-30T23:59:59.000Z",
       "granted" : 100,
       "sold" : 0,
-      "totalGrants": 1600
+      "totalGrants": 1600,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-11-08T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1600
+      "totalGrants": 1600,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-11-09T23:59:59.000Z",
       "granted" : 200,
       "sold" : 0,
-      "totalGrants": 1800
+      "totalGrants": 1800,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-11-29T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1800
+      "totalGrants": 1800,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-11-30T23:59:59.000Z",
       "granted" : 70,
       "sold" : 0,
-      "totalGrants": 1870
+      "totalGrants": 1870,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-12-06T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 1870
+      "totalGrants": 1870,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-12-07T23:59:59.000Z",
       "granted" : 130,
       "sold" : 0,
-      "totalGrants": 2000
+      "totalGrants": 2000,
+      "ethValue" : 0.00384615
     },
     {
       "date" : "2018-12-12T23:59:59.000Z",
       "granted" : 0,
       "sold" : 0,
-      "totalGrants": 2000
+      "totalGrants": 2000,
+      "ethValue" : 0.00384615
     }
   ]
 }
