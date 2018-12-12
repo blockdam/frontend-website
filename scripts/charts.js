@@ -78,7 +78,7 @@ var Charts = function charts() {
 
         var line = d3.line()
             .x(function(d) { return x(new Date(d.date)); })
-            .y(function(d) { return y(d.totalGrants); });
+            .y(function(d) { console.log(d); return y(d.totalGrants); });
 
         layers.data.append("path")
             .data(data)
