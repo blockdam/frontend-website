@@ -62,7 +62,7 @@ class MetaMask {
                         if (data) {
 
                             document.querySelector('#personal_info').style.display = 'flex';
-                            document.querySelector('#personal_info span').innerHTML = data.c;
+                            document.querySelector('#personal_info span').innerHTML = data.toNumber();
                         }
                     });
 
