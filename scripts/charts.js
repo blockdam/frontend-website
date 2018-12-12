@@ -74,6 +74,19 @@ var Charts = function charts() {
             .call(timeAxis);
     }
 
+    let drawLine = function drawLine(data) {
+
+        var line = d3.line()
+            .x(function(d) { return x(new Date(d.date)); })
+            .y(function(d) { return y(d.totalGrants); });
+
+        svg.append("path")
+            .data([data])
+            .attr("class", "line")
+            .attr("d", line);
+
+    }
+
     let bcdSupply = function bcdSupply(el,data) {
 
         let element = el;
@@ -105,6 +118,7 @@ var Charts = function charts() {
         setScale(data,config);
         renderYAxis(config);
         renderXAxis(config);
+        drawLine(data);
 
     }
 
