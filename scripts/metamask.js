@@ -21,13 +21,13 @@ class MetaMask {
                     // Request account access if needed
                     ethereum.enable();
                     // Acccounts now exposed
-                  //  web3.eth.sendTransaction({/* ... */});
+                    //  web3.eth.sendTransaction({/* ... */});
 
                     document.querySelector('#metamask_private').classList.add("visible");
                     // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    web3.eth.getGasPrice(function(error, result){
-                        if(!error)
+                    web3.eth.getGasPrice(function (error, result) {
+                        if (!error)
                             document.querySelector('#metamask_private span').innerHTML = result;
                         else
                             console.error(error);
@@ -44,22 +44,23 @@ class MetaMask {
 
                             console.log(data);
                         }
-                    })
+                    });
 
-                    bcd.totalSupply.getData(function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-
-                            console.log(data);
-                        }
-                    })
+                    // bcd.totalSupply.getData(function (err, data) {
+                    //     if (err) {
+                    //         console.log(err)
+                    //     }
+                    //     if (data) {
+                    //
+                    //         console.log(data);
+                    //     }
+                    // })
 
                     let myBalance = bcd.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78');
 
 
                     console.log(myBalance);
+                }
 
                  catch (error) {
                     // User denied account access...
