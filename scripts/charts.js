@@ -27,7 +27,7 @@ var Charts = function charts() {
         layers.axis = svg.append('g')
             .attr('class', 'axis');
 
-        layers.bars = svg.append('g')
+        layers.data = svg.append('g')
             .attr('class', 'bars');
 
     }
@@ -80,8 +80,8 @@ var Charts = function charts() {
             .x(function(d) { return x(new Date(d.date)); })
             .y(function(d) { return y(d.totalGrants); });
 
-        svg.append("path")
-            .data([data])
+        layers.data.append("path")
+            .data(data)
             .attr("class", "line")
             .attr("d", line);
 
