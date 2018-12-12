@@ -49,7 +49,7 @@ var Charts = function charts() {
 
     let renderYAxis = function renderYAxis() {
 
-        let totalAxis = d3.axisLeft(yScale);
+        let totalAxis = d3.axisRight(yScale);
 
         totalAxis
             .ticks(4);
