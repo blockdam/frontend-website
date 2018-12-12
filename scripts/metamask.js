@@ -74,7 +74,7 @@ class MetaMask {
                 let val = data.toNumber()''
 
                 document.querySelector('#personal_info').style.display = 'flex';
-                document.querySelector('#personal_info span').innerHTML = web3.utils.fromWei(val,'ether');
+                document.querySelector('#personal_info span').innerHTML = web3.utils.fromWei(val);
             }
         });
 
