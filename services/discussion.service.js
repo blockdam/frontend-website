@@ -1,7 +1,7 @@
 'use strict';
 
 const PagePersistence = require('../../persistence/page.persistence');
-const logger = require('../logger.service');
+const logger = require('../../services/logger.service');
 
 /**
  * Service for authorization of the incoming api calls
