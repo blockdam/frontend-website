@@ -34,7 +34,7 @@
 
         loadJSON("./assets/smartcontracts/bcdSupply.json", function (response) {
 
-            charts.bcdSupply('#chart_supply', JSON.parse(response));
+            charts.bcdSupply('#chart_supply',JSON.parse(response).supply);
         });
 
     </script>
