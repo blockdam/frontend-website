@@ -14,9 +14,15 @@
 
     <script>
 
-        loadJSON("./assets/smartcontracts/abi.json", function(response) {
-            var metaMask = new MetaMask(JSON.parse(response));
-            metaMask.init();
+        var metaMask = new MetaMask();
+        metaMask.init();
+
+        loadJSON("./assets/smartcontracts/bcdToken.json", function(response) {
+            metaMask.getBcdToken(JSON.parse(response));
+        });
+
+        loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function(response) {
+            metaMask.getBcdBondingCurve(JSON.parse(response));
         });
 
     </script>

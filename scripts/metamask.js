@@ -1,9 +1,15 @@
 
 class MetaMask {
 
-    constructor(abi) {
+    constructor() {
 
-        this.contractBCDToken = abi;
+        this.bcdTokenAddress = '0x788A378e7F82e36B3719644e042102d68BF597C7';
+        this.bcdBondingCurveAddress = '0x5c5d2c96f62b41ebd4ca420884146b33ba3d75c7';
+
+        this.metaMask = {};
+        this.bcd = {};
+
+        this.bcd.eventList = [];
     }
 
 
@@ -11,96 +17,82 @@ class MetaMask {
 
         let self = this;
 
-
-        // window.addEventListener('load', async () => {
-
-            // Modern dapp browsers...
             if (window.ethereum) {
                 window.web3 = new Web3(ethereum);
-                // try {
-                    // Request account access if needed
-                    ethereum.enable();
 
+                ethereum.enable();
 
-                    let metaMask = {};
-                    metaMask.network =  web3.version.network;
-                    metaMask.accounts = web3.eth.accounts;
-                    metaMask.coinbase = web3.eth.coinbase;
+                self.metaMask.network =  web3.version.network;
+                self.metaMask.accounts = web3.eth.accounts;
+                self.metaMask.coinbase = web3.eth.coinbase;
 
-                    console.log(metaMask);
+                document.querySelector('#metamask_private').classList.add("visible");
+                document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    document.querySelector('#metamask_private').classList.add("visible");
-                    document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
+                if (metaMask.network  !== '4')  {
+                    document.querySelector('#network_warning').style.display = 'block';
+                }
 
-                    if (metaMask.network  !== '4')  {
-                        document.querySelector('#network_warning').style.display = 'block';
-                    }
-
-                    // web3.eth.getGasPrice(function (error, result) {
-                    //     if (!error)
-                    //         document.querySelector('#metamask_private span').innerHTML = result;
-                    //     else
-                    //         console.error(error);
-                    // });
-
-                    let bcd = web3.eth.contract(self.contractBCDToken.abi).at('0x788A378e7F82e36B3719644e042102d68BF597C7');
-
-                    console.log(bcd);
-
-                    bcd.totalSupply.call(function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-
-                            console.log(data.toNumber());
-                        }
-                    });
-
-                    bcd.balanceOf(web3.eth.coinbase, function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-
-                            document.querySelector('#personal_info').style.display = 'flex';
-                            document.querySelector('#personal_info span').innerHTML = data.toNumber();
-                        }
-                    });
-
-                    let eventList = [];
-
-                    bcd.allEvents({fromBlock: 0, toBlock: 'latest'}, function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-
-                            eventList.push(data);
-                        }
-                    });
-
-                    console.log(eventList);
-
-
-                    // console.log(myBalance);
-                // }
-                //
-                //  catch (error) {
-                //     // User denied account access...
-                // }
+                return true;
             }
-            // Legacy dapp browsers...
-            else if (window.web3) {
-                window.web3 = new Web3(web3.currentProvider);
-                // Acccounts always exposed
-                // web3.eth.sendTransaction({/* ... */});
-            }
-            // Non-dapp browsers...
+
             else {
                 console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+
+                return false;
             }
-        // });
+    }
+
+    getBCDToken(abi) {
+
+        let self = this;
+
+        this.bcd.tokenAbi = abi;
+
+        let bcdInfo = web3.eth.contract(self.bcd.tokenAbi).at(self.bcdTokenAddress);
+
+        bcdInfo.totalSupply.call(function (err, data) {
+            if (err) {
+                console.log(err)
+            }
+            if (data) {
+
+                self.bcd.totalSupply = data.toNumber();
+            }
+        });
+
+        bcdInfo.balanceOf(self.metaMask.coinbase, function (err, data) {
+            if (err) {
+                console.log(err)
+            }
+            if (data) {
+
+                document.querySelector('#personal_info').style.display = 'flex';
+                document.querySelector('#personal_info span').innerHTML = data.toNumber();
+            }
+        });
+
+        bcdInfo.allEvents({fromBlock: 0, toBlock: 'latest'}, function (err, data) {
+            if (err) {
+                console.log(err)
+            }
+            if (data) {
+
+                self.bcd.eventList.push(data);
+            }
+        });
+
+        console.log(self.bcdToken);
+    }
+
+    getBCDBondingCurve(abi) {
+
+        let self = this;
+        this.bcd.bondingCurveAbi = abi;
+
+        let bcdBondingCurve = web3.eth.contract(self.bcd.bondingCurveAbi).at(self.bcdBondingCurveAddress);
+
+        console.log(bcdBondingCurve);
 
     }
 
