@@ -7,7 +7,7 @@
   justify-content: space-between;
 
   width : calc(100% - 2rem);
-  min-height: 300px;
+  //min-height: 300px;
 
 
   h2 {
@@ -27,7 +27,7 @@
 
     > div.flex-half {
 
-      padding:  0;
+      padding:  0 0 .5rem 0;
       width : calc(50% - 0rem);
       display: flex;
       flex-direction: column;
