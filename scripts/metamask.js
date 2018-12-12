@@ -110,12 +110,16 @@ class MetaMask {
 
 
             let transfers = events.filter( (e) => {
-                return e.event = 'transfer';
+                return e.event == 'transfer';
             })
 
             transfers.forEach( (t) => {
 
-                console.log(t.args);
+                if(t.args.from == "0x0000000000000000000000000000000000000000") {
+                    console.log(t);
+                }
+
+
             });
     }
 
