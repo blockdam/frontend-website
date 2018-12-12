@@ -45,6 +45,25 @@ var Charts = function charts() {
 
     }
 
+    let renderYAxis = function renderYAxis() {
+
+        let totalAxis = d3.axisLeft(yScale);
+
+        layers.axis.append("g")
+            .attr('class', 'total-axis')
+            .attr("transform", "translate(0,0)")
+            .call(totalAxis);
+    }
+
+    let renderXAxis = function renderYAxis() {
+
+        let statusAxis = d3.axisBottom(xScale);
+
+        layers.axis.append("g")
+            .attr('class', 'status-axis')
+            .attr("transform", "translate(" + (-barWidth / 2 - 10) + "," + (height - config.margin.bottom) + ")")
+            .call(statusAxis);
+    }
 
     let bcdSupply = function bcdSupply(el,data) {
 
@@ -75,6 +94,8 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
         setScale(data);
+        renderYAxis();
+        renderXAxis();
 
     }
 
@@ -83,8 +104,9 @@ var Charts = function charts() {
         bcdSupply : bcdSupply,
         renderSVG : renderSVG,
         renderLayers : renderLayers,
-        setScale : setScale
-
+        setScale : setScale,
+        renderYAxis : renderYAxis,
+        renderXAxis : renderXAxis
     }
 
 }
