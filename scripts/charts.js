@@ -34,6 +34,8 @@ var Charts = function charts() {
 
     let setScale = function setScale(data,config) {
 
+        console.log(data);
+
         xScale = d3.scaleTime()
             .range([config.margin.left, config.width - config.margin.right])
             .domain([d3.min(data, d => d.date),d3.max(data, d => d.date)]);
@@ -62,7 +64,7 @@ var Charts = function charts() {
         timeAxis.ticks(d3.timeMonth.every(1));
 
         layers.axis.append("g")
-            .attr('class', 'status-axis')
+            .attr('class', 'time-axis')
             .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")")
             .call(timeAxis);
     }
