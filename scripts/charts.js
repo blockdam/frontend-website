@@ -103,7 +103,7 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
         setScale(data,config);
-        renderYAxis();
+        renderYAxis(config);
         renderXAxis(config);
 
     }
