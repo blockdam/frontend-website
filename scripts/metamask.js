@@ -119,11 +119,15 @@ class MetaMask {
 
                 if(t.args && t.args.to == "0x0000000000000000000000000000000000000000") {
 
+                    let val = t.args.value.toNumber() / 1000000000000000000;
+
                     web3.eth.getBlock(t.blockNumber, function (err, data) {
                                 if (err) {
                                     console.log(err)
                                 }
                                 if (data) {
+
+
 
                                     let date = new Date(data.timestamp * 1000);
 
