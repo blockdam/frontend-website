@@ -117,24 +117,30 @@ class MetaMask {
 
             transfers.forEach( (t) => {
 
-                if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
+                if(t.args && t.args.from != "0x0000000000000000000000000000000000000000") {
 
-                    let val = t.args.value.toNumber() / 1000000000000000000;
+                    console.log(t);
 
-                    web3.eth.getBlock(t.blockNumber, function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-
-                            let date = new Date(data.timestamp * 1000);
-
-                            console.log(val + ' ' + date.toJSON());
-                        }
-                    });
-
-                    total = total + val;
                 }
+
+                // if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
+                //
+                //     let val = t.args.value.toNumber() / 1000000000000000000;
+                //
+                //     web3.eth.getBlock(t.blockNumber, function (err, data) {
+                //         if (err) {
+                //             console.log(err)
+                //         }
+                //         if (data) {
+                //
+                //             let date = new Date(data.timestamp * 1000);
+                //
+                //             console.log(val + ' ' + date.toJSON());
+                //         }
+                //     });
+                //
+                //     total = total + val;
+                // }
             });
 
             console.log(total);

@@ -3,12 +3,39 @@
   "supply" : [
 
     {
-      "date"
+      "date" : "2018-09-18T23:59:59.000Z",
+      "granted" : 1700,
+      "totalGrants": 1700
+    },
+    {
+      "date" : "2018-09-20T23:59:59.000Z",
+      "granted" : 100,
+      "totalGrants": 1800
+    },
+    {
+      "date" : "2018-10-09T23:59:59.000Z",
+      "granted" : 100,
+      "totalGrants": 1900
+    },
+    {
+      "date" : "2018-10-30T23:59:59.000Z",
+      "granted" : 100,
+      "totalGrants": 2000
+    },
+    {
+      "date" : "2018-11-09T23:59:59.000Z",
+      "granted" : 200,
+      "totalGrants": 2200
+    },
+    {
+      "date" : "2018-11-30T23:59:59.000Z",
+      "granted" : 70,
+      "totalGrants": 2270
+    },
+    {
+      "date" : "2018-11-30T23:59:59.000Z",
+      "granted" : 130,
+      "totalGrants": 2400
     }
-
   ]
-
-
-
-
 }
