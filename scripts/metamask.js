@@ -113,18 +113,22 @@ class MetaMask {
                 return e.event = 'transfer';
             })
 
+            let total = 0;
+
             transfers.forEach( (t) => {
 
                 if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
 
                     let val = t.args.value.toNumber() / 1000000000000000000;
 
+                    total = total + val;
+
                     console.log(val + ' ' + t.blockNumber);
 
                 }
-
-
             });
+
+            console.log(total);
     }
 
 
