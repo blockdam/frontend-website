@@ -56,15 +56,21 @@ class MetaMask {
                     //     }
                     // })
 
-                    bcd.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
+                    bcd.getAccounts(function(err, acc) {
 
-                            console.log(data);
-                        }
+                        console.log(acc)
+
                     });
+
+                    // bcd.balanceOf('0xb87F5B9CC79aCac4346DB7244B5cCB333194da78').call(function (err, data) {
+                    //     if (err) {
+                    //         console.log(err)
+                    //     }
+                    //     if (data) {
+                    //
+                    //         console.log(data);
+                    //     }
+                    // });
 
 
                     // console.log(myBalance);
