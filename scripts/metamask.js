@@ -119,7 +119,8 @@ class MetaMask {
 
                     let val = t.args.value.toNumber() / 1000000000000000000;
 
-                    console.log(val);
+                    console.log(val + ' ' + t.blockNumber);
+
                 }
 
 
