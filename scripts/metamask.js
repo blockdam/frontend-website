@@ -17,7 +17,7 @@ class MetaMask {
             // Modern dapp browsers...
             if (window.ethereum) {
                 window.web3 = new Web3(ethereum);
-                try {
+                // try {
                     // Request account access if needed
                     ethereum.enable();
                     // Acccounts now exposed
@@ -68,11 +68,11 @@ class MetaMask {
 
 
                     // console.log(myBalance);
-                }
-
-                 catch (error) {
-                    // User denied account access...
-                }
+                // }
+                //
+                //  catch (error) {
+                //     // User denied account access...
+                // }
             }
             // Legacy dapp browsers...
             else if (window.web3) {
