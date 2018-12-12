@@ -79,6 +79,12 @@
       "granted" : 130,
       "sold" : 0,
       "totalGrants": 2000
+    },
+    {
+      "date" : "2018-12-29T23:59:59.000Z",
+      "granted" : 0,
+      "sold" : 0,
+      "totalGrants": 2000
     }
   ]
 }
