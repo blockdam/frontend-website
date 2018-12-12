@@ -38,12 +38,12 @@ var Charts = function charts() {
 
         xScale = d3.scaleTime()
             .range([config.margin.left, config.width - config.margin.right])
-            .domain([d3.min(data, d => d.date),d3.max(data, d => d.date)]);
+            .domain([d3.min(data, d => new Date(d.date)),d3.max(data, d => new Date(d.date))]);
         //
         // // y scale
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
-            .domain([0,d3.max(data, d => d.total)]).nice();
+            .domain([0,d3.max(data, d => d.totalGrants)]).nice();
 
     }
 
