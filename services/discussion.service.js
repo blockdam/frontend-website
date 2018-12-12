@@ -18,8 +18,7 @@ class DiscussionService {
                 query : {
 
                     'type' :  { $in : ['post','activity']},
-                    'interaction.comment_count' : { $ne: '0' },
-                    'interaction.comment_count' : { $ne: 0 }
+                    'interaction.comment_count' : { $ne: '0' }
                 },
                 sort: {"interaction.last_comment_date": -1},
                 limit: 3
