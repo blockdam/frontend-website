@@ -81,7 +81,7 @@ var Charts = function charts() {
             .y(function(d) { console.log(d); return yScale(d.totalGrants); });
 
         layers.data.append("path")
-            .data(data)
+            .data([data])
             .attr("class", "line")
             .attr("d", line);
 
