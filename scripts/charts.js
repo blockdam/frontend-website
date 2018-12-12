@@ -51,6 +51,9 @@ var Charts = function charts() {
 
         let totalAxis = d3.axisLeft(yScale);
 
+        totalAxis
+            .ticks(4);
+
         layers.axis.append("g")
             .attr('class', 'total-axis')
             .attr("transform", "translate(0,0)")
