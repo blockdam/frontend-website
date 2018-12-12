@@ -56,7 +56,7 @@ var Charts = function charts() {
 
         layers.axis.append("g")
             .attr('class', 'total-axis')
-            .attr("transform", "translate(0,0)")
+            .attr("transform", "translate(0," + config.width + ")")
             .call(totalAxis);
     }
 
