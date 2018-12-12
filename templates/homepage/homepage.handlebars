@@ -91,6 +91,8 @@
 
                 <h2 class="subheader">Discussion</h2>
 
+                {{json body.discussion }}
+
                 {{#each ../body.discussion as |blog|}}
 
                     <article class="{{#ifEquals @index 0}}active{{/ifEquals}}">
