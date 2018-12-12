@@ -4,10 +4,11 @@
   background: $grey;
   display: flex;
   padding: 1rem;
+  justify-content: space-between;
 
   width : 100%;
   min-height: 300px;
-  flex-wrap: wrap;
+
 
   h2 {
     @include uppercase-large();
@@ -21,6 +22,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
 
     > div.flex-half {
 
@@ -47,5 +49,6 @@
 
       display: none;
       border-top: 1px solid black;
+      @include small-sans();
   }
 }
