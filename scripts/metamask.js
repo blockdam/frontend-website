@@ -29,6 +29,7 @@ class MetaMask {
                 document.querySelector('#metamask_private').classList.add("visible");
                 document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
+                console.log('hallo');
                 console.log(self.metaMask);
 
                 if (self.metaMask.network  !== '4')  {
