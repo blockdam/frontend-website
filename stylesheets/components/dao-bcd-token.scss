@@ -41,26 +41,26 @@
         .total-axis {
 
           path.domain {
-            stroke: $creme;
+            stroke: black;
           }
 
           text {
-            fill: $creme;
+            fill: black;
           }
 
           line, path {
-            stroke : $creme;
+            stroke : black;
           }
         }
 
         .time-axis {
 
           text {
-            fill: $creme;
+            fill: black;
           }
 
           line, path {
-            stroke : $creme;
+            stroke : black;
           }
 
 
@@ -68,7 +68,7 @@
 
         .line {
           fill: none;
-          stroke: $creme;
+          stroke: black;
           stroke-width: 1px;
         }
       }
