@@ -35,7 +35,7 @@ var Charts = function charts() {
     let setScale = function setScale(data,config) {
 
         xScale = d3.scaleTime()
-            .range([config.margin.left, width - config.margin.right])
+            .range([config.margin.left, config.width - config.margin.right])
             .domain([d3.min(data, d => d.date),d3.max(data, d => d.date)]);
         //
         // // y scale
