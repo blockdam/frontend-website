@@ -12,16 +12,14 @@ var Charts = function charts() {
     let yScale;
     let colourMap;
 
-    let renderSVG = function createSVG(element) {
+    let renderSVG = function createSVG(element,config) {
 
         svg = d3.select(element,config)
             .append('svg')
-            // .attr('width', (this.width + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
             .attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
             .attr('height', (config.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
-        //     .offset("zero")
     }
 
     let renderLayers = function renderLayers() {
