@@ -127,7 +127,9 @@ class MetaMask {
                         }
                         if (data) {
 
-                            console.log(data);
+                            let date = new Date(data.timestamp * 1000);
+
+                            console.log(date);
                         }
                     });
 
