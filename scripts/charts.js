@@ -47,7 +47,7 @@ var Charts = function charts() {
 
     }
 
-    let renderYAxis = function renderYAxis() {
+    let renderYAxis = function renderYAxis(config) {
 
         let totalAxis = d3.axisRight(yScale);
 
@@ -84,7 +84,7 @@ var Charts = function charts() {
             margin: {
                 top: 10,
                 bottom: 20,
-                left: 30,
+                left: 0,
                 right: 0
             },
 
