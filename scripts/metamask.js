@@ -61,7 +61,8 @@ class MetaMask {
                         }
                         if (data) {
 
-                            console.log(data);
+                            document.querySelector('#personal_info').style.display = 'flex';
+                            document.querySelector('#personal_info span').innerHTML = data.c;
                         }
                     });
 
