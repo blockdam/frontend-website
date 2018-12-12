@@ -24,6 +24,16 @@ var Charts = function charts() {
         //     .offset("zero")
     }
 
+    let renderLayers = function renderLayers() {
+
+        layers.axis = svg.append('g')
+            .attr('class', 'axis');
+
+        layers.bars = svg.append('g')
+            .attr('class', 'bars');
+
+    }
+
 
     let bcdSupply = function bcdSupply(el,data) {
 
@@ -52,13 +62,15 @@ var Charts = function charts() {
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
         renderSVG(element,config);
+        renderLayers();
 
     }
 
 
     return {
         bcdSupply : bcdSupply,
-        renderSVG : renderSVG
+        renderSVG : renderSVG,
+        renderLayers : renderLayers
 
     }
 
