@@ -30,7 +30,7 @@ var Charts = function charts() {
         let element = el;
         let dataset = data;
 
-        console.log(d3.select(element));
+        console.log(d3.select(element).node());
 
         let containerWidth = d3.select(element).node().getBoundingClientRect().width;
 
