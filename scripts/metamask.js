@@ -35,6 +35,8 @@ class MetaMask {
 
                     let bcd = web3.eth.contract(self.contractBCDToken.abi).at('0x788A378e7F82e36B3719644e042102d68BF597C7');
 
+                    console.log(bcd);
+
 
                     bcd.totalSupply.call(function (err, data) {
                         if (err) {
