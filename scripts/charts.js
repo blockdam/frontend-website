@@ -57,12 +57,14 @@ var Charts = function charts() {
 
     let renderXAxis = function renderXAxis(config) {
 
-        let statusAxis = d3.axisBottom(xScale);
+        let timeAxis = d3.axisBottom(xScale);
+
+        timeAxis.ticks(d3.timeMonth.every(1));
 
         layers.axis.append("g")
             .attr('class', 'status-axis')
             .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")")
-            .call(statusAxis);
+            .call(timeAxis);
     }
 
     let bcdSupply = function bcdSupply(el,data) {
