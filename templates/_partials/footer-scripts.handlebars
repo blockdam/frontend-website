@@ -15,15 +15,18 @@
     <script>
 
         var metaMask = new MetaMask();
-        metaMask.init();
+        var hasMetaMask = metaMask.init();
 
-        loadJSON("./assets/smartcontracts/bcdToken.json", function(response) {
-            metaMask.getBCDToken(JSON.parse(response));
-        });
+        if (hasMetaMask) {
 
-        loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function(response) {
-            metaMask.getBCDBondingCurve(JSON.parse(response));
-        });
+            loadJSON("./assets/smartcontracts/bcdToken.json", function (response) {
+                metaMask.getBCDToken(JSON.parse(response));
+            });
+
+            loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function (response) {
+                metaMask.getBCDBondingCurve(JSON.parse(response));
+            });
+        }
 
     </script>
 
