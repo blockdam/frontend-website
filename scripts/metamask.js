@@ -82,7 +82,7 @@ class MetaMask {
             }
         });
 
-        console.log(self.bcdToken);
+        console.log(self.bcd);
     }
 
     getBCDBondingCurve(json) {
