@@ -36,9 +36,11 @@ var Charts = function charts() {
 
         console.log(data);
 
+        let now = new Date();
+
         xScale = d3.scaleTime()
             .range([config.margin.left, config.width - config.margin.right])
-            .domain([d3.min(data, d => new Date(d.date)),d3.max(data, d => new Date(d.date))]);
+            .domain([d3.min(data, d => new Date(d.date)),now]);
         //
         // // y scale
         yScale = d3.scaleLinear()
@@ -137,7 +139,7 @@ var Charts = function charts() {
         setScale(data,config);
         renderYAxis(config);
         renderXAxis(config);
-        drawLine(data);
+        // drawLine(data);
         drawArea(data);
 
     }
