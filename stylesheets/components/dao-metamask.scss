@@ -4,8 +4,8 @@
   height: 0;
   transition: height 500ms ease;
   overflow: hidden;
-  //@include small-sans();
-  //line-height: 1.2;
+  @include small-sans();
+  line-height: 1.2;
 
   svg  {
 
@@ -37,8 +37,8 @@
   }
 
   span {
-    @include uppercase();
-    font-size: .85rem;
+    //@include uppercase();
+    //font-size: .85rem;
   }
 
 }
