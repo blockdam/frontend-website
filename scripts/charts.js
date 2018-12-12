@@ -138,6 +138,7 @@ var Charts = function charts() {
         renderYAxis(config);
         renderXAxis(config);
         drawLine(data);
+        drawArea(data);
 
     }
 
@@ -149,7 +150,8 @@ var Charts = function charts() {
         setScale : setScale,
         renderYAxis : renderYAxis,
         renderXAxis : renderXAxis,
-        drawLine : drawLine
+        drawLine : drawLine,
+        drawArea : drawArea
     }
 
 }
