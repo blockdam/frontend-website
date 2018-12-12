@@ -45,9 +45,17 @@
           }
         }
 
+        .time-axis {
+
+          text {
+            fill: $creme;
+          }
+        }
+
         .line {
           fill: none;
-          stroke : black;
+          stroke: $creme;
+          stroke-width: 2px;
         }
       }
 
