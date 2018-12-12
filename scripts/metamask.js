@@ -32,7 +32,7 @@ class MetaMask {
                     document.querySelector('#metamask_private').classList.add("visible");
                     document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
 
-                    if (metaMask.network  !== 4)  {
+                    if (metaMask.network  !== '4')  {
                         document.querySelector('#network_warning').style.display = 'block';
                     }
 
