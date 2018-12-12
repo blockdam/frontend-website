@@ -115,7 +115,7 @@ class MetaMask {
 
             transfers.forEach( (t) => {
 
-                if(t.args.from == "0x0000000000000000000000000000000000000000") {
+                if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
                     console.log(t);
                 }
 
