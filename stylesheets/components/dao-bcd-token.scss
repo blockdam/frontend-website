@@ -52,6 +52,10 @@
           line, path {
             stroke : black;
           }
+
+          .tick:first-of-type {
+            display: none;
+          }
         }
 
         .time-axis {

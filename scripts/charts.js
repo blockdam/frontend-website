@@ -58,7 +58,11 @@ var Charts = function charts() {
 
         layers.axis.append("g")
             .attr('class', 'total-axis')
-            .attr("transform", "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)")
+            .attr("transform", function()  {
+
+                    if(config.alignment == 'right')  { return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)" }
+                    else { return "translate(0,0);" }
+            })
             .call(totalAxis);
     }
 
@@ -135,6 +139,7 @@ var Charts = function charts() {
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
         config.yParameter = 'totalGrants';
+        config.alignment = 'right';
 
         renderSVG(element,config);
         renderLayers();
@@ -173,6 +178,7 @@ var Charts = function charts() {
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
         config.yParameter = 'ethValue';
+        config.alignment = 'left';
 
         renderSVG(element,config);
         renderLayers();
