@@ -34,13 +34,11 @@ var Charts = function charts() {
 
     let setScale = function setScale(data,config) {
 
-        console.log(data);
-
-        let now = new Date();
+        let endDate = moment().add(2,'days');
 
         xScale = d3.scaleTime()
             .range([config.margin.left, config.width - config.margin.right])
-            .domain([d3.min(data, d => new Date(d.date)),now]);
+            .domain([d3.min(data, d => new Date(d.date)),endDate]);
         //
         // // y scale
         yScale = d3.scaleLinear()
