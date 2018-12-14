@@ -94,6 +94,13 @@
       "ethValue" : 0.0025
     },
     {
+      "date" : "2018-12-12T23:59:59.000Z",
+      "granted" : 130,
+      "sold" : 0,
+      "totalGrants": 2000,
+      "ethValue" : 0.0025
+    },
+    {
       "date" : "2018-12-13T23:59:59.000Z",
       "granted" : 140,
       "sold" : 0,
