@@ -34,7 +34,7 @@ var Charts = function charts() {
 
     let setScale = function setScale(data,config) {
 
-        let endDate = moment().add(2,'days');
+        let endDate = moment().add(1,'days');
 
         xScale = d3.scaleTime()
             .range([config.margin.left, config.width - config.margin.right])
