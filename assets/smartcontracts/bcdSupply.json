@@ -102,7 +102,7 @@
     },
     {
       "date" : "2018-14-12T23:59:59.000Z",
-      "granted" : 140,
+      "granted" : 0,
       "sold" : 0,
       "totalGrants": 2140,
       "ethValue" : 0.00233645
