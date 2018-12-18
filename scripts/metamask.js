@@ -31,7 +31,7 @@ class MetaMask {
                 console.log(web3.eth);
 
                 web3.eth.getAccounts((err, res) => {
-                    console.log(res[0]);
+                    console.log(res);
                 });
 
                 // document.querySelector('#metamask_private').classList.add("visible");
@@ -42,6 +42,8 @@ class MetaMask {
                 if (self.metaMask.network  !== '4')  {
                     document.querySelector('#network_warning').style.display = 'block';
                 }
+
+                // web3.currentProvider.publicConfigStore.on('update', callback);
 
                 return true;
 
