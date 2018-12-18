@@ -1,6 +1,23 @@
 <!-- page specific script -->
 <script src="{{baseUrl}}/assets/scripts/{{{body.type}}}.js"></script>
 
+<script>
+
+    var metaMask = new MetaMask();
+    var hasMetaMask = metaMask.init();
+
+    if (hasMetaMask) {
+
+        loadJSON("./assets/smartcontracts/bcdToken.json", function (response) {
+            metaMask.getBCDToken(JSON.parse(response));
+        });
+
+        loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function (response) {
+            metaMask.getBCDBondingCurve(JSON.parse(response));
+        });
+    }
+</script>
+
 {{#ifEquals body.type 'post' }}
 
     <script>
@@ -10,25 +27,13 @@
 
 {{/ifEquals}}
 
+
+
 {{#ifEquals body.type 'homepage' }}
 
     <script src="{{baseUrl}}/assets/scripts/d3.min.js"></script>
 
     <script>
-
-        var metaMask = new MetaMask();
-        var hasMetaMask = metaMask.init();
-
-        if (hasMetaMask) {
-
-            loadJSON("./assets/smartcontracts/bcdToken.json", function (response) {
-                metaMask.getBCDToken(JSON.parse(response));
-            });
-
-            loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function (response) {
-                metaMask.getBCDBondingCurve(JSON.parse(response));
-            });
-        }
 
         var charts = new Charts();
         charts.bcdSupply('#chart_supply');
@@ -37,6 +42,10 @@
     </script>
 
 {{/ifEquals}}
+
+
+
+
 
 
 
