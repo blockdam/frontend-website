@@ -8,11 +8,11 @@
 
     if (hasMetaMask) {
 
-        loadJSON("./assets/smartcontracts/bcdToken.json", function (response) {
+        loadJSON("{{baseUrl}}/assets/smartcontracts/bcdToken.json", function (response) {
             metaMask.getBCDToken(JSON.parse(response));
         });
 
-        loadJSON("./assets/smartcontracts/bcdBondingCurve.json", function (response) {
+        loadJSON("{{baseUrl}}/smartcontracts/bcdBondingCurve.json", function (response) {
             metaMask.getBCDBondingCurve(JSON.parse(response));
         });
     }
