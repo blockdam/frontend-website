@@ -150,8 +150,8 @@ var Charts = function charts() {
 
                 console.log(response);
 
-                setScale(data,config);
-                drawArea(data,config);
+                // setScale(data,config);
+                // drawArea(data,config);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
