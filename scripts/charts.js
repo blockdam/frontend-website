@@ -143,8 +143,7 @@ var Charts = function charts() {
 
         renderSVG(element,config);
         renderLayers();
-        renderYAxis(config);
-        renderXAxis(config);
+
         // drawLine(data);
 
         console.log('huh?');
@@ -156,6 +155,8 @@ var Charts = function charts() {
                 console.log(response);
 
                 // setScale(data,config);
+                // renderYAxis(config);
+                // renderXAxis(config);
                 // drawArea(data,config);
 
                 if (response.status !== 200) {
