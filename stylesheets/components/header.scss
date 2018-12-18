@@ -29,7 +29,8 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+
 
 
     @media (min-width: $breakpoint-sm) {
@@ -102,11 +103,22 @@ header {
         > div.tooltip {
           display: none;
           position: absolute;
-          top: 0;
-          width: 8rem;
-          left: -4rem;
-          height: 4em;
-          background: black;
+          bottom: -8.5rem;
+          width: 12rem;
+          left: -2.5rem;
+          height: 8em;
+          background: $grey;
+          z-index: 999;
+
+          > .tip {
+            position: absolute;
+            top: -.5rem;
+            width: 1rem;
+            height: 1rem;
+            transform: rotate(-45deg);
+            background: $grey;
+
+          }
         }
 
         &.visible {
