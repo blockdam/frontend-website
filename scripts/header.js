@@ -52,30 +52,30 @@ class Header {
     _initWaypoints() {
 
         let self = this;
+        //
+        // let wp_close = new Waypoint({
+        //     element: self.article,
+        //     handler: function(direction) {
+        //         if(direction === 'down') {  // self.expanded &&
+        //             console.log('close1');
+        //             self._close();
+        //         }
+        //     },
+        //     offset : -10
+        // })
+        //
+        // let wp_open = new Waypoint({
+        //     element: self.article,
+        //     handler: function(direction) {
+        //         if(direction === 'up') {  // !self.expanded &&
+        //             console.log('open');
+        //             self._open();
+        //         }
+        //     },
+        //     offset : -10
+        // })
 
-        let wp_close = new Waypoint({
-            element: self.article,
-            handler: function(direction) {
-                if(direction === 'down') {  // self.expanded &&
-                    console.log('close1');
-                    self._close();
-                }
-            },
-            offset : -10
-        })
-
-        let wp_open = new Waypoint({
-            element: self.article,
-            handler: function(direction) {
-                if(direction === 'up') {  // !self.expanded &&
-                    console.log('open');
-                    self._open();
-                }
-            },
-            offset : -10
-        })
-
-        let offset = window.innerHeight * 0.8;
+        // let offset = window.innerHeight * 0.8;
 
         // let wp_closing = new Waypoint({
         //     element: self.main,
