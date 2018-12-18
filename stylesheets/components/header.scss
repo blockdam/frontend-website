@@ -74,6 +74,7 @@ header {
   nav ul {
     display: none;
     flex-direction: row;
+    align-items: center;
 
     @media(min-width: $breakpoint-sm) {
       display: flex;
@@ -90,7 +91,7 @@ header {
       &#metamask {
 
         display: none;
-        margin-top: -.6rem;
+        margin-top: .6rem;
         position: relative;
 
         svg {
