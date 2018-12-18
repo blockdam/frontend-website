@@ -145,9 +145,12 @@ var Charts = function charts() {
         renderXAxis(config);
         // drawLine(data);
 
+        console.log('huh?');
+
         axios.get(url)
             .then(function (response) {
 
+                console.log('hah!');
                 console.log(response);
 
                 // setScale(data,config);
