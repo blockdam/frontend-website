@@ -111,7 +111,13 @@ header {
           z-index: 999;
           padding: .5rem;
           color: white;
-          @include small-sans();
+          //@include small-sans();
+          font-family: Gotham SSm A,Gotham SSm B;
+          font-weight: 300;
+          line-height: 1.66;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-size: .725rem;
 
           > .tip {
             position: absolute;
@@ -134,7 +140,6 @@ header {
             justify-content: center;
             display: none;
             padding-top: .5rem;
-            @include small-sans();
 
             > div > span {
               display: inline-block;
