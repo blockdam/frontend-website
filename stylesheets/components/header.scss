@@ -89,12 +89,34 @@ header {
       &#metamask {
 
         display: none;
+        margin-top: -.6rem;
 
         svg {
           height: 3rem;
           width: auto;
           -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+        }
+
+        > div.tooltip {
+          display: none;
+          position: absolute;
+          top: 0;
+          width: 8rem;
+          left: -4rem;
+          height: 4em;
+          background: black;
+        }
+
+        &.visible {
+          display: block;
+        }
+
+        &:hover {
+
+          > div.tooltip {
+            display: block;
+          }
         }
       }
     }
