@@ -139,14 +139,11 @@ var Charts = function charts() {
         config.yParameter = 'totalGrants';
         config.alignment = 'right';
 
-        renderSVG(element,config);
-        renderLayers();
-
-
-
         axios.get(url)
             .then(function (response) {
 
+                renderSVG(element,config);
+                renderLayers();
                 setScale(response.data,config);
                 renderYAxis(config);
                 renderXAxis(config);
@@ -189,11 +186,7 @@ var Charts = function charts() {
 
         config.yParameter = 'ethValue';
         config.alignment = 'left';
-
-
-
-
-
+        
         // drawArea(data);
 
         axios.get(url)
