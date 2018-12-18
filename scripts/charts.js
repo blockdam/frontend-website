@@ -112,6 +112,8 @@ var Charts = function charts() {
 
     let bcdSupply = function bcdSupply(el) {
 
+        console.log('he?');
+
         let element = el,
             url = 'https://blockdam.nl/smc-api/token/balance';
 
