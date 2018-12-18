@@ -145,7 +145,7 @@ var Charts = function charts() {
         renderXAxis(config);
         // drawLine(data);
 
-        axios.post(url)
+        axios.get(url)
             .then(function (response) {
 
                 console.log(response);
