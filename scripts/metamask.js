@@ -29,7 +29,7 @@ class MetaMask {
                 document.querySelector('nav ul li#metamask').classList.add("visible");
 
                 // document.querySelector('#metamask_private').classList.add("visible");
-                // document.querySelector('#metamask_private span').innerHTML = web3.eth.coinbase;
+                document.querySelector('nav ul li#metamask #welcome_message span').innerHTML = web3.eth.coinbase;
 
                 // console.log(self.metaMask);
 
