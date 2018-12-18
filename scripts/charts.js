@@ -110,10 +110,10 @@ var Charts = function charts() {
             .attr('class', 'flow');
     }
 
-    let bcdSupply = function bcdSupply(el,data) {
+    let bcdSupply = function bcdSupply(el) {
 
-        let element = el;
-        let dataset = data;
+        let element = el,
+            url = '/smc-api/token/balance/';
 
         let config = {
 
@@ -141,18 +141,28 @@ var Charts = function charts() {
 
         renderSVG(element,config);
         renderLayers();
-        setScale(data,config);
         renderYAxis(config);
         renderXAxis(config);
         // drawLine(data);
-        drawArea(data,config);
+
+        axios.post(url)
+            .then(function (response) {
+
+                setScale(data,config);
+                drawArea(data,config);
+
+                if (response.status !== 200) {
+                    console.log('foutje bedankt')
+                }
+            });
 
     }
 
-    let bcdEthValue = function bcdEthValue(el,data) {
+    let bcdEthValue = function bcdEthValue(el) {
 
-        let element = el;
-        let dataset = data;
+        let element = el,
+            url = '/smc-api/token/balance/';
+
 
         let config = {
 
@@ -180,11 +190,22 @@ var Charts = function charts() {
 
         renderSVG(element,config);
         renderLayers();
-        setScale(data,config);
+
         renderYAxis(config);
         renderXAxis(config);
-        drawLine(data,config);
+
         // drawArea(data);
+
+        axios.post(url)
+            .then(function (response) {
+
+                setScale(data,config);
+                drawLine(data,config);
+
+                if (response.status !== 200) {
+                    console.log('foutje bedankt')
+                }
+            });
     }
 
 
