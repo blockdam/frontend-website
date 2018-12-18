@@ -151,13 +151,10 @@ var Charts = function charts() {
         axios.get(url)
             .then(function (response) {
 
-                console.log('hah!');
-                console.log(response);
-
-                // setScale(data,config);
-                // renderYAxis(config);
-                // renderXAxis(config);
-                // drawArea(data,config);
+                setScale(response.data,config);
+                renderYAxis(config);
+                renderXAxis(config);
+                drawArea(response.data,config);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
