@@ -127,6 +127,21 @@ header {
           #welcome_message span {
             font-size: .45rem;
           }
+
+          #personal_info {
+
+            flex-direction: column;
+            justify-content: center;
+            display: none;
+            padding-top: .5rem;
+            @include small-sans();
+
+            > div > span {
+              display: inline-block;
+              //margin: 0 .125rem;
+
+            }
+          }
         }
 
         &.visible {
