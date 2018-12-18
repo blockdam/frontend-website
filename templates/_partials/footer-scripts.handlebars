@@ -22,7 +22,6 @@
         if (hasMetaMask) {
 
             loadJSON("./assets/smartcontracts/bcdToken.json", function (response) {
-                console.log('yoyoyoy');
                 metaMask.getBCDToken(JSON.parse(response));
             });
 

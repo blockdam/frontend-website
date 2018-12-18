@@ -58,7 +58,10 @@ var Charts = function charts() {
             .attr('class', 'total-axis')
             .attr("transform", function()  {
 
-                    if(config.alignment == 'right')  { return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)" }
+                    if(config.alignment == 'right')  {
+                        return "translate(0,0);"
+                       // return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)"
+                    }
                     else { return "translate(0,0);" }
             })
             .call(totalAxis);
