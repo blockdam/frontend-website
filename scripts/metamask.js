@@ -3,7 +3,7 @@ class MetaMask {
 
     constructor() {
 
-        this.bcdTokenAddress = '0x788A378e7F82e36B3719644e042102d68BF597C7';
+        this.bcdTokenAddress = '0xA2F071aFe85e8F3ec51bD9ae5284Bf53204Df1b9';
         this.bcdBondingCurveAddress = '0x5c5d2c96f62b41ebd4ca420884146b33ba3d75c7';
 
         this.metaMask = {};
