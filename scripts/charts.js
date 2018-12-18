@@ -190,8 +190,7 @@ var Charts = function charts() {
         config.yParameter = 'ethValue';
         config.alignment = 'left';
 
-        renderSVG(element,config);
-        renderLayers();
+
 
 
 
@@ -200,6 +199,8 @@ var Charts = function charts() {
         axios.get(url)
             .then(function (response) {
 
+                renderSVG(element,config);
+                renderLayers();
                 setScale(response.data,config);
                 renderYAxis(config);
                 renderXAxis(config);
