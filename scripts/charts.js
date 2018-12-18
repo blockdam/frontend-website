@@ -148,6 +148,8 @@ var Charts = function charts() {
         axios.post(url)
             .then(function (response) {
 
+                console.log(response);
+
                 setScale(data,config);
                 drawArea(data,config);
 
