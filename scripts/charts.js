@@ -112,8 +112,6 @@ var Charts = function charts() {
 
     let bcdSupply = function bcdSupply(el) {
 
-        console.log('he?');
-
         let element = el,
             url = 'https://blockdam.nl/smc-api/token/balance';
 
@@ -144,9 +142,7 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
 
-        // drawLine(data);
 
-        console.log('huh?');
 
         axios.get(url)
             .then(function (response) {
@@ -155,6 +151,7 @@ var Charts = function charts() {
                 renderYAxis(config);
                 renderXAxis(config);
                 drawArea(response.data,config);
+                // drawLine(data);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
@@ -166,7 +163,7 @@ var Charts = function charts() {
     let bcdEthValue = function bcdEthValue(el) {
 
         let element = el,
-            url = '/smc-api/token/balance/';
+            url = 'https://blockdam.nl/smc-api/token/balance/';
 
 
         let config = {
@@ -196,16 +193,17 @@ var Charts = function charts() {
         renderSVG(element,config);
         renderLayers();
 
-        renderYAxis(config);
-        renderXAxis(config);
+
 
         // drawArea(data);
 
         axios.post(url)
             .then(function (response) {
 
-                setScale(data,config);
-                drawLine(data,config);
+                setScale(response.data,config);
+                renderYAxis(config);
+                renderXAxis(config);
+                drawLine(response.data,config);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
