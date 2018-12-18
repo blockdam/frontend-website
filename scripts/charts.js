@@ -82,7 +82,7 @@ var Charts = function charts() {
 
         var line = d3.line()
             .x(function(d) { return xScale(new Date(d.date)); })
-            .y(function(d) { console.log(d); return yScale(d[config.yParameter]); });
+            .y(function(d) { return yScale(d[config.yParameter]); });
 
         layers.data.append("path")
             .data([data])
@@ -186,7 +186,7 @@ var Charts = function charts() {
 
         config.yParameter = 'ethValue';
         config.alignment = 'left';
-        
+
         // drawArea(data);
 
         axios.get(url)
