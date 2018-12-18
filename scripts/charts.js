@@ -113,7 +113,7 @@ var Charts = function charts() {
     let bcdSupply = function bcdSupply(el) {
 
         let element = el,
-            url = '/smc-api/token/balance/';
+            url = 'https://blockdam.nl/smc-api/token/balance';
 
         let config = {
 
