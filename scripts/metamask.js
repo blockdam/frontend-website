@@ -30,6 +30,10 @@ class MetaMask {
 
                 console.log(web3.eth);
 
+                web3.eth.getAccounts((err, res) => {
+                    console.log(res[0]);
+                });
+
                 // document.querySelector('#metamask_private').classList.add("visible");
                 document.querySelector('nav ul li#metamask #welcome_message span').innerHTML = web3.eth.coinbase;
 
