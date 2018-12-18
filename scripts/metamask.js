@@ -36,6 +36,7 @@ class MetaMask {
                 }
 
                 return true;
+
             }
 
             else {
@@ -59,6 +60,8 @@ class MetaMask {
             }
             if (data) {
 
+                console.log(data);
+
                 self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
                 document.querySelector('#general_info span#total_supply').innerHTML = self.bcd.totalSupply;
             }
@@ -76,21 +79,6 @@ class MetaMask {
                 document.querySelector('#personal_info span').innerHTML = val;
             }
         });
-
-        bcdInfo.allEvents({fromBlock: 0, toBlock: 'latest'}, function (err, data) {
-            if (err) {
-                console.log(err)
-            }
-            if (data) {
-
-                self.bcd.eventList.push(data);
-            }
-        });
-
-        // setTimeout( function() {
-        //
-        //     self.countGrants(self.bcd.eventList);
-        // },15000);
     }
 
     getBCDBondingCurve(json) {
@@ -104,59 +92,6 @@ class MetaMask {
 
     }
 
-    countGrants(events) {
-
-
-            let transfers = events.filter( (e) => {
-                return e.event = 'transfer';
-            })
-
-            let total = 0;
-
-            transfers.forEach( (t) => {
-
-                // if(t.args && t.args.to == "0x0000000000000000000000000000000000000000") {
-                //
-                //     let val = t.args.value.toNumber() / 1000000000000000000;
-                //
-                //     web3.eth.getBlock(t.blockNumber, function (err, data) {
-                //                 if (err) {
-                //                     console.log(err)
-                //                 }
-                //                 if (data) {
-                //
-                //
-                //
-                //                     let date = new Date(data.timestamp * 1000);
-                //
-                //                     console.log(val + ' ' + date.toJSON());
-                //                 }
-                //             });
-                //
-                // }
-
-                // if(t.args && t.args.from == "0x0000000000000000000000000000000000000000") {
-                //
-                //     let val = t.args.value.toNumber() / 1000000000000000000;
-                //
-                //     web3.eth.getBlock(t.blockNumber, function (err, data) {
-                //         if (err) {
-                //             console.log(err)
-                //         }
-                //         if (data) {
-                //
-                //             let date = new Date(data.timestamp * 1000);
-                //
-                //             console.log(val + ' ' + date.toJSON());
-                //         }
-                //     });
-                //
-                //     total = total + val;
-                // }
-            });
-
-            // console.log(total);
-    }
 
 
 }
