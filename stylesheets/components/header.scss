@@ -103,7 +103,7 @@ header {
         > div.tooltip {
           display: none;
           position: absolute;
-          bottom: -8.5rem;
+          bottom: -8.75rem;
           width: 12rem;
           left: -2.5rem;
           height: 8em;
@@ -113,7 +113,7 @@ header {
           > .tip {
             position: absolute;
             top: -.5rem;
-            left: calc(50% - .66rem);
+            left: calc(50% - .4rem);
             width: 1rem;
             height: 1rem;
             transform: rotate(-45deg);
