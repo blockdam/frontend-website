@@ -197,7 +197,7 @@ var Charts = function charts() {
 
         // drawArea(data);
 
-        axios.post(url)
+        axios.get(url)
             .then(function (response) {
 
                 setScale(response.data,config);
