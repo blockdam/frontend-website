@@ -1,4 +1,7 @@
 table.default {
 
   width: 100%;
+
+  @include uppercase();
+  font-size: .75rem;
 }
