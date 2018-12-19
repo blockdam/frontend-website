@@ -9,7 +9,7 @@ class Transactions {
     init() {
 
         let self = this,
-            url = 'https://blockdam.nl/smc-api/transactions/';
+            url = 'https://blockdam.nl/smc-api/transactions';
 
         axios.get(url)
             .then(function (response) {
