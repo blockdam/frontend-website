@@ -7,7 +7,7 @@ class MetaMask {
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
         this.html.navItem = document.querySelector('nav ul li#metamask');
         this.html.welcome = document.querySelector('nav ul li#metamask #welcome_message');
-        this.html.balance = document.querySelector('#personal_info')
+        this.html.balance = document.querySelector('nav ul li#metamask #personal_info');
     }
 
 
@@ -59,7 +59,7 @@ class MetaMask {
 
                 if(response.data !== null) {
 
-                    self.html.welcome.innerHTML = 'Hello = ' + response.data.nickName + ', the DAO salutes you!.';
+                    self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + ', the DAO salutes you!.';
 
                 } else {
 
@@ -97,7 +97,7 @@ class MetaMask {
                     }
                     if (data) {
                         let val = data.toNumber() / 1000000000000000000;
-                        this.html.balance.innerHTML = 'Your member address holds ' + val + ' BCD tokens';
+                        self.html.balance.innerHTML = 'Your member address holds ' + val + ' BCD tokens';
                     }
                 });
 
