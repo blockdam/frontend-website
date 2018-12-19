@@ -67,22 +67,20 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                let bcdInfo = web3.eth.contract(response.data.abi).at(self.bcdTokenAddress);
+                self.bcdContract = web3.eth.contract(response.data.abi).at(self.bcdTokenAddress);
 
                 if(self.html.totalSupply) {
-
-                    bcdInfo.totalSupply.call(function (err, data) {
+                    self.bcdContract.totalSupply.call(function (err, data) {
                         if (err) {
                             console.log(err)
                         }
                         if (data) {
-                            self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
-                            self.html.totalSupply.innerHTML = self.bcd.totalSupply;
+                            self.html.totalSupply.innerHTML = data.toNumber() / 1000000000000000000;
                         }
                     });
                 }
 
-                bcdInfo.balanceOf(self.metaMask.coinbase, function (err, data) {
+                self.bcdContract.balanceOf(self.metaMask.coinbase, function (err, data) {
                     if (err) {
                         console.log(err)
                     }
