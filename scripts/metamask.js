@@ -23,7 +23,6 @@ class MetaMask {
 
                 if (web3.eth.accounts.length) {
 
-
                     self.identify(web3.eth.accounts[0]);
 
                 } else {
@@ -55,7 +54,7 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                self.html.nickName.innerHTML = response.nick;
+                self.html.nickName.innerHTML = response.data.nickName;
             });
     }
 
