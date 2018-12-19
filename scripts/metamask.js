@@ -48,6 +48,8 @@ class MetaMask {
 
     identify(address) {
 
+        console.log(address);
+
         let self = this,
             url = 'https://blockdam.nl/smc-api/members/' + address;
 
