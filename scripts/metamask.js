@@ -54,6 +54,8 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
+                console.log(response);
+
                 self.html.nickName.innerHTML = response.data.nickName;
             });
     }
