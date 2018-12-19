@@ -19,6 +19,10 @@ class Donate {
 
         console.log(metaMask);
 
+        web3.eth.getAccounts((err, res) => {
+            console.log(res);
+        });
+
     }
 
     skip() {
