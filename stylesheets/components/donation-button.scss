@@ -4,13 +4,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 6rem;
+  height: 12rem;
 
   span {
     @include small-sans();
   }
 
   svg {
+    margin: 2rem 0;
     width: 3rem;
     height: auto;
     fill: #333;
