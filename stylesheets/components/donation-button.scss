@@ -1,5 +1,10 @@
 #donation_button_container {
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+
   svg {
     width: 2rem;
     height: auto;
