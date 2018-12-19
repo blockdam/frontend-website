@@ -44,7 +44,7 @@ class Transactions {
 
         })
 
-        this.container.innerHTML = table;
+        this.container.appendChild(table);
     }
 
 }
