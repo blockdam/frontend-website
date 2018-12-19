@@ -23,7 +23,7 @@ class Donate {
             console.log(res);
         });
 
-        metaMask.bcdContract.transfer.sendTransaction('0x6974A038f0a2dC6d68Fa1c92b8d4e242FFf72f8E', 1,{ from: web3.eth.coinbase}, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction('0x6974A038f0a2dC6d68Fa1c92b8d4e242FFf72f8E', .1 * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
             if (err) {
                 console.log(err)
             }
