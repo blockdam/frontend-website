@@ -25,11 +25,12 @@ class Transactions {
         console.log(transactions)
 
         let table = document.createElement('table');
+        table.classList.add('default');
 
         transactions.forEach((t) => {
 
             let tr = document.createElement('tr');
-            tr.classList.add('default');
+
             let date = document.createElement('td');
             date.innerHTML = moment(t.date).format('DD/MM/YYYY');
             tr.appendChild(date);
