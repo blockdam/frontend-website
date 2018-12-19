@@ -18,17 +18,8 @@ class Menu {
             self.skip();
         }
 
-        this.rowOne = document.getElementById('row_one');
-        this.rowTwo = document.getElementById('row_two');
     }
 
-    openRowOne() {
-        this.rowOne.classList.add('active');
-    }
-
-    openRowTwo() {
-        this.rowTwo.classList.add('active');
-    }
 
     intro() {
 
