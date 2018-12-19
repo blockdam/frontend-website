@@ -67,7 +67,7 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                let bcdInfo = web3.eth.contract(response.data).at(self.bcdTokenAddress);
+                let bcdInfo = web3.eth.contract(response.data.abi).at(self.bcdTokenAddress);
 
                 if(self.html.totalSupply) {
 
@@ -106,7 +106,7 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                let bcdBondingCurve = web3.eth.contract(response.data).at(self.bcdBondingCurveAddress);
+                let bcdBondingCurve = web3.eth.contract(response.data.abi).at(self.bcdBondingCurveAddress);
 
                 console.log(bcdBondingCurve);
             });
