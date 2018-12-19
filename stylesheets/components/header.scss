@@ -102,7 +102,7 @@ header {
         }
 
         > div.tooltip {
-          display: none;
+          visibility: hidden;
           position: absolute;
           bottom: -10.5rem;
           width: 12rem;
@@ -119,7 +119,7 @@ header {
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-size: .725rem;
-          transition: bottom 250ms ease;
+          transition: visibility 0s, bottom 250ms ease;
 
           > .tip {
             position: absolute;
@@ -149,7 +149,7 @@ header {
             }
           }
           &.visible {
-            display: block;
+            visibility: visible;
             bottom: -8.5rem;
           }
         }
@@ -161,7 +161,8 @@ header {
         &:hover {
 
           > div.tooltip {
-            display: block;
+            visibility: hidden;
+            bottom: -8.5rem;
           }
         }
       }
