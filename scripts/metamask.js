@@ -65,7 +65,7 @@ class MetaMask {
                     });
                 }
 
-                self.bcdContract.balanceOf(self.metaMask.coinbase, function (err, data) {
+                self.bcdContract.balanceOf(web3.eth.coinbase, function (err, data) {
                     if (err) {
                         console.log(err)
                     }
