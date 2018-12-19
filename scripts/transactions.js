@@ -30,13 +30,13 @@ class Transactions {
 
             let tr = document.createElement('tr');
             let date = document.createElement('td');
-            date.innerHTML = moment(t.date).format('DD/MM/YY');
+            date.innerHTML = moment(t.date).format('DD/MM/YYYY');
             tr.appendChild(date);
             let from = document.createElement('td');
-            from.innerHTML = t.from.substr(t.from - 5);
+            from.innerHTML = t.from.slice(-5);
             tr.appendChild(from);
             let to = document.createElement('td');
-            to.innerHTML = t.to.substr(t.from - 5);
+            to.innerHTML = t.to.slice(-5);
             tr.appendChild(to);
             let value = document.createElement('td');
             value.innerHTML = parseInt(t.value) / 1000000000000000000;
