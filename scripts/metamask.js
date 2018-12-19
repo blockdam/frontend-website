@@ -10,6 +10,9 @@ class MetaMask {
         this.bcd = {};
 
         this.bcd.eventList = [];
+
+        this.html = {}
+        this.html.totalSupply = document.querySelector('#general_info span#total_supply')''
     }
 
 
@@ -28,10 +31,10 @@ class MetaMask {
 
                 document.querySelector('nav ul li#metamask').classList.add("visible");
 
-                console.log(web3.eth);
+                // console.log(web3.eth);
 
                 web3.eth.getAccounts((err, res) => {
-                    console.log(res);
+                    // console.log(res);
                 });
 
                 // document.querySelector('#metamask_private').classList.add("visible");
@@ -64,18 +67,21 @@ class MetaMask {
 
         let bcdInfo = web3.eth.contract(self.bcd.tokenAbi).at(self.bcdTokenAddress);
 
-        bcdInfo.totalSupply.call(function (err, data) {
-            if (err) {
-                console.log(err)
-            }
-            if (data) {
+        if(this.html.totalSupply) {
 
-                console.log(data);
+            bcdInfo.totalSupply.call(function (err, data) {
+                if (err) {
+                    console.log(err)
+                }
+                if (data) {
 
-                self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
-                document.querySelector('#general_info span#total_supply').innerHTML = self.bcd.totalSupply;
-            }
-        });
+                    console.log(data);
+
+                    self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
+                    this.html.totalSupply.innerHTML = self.bcd.totalSupply;
+                }
+            });
+        }
 
         bcdInfo.balanceOf(self.metaMask.coinbase, function (err, data) {
             if (err) {
