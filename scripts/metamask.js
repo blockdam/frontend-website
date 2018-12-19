@@ -98,7 +98,7 @@ class MetaMask {
 
     }
 
-    getBCDBondingCurve(json) {
+    getBCDBondingCurve() {
 
         let self = this,
             url = 'https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json';
