@@ -22,22 +22,24 @@ class Transactions {
 
     createHTML(transactions) {
 
+        console.log(transactions)
+
         let table = document.createElement('table');
 
         transactions.forEach((t) => {
 
             let tr = document.createElement('tr');
             let date = document.createElement('td');
-            date.innerHTML = t.date;
+            date.innerHTML = moment(t.date).format('DD/MM/YY');
             tr.appendChild(date);
             let from = document.createElement('td');
-            from.innerHTML = t.from;
+            from.innerHTML = t.from.substr(t.from - 5);
             tr.appendChild(from);
             let to = document.createElement('td');
-            from.innerHTML = t.to;
+            to.innerHTML = t.to.substr(t.from - 5);
             tr.appendChild(to);
             let value = document.createElement('td');
-            value.innerHTML = t.value;
+            value.innerHTML = parseInt(t.value) / 1000000000000000000;
             tr.appendChild(value);
 
             table.appendChild(tr);
