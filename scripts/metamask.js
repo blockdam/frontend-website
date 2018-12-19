@@ -48,7 +48,7 @@ class MetaMask {
 
                 // web3.currentProvider.publicConfigStore.on('update', callback);
 
-                return true;
+                self.getBCDToken();
 
             }
 
@@ -59,56 +59,61 @@ class MetaMask {
             }
     }
 
-    getBCDToken(json) {
+    getBCDToken() {
 
-        let self = this;
+        let self = this,
+            url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
 
-        this.bcd.tokenAbi = json.abi;
+        axios.get(url)
+            .then(function (response) {
 
-        let bcdInfo = web3.eth.contract(self.bcd.tokenAbi).at(self.bcdTokenAddress);
+                let bcdInfo = web3.eth.contract(response.data).at(self.bcdTokenAddress);
 
-        if(this.html.totalSupply) {
+                if(self.html.totalSupply) {
 
-            bcdInfo.totalSupply.call(function (err, data) {
-                if (err) {
-                    console.log(err)
+                    bcdInfo.totalSupply.call(function (err, data) {
+                        if (err) {
+                            console.log(err)
+                        }
+                        if (data) {
+                            self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
+                            self.html.totalSupply.innerHTML = self.bcd.totalSupply;
+                        }
+                    });
                 }
-                if (data) {
 
-                    console.log(data);
+                bcdInfo.balanceOf(self.metaMask.coinbase, function (err, data) {
+                    if (err) {
+                        console.log(err)
+                    }
+                    if (data) {
+                        let val = data.toNumber() / 1000000000000000000;
+                        document.querySelector('#personal_info').style.display = 'flex';
+                        document.querySelector('#personal_info span').innerHTML = val;
+                    }
+                });
 
-                    self.bcd.totalSupply = data.toNumber() / 1000000000000000000;
-                    this.html.totalSupply.innerHTML = self.bcd.totalSupply;
-                }
-            });
-        }
-
-        bcdInfo.balanceOf(self.metaMask.coinbase, function (err, data) {
-            if (err) {
-                console.log(err)
             }
-            if (data) {
 
-                let val = data.toNumber() / 1000000000000000000;
 
-                document.querySelector('#personal_info').style.display = 'flex';
-                document.querySelector('#personal_info span').innerHTML = val;
-            }
-        });
     }
 
     getBCDBondingCurve(json) {
 
-        let self = this;
-        this.bcd.bondingCurveAbi = json.abi;
+        let self = this,
+            url = 'https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json';
 
-        let bcdBondingCurve = web3.eth.contract(self.bcd.bondingCurveAbi).at(self.bcdBondingCurveAddress);
+        axios.get(url)
+            .then(function (response) {
 
-        console.log(bcdBondingCurve);
+                let bcdBondingCurve = web3.eth.contract(response.data).at(self.bcdBondingCurveAddress);
+
+                console.log(bcdBondingCurve);
+            });
 
     }
-
-
-
 }
+
+var metaMask = new MetaMask();
+var hasMetaMask = metaMask.init();
 

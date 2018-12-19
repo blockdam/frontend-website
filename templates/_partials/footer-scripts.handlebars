@@ -1,22 +1,6 @@
 <!-- page specific script -->
 <script src="{{baseUrl}}/assets/scripts/{{{body.type}}}.js"></script>
 
-<script>
-
-    var metaMask = new MetaMask();
-    var hasMetaMask = metaMask.init();
-
-    if (hasMetaMask) {
-
-        loadJSON("{{baseUrl}}/assets/smartcontracts/bcdToken.json", function (response) {
-            metaMask.getBCDToken(JSON.parse(response));
-        });
-
-        loadJSON("{{baseUrl}}/assets/smartcontracts/bcdBondingCurve.json", function (response) {
-            metaMask.getBCDBondingCurve(JSON.parse(response));
-        });
-    }
-</script>
 
 {{#ifEquals body.type 'post' }}
 

@@ -17,7 +17,7 @@ class Donate {
 
     donate() {
 
-        console.log(metamask.web3);
+        console.log(metamask);
 
     }
 
