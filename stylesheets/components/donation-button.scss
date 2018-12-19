@@ -8,6 +8,7 @@
 
   span {
     @include small-sans();
+    padding: 0 1.5rem;
   }
 
   svg {
