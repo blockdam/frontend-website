@@ -56,7 +56,8 @@ module.exports = function() {
             path.projectFolder + '/scripts/header.js',
             path.projectFolder + '/scripts/menu.js',
             path.projectFolder + '/scripts/commenting.js',
-            path.projectFolder + '/scripts/appreciation.js'
+            path.projectFolder + '/scripts/appreciation.js',
+            path.projectFolder + '/scripts/donate.js'
 
         ])
         // .pipe(plumber())
