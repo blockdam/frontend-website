@@ -2,6 +2,8 @@
 class Members {
 
     constructor() {
+
+        this.container = document.querySelector('#content-container');
     }
 
     init() {
