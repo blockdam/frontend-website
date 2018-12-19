@@ -32,7 +32,7 @@ class Transactions {
             let tr = document.createElement('tr');
 
             let date = document.createElement('td');
-            date.innerHTML = moment(t.date).format('DD/MM/YYYY');
+            date.innerHTML = moment(t.date).format('DD/MM/YYYY hh:mm:ss');
             tr.appendChild(date);
             let from = document.createElement('td');
             from.innerHTML = '..' + t.from.slice(-5);
