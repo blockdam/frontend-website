@@ -5,6 +5,7 @@ class MetaMask {
 
         this.html = {}
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
+        this.html.navItem = document.querySelector('nav ul li#metamask');
         this.html.nickName = document.querySelector('nav ul li#metamask #welcome_message span');
     }
 
@@ -18,7 +19,10 @@ class MetaMask {
 
                 ethereum.enable();
 
+                this.html.navItem.style.display = 'flex';
+
                 if (web3.eth.accounts.length) {
+
 
                     self.identify(web3.eth.accounts[0]);
 

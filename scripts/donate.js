@@ -8,22 +8,30 @@ class Donate {
 
     init() {
 
-        let self = this;
+        let self = this,
+            authorId = this.button.getAttribute('data-author-id'),
+            url = 'https://blockdam.nl/smc-api/members/' + authorId;
 
-        this.button.addEventListener('click', function() { self.donate();},true)
+        // web3.eth.getAccounts((err, res) => {
+        //     console.log(res);
+        // });
+
+        axios.get(url)
+            .then(function (response) {
+
+                this.button.addEventListener('click', function() { self.donate(address);},true)
+            });
+
+
     }
 
 
 
-    donate() {
+    donate(address) {
 
-        console.log(metaMask);
+        let self = this;
 
-        web3.eth.getAccounts((err, res) => {
-            console.log(res);
-        });
-
-        metaMask.bcdContract.transfer.sendTransaction('0x6974A038f0a2dC6d68Fa1c92b8d4e242FFf72f8E', .1 * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction(address, .1 * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
             if (err) {
                 console.log(err)
             }
