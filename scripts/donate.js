@@ -19,7 +19,9 @@ class Donate {
         axios.get(url)
             .then(function (response) {
 
-                this.button.addEventListener('click', function() { self.donate(address);},true)
+                console.log(response);
+
+               // this.button.addEventListener('click', function() { self.donate(address);},true)
             });
 
 
