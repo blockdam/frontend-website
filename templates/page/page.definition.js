@@ -59,7 +59,11 @@ module.exports = {
     getDependencies: (data, correlationId) => {
         return new Promise((resolve, reject) => {
             logger.info('Get template dependencies for ' + data.type, correlationId);
-            resolve([]);
+            resolve([
+
+                { template: 'members', data: data },
+                { template: 'transactions', data: data}
+            ]);
         })
 
     },
