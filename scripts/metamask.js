@@ -58,8 +58,6 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-
-
                 if(response.data !== null) {
 
                     self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + '! The DAO welcomes you back.';

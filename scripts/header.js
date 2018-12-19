@@ -34,7 +34,7 @@ class Header {
             handler: function(direction) {
                 if(direction === 'down') {  // self.expanded &&
                     console.log('close1');
-
+                    metaMask.html.tooltip.classList.remove('visible');
                 }
             },
             offset : -10

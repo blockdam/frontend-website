@@ -50,24 +50,6 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        // var blog = gulp.src([
-        //     path.projectFolder + '/scripts/_loadJSON.js',
-        //     path.projectFolder + '/scripts/detect.js',
-        //     path.projectFolder + '/scripts/metamask.js',
-        //     path.projectFolder + '/scripts/header.js',
-        //     path.projectFolder + '/scripts/menu.js',
-        //     path.projectFolder + '/scripts/commenting.js',
-        //     path.projectFolder + '/scripts/appreciation.js',
-        //     path.projectFolder + '/scripts/donate.js'
-        //
-        // ])
-        // // .pipe(plumber())
-        //     .pipe(concat('blog.js'))
-        //     .pipe(babel({
-        //         presets: ['es2015']
-        //     }))
-        //     .pipe(gulp.dest(scriptsDir));
-
         var page = gulp.src([
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
