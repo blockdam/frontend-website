@@ -3,16 +3,9 @@ class MetaMask {
 
     constructor() {
 
-        this.bcdTokenAddress = '0xA2F071aFe85e8F3ec51bD9ae5284Bf53204Df1b9';
-        this.bcdBondingCurveAddress = '0x307963cb5fce3bfceb30944bf0a65f7a2fe42b7e';
-
-        this.metaMask = {};
-        this.bcd = {};
-
-        this.bcd.eventList = [];
-
         this.html = {}
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
+        this.html.nickName = document.querySelector('nav ul li#metamask #welcome_message span');
     }
 
 
@@ -25,34 +18,54 @@ class MetaMask {
 
                 ethereum.enable();
 
-                document.querySelector('nav ul li#metamask #welcome_message span').innerHTML = web3.eth.coinbase;
+                if (web3.eth.accounts.length) {
+
+                    self.identify(web3.eth.accounts[0]);
+
+                } else {
+                    console.log('metamask may be locked. no active account');
+                }
 
                 if (web3.version.network  !== '4')  {
                     document.querySelector('#network_warning').style.display = 'block';
                 }
 
+
                 // web3.currentProvider.publicConfigStore.on('update', callback);
 
                 self.getBCDToken();
+                self.getBCDBondingCurve()
 
             }
 
             else {
                 console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-
-                return false;
             }
     }
 
-    getBCDToken() {
+    identify(address) {
 
         let self = this,
-            url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
+            url = 'https://blockdam.nl/smc-api/members/' + address;
 
         axios.get(url)
             .then(function (response) {
 
-                self.bcdContract = web3.eth.contract(response.data.abi).at(self.bcdTokenAddress);
+                self.html.nickName.innerHTML = response.nick;
+            });
+    }
+
+
+    getBCDToken() {
+
+        let self = this,
+            url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json',
+            bcdTokenAddress = '0xA2F071aFe85e8F3ec51bD9ae5284Bf53204Df1b9';
+
+        axios.get(url)
+            .then(function (response) {
+
+                self.bcdContract = web3.eth.contract(response.data.abi).at(bcdTokenAddress);
 
                 if(self.html.totalSupply) {
                     self.bcdContract.totalSupply.call(function (err, data) {
@@ -84,12 +97,13 @@ class MetaMask {
     getBCDBondingCurve() {
 
         let self = this,
-            url = 'https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json';
+            url = 'https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json',
+            bcdBondingCurveAddress = '0x307963cb5fce3bfceb30944bf0a65f7a2fe42b7e';
 
         axios.get(url)
             .then(function (response) {
 
-                let bcdBondingCurve = web3.eth.contract(response.data.abi).at(self.bcdBondingCurveAddress);
+                let bcdBondingCurve = web3.eth.contract(response.data.abi).at(bcdBondingCurveAddress);
 
                 console.log(bcdBondingCurve);
             });
