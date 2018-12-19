@@ -27,7 +27,7 @@ class Transactions {
         let table = document.createElement('table');
         table.classList.add('default');
 
-        transactions.forEach((t) => {
+        transactions.reverse().forEach((t) => {
 
             let tr = document.createElement('tr');
 
