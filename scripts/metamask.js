@@ -6,7 +6,8 @@ class MetaMask {
         this.html = {}
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
         this.html.navItem = document.querySelector('nav ul li#metamask');
-        this.html.nickName = document.querySelector('nav ul li#metamask #welcome_message span');
+        this.html.welcome = document.querySelector('nav ul li#metamask #welcome_message');
+        this.html.balance = document.querySelector('#personal_info')
     }
 
 
@@ -56,9 +57,14 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                console.log(response);
+                if(response.data !== null) {
 
-                self.html.nickName.innerHTML = response.data.nickName;
+                    self.html.welcome.innerHTML = 'Hello = ' + response.data.nickName + ', the DAO salutes you!.';
+
+                } else {
+
+                    self.html.welcome.innerHTML = 'Sorry, the DAO did not recognize this address.';
+                }
             });
     }
 
@@ -91,8 +97,7 @@ class MetaMask {
                     }
                     if (data) {
                         let val = data.toNumber() / 1000000000000000000;
-                        document.querySelector('#personal_info').style.display = 'flex';
-                        document.querySelector('#personal_info span').innerHTML = val;
+                        this.html.balance.innerHTML = 'Your member address holds ' + val + ' BCD tokens';
                     }
                 });
 
