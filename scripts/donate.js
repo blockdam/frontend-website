@@ -2,13 +2,21 @@
 class Donate {
 
     constructor() {
+
+        this.button = document.querySelector('#donation_button_container');
     }
 
-    init() {}
+    init() {
+
+
+        this.button.addEventListener('click', function() { self.donate();},true)
+    }
 
 
 
-    intro() {
+    donate() {
+
+        console.log('hi');
 
     }
 
