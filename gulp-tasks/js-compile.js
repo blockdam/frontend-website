@@ -67,7 +67,35 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page);
+        var members = gulp.src([
+            path.projectFolder + '/scripts/_loadJSON.js',
+            path.projectFolder + '/scripts/detect.js',
+            path.projectFolder + '/scripts/metamask.js',
+            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/members.js'
+        ])
+        // .pipe(plumber())
+            .pipe(concat('members.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
+        var transactions = gulp.src([
+            path.projectFolder + '/scripts/_loadJSON.js',
+            path.projectFolder + '/scripts/detect.js',
+            path.projectFolder + '/scripts/metamask.js',
+            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/transactions.js'
+        ])
+        // .pipe(plumber())
+            .pipe(concat('transactions.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
+        return merge(post, homepage, page, members, transactions);
 
     });
 }
