@@ -1,12 +1,17 @@
 #donation_button_container {
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 6rem;
 
+  span {
+    @include small-sans();
+  }
+
   svg {
-    width: 2rem;
+    width: 3rem;
     height: auto;
     fill: #333;
     cursor: pointer;
