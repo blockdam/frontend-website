@@ -12,7 +12,7 @@ class MetaMask {
         this.bcd.eventList = [];
 
         this.html = {}
-        this.html.totalSupply = document.querySelector('#general_info span#total_supply')''
+        this.html.totalSupply = document.querySelector('#general_info span#total_supply');
     }
 
 
