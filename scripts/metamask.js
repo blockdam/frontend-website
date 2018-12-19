@@ -3,7 +3,7 @@ class MetaMask {
 
     constructor() {
 
-        this.html = {}
+        this.html = {};
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
         this.html.navItem = document.querySelector('nav ul li#metamask');
         this.html.welcome = this.html.navItem.querySelector('#welcome_message');

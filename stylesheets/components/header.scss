@@ -104,18 +104,18 @@ header {
         > div.tooltip {
           display: none;
           position: absolute;
-          bottom: -8rem;
+          bottom: -7.5rem;
           width: 12rem;
-          left: -3.075rem;
+          left: -3.575rem;
           height: 8em;
           background: #333;
           z-index: 999;
-          padding: .5rem;
+          padding: 1rem;
           color: white;
           //@include small-sans();
           font-family: Gotham SSm A,Gotham SSm B;
           font-weight: 300;
-          line-height: 1.66;
+          line-height: 1.33;
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-size: .725rem;
