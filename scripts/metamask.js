@@ -25,24 +25,9 @@ class MetaMask {
 
                 ethereum.enable();
 
-                // self.metaMask.network =  web3.version.network;
-                // self.metaMask.accounts = web3.eth.accounts;
-                // self.metaMask.coinbase = web3.eth.coinbase;
-
-                // document.querySelector('nav ul li#metamask').classList.add("visible");
-
-                // console.log(web3.eth);
-
-                // web3.eth.getAccounts((err, res) => {
-                //     // console.log(res);
-                // });
-
-                // document.querySelector('#metamask_private').classList.add("visible");
                 document.querySelector('nav ul li#metamask #welcome_message span').innerHTML = web3.eth.coinbase;
 
-                // console.log(self.metaMask);
-
-                if (self.metaMask.network  !== '4')  {
+                if (web3.version.network  !== '4')  {
                     document.querySelector('#network_warning').style.display = 'block';
                 }
 
