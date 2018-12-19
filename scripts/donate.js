@@ -8,8 +8,6 @@ class Donate {
 
     init() {
 
-        console.log('hihi');
-
         let self = this;
 
         this.button.addEventListener('click', function() { self.donate();},true)
