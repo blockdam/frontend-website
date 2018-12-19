@@ -147,6 +147,9 @@ header {
 
             }
           }
+          &.visible {
+            display: block;
+          }
         }
 
         &.visible {

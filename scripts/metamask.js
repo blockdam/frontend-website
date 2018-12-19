@@ -6,8 +6,8 @@ class MetaMask {
         this.html = {}
         this.html.totalSupply = document.querySelector('#general_info span#total_supply');
         this.html.navItem = document.querySelector('nav ul li#metamask');
-        this.html.welcome = document.querySelector('nav ul li#metamask #welcome_message');
-        this.html.balance = document.querySelector('nav ul li#metamask #personal_info');
+        this.html.welcome = this.html.navItem.querySelector('#welcome_message');
+        this.html.balance = this.html.navItem.querySelector('#personal_info');
         this.html.tooltip = this.html.navItem.querySelector('.tooltip');
     }
 
