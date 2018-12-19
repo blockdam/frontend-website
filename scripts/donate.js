@@ -15,9 +15,10 @@ class Donate {
 
         axios.get(url)
             .then(function (response) {
-               this.button.addEventListener('click', function() {
+
+               self.button.addEventListener('click', function() {
                    self.donate(response.data.ethAddress)
-                   },true)
+               },true)
             });
     }
 
