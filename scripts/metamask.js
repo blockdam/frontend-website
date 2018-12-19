@@ -115,5 +115,5 @@ class MetaMask {
 }
 
 var metaMask = new MetaMask();
-var hasMetaMask = metaMask.init();
+metaMask.init();
 
