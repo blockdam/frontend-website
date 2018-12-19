@@ -160,7 +160,7 @@ header {
 
         &:hover {
 
-          > div.tooltip {
+          > div.tooltip:not(.visible) {
             visibility: hidden;
             bottom: -8.5rem;
           }
