@@ -17,7 +17,7 @@ class Donate {
 
     donate() {
 
-        console.log(metamask);
+        console.log(metaMask);
 
     }
 
