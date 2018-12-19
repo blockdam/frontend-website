@@ -8,6 +8,7 @@ class MetaMask {
         this.html.navItem = document.querySelector('nav ul li#metamask');
         this.html.welcome = document.querySelector('nav ul li#metamask #welcome_message');
         this.html.balance = document.querySelector('nav ul li#metamask #personal_info');
+        this.html.tooltip = this.html.navItem.querySelector('.tooltip');
     }
 
 
@@ -57,9 +58,11 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
+                self.html.tooltip.classList.add('visible');
+
                 if(response.data !== null) {
 
-                    self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + '<br/> the DAO salutes you!.';
+                    self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + '<br/> the DAO welcomes you back.';
 
                 } else {
 
