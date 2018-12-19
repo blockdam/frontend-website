@@ -3,7 +3,7 @@ class Donate {
 
     constructor() {
 
-        this.button = document.querySelector('#donation_button_container');
+        this.button = document.querySelector('#donation_button_container svg');
     }
 
     init() {

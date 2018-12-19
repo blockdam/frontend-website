@@ -3,10 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4rem;
+  height: 6rem;
 
   svg {
     width: 2rem;
     height: auto;
+    fill: #333;
+
+    &:hover {
+      fill: black;
+    }
   }
 }
