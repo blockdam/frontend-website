@@ -58,7 +58,7 @@ class MetaMask {
         axios.get(url)
             .then(function (response) {
 
-                self.html.tooltip.classList.add('visible');
+
 
                 if(response.data !== null) {
 
@@ -68,6 +68,10 @@ class MetaMask {
 
                     self.html.welcome.innerHTML = 'Sorry, the DAO did not recognize this address.';
                 }
+
+                setTimeout( () => {
+                    self.html.tooltip.classList.add('visible');
+                },1000);
             });
     }
 

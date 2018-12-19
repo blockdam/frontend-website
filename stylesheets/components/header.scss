@@ -104,7 +104,7 @@ header {
         > div.tooltip {
           display: none;
           position: absolute;
-          bottom: -8.5rem;
+          bottom: -10.5rem;
           width: 12rem;
           left: -3.575rem;
           height: 8em;
@@ -119,6 +119,7 @@ header {
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-size: .725rem;
+          transition: bottom 250ms ease;
 
           > .tip {
             position: absolute;
@@ -149,6 +150,7 @@ header {
           }
           &.visible {
             display: block;
+            bottom: -8.5rem;
           }
         }
 
