@@ -4,4 +4,8 @@ table.default {
 
   @include uppercase();
   font-size: .75rem;
+
+  td {
+    border-bottom: 1px solid $grey;
+  }
 }
