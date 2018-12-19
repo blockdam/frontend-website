@@ -3,13 +3,14 @@ class Donate {
 
     constructor() {
 
-        this.button = document.querySelector('#donation_button_container svg');
+        this.container = document.querySelector('#donation_button_container');
+        this.button = this.container.querySelector('svg');
     }
 
     init() {
 
         let self = this,
-            authorId = this.button.getAttribute('data-author-id'),
+            authorId = this.container.getAttribute('data-author-id'),
             url = 'https://blockdam.nl/smc-api/members/' + authorId;
 
         // web3.eth.getAccounts((err, res) => {
