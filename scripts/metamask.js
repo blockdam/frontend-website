@@ -62,7 +62,7 @@ class MetaMask {
 
                 if(response.data !== null) {
 
-                    self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + '<br/> the DAO welcomes you back.';
+                    self.html.welcome.innerHTML = 'Hello ' + response.data.nickName + '! The DAO welcomes you back.';
 
                 } else {
 
