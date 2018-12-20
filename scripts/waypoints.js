@@ -34,9 +34,9 @@ class Header {
             offset : -10
         });
 
-        console.log(self.aside);
+        console.log('yo ' + self.aside);
 
-        if (self.aside) {
+        if (self.aside != '') {
 
             let aside = new Waypoint({
                 element: self.commentSection,
