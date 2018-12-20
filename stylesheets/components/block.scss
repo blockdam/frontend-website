@@ -37,6 +37,11 @@ a.block {
     font-size: .725rem;
   }
 
+  span.read-more {
+    @include small-sans();
+
+  }
+
   &.longTitle h2 {
     font-size: 1.85rem;
     line-height: 1;
@@ -69,6 +74,12 @@ a.block {
       height: auto;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1) rotate(15deg);
+    }
+  }
+
+  &:hover {
+    span.read-more {
+      border: 1px solid black;
     }
   }
 }
