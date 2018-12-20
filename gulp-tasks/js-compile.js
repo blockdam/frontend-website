@@ -67,35 +67,35 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        var members = gulp.src([
+        var dao = gulp.src([
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
             path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/members.js'
+            path.projectFolder + '/scripts/dao.js'
         ])
         // .pipe(plumber())
-            .pipe(concat('members.js'))
+            .pipe(concat('dao.js'))
             .pipe(babel({
                 presets: ['es2015']
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        var transactions = gulp.src([
+        var token = gulp.src([
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
             path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/transactions.js'
+            path.projectFolder + '/scripts/token.js'
         ])
         // .pipe(plumber())
-            .pipe(concat('transactions.js'))
+            .pipe(concat('token.js'))
             .pipe(babel({
                 presets: ['es2015']
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page, members, transactions);
+        return merge(post, homepage, page, dao, token);
 
     });
 }

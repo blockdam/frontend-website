@@ -1,5 +1,5 @@
 
-class Members {
+class Dao {
 
     constructor() {
 
@@ -13,5 +13,5 @@ class Members {
 
 }
 
-var members = new Members();
+var members = new Dao();
 members.init();

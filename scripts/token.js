@@ -51,5 +51,5 @@ class Transactions {
 
 }
 
-var transactions = new Transactions();
-transactions.init();
+var token = new Transactions();
+token.init();
