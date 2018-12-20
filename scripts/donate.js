@@ -47,18 +47,16 @@ class Donate {
 
         let self = this;
 
-        console.log(web3.eth.coinbase);
+        console.log(ethAddress);
 
-        metaMask.bcdContract.transfer.sendTransaction(ethAddress, amount,{ from: web3.eth.coinbase });
-
-        // , function(err,receipt){
-        //     if (err) {
-        //         console.log(err)
-        //     }
-        //     if (receipt) {
-        //         self.tooltip.classList.remove('visible');
-        //     }
-        // })
+        metaMask.bcdContract.transfer.sendTransaction(ethAddress, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+            if (err) {
+                console.log(err)
+            }
+            if (receipt) {
+                self.tooltip.classList.remove('visible');
+            }
+        })
     }
 }
 
