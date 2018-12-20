@@ -27,11 +27,15 @@
 
   .tooltip {
 
+    display: flex;
+    flex-direction: column;
     border: 1px solid $secondary;
     padding: 1rem;
 
     input {
-
+      @include uppercase();
+      font-size: .725rem;
+      line-height: 2;
     }
 
     button {
