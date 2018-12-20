@@ -118,7 +118,7 @@ var Charts = function charts() {
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { console.log(d); return xScale(d.date); })
+            .attr("x", function(d) { console.log(d); return xScale(new Date(d.date)); })
             .attr("width", 10)
             .attr("y", function(d) { return yScale(d.value); })
             .attr("height", function(d) { return config.height - yScale(d.value); });
