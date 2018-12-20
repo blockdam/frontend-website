@@ -32,7 +32,9 @@ class Header {
                 }
             },
             offset : -10
-        })
+        });
+
+        console.log(self.aside);
 
         if (self.aside) {
 
