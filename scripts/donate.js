@@ -32,7 +32,7 @@ class Donate {
 
         console.log(address);
 
-        this.form.addEventListener("submit", function(event,errors) {
+        this.form.addEventListener("submit", function(event,errors,address) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);
