@@ -115,7 +115,7 @@ var Charts = function charts() {
 
     let drawBars = function drawLine(data,config) {
 
-        let barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 1;
+        let barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
 
         layers.data.selectAll(".bar")
             .data(data)
