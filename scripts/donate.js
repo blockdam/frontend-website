@@ -17,20 +17,21 @@ class Donate {
 
         axios.get(url)
             .then(function (response) {
+                console.log(response.data.ethAddress);
                self.button.addEventListener('click', function() {
+                   console.log(response.data.ethAddress);
                    self.openForm(response.data.ethAddress)
                },true)
             });
     }
 
-    openForm(ethAddress) {
+    openForm(address) {
 
-        let self = this,
-            address = ethAddress;
+        let self = this;
 
         this.tooltip.classList.add('visible');
 
-        console.log(address);
+
 
         this.form.addEventListener("submit", function(event,errors,address) {
             event.preventDefault();
