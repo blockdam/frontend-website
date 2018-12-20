@@ -6,6 +6,7 @@
   align-items: center;
   height: 12rem;
   width: 240px;
+  text-align: center;
 
   span {
     @include small-sans();
