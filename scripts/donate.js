@@ -30,13 +30,15 @@ class Donate {
 
         this.tooltip.classList.add('visible');
 
+        console.log(address);
+
         this.form.addEventListener("submit", function(event,errors) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);
             } else {
                 let amount = parseInt(self.form.querySelector("input[type='number']").value) * 1000000000000000000;
-                console.log(address);
+
                 self.donate(amount, address);
             }
         });
