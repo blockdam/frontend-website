@@ -39,15 +39,18 @@
         display: flex;
         flex-direction: row;
         @include uppercase();
+        letter-spacing: 0;
         font-size: .725rem;
-        line-height: 1.5;
+        line-height: 2.5;
+        margin: 0 0.5rem .75rem 0rem;
 
         input {
 
           height: 1.5rem;
+          line-height: 1.5;
           width: 2rem;
-          margin: 0 0.5rem .75rem 0rem;
-          text-align: center;
+
+          text-align: right;
           border: none;
         }
       }
