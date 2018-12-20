@@ -31,7 +31,7 @@ class Dao {
             tr.appendChild(name);
 
             let address = document.createElement('td');
-            address.innerHTML = t.ethAddress;
+            address.innerHTML = m.ethAddress;
             tr.appendChild(address);
 
             table.appendChild(tr);
