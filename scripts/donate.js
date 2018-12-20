@@ -7,6 +7,8 @@ class Donate {
         this.button = this.container.querySelector('svg');
         this.tooltip = this.container.querySelector('.tooltip');
         this.form = this.container.querySelector('form');
+
+        this.address = null;
     }
 
     init() {
@@ -17,23 +19,19 @@ class Donate {
 
         axios.get(url)
             .then(function (response) {
-                let address = response.data.ethAddress;
-                console.log(address);
-               self.button.addEventListener('click', function() {
-                   self.openForm(address)
+
+                self.address = response.data.ethAddress;
+                self.button.addEventListener('click', function() {
+                   self.openForm()
                },false)
             });
     }
 
-    openForm(address) {
-
-        console.log(address);
+    openForm() {
 
         let self = this;
 
         this.tooltip.classList.add('visible');
-
-
 
         this.form.addEventListener("submit", function(event,errors,address) {
             event.preventDefault();
@@ -42,18 +40,16 @@ class Donate {
             } else {
                 let amount = parseInt(self.form.querySelector("input[type='number']").value) * 1000000000000000000;
 
-                self.donate(amount, address);
+                self.donate(amount);
             }
         });
     }
 
-    donate(amount,address) {
+    donate(amount) {
 
         let self = this;
 
-
-
-        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction(self.address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
