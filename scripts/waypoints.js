@@ -48,7 +48,7 @@ class Header {
                         self.aside.classList.remove('absolute');
                     }
                 },
-                offset: -100
+                offset: 100%
             })
         }
     }
