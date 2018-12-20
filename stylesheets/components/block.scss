@@ -40,7 +40,7 @@ a.block {
   span.readmore {
     @include uppercase();
     display: block;
-    font-size: 1rem;
+    font-size: .725rem;
     line-height: 1.5;
     border-bottom: 1px solid transparent;
 
