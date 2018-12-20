@@ -43,6 +43,10 @@ class Header {
                         console.log('way out');
                         self.aside.classList.add('absolute');
                     }
+                    if (direction === 'up') {
+                        console.log('way in');
+                        self.aside.classList.remove('absolute');
+                    }
                 },
                 offset: -100
             })
