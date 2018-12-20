@@ -24,11 +24,12 @@ var Charts = function charts() {
 
     let renderLayers = function renderLayers() {
 
-        layers.axis = svg.append('g')
-            .attr('class', 'axis');
 
         layers.data = svg.append('g')
             .attr('class', 'bars');
+
+        layers.axis = svg.append('g')
+            .attr('class', 'axis');
 
     }
 
@@ -118,7 +119,7 @@ var Charts = function charts() {
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return xScale(new Date(d.date)) + 12; })
+            .attr("x", function(d) { return xScale(new Date(d.date)); })
             .attr("width", 10)
             .attr("y", function(d) { return yScale(d.value); })
             .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
