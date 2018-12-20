@@ -28,7 +28,12 @@ class MetaMask {
                     self.identify(web3.eth.accounts[0]);
 
                 } else {
-                    console.log('metamask may be locked. no active account');
+
+                    self.html.welcome.innerHTML = 'Hello, Metamask may be locked'
+
+                    setTimeout( () => {
+                        self.html.tooltip.classList.add('visible');
+                    },1000);
                 }
 
                 if (web3.version.network  !== '4')  {
@@ -36,15 +41,17 @@ class MetaMask {
                 }
 
 
-                // web3.currentProvider.publicConfigStore.on('update', callback);
-
                 self.getBCDToken();
                 self.getBCDBondingCurve()
 
             }
 
             else {
-                console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                self.html.welcome.innerHTML = 'Hello, we use metamask to connect to the smart contracts of the DAO'
+
+                setTimeout( () => {
+                    self.html.tooltip.classList.add('visible');
+                },1000);
             }
     }
 
@@ -64,7 +71,7 @@ class MetaMask {
 
                 } else {
 
-                    self.html.welcome.innerHTML = 'Sorry, the DAO did not recognize this address.';
+                    self.html.welcome.innerHTML = 'Hello! The DAO welcomes you back.';
                 }
 
                 setTimeout( () => {
