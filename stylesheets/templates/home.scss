@@ -7,7 +7,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    @media (min-width: $breakpoint-sm) {
+    @media (min-width: $breakpoint-md) {
       flex-direction: row;
     }
   }
@@ -24,7 +24,7 @@
 
       position: relative;
 
-      @media (min-width: $breakpoint-sm) {
+      @media (min-width: $breakpoint-md) {
         width: calc(50% - .5rem);
       }
     }
@@ -81,7 +81,7 @@
 
     #blog-list {
 
-      @media (min-width: $breakpoint-sm) {
+      @media (min-width: $breakpoint-md) {
         width: calc(60% - .5rem);
       }
     }
@@ -94,7 +94,7 @@
       justify-content: flex-start;
       align-items: center;
 
-      @media (min-width: $breakpoint-sm) {
+      @media (min-width: $breakpoint-md) {
         width: calc(40% - .5rem);
       }
 

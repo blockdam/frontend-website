@@ -59,23 +59,6 @@
 
 }
 
-@mixin uppercase {
-
-      font-family: "Gotham SSm A", "Gotham SSm B";
-      font-weight: 300;
-      font-size: 1rem;
-      line-height: 1.66;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-}
-
-@mixin uppercase-large {
-
-  @include uppercase;
-  font-size: 1.3rem;
-  line-height: 1.4;
-
-}
 
 @mixin small-sans {
 
@@ -83,6 +66,35 @@
   font-weight: 300;
   font-size: .85rem;
   line-height: 1.5;
+
+}
+
+
+@mixin uppercase {
+
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.66;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+}
+
+@mixin uppercase-large {
+
+  @include uppercase;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  letter-spacing: 1.5px;
+
+}
+
+@mixin uppercase-small {
+
+  @include uppercase;
+  font-size: .725rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
 
 }
 
