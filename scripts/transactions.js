@@ -22,8 +22,6 @@ class Transactions {
 
     createHTML(transactions) {
 
-        console.log(transactions)
-
         let table = document.createElement('table');
         table.classList.add('default');
 
