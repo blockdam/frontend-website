@@ -27,7 +27,7 @@ class Header {
         let scroll = new Waypoint({
             element: self.main,
             handler: function(direction) {
-                if(direction === 'down') {  // self.expanded &&
+                if(direction === 'down') {
                     metaMask.html.tooltip.classList.remove('visible');
                 }
             },
@@ -50,11 +50,6 @@ class Header {
             })
         }
     }
-
-
-
-
-
 }
 var header = new Header();
 header.init();

@@ -1,13 +1,9 @@
 
 class Detect {
 
-    constructor() {
-    }
+    constructor() {}
 
-    init() {
-
-
-    }
+    init() {}
 
     ie() {
 

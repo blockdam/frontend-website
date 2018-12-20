@@ -4,7 +4,6 @@ class Appreciation {
 
         this.rating = {};
         this.post_id = null;
-
     }
 
 
@@ -19,8 +18,6 @@ class Appreciation {
         this.buttonsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down'));
         this.countsPositive = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--up span'));
         this.countsNegative = [].slice.call(document.querySelectorAll('.post-intro--stats--votes--down span'));
-
-
 
         this.buttonsPostive.forEach( (b) => {
             b.addEventListener('click', function handlerRatePositive() {
@@ -57,8 +54,8 @@ class Appreciation {
                 self.rating = response.data;
 
             }).catch((error) => {
-            console.log(error);
-        });
+                console.log(error);
+            });
     }
 
     ratePositive() {
