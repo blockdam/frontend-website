@@ -28,13 +28,13 @@ class Donate {
 
         this.tooltip.classList.add('visible');
 
-        this.form.addEventListener("submit", function(event) {
+        this.form.addEventListener("submit", function(event,errors) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);
             } else {
                 let amount = self.form.querySelector('input[type="number"]').value;
-                self.donate(amount,ethAddress);
+                self.donate(amount, ethAddress);
             }
         });
     }
