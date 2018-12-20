@@ -35,7 +35,9 @@
     input {
       @include uppercase();
       font-size: .725rem;
-      line-height: 2;
+      line-height: 1.5;
+      width: 4rem;
+      margin: 0 0 .75rem 0;
     }
 
     button {
