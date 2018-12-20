@@ -61,8 +61,8 @@ module.exports = {
             logger.info('Get template dependencies for ' + data.type, correlationId);
             resolve([
 
-                { template: 'members', data: data },
-                { template: 'transactions', data: data}
+                { template: 'dao', data: data },
+                { template: 'token', data: data}
             ]);
         })
 
