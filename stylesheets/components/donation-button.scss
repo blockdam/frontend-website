@@ -26,21 +26,24 @@
   }
 
   .tooltip {
-
-    display: flex;
-    flex-direction: column;
+    
     padding: 1rem;
 
-    input {
-      @include uppercase();
-      font-size: .725rem;
-      line-height: 1.5;
-      width: 4rem;
-      margin: 0 2rem .75rem 2rem;
-    }
+    form {
+      display: flex;
+      flex-direction: column;
 
-    button {
-      height: 1.5rem;
+      input {
+        @include uppercase();
+        font-size: .725rem;
+        line-height: 1.5;
+        width: 4rem;
+        margin: 0 2rem .75rem 2rem;
+      }
+
+      button {
+        height: 1.5rem;
+      }
     }
   }
 }
