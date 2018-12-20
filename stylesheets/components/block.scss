@@ -39,6 +39,8 @@ a.block {
 
   span.readmore {
     @include small-sans();
+    border-bottom: 1px solid transparent;
+
 
   }
 
@@ -79,7 +81,7 @@ a.block {
 
   &:hover {
     span.readmore {
-      border: 1px solid black;
+      border-bottom: 1px solid black;
     }
   }
 }
