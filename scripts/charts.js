@@ -112,6 +112,19 @@ var Charts = function charts() {
             .attr('class', 'flow');
     }
 
+    let drawBars = function drawLine(data,config) {
+
+        layers.data.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.date); })
+            .attr("width", 10)
+            .attr("y", function(d) { return y(d.value); })
+            .attr("height", function(d) { return height - y(d.value); });
+
+    }
+
     let bcdSupply = function bcdSupply(el) {
 
         let element = el,
@@ -199,7 +212,7 @@ var Charts = function charts() {
                 setScale(response.data,config);
                 renderYAxis(config);
                 renderXAxis(config);
-                drawLine(response.data,config);
+                drawBars(response.data,config);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
