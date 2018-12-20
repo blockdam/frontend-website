@@ -11,8 +11,8 @@
   @media (min-width: $breakpoint-sm) {
 
     width: 240px;
-    margin-bottom: 1rem;
-    border-left: 4px double $secondary;
+    padding-bottom: 2rem;
+    border-bottom: 4px double #d5d3d3;
   }
 
 
@@ -33,6 +33,7 @@
     text-align: center;
     padding: 0 1.5rem;
     @include small-sans();
+    margin-bottom: .75rem;
   }
 
   .post-intro--author--links {
@@ -44,7 +45,7 @@
     margin: .5rem 0 0 0;
 
     .icon {
-      width: 1.25rem;
+      width: 1.5rem;
       height: auto;
       cursor: pointer;
       fill: $secondary;
