@@ -28,6 +28,8 @@ class Donate {
 
     openForm(ethAddress) {
 
+        let self = this;
+
         this.tooltip.classList.add('visible');
 
         this.form.addEventListener("submit", function(event,errors) {
