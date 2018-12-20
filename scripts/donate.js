@@ -17,15 +17,17 @@ class Donate {
 
         axios.get(url)
             .then(function (response) {
-                console.log(response.data.ethAddress);
+                let address = response.data.ethAddress;
+                console.log(address);
                self.button.addEventListener('click', function() {
-                   console.log(response.data.ethAddress);
-                   self.openForm(response.data.ethAddress)
+                   self.openForm(address)
                },true)
             });
     }
 
     openForm(address) {
+
+        console.log(address);
 
         let self = this;
 
