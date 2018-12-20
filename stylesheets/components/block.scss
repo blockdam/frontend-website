@@ -37,7 +37,7 @@ a.block {
     font-size: .725rem;
   }
 
-  span.read-more {
+  span.readmore {
     @include small-sans();
 
   }
@@ -78,7 +78,7 @@ a.block {
   }
 
   &:hover {
-    span.read-more {
+    span.readmore {
       border: 1px solid black;
     }
   }
