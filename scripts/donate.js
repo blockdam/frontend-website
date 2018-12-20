@@ -37,7 +37,7 @@ class Donate {
             if(errors) {
                 console.log(errors);
             } else {
-                let amount = self.form.querySelector("input[type='number']"); // .value;
+                let amount = self.form.querySelector("input[type='number']").value;
                 self.donate(amount, ethAddress);
             }
         });
