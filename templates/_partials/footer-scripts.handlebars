@@ -11,8 +11,6 @@
 
 {{/ifEquals}}
 
-
-
 {{#ifEquals body.type 'homepage' }}
 
     <script src="{{baseUrl}}/assets/scripts/d3.min.js"></script>
@@ -21,7 +19,7 @@
 
         var charts = new Charts();
         charts.bcdSupply('#chart_supply');
-        charts.bcdEthValue('#chart_eth_value');
+        charts.bcdCirculation('#chart_circulation');
 
     </script>
 

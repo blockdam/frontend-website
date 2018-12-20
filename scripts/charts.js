@@ -159,10 +159,10 @@ var Charts = function charts() {
 
     }
 
-    let bcdEthValue = function bcdEthValue(el) {
+    let bcdCirculation = function bcdCirculation(el) {
 
         let element = el,
-            url = 'https://blockdam.nl/smc-api/token/balance/';
+            url = 'https://blockdam.nl/smc-api/token/circulation/';
 
 
         let config = {
@@ -186,7 +186,7 @@ var Charts = function charts() {
         config.height = 120;
         config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
-        config.yParameter = 'ethValue';
+        config.yParameter = 'value';
         config.alignment = 'left';
 
         // drawArea(data);
@@ -208,9 +208,58 @@ var Charts = function charts() {
     }
 
 
+    // let bcdEthValue = function bcdEthValue(el) {
+    //
+    //     let element = el,
+    //         url = 'https://blockdam.nl/smc-api/token/balance/';
+    //
+    //
+    //     let config = {
+    //
+    //         margin: {
+    //             top: 10,
+    //             bottom: 20,
+    //             left: 0,
+    //             right: 20
+    //         },
+    //
+    //         padding: {
+    //             top: 0,
+    //             bottom: 0,
+    //             left: 0,
+    //             right: 0
+    //         }
+    //     };
+    //
+    //     config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+    //     config.height = 120;
+    //     config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+    //
+    //     config.yParameter = 'ethValue';
+    //     config.alignment = 'left';
+    //
+    //     // drawArea(data);
+    //
+    //     axios.get(url)
+    //         .then(function (response) {
+    //
+    //             renderSVG(element,config);
+    //             renderLayers();
+    //             setScale(response.data,config);
+    //             renderYAxis(config);
+    //             renderXAxis(config);
+    //             drawLine(response.data,config);
+    //
+    //             if (response.status !== 200) {
+    //                 console.log('foutje bedankt')
+    //             }
+    //         });
+    // }
+
+
     return {
         bcdSupply : bcdSupply,
-        bcdEthValue : bcdEthValue,
+        bcdCirculation : bcdCirculation,
         renderSVG : renderSVG,
         renderLayers : renderLayers,
         setScale : setScale,
