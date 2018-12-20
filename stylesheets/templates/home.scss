@@ -202,13 +202,19 @@
 
   .subheader {
 
-    @include uppercase-large();
+    @include uppercase();
     background: #333;
     color: #fff;
     padding: 0 1rem;
     margin-bottom: 1rem;
     width: calc(100% - 2rem);
     text-align: center;
+
+    @media (min-width : $breakpoint-bax) {
+
+      @include uppercase-large();
+
+    }
   }
 
 }
