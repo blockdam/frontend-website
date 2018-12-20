@@ -20,8 +20,8 @@ class Dao {
     createHTML(transactions) {
 
         transactions.sort(function(a, b){
-            if(a.nickName < b.nickName) { return -1; }
-            if(a.nickName > b.nickName) { return 1; }
+            if(a.nickName < b.nickName) { return 1; }
+            if(a.nickName > b.nickName) { return -1; }
             return 0;
         })
 
