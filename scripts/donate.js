@@ -37,7 +37,7 @@ class Donate {
             if(errors) {
                 console.log(errors);
             } else {
-                let amount = self.form.querySelector("input[type='number']").value;
+                let amount = parseInt(self.form.querySelector("input[type='number']").value) * 1000000000000000000;
                 self.donate(amount, ethAddress);
             }
         });
@@ -47,7 +47,7 @@ class Donate {
 
         let self = this;
 
-        metaMask.bcdContract.transfer.sendTransaction(ethAddress, parseInt(amount) * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction(ethAddress, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
