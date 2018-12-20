@@ -36,7 +36,7 @@ class Header {
 
         console.log('yo ' + self.aside);
 
-        if (self.aside != '') {
+        if (self.aside && self.commentSection) {
 
             let aside = new Waypoint({
                 element: self.commentSection,
