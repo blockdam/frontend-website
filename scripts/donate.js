@@ -21,7 +21,7 @@ class Donate {
                 console.log(address);
                self.button.addEventListener('click', function() {
                    self.openForm(address)
-               },true)
+               },false)
             });
     }
 
