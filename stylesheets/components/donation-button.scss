@@ -29,6 +29,8 @@
 
     padding: 0 1rem;
     visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 500ms linear;
 
     form {
       display: flex;
@@ -61,6 +63,12 @@
         height: 1.5rem;
         width: 4rem;
       }
+    }
+
+    &.visible {
+
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

@@ -5,6 +5,7 @@ class Donate {
 
         this.container = document.querySelector('#donation_button_container');
         this.button = this.container.querySelector('svg');
+        this.tooltip = this.container.querySelector('.tooltip');
     }
 
     init() {
@@ -17,9 +18,14 @@ class Donate {
             .then(function (response) {
 
                self.button.addEventListener('click', function() {
-                   self.donate(response.data.ethAddress)
+                   self.openForm(response.data.ethAddress)
                },true)
             });
+    }
+
+    openForm(ethAddress) {
+
+        this.tooltip.classList.add('visible');
     }
 
     donate(ethAddress) {
