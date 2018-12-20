@@ -17,9 +17,6 @@ class Donate {
 
         axios.get(url)
             .then(function (response) {
-
-                console.log(response);
-
                self.button.addEventListener('click', function() {
                    self.openForm(response.data.ethAddress)
                },true)
@@ -28,7 +25,8 @@ class Donate {
 
     openForm(ethAddress) {
 
-        let self = this;
+        let self = this,
+            address = ethAddress;
 
         this.tooltip.classList.add('visible');
 
@@ -38,18 +36,18 @@ class Donate {
                 console.log(errors);
             } else {
                 let amount = parseInt(self.form.querySelector("input[type='number']").value) * 1000000000000000000;
-                self.donate(amount, ethAddress);
+                self.donate(amount, address);
             }
         });
     }
 
-    donate(amount,ethAddress) {
+    donate(amount,address) {
 
         let self = this;
 
-        console.log(ethAddress);
+        console.log(address);
 
-        metaMask.bcdContract.transfer.sendTransaction(ethAddress, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
