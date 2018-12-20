@@ -28,6 +28,7 @@
   .tooltip {
 
     padding: 0 1rem;
+    visibility: hidden;
 
     form {
       display: flex;
@@ -42,7 +43,7 @@
         letter-spacing: 0;
         font-size: .725rem;
         line-height: 2.5;
-        margin: 0 0.25rem 0 0rem;
+        margin: 0 0.5rem 0 0rem;
 
         input {
 
