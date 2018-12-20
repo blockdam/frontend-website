@@ -37,7 +37,7 @@ class Donate {
             if(errors) {
                 console.log(errors);
             } else {
-                let amount = self.form.querySelector('input[type="number"]').value;
+                let amount = self.form.querySelector("input[type='number']"); // .value;
                 self.donate(amount, ethAddress);
             }
         });
@@ -49,15 +49,14 @@ class Donate {
 
         console.log(amount);
 
-        metaMask.bcdContract.transfer.sendTransaction(ethAddress, parseInt(amount) * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
-            if (err) {
-                console.log(err)
-            }
-            if (receipt) {
-                this.tooltip.classList.remove('visible');
-                console.log(receipt);
-            }
-        })
+        // metaMask.bcdContract.transfer.sendTransaction(ethAddress, parseInt(amount) * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
+        //     if (err) {
+        //         console.log(err)
+        //     }
+        //     if (receipt) {
+        //         this.tooltip.classList.remove('visible');
+        //     }
+        // })
     }
 }
 
