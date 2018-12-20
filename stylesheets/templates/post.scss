@@ -13,13 +13,14 @@
     display: flex;
     flex-direction: column;
 
-
     @media (min-width: $breakpoint-sm){
 
       position: fixed;
       z-index: 9;
-      top: 13.5rem;
+      top: 0rem;
       right: 2rem;
+      height: 100%;
+      justify-content: center;
     }
   }
 }
