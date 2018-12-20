@@ -6,6 +6,7 @@ class Donate {
         this.container = document.querySelector('#donation_button_container');
         this.button = this.container.querySelector('svg');
         this.tooltip = this.container.querySelector('.tooltip');
+        this.form = this.container.querySelector('form');
     }
 
     init() {
@@ -26,17 +27,30 @@ class Donate {
     openForm(ethAddress) {
 
         this.tooltip.classList.add('visible');
+
+        this.form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            if(errors) {
+                console.log(errors);
+            } else {
+                let amount = self.form.querySelector('input[type="number"]').value;
+                self.donate(amount,ethAddress);
+            }
+        });
     }
 
-    donate(ethAddress) {
+    donate(amount,ethAddress) {
 
         let self = this;
 
-        metaMask.bcdContract.transfer.sendTransaction(ethAddress, .1 * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
+        console.log(amount);
+
+        metaMask.bcdContract.transfer.sendTransaction(ethAddress, parseInt(amount) * 1000000000000000000,{ from: web3.eth.coinbase}, function(err,receipt){
             if (err) {
                 console.log(err)
             }
             if (receipt) {
+                this.tooltip.classList.remove('visible');
                 console.log(receipt);
             }
         })
