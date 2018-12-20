@@ -121,7 +121,7 @@ var Charts = function charts() {
             .attr("x", function(d) { console.log(d); return xScale(d.date); })
             .attr("width", 10)
             .attr("y", function(d) { return yScale(d.value); })
-            .attr("height", function(d) { return height - yScale(d.value); });
+            .attr("height", function(d) { return config.height - yScale(d.value); });
 
     }
 
