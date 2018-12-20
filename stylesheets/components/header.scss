@@ -76,7 +76,7 @@ header {
     flex-direction: row;
     align-items: center;
 
-    @media(min-width: $breakpoint-sm) {
+    @media(min-width: $breakpoint-md) {
       display: flex;
     }
 
