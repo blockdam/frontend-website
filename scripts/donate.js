@@ -54,7 +54,7 @@ class Donate {
                 console.log(err)
             }
             if (receipt) {
-                this.tooltip.classList.remove('visible');
+                self.tooltip.classList.remove('visible');
             }
         })
     }
