@@ -118,10 +118,10 @@ var Charts = function charts() {
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return x(d.date); })
+            .attr("x", function(d) { return xScale(d.date); })
             .attr("width", 10)
-            .attr("y", function(d) { return y(d.value); })
-            .attr("height", function(d) { return height - y(d.value); });
+            .attr("y", function(d) { return yScale(d.value); })
+            .attr("height", function(d) { return height - yScale(d.value); });
 
     }
 
