@@ -34,19 +34,15 @@ class Header {
             offset : -10
         });
 
-        console.log('yo ' + self.aside);
-
         if (self.aside && self.commentSection) {
 
             let aside = new Waypoint({
                 element: self.commentSection,
                 handler: function (direction) {
                     if (direction === 'down') {
-                        console.log('way out');
                         self.aside.classList.add('absolute');
                     }
                     if (direction === 'up') {
-                        console.log('way in');
                         self.aside.classList.remove('absolute');
                     }
                 },
