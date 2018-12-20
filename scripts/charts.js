@@ -115,12 +115,14 @@ var Charts = function charts() {
 
     let drawBars = function drawLine(data,config) {
 
+        let barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 1;
+
         layers.data.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
             .attr("x", function(d) { return xScale(new Date(d.date)); })
-            .attr("width", 10)
+            .attr("width", barWidth )
             .attr("y", function(d) { return yScale(d.value); })
             .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
 
