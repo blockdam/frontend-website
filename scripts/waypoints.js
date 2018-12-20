@@ -7,13 +7,8 @@ class Header {
         this.article = document.getElementsByTagName('article')[0];
         this.header = document.getElementsByTagName('header')[0];
         this.main = document.getElementsByTagName('main')[0];
-
-        this.expanded = false;
-        this.animations = {};
-        this.animations.collapseMenu = {};
-        this.animations.collapseMenu.rotation = 0;
-        this.animations.collapseMenu.offsetTop = 0;
-        this.animations.collapseMenu.offsetLeft = 0;
+        this.aside = document.getElementsByTagName('aside')[0];
+        this.commentSection = document.getElementById('comment-section');
     }
 
     init() {
@@ -33,12 +28,25 @@ class Header {
             element: self.main,
             handler: function(direction) {
                 if(direction === 'down') {  // self.expanded &&
-                    console.log('close1');
                     metaMask.html.tooltip.classList.remove('visible');
                 }
             },
             offset : -10
         })
+
+        if (self.aside) {
+
+            let aside = new Waypoint({
+                element: self.commentSection,
+                handler: function (direction) {
+                    if (direction === 'down') {
+                        console.log('way out');
+                        self.aside.classList.add('absolute');
+                    }
+                },
+                offset: 100
+            })
+        }
     }
 
 

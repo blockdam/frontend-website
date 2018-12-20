@@ -1,6 +1,5 @@
 #blog {
 
-
   article {
 
     @media (min-width: $breakpoint-sm) {
@@ -13,7 +12,7 @@
     display: flex;
     flex-direction: column;
 
-    @media (min-width: $breakpoint-sm){
+    @media (min-width: $breakpoint-sm) {
 
       position: fixed;
       z-index: 9;

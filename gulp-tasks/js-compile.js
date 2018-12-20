@@ -20,7 +20,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/menu.js',
             path.projectFolder + '/scripts/commenting.js',
             path.projectFolder + '/scripts/appreciation.js',
@@ -38,7 +38,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
             path.projectFolder + '/scripts/charts.js',
-            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js'
 
@@ -54,7 +54,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/menu.js',
             path.projectFolder + '/scripts/commenting.js',
             path.projectFolder + '/scripts/appreciation.js'
@@ -71,7 +71,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/members.js'
         ])
         // .pipe(plumber())
@@ -85,7 +85,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/header.js',
+            path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/transactions.js'
         ])
         // .pipe(plumber())
