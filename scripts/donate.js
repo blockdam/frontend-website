@@ -18,6 +18,8 @@ class Donate {
         axios.get(url)
             .then(function (response) {
 
+                console.log(response);
+
                self.button.addEventListener('click', function() {
                    self.openForm(response.data.ethAddress)
                },true)
