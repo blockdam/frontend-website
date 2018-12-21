@@ -128,14 +128,6 @@ var Charts = function charts() {
 
     }
 
-    let redrawBcdSupply = function redrawBcdSupply(data,config) {
-        setScale(data, config);
-        renderYAxis(config);
-        renderXAxis(config);
-        drawArea(data, config);
-    }
-
-
     let bcdSupply = function bcdSupply(el) {
 
         let element = el,
@@ -168,11 +160,18 @@ var Charts = function charts() {
         axios.get(url)
             .then(function (response) {
 
+                function redrawBcdSupply() {
+                    setScale(response.data, config);
+                    renderYAxis(config);
+                    renderXAxis(config);
+                    drawArea(response.data, config);
+                }
+
                 renderSVG(element,config);
                 renderLayers();
-                redrawBcdSupply(response.data,config);
+                redrawBcdSupply();
 
-                window.addEventListener("resize", redrawBcdSupply(response.data,config));
+                window.addEventListener("resize", redrawBcdSupply, false);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
@@ -180,16 +179,6 @@ var Charts = function charts() {
             });
 
     }
-
-    let redrawBcdCirculation = function redrawBcdCirculation(data,config) {
-
-        console.log('hi');
-        setScale(data,config);
-        drawBars(data,config);
-        renderYAxis(config);
-        renderXAxis(config);
-    }
-
 
     let bcdCirculation = function bcdCirculation(el) {
 
@@ -225,18 +214,16 @@ var Charts = function charts() {
         axios.get(url)
             .then(function (response) {
 
-                renderSVG(element,config);
-                renderLayers();
-                redrawBcdCirculation(response.data,config);
-
                 function redrawBcdCirculation() {
-
-                    console.log('hi');
                     setScale(response.data,config);
                     drawBars(response.data,config);
                     renderYAxis(config);
                     renderXAxis(config);
                 }
+
+                renderSVG(element,config);
+                renderLayers();
+                redrawBcdCirculation(response.data,config);
 
                 window.addEventListener("resize", redrawBcdCirculation,false);
 
