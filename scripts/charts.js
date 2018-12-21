@@ -229,7 +229,16 @@ var Charts = function charts() {
                 renderLayers();
                 redrawBcdCirculation(response.data,config);
 
-                window.addEventListener("resize", redrawBcdCirculation(response.data,config));
+                function redrawBcdCirculation() {
+
+                    console.log('hi');
+                    setScale(data,config);
+                    drawBars(data,config);
+                    renderYAxis(config);
+                    renderXAxis(config);
+                }
+
+                window.addEventListener("resize", redrawBcdCirculation());
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
