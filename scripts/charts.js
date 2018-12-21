@@ -15,6 +15,8 @@ var Charts = function charts() {
     let timeAxis;
     let flow;
     let area;
+    let barWidth;
+    let bars;
 
     let renderSVG = function createSVG(element,config) {
 
@@ -123,7 +125,6 @@ var Charts = function charts() {
     let drawArea = function drawArea(data,config) {
 
         area = d3.area()
-            // .curve(d3.curveCardinal)
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
             .y0(yScale(0))
@@ -148,17 +149,23 @@ var Charts = function charts() {
 
     let drawBars = function drawLine(data,config) {
 
-        let barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
-
-        layers.data.selectAll(".bar")
+        bars = layers.data.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return xScale(new Date(d.date)); })
-            .attr("width", barWidth )
             .attr("y", function(d) { return yScale(d.value); })
             .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
 
+        redrawBars(config);
+
+    }
+
+    let redrawBars = function redrawBars(config) {
+
+        barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
+        bars
+            .attr("x", function(d) { return xScale(new Date(d.date)); })
+            .attr("width", barWidth);
     }
 
     let bcdSupply = function bcdSupply(el) {
@@ -254,14 +261,20 @@ var Charts = function charts() {
             .then(function (response) {
 
                 function redrawBcdCirculation() {
-                    setScale(response.data,config);
-                    drawBars(response.data,config);
-                    renderYAxis(config);
-                    renderXAxis(config);
+                    
+                    redrawSVG(config);
+                    resetScale(config);
+                    redrawYAxis(config);
+                    redrawXAxis(config);
+                    redrawBars(config);
                 }
 
                 renderSVG(element,config);
                 renderLayers();
+                setScale(response.data,config);
+                renderYAxis(config);
+                renderXAxis(config);
+                drawBars(response.data,config);
                 redrawBcdCirculation(response.data,config);
 
                 window.addEventListener("resize", redrawBcdCirculation,false);
