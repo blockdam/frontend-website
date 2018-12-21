@@ -261,6 +261,9 @@ var Charts = function charts() {
             .then(function (response) {
 
                 function redrawBcdCirculation() {
+
+                    config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+                    config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
                     
                     redrawSVG(config);
                     resetScale(config);
