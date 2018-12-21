@@ -228,7 +228,7 @@ var Charts = function charts() {
                 renderLayers();
                 redrawBcdCirculation(response.data,config);
 
-                window.addEventListener("resize", redrawBcdSupply(response.data,config));
+                window.addEventListener("resize", redrawBcdCirculation(response.data,config));
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
