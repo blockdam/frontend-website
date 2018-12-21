@@ -132,7 +132,7 @@ var Charts = function charts() {
         setScale(data, config);
         renderYAxis(config);
         renderXAxis(config);
-        drawArea(response.data, config);
+        drawArea(data, config);
     }
 
 
