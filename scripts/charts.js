@@ -88,11 +88,11 @@ var Charts = function charts() {
 
         timeAxis = d3.axisBottom(xScale);
 
-        timeAxisGroup = timeAxis
+        timeAxis
             .ticks(d3.timeMonth.every(1))
             .tickFormat(d3.timeFormat("%b"));
 
-        layers.axis.append("g")
+        timeAxisGroup = layers.axis.append("g")
             .attr('class', 'time-axis')
             .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")");
 
