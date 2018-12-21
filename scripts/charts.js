@@ -16,10 +16,17 @@ var Charts = function charts() {
 
         svg = d3.select(element,config)
             .append('svg')
-            .attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
             .attr('height', (config.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
+
+            drawSVG(config);
+    }
+
+    let drawSVG = function drawSVG(config) {
+
+        svg.attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
+
     }
 
     let renderLayers = function renderLayers() {
@@ -66,6 +73,7 @@ var Charts = function charts() {
             })
             .call(totalAxis);
     }
+
 
     let renderXAxis = function renderXAxis(config) {
 
