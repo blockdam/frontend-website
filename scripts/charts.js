@@ -238,7 +238,7 @@ var Charts = function charts() {
                     renderXAxis(config);
                 }
 
-                window.addEventListener("resize", redrawBcdCirculation());
+                window.addEventListener("resize", redrawBcdCirculation,false);
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
