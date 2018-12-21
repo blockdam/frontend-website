@@ -68,7 +68,7 @@ var Charts = function charts() {
             .attr('class', 'total-axis')
             .call(totalAxis);
 
-        redrawYAxis();
+        redrawYAxis(config);
     }
 
     let redrawYAxis = function redrawYAxis(config) {
