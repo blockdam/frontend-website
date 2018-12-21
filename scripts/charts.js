@@ -128,6 +128,14 @@ var Charts = function charts() {
 
     }
 
+    let redrawBcdSupply = function redrawBcdSupply(data,config) {
+        setScale(data, config);
+        renderYAxis(config);
+        renderXAxis(config);
+        drawArea(response.data, config);
+    }
+
+
     let bcdSupply = function bcdSupply(el) {
 
         let element = el,
@@ -162,11 +170,9 @@ var Charts = function charts() {
 
                 renderSVG(element,config);
                 renderLayers();
-                setScale(response.data,config);
-                renderYAxis(config);
-                renderXAxis(config);
-                drawArea(response.data,config);
-                // drawLine(data);
+                redrawBcdSupply(response.data,config);
+
+                window.addEventListener("resize", redrawBcdSupply(response.data,config));
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
@@ -175,11 +181,19 @@ var Charts = function charts() {
 
     }
 
+    let redrawBcdCirculation = function redrawBcdCirculation(data,config) {
+
+        setScale(data,config);
+        drawBars(data,config);
+        renderYAxis(config);
+        renderXAxis(config);
+    }
+
+
     let bcdCirculation = function bcdCirculation(el) {
 
         let element = el,
             url = 'https://blockdam.nl/smc-api/token/circulation/';
-
 
         let config = {
 
@@ -212,11 +226,9 @@ var Charts = function charts() {
 
                 renderSVG(element,config);
                 renderLayers();
-                setScale(response.data,config);
-                drawBars(response.data,config);
-                renderYAxis(config);
-                renderXAxis(config);
+                redrawBcdCirculation(response.data,config);
 
+                window.addEventListener("resize", redrawBcdSupply(response.data,config));
 
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
