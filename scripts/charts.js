@@ -12,6 +12,7 @@ var Charts = function charts() {
     let yScale;
     let totalAxisGroup;
     let timeAxisGroup;
+    let timeAxis;
 
     let renderSVG = function createSVG(element,config) {
 
@@ -85,7 +86,7 @@ var Charts = function charts() {
 
     let renderXAxis = function renderXAxis(config) {
 
-        let timeAxis = d3.axisBottom(xScale);
+        timeAxis = d3.axisBottom(xScale);
 
         timeAxisGroup = timeAxis
             .ticks(d3.timeMonth.every(1))
@@ -93,14 +94,14 @@ var Charts = function charts() {
 
         layers.axis.append("g")
             .attr('class', 'time-axis')
-            .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")")
+            .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")");
 
         redrawXAxis(config);
     }
 
     let redrawXAxis = function redrawXAxis(config) {
 
-        let timeAxis = d3.axisBottom(xScale);
+        timeAxis = d3.axisBottom(xScale);
         timeAxisGroup.call(timeAxis);
     }
 
