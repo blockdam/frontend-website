@@ -154,7 +154,9 @@ var Charts = function charts() {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("y", function(d) { return yScale(d.value); })
-            .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
+            .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); })
+            .attr("x", function(d) { return xScale(new Date(d.date)); });
+
 
         redrawBars(config);
 
@@ -164,7 +166,6 @@ var Charts = function charts() {
 
         barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
         bars
-            .attr("x", function(d) { return xScale(new Date(d.date)); })
             .attr("width", barWidth);
     }
 
