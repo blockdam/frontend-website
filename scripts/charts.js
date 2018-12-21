@@ -10,7 +10,7 @@ var Charts = function charts() {
     let layers = {};
     let xScale;
     let yScale;
-    let colourMap;
+    let totalAxisGroup;
 
     let renderSVG = function createSVG(element,config) {
 
@@ -20,25 +20,20 @@ var Charts = function charts() {
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
 
-            drawSVG(config);
+            redrawSVG(config);
     }
 
-    let drawSVG = function drawSVG(config) {
-
-        console.log(config);
+    let redrawSVG = function drawSVG(config) {
         svg.attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
-
     }
 
     let renderLayers = function renderLayers() {
-
 
         layers.data = svg.append('g')
             .attr('class', 'bars');
 
         layers.axis = svg.append('g')
             .attr('class', 'axis');
-
     }
 
     let setScale = function setScale(data,config) {
@@ -46,15 +41,21 @@ var Charts = function charts() {
         let endDate = moment().add(2,'days');
 
         xScale = d3.scaleTime()
-            .range([config.margin.left, config.width - config.margin.right])
             .domain([d3.min(data, d => new Date(d.date)),endDate]);
-        //
-        // // y scale
+
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
 
+        resetScale(config);
     }
+
+    let resetScale = function resetScale(config) {
+
+        xScale.range([config.margin.left, config.width - config.margin.right])
+    }
+
+
 
     let renderYAxis = function renderYAxis(config) {
 
@@ -63,16 +64,21 @@ var Charts = function charts() {
         totalAxis
             .ticks(2);
 
-        layers.axis.append("g")
+        totalAxisGroup = layers.axis.append("g")
             .attr('class', 'total-axis')
-            .attr("transform", function()  {
-
-                    if(config.alignment == 'right')  {
-                       return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)"
-                    }
-                    else { return "translate(0,0)" }
-            })
             .call(totalAxis);
+
+        redrawYAxis();
+    }
+
+    let redrawYAxis = function redrawYAxis(config) {
+
+        totalAxisGroup.attr("transform", function()  {
+            if (config.alignment == 'right')  {
+                return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)"
+            }
+            else { return "translate(0,0)" }
+        });
     }
 
 
@@ -170,14 +176,18 @@ var Charts = function charts() {
             .then(function (response) {
 
                 function redrawBcdSupply() {
-                    setScale(response.data, config);
-                    renderYAxis(config);
-                    renderXAxis(config);
-                    drawArea(response.data, config);
+
+                    redrawSVG(config);
+                    resetScale(config);
+                    redrawYAxis(config);
                 }
 
                 renderSVG(element,config);
                 renderLayers();
+                setScale(response.data, config);
+                renderYAxis(config);
+                renderXAxis(config);
+                drawArea(response.data, config);
                 redrawBcdSupply();
 
                 window.addEventListener("resize", redrawBcdSupply, false);
