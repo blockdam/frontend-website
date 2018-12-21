@@ -183,6 +183,7 @@ var Charts = function charts() {
 
     let redrawBcdCirculation = function redrawBcdCirculation(data,config) {
 
+        console.log('hi');
         setScale(data,config);
         drawBars(data,config);
         renderYAxis(config);
