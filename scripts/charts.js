@@ -26,7 +26,6 @@ var Charts = function charts() {
     let drawSVG = function drawSVG(config) {
 
         console.log(config);
-
         svg.attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
 
     }
