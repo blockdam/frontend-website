@@ -154,18 +154,17 @@ var Charts = function charts() {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("y", function(d) { return yScale(d.value); })
-            .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); })
-            .attr("x", function(d) { return xScale(new Date(d.date)); });
+            .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
 
-
-        redrawBars(config);
+        redrawBars(config,data);
 
     }
 
-    let redrawBars = function redrawBars(config) {
+    let redrawBars = function redrawBars(config,data) {
 
         barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
         bars
+            .attr("x", function(d) { return xScale(new Date(d.date)); })
             .attr("width", barWidth);
     }
 
@@ -267,7 +266,7 @@ var Charts = function charts() {
                     resetScale(config);
                     redrawYAxis(config);
                     redrawXAxis(config);
-                    redrawBars(config);
+                    redrawBars(config,response.data);
                 }
 
                 renderSVG(element,config);
