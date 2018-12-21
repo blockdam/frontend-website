@@ -13,6 +13,8 @@ var Charts = function charts() {
     let totalAxisGroup;
     let timeAxisGroup;
     let timeAxis;
+    let flow;
+    let area;
 
     let renderSVG = function createSVG(element,config) {
 
@@ -120,7 +122,7 @@ var Charts = function charts() {
 
     let drawArea = function drawArea(data,config) {
 
-        let area = d3.area()
+        area = d3.area()
             // .curve(d3.curveCardinal)
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
@@ -128,13 +130,20 @@ var Charts = function charts() {
             .y1((d) => { return yScale(d[config.yParameter]); });
 
 
-        layers.data.selectAll('.flow')
+        flow = layers.data.selectAll('.flow')
             .data([data])
             .enter()
             .append("path")
-            .attr("d", area)
             .attr("fill", "#f6f5f2")
             .attr('class', 'flow');
+
+        redrawArea();
+    }
+
+    let redrawArea = function redrawArea() {
+
+        flow.attr("d", area);
+
     }
 
     let drawBars = function drawLine(data,config) {
@@ -190,6 +199,7 @@ var Charts = function charts() {
                     resetScale(config);
                     redrawYAxis(config);
                     redrawXAxis(config);
+                    redrawArea();
                 }
 
                 renderSVG(element,config);
