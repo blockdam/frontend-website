@@ -101,7 +101,7 @@ var Charts = function charts() {
 
     let redrawXAxis = function redrawXAxis(config) {
 
-        timeAxis = d3.axisBottom(xScale);
+        // timeAxis = d3.axisBottom(xScale);
         timeAxisGroup.call(timeAxis);
     }
 
