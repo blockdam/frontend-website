@@ -52,7 +52,7 @@ var Charts = function charts() {
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
     }
 
-    let resetScale = function resetScale(config) {
+    let resetScale = function resetScale(config,data) {
 
         console.log(config.width);
 
@@ -193,7 +193,7 @@ var Charts = function charts() {
                 function redrawBcdSupply() {
 
                     redrawSVG(config);
-                    resetScale(config);
+                    resetScale(config,response.data);
                     redrawYAxis(config);
                     redrawXAxis(config);
                     redrawArea(response.data);
@@ -256,7 +256,7 @@ var Charts = function charts() {
                     config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
 
                     redrawSVG(config);
-                    resetScale(config);
+                    resetScale(config,response.data);
                     redrawYAxis(config);
                     redrawXAxis(config);
                     redrawBars(config,response.data);
