@@ -90,11 +90,11 @@ var Charts = function charts() {
 
     let renderXAxis = function renderXAxis(config) {
 
-        timeAxis = d3.axisBottom(xScale);
-
-        timeAxis
-            .ticks(d3.timeMonth.every(1))
-            .tickFormat(d3.timeFormat("%b"));
+        // timeAxis = d3.axisBottom(xScale);
+        //
+        // timeAxis
+        //     .ticks(d3.timeMonth.every(1))
+        //     .tickFormat(d3.timeFormat("%b"));
 
         timeAxisGroup = layers.axis.append("g")
             .attr('class', 'time-axis')
@@ -105,7 +105,14 @@ var Charts = function charts() {
 
     let redrawXAxis = function redrawXAxis(config) {
 
-        // timeAxis = d3.axisBottom(xScale);
+        timeAxis = d3.axisBottom(xScale);
+
+        timeAxis
+            .ticks(d3.timeMonth.every(1))
+            .tickFormat(d3.timeFormat("%b"));
+
+
+
         timeAxisGroup.call(timeAxis);
     }
 
