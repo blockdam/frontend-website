@@ -1,4 +1,4 @@
-let ChartSVG = function ChartSVG(element,config,chart) {
+let ChartSVG = function ChartSVG(element,config,svg) {
 
 
     let render = function createSVG() {
