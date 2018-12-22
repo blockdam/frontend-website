@@ -25,8 +25,6 @@ var Charts = function charts() {
             .attr('height', (config.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
-
-            redrawSVG(config);
     }
 
     let redrawSVG = function drawSVG(config) {
@@ -52,16 +50,12 @@ var Charts = function charts() {
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
-
-        resetScale(config);
     }
 
     let resetScale = function resetScale(config) {
 
         xScale.range([config.margin.left, config.width - config.margin.right])
     }
-
-
 
     let renderYAxis = function renderYAxis(config) {
 
@@ -74,7 +68,6 @@ var Charts = function charts() {
             .attr('class', 'total-axis')
             .call(totalAxis);
 
-        redrawYAxis(config);
     }
 
     let redrawYAxis = function redrawYAxis(config) {
@@ -89,18 +82,11 @@ var Charts = function charts() {
 
 
     let renderXAxis = function renderXAxis(config) {
-
-        // timeAxis = d3.axisBottom(xScale);
-        //
-        // timeAxis
-        //     .ticks(d3.timeMonth.every(1))
-        //     .tickFormat(d3.timeFormat("%b"));
-
+        
         timeAxisGroup = layers.axis.append("g")
             .attr('class', 'time-axis')
             .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")");
 
-        redrawXAxis(config);
     }
 
     let redrawXAxis = function redrawXAxis(config) {
@@ -110,8 +96,6 @@ var Charts = function charts() {
         timeAxis
             .ticks(d3.timeMonth.every(1))
             .tickFormat(d3.timeFormat("%b"));
-
-
 
         timeAxisGroup.call(timeAxis);
     }
@@ -131,8 +115,6 @@ var Charts = function charts() {
 
     let drawArea = function drawArea(data,config) {
 
-        console.log([data]);
-
         area = d3.area()
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
@@ -147,13 +129,11 @@ var Charts = function charts() {
             .attr("fill", "#f6f5f2")
             .attr('class', 'flow');
 
-        redrawArea();
     }
 
     let redrawArea = function redrawArea() {
 
         flow.attr("d", area);
-
     }
 
     let drawBars = function drawLine(data,config) {
@@ -164,9 +144,6 @@ var Charts = function charts() {
             .attr("class", "bar")
             .attr("y", function(d) { return yScale(d.value); })
             .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
-
-        redrawBars(config,data);
-
     }
 
     let redrawBars = function redrawBars(config,data) {
