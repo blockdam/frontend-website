@@ -3,39 +3,50 @@ let bcdCirculation = function bcdCirculation(el) {
     let element = el,
         url = 'https://blockdam.nl/smc-api/token/circulation/';
 
-    let config = initConfig();
+    const chartObjects = ChartObjects();
+
+    let svg = chartObjects.svg();
+    let scales = chartObjects.scales();
+    let config = chartObjects.config();
     config.padding.bottom = 10;
     config.margin.bottom = 10;
     config.padding.right = 20;
 
-    config = getDimensions(config,element);
+    const chartDimensions = ChartDimensions(element);
+    // make separate dimensions object?
+    config = chartDimensions.get(config);
 
     config.yParameter = 'value';
     config.alignment = 'left';
 
-    // drawArea(data);
+    const chartSVG = ChartSVG(element,config,svg);
+    const chartScales = ChartScales(config,svg);
+    const chartAxis = ChartAxis(config,svg)
+
 
     axios.get(url)
         .then(function (response) {
 
-            function redrawBcdCirculation() {
+            let data = response.data;
+
+            function redraw() {
 
                 config = getDimensions(config,element);
 
-                redrawSVG(config);
-                resetScale(config,response.data);
-                redrawYAxis(config);
-                redrawXAxis(config);
-                redrawBars(config,response.data);
+                chartSVG.redraw(config);
+                scales = chartScales.reset(config);
+                chartAxis.redrawXAxis(scales);
+                chartAxis.redrawYAxis(scales);
+                redrawBars(config,data);
             }
 
-            renderSVG(element,config);
-            renderLayers();
-            setScale(response.data,config);
-            renderYAxis(config);
-            renderXAxis(config);
+            chartScales.set(data);
+            chartAxis.drawXAxis();
+            chartAxis.drawYAxis();
+
+
             drawBars(response.data,config);
-            redrawBcdCirculation(response.data,config);
+            redraw();
 
             window.addEventListener("resize", redrawBcdCirculation,false);
 

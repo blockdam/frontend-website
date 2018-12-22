@@ -1,42 +1,47 @@
-let renderYAxis = function renderYAxis(config) {
+let ChartAxis = function ChartAxis(config,svg) {
 
-    chart.totalAxis = d3.axisRight(chart.yScale);
+    let drawXAxis = function drawXAxis() {
 
-    chart.totalAxis
-        .ticks(2);
+        svg.timeAxisGroup = svg.layers.axis.append("g")
+            .attr('class', 'time-axis')
+            .attr("transform", "translate(" + 0 + "," + config.height + ")");
+    }
 
-    chart.totalAxisGroup = chart.layers.axis.append("g")
-        .attr('class', 'total-axis')
-        .call(chart.totalAxis);
+    let redrawXAxis = function redrawXAxis(scales) {
 
+        svg.timeAxis = d3.axisBottom(scales.xTime);
+
+        svg.timeAxis
+            .ticks(d3.timeMonth.every(1))
+            .tickFormat(d3.timeFormat("%b"));
+
+        svg.timeAxisGroup.call(svg.timeAxis);
+    }
+
+    let drawYAxis = function drawYAxis() {
+
+        svg.totalAxisGroup = svg.layers.axis.append("g")
+            .attr('class', 'total-axis')
+
+    }
+
+    let redrawYAxis = function redrawYAxis(scales) {
+
+        svg.totalAxis = d3.axisRight(scales.yLinear);
+
+        svg.totalAxis
+            .ticks(2);
+
+        svg.totalAxisGroup
+            .call(svg.totalAxis);
+
+    }
+
+    return {
+        drawXAxis : drawXAxis,
+        redrawXAxis : redrawXAxis,
+        drawYAxis : drawYAxis,
+        redrawYAxis : redrawYAxis
+    }
 }
 
-let redrawYAxis = function redrawYAxis(config) {
-
-    chart.totalAxisGroup.attr("transform", function()  {
-        if (config.alignment == 'right')  {
-            return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)"
-        }
-        else { return "translate(0,0)" }
-    });
-}
-
-
-let renderXAxis = function renderXAxis(config) {
-
-    chart.timeAxisGroup = chart.layers.axis.append("g")
-        .attr('class', 'time-axis')
-        .attr("transform", "translate(" + 0 + "," + config.height + ")");
-
-}
-
-let redrawXAxis = function redrawXAxis(config) {
-
-    chart.timeAxis = d3.axisBottom(chart.xScale);
-
-    chart.timeAxis
-        .ticks(d3.timeMonth.every(1))
-        .tickFormat(d3.timeFormat("%b"));
-
-    chart.timeAxisGroup.call(chart.timeAxis);
-}
