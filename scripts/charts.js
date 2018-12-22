@@ -201,7 +201,8 @@ var Charts = function charts() {
 
         let config = initConfig();
 
-        config.padding.bottom = 20;
+        config.margin.bottom = 10;
+        config.padding.bottom = 10;
         config.padding.right = 20;
 
 
@@ -249,7 +250,8 @@ var Charts = function charts() {
             url = 'https://blockdam.nl/smc-api/token/circulation/';
 
         let config = initConfig();
-        config.padding.bottom = 20;
+        config.padding.bottom = 10;
+        config.margin.bottom = 10;
         config.padding.right = 20;
 
         config = getDimensions(config,element);
