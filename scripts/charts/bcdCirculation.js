@@ -14,7 +14,7 @@ let bcdCirculation = function bcdCirculation(el) {
 
     const chartDimensions = ChartDimensions(element);
     // make separate dimensions object?
-    config = chartDimensions.get(config);
+    config = chartDimensions.get(config,element);
 
     config.yParameter = 'value';
     config.alignment = 'left';
@@ -34,7 +34,7 @@ let bcdCirculation = function bcdCirculation(el) {
 
             function redraw() {
 
-                config = getDimensions(config,element);
+                config = chartDimensions.get(config,element);
 
                 chartSVG.redraw(config);
                 scales = chartScales.reset(config);
