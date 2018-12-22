@@ -45,7 +45,7 @@ var Charts = function charts() {
         let endDate = moment().add(2,'days');
 
         xScale = d3.scaleTime()
-            .domain([d3.min(data, d => new Date(d.date)),endDate]);
+
 
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
@@ -54,7 +54,11 @@ var Charts = function charts() {
 
     let resetScale = function resetScale(config) {
 
-        xScale.range([config.margin.left, config.width - config.margin.right])
+        console.log(config.width);
+
+        xScale
+            .domain([d3.min(data, d => new Date(d.date)),endDate]);
+            .range([config.margin.left, config.width - config.margin.right])
     }
 
     let renderYAxis = function renderYAxis(config) {
@@ -132,8 +136,6 @@ var Charts = function charts() {
     }
 
     let redrawArea = function redrawArea() {
-
-        console.log('yo');
 
         flow.attr("d", area);
     }
