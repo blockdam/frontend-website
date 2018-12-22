@@ -145,7 +145,7 @@ var Charts = function charts() {
 
     let redrawArea = function redrawArea(data) {
 
-        flow.data(data)
+        flow.data([data])
             .enter()
             .append("path")
             .attr("fill", "#f6f5f2")
