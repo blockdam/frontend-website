@@ -202,7 +202,7 @@ var Charts = function charts() {
         config = getDimensions(config,element);
 
         config.yParameter = 'totalGrants';
-        config.alignment = 'right';
+        config.alignment = 'left';
 
         axios.get(url)
             .then(function (response) {
@@ -247,7 +247,7 @@ var Charts = function charts() {
         config = getDimensions(config,element);
 
         config.yParameter = 'value';
-        config.alignment = 'right';
+        config.alignment = 'left';
 
         // drawArea(data);
 
