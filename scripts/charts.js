@@ -57,8 +57,8 @@ var Charts = function charts() {
         console.log(config.width);
 
         xScale
-            .domain([d3.min(data, d => new Date(d.date)),endDate]);
-            .range([config.margin.left, config.width - config.margin.right])
+            .domain([d3.min(data, d => new Date(d.date)),endDate])
+            .range([config.margin.left, config.width - config.margin.right]);
     }
 
     let renderYAxis = function renderYAxis(config) {
