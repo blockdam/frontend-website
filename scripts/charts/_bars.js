@@ -1,4 +1,4 @@
-let ChartBar = function ChartBar(config,svg,scales) {
+let ChartBar = function ChartBar(config,svg) {
 
     let draw = function draw(data) {
 

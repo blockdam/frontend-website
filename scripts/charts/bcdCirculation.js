@@ -21,7 +21,10 @@ let bcdCirculation = function bcdCirculation(el) {
 
     const chartSVG = ChartSVG(element,config,svg);
     const chartScales = ChartScales(config,svg);
-    const chartAxis = ChartAxis(config,svg)
+    const chartAxis = ChartAxis(config,svg);
+    chartAxis.drawXAxis();
+    chartAxis.drawYAxis();
+    const chartBar = ChartBar(config,svg);
 
 
     axios.get(url)
@@ -37,18 +40,15 @@ let bcdCirculation = function bcdCirculation(el) {
                 scales = chartScales.reset(config);
                 chartAxis.redrawXAxis(scales);
                 chartAxis.redrawYAxis(scales);
-                redrawBars(config,data);
+                chartBar.redraw(config);
             }
 
             chartScales.set(data);
-            chartAxis.drawXAxis();
-            chartAxis.drawYAxis();
+            chartBar.draw(data);
 
-
-            drawBars(response.data,config);
             redraw();
 
-            window.addEventListener("resize", redrawBcdCirculation,false);
+            window.addEventListener("resize", redraw,false);
 
             if (response.status !== 200) {
                 console.log('foutje bedankt')
