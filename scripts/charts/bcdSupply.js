@@ -1,19 +1,5 @@
 let bcdSupply = function bcdSupply(el) {
 
-    let svg = null;
-    let layers = {};
-    let xScale;
-    let yScale;
-    let totalAxisGroup;
-    let timeAxisGroup;
-    let timeAxis;
-    let flow;
-    let area;
-    let line;
-    let trend;
-    let barWidth;
-    let bars;
-
     let element = el,
         url = 'https://blockdam.nl/smc-api/token/balance';
 
