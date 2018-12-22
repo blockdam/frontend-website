@@ -18,6 +18,37 @@ var Charts = function charts() {
     let barWidth;
     let bars;
 
+    let initConfig = function initConfig() {
+
+        let config = {
+
+            margin: {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0
+            },
+
+            padding: {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0
+            }
+        };
+
+        return config;
+    }
+
+    let getDimensions = function getDimensions(config) {
+
+        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+        config.height = 120;
+        config.width = config.containerWidth - config.margin.left - config.margin.right;
+
+        return config;
+    }
+
     let renderSVG = function createSVG(element,config) {
 
         svg = d3.select(element,config)
@@ -162,26 +193,13 @@ var Charts = function charts() {
         let element = el,
             url = 'https://blockdam.nl/smc-api/token/balance';
 
-        let config = {
+        let config = initConfig();
 
-            margin: {
-                top: 10,
-                bottom: 20,
-                left: 0,
-                right: 20
-            },
+        config.padding.bottom = 20;
+        config.padding.right = 20;
 
-            padding: {
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0
-            }
-        };
 
-        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-        config.height = 120;
-        config.width = config.containerWidth - config.margin.left - config.margin.right; // - config.padding.left - config.padding.right
+        config = getDimensions(config);
 
         config.yParameter = 'totalGrants';
         config.alignment = 'right';
@@ -191,10 +209,7 @@ var Charts = function charts() {
 
                 function redrawBcdSupply() {
 
-                    config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-                    config.height = 120;
-                    config.width = config.containerWidth - config.margin.left - config.margin.right; // - config.padding.left - config.padding.right
-
+                    config = getDimensions(config);
 
                     redrawSVG(config);
                     resetScale(config,response.data);
@@ -225,26 +240,11 @@ var Charts = function charts() {
         let element = el,
             url = 'https://blockdam.nl/smc-api/token/circulation/';
 
-        let config = {
+        let config = initConfig();
+        config.padding.bottom = 20;
+        config.padding.right = 20;
 
-            margin: {
-                top: 10,
-                bottom: 20,
-                left: 0,
-                right: 20
-            },
-
-            padding: {
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0
-            }
-        };
-
-        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-        config.height = 120;
-        config.width = config.containerWidth - config.margin.left - config.margin.right;
+        config = getDimensions(config);
 
         config.yParameter = 'value';
         config.alignment = 'left';
@@ -256,9 +256,7 @@ var Charts = function charts() {
 
                 function redrawBcdCirculation() {
 
-                    config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-                    config.height = 120;
-                    config.width = config.containerWidth - config.margin.left - config.margin.right;
+                    config = getDimensions(config);
 
                     redrawSVG(config);
                     resetScale(config,response.data);
