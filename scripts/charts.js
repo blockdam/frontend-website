@@ -223,6 +223,7 @@ var Charts = function charts() {
                     resetScale(config,response.data);
                     redrawYAxis(config);
                     redrawXAxis(config);
+                    redrawArea(response.data);
                     redrawLine(response.data);
                 }
 
@@ -231,7 +232,8 @@ var Charts = function charts() {
                 setScale(response.data, config);
                 renderYAxis(config);
                 renderXAxis(config);
-                drawLine(response.data, config);
+                drawArea(response.data, config);
+                // drawLine(response.data, config);
                 redrawBcdSupply();
 
                 window.addEventListener("resize", redrawBcdSupply, false);
