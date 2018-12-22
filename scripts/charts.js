@@ -46,7 +46,7 @@ var Charts = function charts() {
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width - config.margin.left - config.margin.right;
         config.containerHeight = d3.select(element).node().getBoundingClientRect().height - config.margin.top - config.margin.bottom;
-        config.height = config.containerHeight - config.margin.top - config.margin.bottom;
+        config.height = config.containerHeight - config.padding.top - config.padding.bottom;
         config.width = config.containerWidth - config.padding.left - config.padding.right;
 
         return config;
@@ -82,7 +82,7 @@ var Charts = function charts() {
             .domain([d3.min(data, d => new Date(d.date)),endDate]);
 
         yScale = d3.scaleLinear()
-            .range([config.height - config.margin.bottom, config.margin.top])
+            .range([config.height])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
     }
 
