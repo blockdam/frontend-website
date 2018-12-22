@@ -11,7 +11,7 @@ let drawBars = function drawLine(data,config) {
 
 let redrawBars = function redrawBars(config,data) {
 
-    barWidth = ((config.width - config.padding.left - config.padding.right) / data.length) - 2;
+    let barWidth = ((config.width - config.padding.left - config.padding.right) / data.length) - 2;
     chart.bars
         .attr("x", function(d) { return chart.xScale(new Date(d.date)); })
         .attr("width", barWidth);
