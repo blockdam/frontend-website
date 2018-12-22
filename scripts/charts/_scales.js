@@ -13,10 +13,12 @@ let ChartScales = function ChartScales(config,scales) {
     }
 
 
-    let reset = function reset(config) {
+    let reset = function reset(config,scales) {
 
         scales.xTime
             .range([config.margin.left + config.padding.left, config.width]);
+
+        return scales;
     }
 
     return {
