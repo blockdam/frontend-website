@@ -15,6 +15,7 @@ var Charts = function charts() {
     let timeAxis;
     let flow;
     let area;
+    let trend;
     let barWidth;
     let bars;
 
@@ -140,11 +141,17 @@ var Charts = function charts() {
             .x(function(d) { return xScale(new Date(d.date)); })
             .y(function(d) { return yScale(d[config.yParameter]); });
 
-        layers.data.append("path")
+        trend = layers.data.append("path")
             .data([data])
-            .attr("class", "line")
-            .attr("d", line);
+            .attr("class", "line");
 
+
+    }
+
+    let redrawLine = function redrawLine(data,config) {
+
+        trend
+            .attr("d", line);
     }
 
     let drawArea = function drawArea(data,config) {
