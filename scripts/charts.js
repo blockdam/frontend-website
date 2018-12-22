@@ -82,7 +82,7 @@ var Charts = function charts() {
             .domain([d3.min(data, d => new Date(d.date)),endDate]);
 
         yScale = d3.scaleLinear()
-            .range([config.height])
+            .range([config.height, config.margin.top + config.padding.top])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
     }
 
