@@ -223,7 +223,7 @@ var Charts = function charts() {
                     redrawYAxis(config);
                     redrawXAxis(config);
                     redrawArea(config);
-                    redrawLine(response.data);
+                   // redrawLine(response.data);
                 }
 
                 renderSVG(element,config);
