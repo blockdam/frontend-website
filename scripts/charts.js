@@ -28,7 +28,7 @@ var Charts = function charts() {
     }
 
     let redrawSVG = function drawSVG(config) {
-        svg.attr('width', (config.containerWidth + config.margin.left + config.margin.right + config.padding.left + config.padding.right))
+        svg.attr('width', (config.containerWidth))
     }
 
     let renderLayers = function renderLayers() {
@@ -41,7 +41,7 @@ var Charts = function charts() {
     }
 
     let setScale = function setScale(data,config) {
-        
+
         xScale = d3.scaleTime()
 
         yScale = d3.scaleLinear()
@@ -57,7 +57,7 @@ var Charts = function charts() {
 
         xScale
             .domain([d3.min(data, d => new Date(d.date)),endDate])
-            .range([config.margin.left, config.width - config.margin.right]);
+            .range([config.padding.left, config.width - config.padding.right]);
     }
 
     let renderYAxis = function renderYAxis(config) {
@@ -181,7 +181,7 @@ var Charts = function charts() {
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
         config.height = 120;
-        config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+        config.width = config.containerWidth - config.margin.left - config.margin.right; // - config.padding.left - config.padding.right
 
         config.yParameter = 'totalGrants';
         config.alignment = 'right';
