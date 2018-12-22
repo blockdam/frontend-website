@@ -3,7 +3,7 @@ let ChartAxis = function ChartAxis(config,svg) {
     let drawXAxis = function drawXAxis() {
 
         svg.timeAxisGroup = svg.layers.axis.append("g")
-            .attr('class', 'time-axis')
+            .attr('class', 'time-axis');
 
     }
 
@@ -16,7 +16,7 @@ let ChartAxis = function ChartAxis(config,svg) {
             .tickFormat(d3.timeFormat("%b"));
 
         svg.timeAxisGroup
-            .attr("transform", "translate(" + 0 + "," + dimensions.height + ")");
+            .attr("transform", "translate(" + 0 + "," + dimensions.height + ")")
             .call(svg.timeAxis);
     }
 
