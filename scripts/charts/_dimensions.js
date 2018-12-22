@@ -10,4 +10,9 @@ let ChartDimensions = function ChartDimensions(element) {
         return config;
 
     }
+
+    return {
+
+        get : get
+    }
 }
