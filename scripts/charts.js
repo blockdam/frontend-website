@@ -45,7 +45,8 @@ var Charts = function charts() {
     let getDimensions = function getDimensions(config,element) {
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width - config.margin.left - config.margin.right;
-        config.height = 120;
+        config.containerHeight = d3.select(element).node().getBoundingClientRect().height - config.margin.top - config.margin.bottom;
+        config.height = config.containerHeight - config.margin.top - config.margin.bottom;
         config.width = config.containerWidth - config.padding.left - config.padding.right;
 
         return config;
@@ -75,7 +76,10 @@ var Charts = function charts() {
 
     let setScale = function setScale(data,config) {
 
+        let endDate = moment().add(2,'days');
+
         xScale = d3.scaleTime()
+            .domain([d3.min(data, d => new Date(d.date)),endDate]);
 
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
@@ -86,11 +90,8 @@ var Charts = function charts() {
 
         console.log(config.width);
 
-        let endDate = moment().add(2,'days');
-
         xScale
-            .domain([d3.min(data, d => new Date(d.date)),endDate])
-            .range([config.padding.left, config.width - config.padding.right]);
+            .range([config.margin.left + config.padding.left, config.width]);
     }
 
     let renderYAxis = function renderYAxis(config) {
