@@ -140,18 +140,17 @@ var Charts = function charts() {
 
         flow = layers.data.selectAll('.flow')
             .data([data])
-            .enter();
+            .enter()
+            .append("path")
+            .attr("fill", "#f6f5f2")
+            .attr('class', 'flow');
 
         redrawArea();
     }
 
     let redrawArea = function redrawArea() {
 
-        flow
-            .append("path")
-            .attr("fill", "#f6f5f2")
-            .attr('class', 'flow')
-            .attr("d", area);
+        flow.attr("d", area);
 
     }
 
