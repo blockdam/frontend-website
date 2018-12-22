@@ -41,11 +41,8 @@ var Charts = function charts() {
     }
 
     let setScale = function setScale(data,config) {
-
-        let endDate = moment().add(2,'days');
-
+        
         xScale = d3.scaleTime()
-
 
         yScale = d3.scaleLinear()
             .range([config.height - config.margin.bottom, config.margin.top])
@@ -55,6 +52,8 @@ var Charts = function charts() {
     let resetScale = function resetScale(config,data) {
 
         console.log(config.width);
+
+        let endDate = moment().add(2,'days');
 
         xScale
             .domain([d3.min(data, d => new Date(d.date)),endDate])
