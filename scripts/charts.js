@@ -15,6 +15,7 @@ var Charts = function charts() {
     let timeAxis;
     let flow;
     let area;
+    let line;
     let trend;
     let barWidth;
     let bars;
@@ -137,7 +138,7 @@ var Charts = function charts() {
 
     let drawLine = function drawLine(data,config) {
 
-        var line = d3.line()
+        line = d3.line()
             .x(function(d) { return xScale(new Date(d.date)); })
             .y(function(d) { return yScale(d[config.yParameter]); });
 
