@@ -157,12 +157,6 @@ var Charts = function charts() {
 
     let drawArea = function drawArea(data,config) {
 
-        area = d3.area()
-            .x0((d,i) => { return xScale(new Date(d.date))})
-            .x1((d,i) => { return xScale(new Date(d.date))})
-            .y0(yScale(0))
-            .y1((d) => {  return yScale(d[config.yParameter]); });
-
         flow = layers.data.selectAll('.flow')
             .data([data])
             .enter()
@@ -174,7 +168,11 @@ var Charts = function charts() {
 
     let redrawArea = function redrawArea(config) {
 
-
+        area = d3.area()
+            .x0((d,i) => { return xScale(new Date(d.date))})
+            .x1((d,i) => { return xScale(new Date(d.date))})
+            .y0(yScale(0))
+            .y1((d) => {  return yScale(d[config.yParameter]); });
 
         flow.attr("d", area);
     }
@@ -233,7 +231,7 @@ var Charts = function charts() {
                 setScale(response.data, config);
                 renderYAxis(config);
                 renderXAxis(config);
-                drawArea(config);
+                drawArea(response.data,config);
                 // drawLine(response.data, config);
                 redrawBcdSupply();
 
