@@ -96,14 +96,14 @@ module.exports = function() {
 
         var charts = gulp.src([
 
-            path.projectFolder + '/scripts/charts/_init.js',
-            path.projectFolder + '/scripts/charts/_dimensions.js',
-            path.projectFolder + '/scripts/charts/_svg.js',
-            path.projectFolder + '/scripts/charts/_scales.js',
-            path.projectFolder + '/scripts/charts/_axis.js',
-            path.projectFolder + '/scripts/charts/_line.js',
-            path.projectFolder + '/scripts/charts/_bars.js',
-            path.projectFolder + '/scripts/charts/_area.js',
+            path.projectFolder + '/scripts/charts/chart-init-objects.js',
+            path.projectFolder + '/scripts/charts/chart-dimensions.js',
+            path.projectFolder + '/scripts/charts/chart-svg.js',
+            path.projectFolder + '/scripts/charts/chart-scales.js',
+            path.projectFolder + '/scripts/charts/chart-axis.js',
+            path.projectFolder + '/scripts/charts/chart-line.js',
+            path.projectFolder + '/scripts/charts/chart-bar.js',
+            path.projectFolder + '/scripts/charts/chart-area.js',
             path.projectFolder + '/scripts/charts/bcdSupply.js',
             path.projectFolder + '/scripts/charts/bcdCirculation.js',
 
