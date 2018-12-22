@@ -32,6 +32,8 @@ let bcdSupply = function bcdSupply(el) {
     axios.get(url)
         .then(function (response) {
 
+            let data = response.data;
+
             function redraw() {
                 // on redraw chart gets new dimensions
                 dimensions = chartDimensions.get(dimensions);
