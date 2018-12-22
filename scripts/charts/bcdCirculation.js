@@ -43,7 +43,7 @@ let bcdCirculation = function bcdCirculation(el) {
                 chartBar.redraw(config);
             }
 
-            chartScales.set(data);
+            scales = chartScales.set(data);
             chartBar.draw(data);
 
             redraw();

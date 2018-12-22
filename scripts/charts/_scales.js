@@ -10,15 +10,17 @@ let ChartScales = function ChartScales(config,scales) {
         scales.yLinear = d3.scaleLinear()
             .range([config.height, config.margin.top + config.padding.top])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
+
+        return scales;
     }
 
 
-    let reset = function reset(config,scales) {
+    let reset = function reset(config,newScales) {
 
-        scales.xTime
+        newScales.xTime
             .range([config.margin.left + config.padding.left, config.width]);
 
-        return scales;
+        return newScales;
     }
 
     return {
