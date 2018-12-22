@@ -143,7 +143,6 @@ var Charts = function charts() {
             .append("path")
             .attr("fill", "#f6f5f2")
             .attr('class', 'flow')
-            .merge()
             .attr("d", area);
 
     }
