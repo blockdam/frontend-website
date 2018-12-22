@@ -131,19 +131,20 @@ var Charts = function charts() {
             .y1((d) => { return yScale(d[config.yParameter]); });
 
 
-        flow = layers.data.selectAll('.flow')
-            .data([data])
-            .enter()
-            .append("path")
-            .attr("fill", "#f6f5f2")
-            .attr('class', 'flow');
+        flow = layers.data.selectAll('.flow');
 
-        redrawArea();
+
+        redrawArea(data);
     }
 
     let redrawArea = function redrawArea() {
 
-        flow.attr("d", area);
+        flow.data([data])
+            .enter()
+            .append("path")
+            .attr("fill", "#f6f5f2")
+            .merge()
+            .attr('class', 'flow');attr("d", area);
 
     }
 
@@ -264,7 +265,7 @@ var Charts = function charts() {
 
                     config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
                     config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
-                    
+
                     redrawSVG(config);
                     resetScale(config);
                     redrawYAxis(config);
