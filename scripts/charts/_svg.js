@@ -13,9 +13,9 @@ let redrawSVG = function drawSVG(config) {
 
 let renderLayers = function renderLayers() {
 
-    layers.data = chart.svg.append('g')
+    chart.layers.data = chart.svg.append('g')
         .attr('class', 'data');
 
-    layers.axis = chart.svg.append('g')
+    chart.layers.axis = chart.svg.append('g')
         .attr('class', 'axis');
 }
