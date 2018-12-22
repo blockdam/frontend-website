@@ -1,7 +1,7 @@
 
 let drawBars = function drawLine(data,config) {
 
-    chart.bars = layers.data.selectAll(".bar")
+    chart.bars = chart.layers.data.selectAll(".bar")
         .data(data)
         .enter().append("rect")
         .attr("class", "bar")
