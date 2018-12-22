@@ -1,16 +1,20 @@
-let svg = null;
-let layers = {};
-let xScale;
-let yScale;
-let totalAxisGroup;
-let timeAxisGroup;
-let timeAxis;
-let flow;
-let area;
-let line;
-let trend;
-let barWidth;
-let bars;
+let chart = {
+
+    svg : null,
+    layers : {},
+    xScale : null,
+    yScale: null,
+    totalAxisGroup : null,
+    timeAxisGroup : null,
+    timeAxis : null,
+    totalAxis: null,
+    flow : null,
+    area : null,
+    line : null,
+    trend : null,
+    barWidth : null,
+    bars : null
+}
 
 
 let initConfig = function initConfig() {

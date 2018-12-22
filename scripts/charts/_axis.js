@@ -1,19 +1,19 @@
 let renderYAxis = function renderYAxis(config) {
 
-    let totalAxis = d3.axisRight(yScale);
+    chart.totalAxis = d3.axisRight(chart.yScale);
 
-    totalAxis
+    chart.totalAxis
         .ticks(2);
 
-    totalAxisGroup = layers.axis.append("g")
+    chart.totalAxisGroup = chart.layers.axis.append("g")
         .attr('class', 'total-axis')
-        .call(totalAxis);
+        .call(chart.totalAxis);
 
 }
 
 let redrawYAxis = function redrawYAxis(config) {
 
-    totalAxisGroup.attr("transform", function()  {
+    chart.totalAxisGroup.attr("transform", function()  {
         if (config.alignment == 'right')  {
             return "translate(" + (config.width - config.margin.right - config.padding.right) + ",0)"
         }
@@ -24,7 +24,7 @@ let redrawYAxis = function redrawYAxis(config) {
 
 let renderXAxis = function renderXAxis(config) {
 
-    timeAxisGroup = layers.axis.append("g")
+    chart.timeAxisGroup = chart.layers.axis.append("g")
         .attr('class', 'time-axis')
         .attr("transform", "translate(" + 0 + "," + config.height + ")");
 
@@ -32,11 +32,11 @@ let renderXAxis = function renderXAxis(config) {
 
 let redrawXAxis = function redrawXAxis(config) {
 
-    timeAxis = d3.axisBottom(xScale);
+    chart.timeAxis = d3.axisBottom(chart.xScale);
 
-    timeAxis
+    chart.timeAxis
         .ticks(d3.timeMonth.every(1))
         .tickFormat(d3.timeFormat("%b"));
 
-    timeAxisGroup.call(timeAxis);
+    chart.timeAxisGroup.call(chart.timeAxis);
 }
