@@ -37,7 +37,7 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/charts.js',
+            path.projectFolder + '/scripts/charts/charts.js',
             path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js'
