@@ -157,9 +157,6 @@ var Charts = function charts() {
 
     let drawArea = function drawArea(data,config) {
 
-        //
-
-
         flow = layers.data.selectAll('.flow')
             .data([data])
             .enter()
@@ -169,7 +166,7 @@ var Charts = function charts() {
 
     }
 
-    let redrawArea = function redrawArea() {
+    let redrawArea = function redrawArea(config) {
 
         area = d3.area()
             .x0((d,i) => { return xScale(new Date(d.date))})
@@ -225,7 +222,7 @@ var Charts = function charts() {
                     resetScale(config,response.data);
                     redrawYAxis(config);
                     redrawXAxis(config);
-                    redrawArea(response.data);
+                    redrawArea(config);
                     redrawLine(response.data);
                 }
 
@@ -234,7 +231,7 @@ var Charts = function charts() {
                 setScale(response.data, config);
                 renderYAxis(config);
                 renderXAxis(config);
-                drawArea(response.data, config);
+                drawArea(config);
                 // drawLine(response.data, config);
                 redrawBcdSupply();
 
