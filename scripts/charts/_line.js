@@ -1,16 +1,24 @@
-let drawLine = function drawLine(data,config) {
+let ChartLine = function ChartLine(config,svg) {
 
-    chart.trend = chart.layers.data.append("path")
-        .data([data])
-        .attr("class", "line");
-}
+    let draw = function draw(data) {
 
-let redrawLine = function redrawLine(data,config) {
+        svg.trend = svg.layers.data.append("path")
+            .data([data])
+            .attr("class", "line");
+    }
 
-    chart.line = d3.line()
-        .x(function(d) { return chart.xScale(new Date(d.date)); })
-        .y(function(d) { return chart.yScale(d[config.yParameter]); });
+    let redraw = function redraw(scales) {
 
-    chart.trend
-        .attr("d", chart.line);
+        svg.line = d3.line()
+            .x(function(d) { return scales.xTime(new Date(d.date)); })
+            .y(function(d) { return scales.yLinear(d[config.yParameter]); });
+
+        svg.trend
+            .attr("d", svg.line);
+    }
+
+    return {
+        draw: draw,
+        redraw: redraw
+    }
 }
