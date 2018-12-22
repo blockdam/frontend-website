@@ -9,7 +9,7 @@ let ChartBar = function ChartBar(config,svg) {
 
     }
 
-    let redraw = function redraw(scales) {
+    let redraw = function redraw(scales,data) {
 
         let barWidth = ((config.width - config.padding.left - config.padding.right) / data.length) - 2;
 

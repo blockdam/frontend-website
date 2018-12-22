@@ -40,7 +40,7 @@ let bcdCirculation = function bcdCirculation(el) {
                 scales = chartScales.reset(config,scales);
                 chartAxis.redrawXAxis(scales);
                 chartAxis.redrawYAxis(scales);
-                chartBar.redraw(config);
+                chartBar.redraw(scales,data);
             }
 
             scales = chartScales.set(data);
