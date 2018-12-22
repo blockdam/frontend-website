@@ -191,6 +191,11 @@ var Charts = function charts() {
 
                 function redrawBcdSupply() {
 
+                    config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+                    config.height = 120;
+                    config.width = config.containerWidth - config.margin.left - config.margin.right; // - config.padding.left - config.padding.right
+
+
                     redrawSVG(config);
                     resetScale(config,response.data);
                     redrawYAxis(config);
@@ -239,7 +244,7 @@ var Charts = function charts() {
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
         config.height = 120;
-        config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+        config.width = config.containerWidth - config.margin.left - config.margin.right;
 
         config.yParameter = 'value';
         config.alignment = 'left';
@@ -252,7 +257,8 @@ var Charts = function charts() {
                 function redrawBcdCirculation() {
 
                     config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
-                    config.width = config.containerWidth - config.margin.left - config.margin.right - config.padding.left - config.padding.right;
+                    config.height = 120;
+                    config.width = config.containerWidth - config.margin.left - config.margin.right;
 
                     redrawSVG(config);
                     resetScale(config,response.data);
