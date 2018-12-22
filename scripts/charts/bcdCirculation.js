@@ -36,7 +36,7 @@ let bcdCirculation = function bcdCirculation(el) {
 
             function redraw() {
                 // on redraw chart gets new dimensions
-                dimensions = chartDimensions.get(config,element);
+                dimensions = chartDimensions.get(dimensions);
                 chartSVG.redraw(dimensions);
                 // new dimensions mean new scales
                 scales = chartScales.reset(dimensions,scales);
