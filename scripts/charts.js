@@ -138,15 +138,16 @@ var Charts = function charts() {
             .y1((d) => { return yScale(d[config.yParameter]); });
 
 
-        flow = layers.data.selectAll('.flow');
+        flow = layers.data.selectAll('.flow')
+            .data([data])
+            .enter();
 
-        redrawArea(data);
+        redrawArea();
     }
 
-    let redrawArea = function redrawArea(data) {
+    let redrawArea = function redrawArea() {
 
-        flow.data([data])
-            .enter()
+        flow
             .append("path")
             .attr("fill", "#f6f5f2")
             .attr('class', 'flow')
