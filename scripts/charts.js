@@ -44,9 +44,9 @@ var Charts = function charts() {
 
     let getDimensions = function getDimensions(config,element) {
 
-        config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
+        config.containerWidth = d3.select(element).node().getBoundingClientRect().width - config.margin.left - config.margin.right;
         config.height = 120;
-        config.width = config.containerWidth - config.margin.left - config.margin.right;
+        config.width = config.containerWidth - config.padding.left - config.padding.right;
 
         return config;
     }
@@ -138,18 +138,16 @@ var Charts = function charts() {
 
     let drawLine = function drawLine(data,config) {
 
-        line = d3.line()
-            .x(function(d) { return xScale(new Date(d.date)); })
-            .y(function(d) { return yScale(d[config.yParameter]); });
-
         trend = layers.data.append("path")
             .data([data])
             .attr("class", "line");
-
-
     }
 
     let redrawLine = function redrawLine(data,config) {
+
+        line = d3.line()
+            .x(function(d) { return xScale(new Date(d.date)); })
+            .y(function(d) { return yScale(d[config.yParameter]); });
 
         trend
             .attr("d", line);
@@ -189,7 +187,7 @@ var Charts = function charts() {
 
     let redrawBars = function redrawBars(config,data) {
 
-        barWidth = ((config.width - config.margin.left - config.margin.right) / data.length) - 2;
+        barWidth = ((config.width - config.padding.left - config.padding.right) / data.length) - 2;
         bars
             .attr("x", function(d) { return xScale(new Date(d.date)); })
             .attr("width", barWidth);
@@ -223,7 +221,7 @@ var Charts = function charts() {
                     redrawYAxis(config);
                     redrawXAxis(config);
                     redrawArea(config);
-                   // redrawLine(response.data);
+                   // redrawLine(response.data,config);
                 }
 
                 renderSVG(element,config);
