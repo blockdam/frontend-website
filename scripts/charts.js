@@ -133,7 +133,6 @@ var Charts = function charts() {
 
         flow = layers.data.selectAll('.flow');
 
-
         redrawArea(data);
     }
 
@@ -143,8 +142,9 @@ var Charts = function charts() {
             .enter()
             .append("path")
             .attr("fill", "#f6f5f2")
+            .attr('class', 'flow')
             .merge()
-            .attr('class', 'flow');attr("d", area);
+            .attr("d", area);
 
     }
 
