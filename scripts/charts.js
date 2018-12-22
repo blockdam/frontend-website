@@ -122,7 +122,7 @@ var Charts = function charts() {
 
         timeAxisGroup = layers.axis.append("g")
             .attr('class', 'time-axis')
-            .attr("transform", "translate(" + 0 + "," + (config.height + config.padding.bottom + config.margin.bottom) + ")");
+            .attr("transform", "translate(" + 0 + "," + (config.containerHeight) + ")");
 
     }
 
