@@ -131,13 +131,13 @@ var Charts = function charts() {
 
     let drawArea = function drawArea(data,config) {
 
-        console.log('once?');
+        console.log([data]);
 
         area = d3.area()
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
             .y0(yScale(0))
-            .y1((d) => { console.log(d[config.yParameter]); return yScale(d[config.yParameter]); });
+            .y1((d) => {  return yScale(d[config.yParameter]); }); // console.log(d[config.yParameter]);
 
 
         flow = layers.data.selectAll('.flow')
