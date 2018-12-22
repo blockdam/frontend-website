@@ -1,4 +1,4 @@
-let ChartScales = function ChartScales(config,scales) {
+let ChartScales = function ChartScales(config,dimensions,scales) {
 
     let set = function set(data) {
 
@@ -8,17 +8,17 @@ let ChartScales = function ChartScales(config,scales) {
             .domain([d3.min(data, d => new Date(d.date)),endDate]);
 
         scales.yLinear = d3.scaleLinear()
-            .range([config.height, config.margin.top + config.padding.top])
+            .range([dimensions.height, config.margin.top + config.padding.top])
             .domain([0,d3.max(data, d => d[config.yParameter])]).nice();
 
         return scales;
     }
 
 
-    let reset = function reset(config,newScales) {
+    let reset = function reset(dimensions,newScales) {
 
         newScales.xTime
-            .range([config.margin.left + config.padding.left, config.width]);
+            .range([config.margin.left + config.padding.left, dimensions.width]);
 
         return newScales;
     }

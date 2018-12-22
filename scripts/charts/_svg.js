@@ -1,20 +1,20 @@
-let ChartSVG = function ChartSVG(element,config,svg) {
+let ChartSVG = function ChartSVG(element,config,dimensions,svg) {
 
 
-    let render = function createSVG() {
+    let render = function render() {
 
         svg.body = d3.select(element,config)
             .append('svg')
-            .attr('height', (config.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
+            .attr('height', (dimensions.height + config.margin.top + config.margin.bottom + config.padding.top + config.padding.bottom))
             .append('g')
             .attr('transform', 'translate(' + config.margin.left + ',' + config.margin.top + ')');
     }
 
-    let redraw = function drawSVG() {
-        svg.body.attr('width', (config.containerWidth))
+    let redraw = function redraw(dimensions) {
+        svg.body.attr('width', (dimensions.containerWidth))
     }
 
-    let layers = function renderLayers() {
+    let layers = function layers() {
 
         svg.layers.data = svg.body.append('g')
             .attr('class', 'data');

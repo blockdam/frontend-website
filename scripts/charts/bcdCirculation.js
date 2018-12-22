@@ -3,31 +3,31 @@ let bcdCirculation = function bcdCirculation(el) {
     let element = el,
         url = 'https://blockdam.nl/smc-api/token/circulation/';
 
+    // create objects
     const chartObjects = ChartObjects();
-
     let config = chartObjects.config();
     let dimensions = chartObjects.dimensions();
     let svg = chartObjects.svg();
     let scales = chartObjects.scales();
 
+    // configuration
     config.padding.bottom = 10;
     config.margin.bottom = 10;
     config.padding.right = 20;
-
-    const chartDimensions = ChartDimensions(element,config);
-    // make separate dimensions object?
-    dimensions = chartDimensions.get(dimensions);
-
     config.yParameter = 'value';
     config.alignment = 'left';
 
-    const chartSVG = ChartSVG(element,config,svg);
-    const chartScales = ChartScales(config,svg);
+    // get dimensions from parent element
+    const chartDimensions = ChartDimensions(element,config);
+    dimensions = chartDimensions.get(dimensions);
+
+    // create svg elements without data
+    const chartSVG = ChartSVG(element,config,dimensions,svg);
+    const chartScales = ChartScales(config,dimensions,scales);
     const chartAxis = ChartAxis(config,svg);
     chartAxis.drawXAxis();
     chartAxis.drawYAxis();
     const chartBar = ChartBar(config,svg);
-
 
     axios.get(url)
         .then(function (response) {
@@ -35,21 +35,25 @@ let bcdCirculation = function bcdCirculation(el) {
             let data = response.data;
 
             function redraw() {
-
-                config = chartDimensions.get(config,element);
-
-                chartSVG.redraw(config);
-                scales = chartScales.reset(config,scales);
-                chartAxis.redrawXAxis(scales);
+                // on redraw chart gets new dimensions
+                dimensions = chartDimensions.get(config,element);
+                chartSVG.redraw(dimensions);
+                // new dimensions mean new scales
+                scales = chartScales.reset(dimensions,scales);
+                // new scales mean new axis
+                chartAxis.redrawXAxis(dimensions,scales);
                 chartAxis.redrawYAxis(scales);
-                chartBar.redraw(scales,data);
+                // redraw data
+                chartBar.redraw(dimensions,scales,data);
             }
 
+            // with data we can init scales
             scales = chartScales.set(data);
+            // width data we can draw items
             chartBar.draw(data);
-
+            // further drawing happens in function that can be repeated.
             redraw();
-
+            // for example on window resize
             window.addEventListener("resize", redraw,false);
 
             if (response.status !== 200) {

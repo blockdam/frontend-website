@@ -9,14 +9,14 @@ let ChartBar = function ChartBar(config,svg) {
 
     }
 
-    let redraw = function redraw(scales,data) {
+    let redraw = function redraw(dimensions,scales,data) {
 
-        let barWidth = ((config.width - config.padding.left - config.padding.right) / data.length) - 2;
+        let barWidth = ((dimensions.width - config.padding.left - config.padding.right) / data.length) - 2;
 
         svg.bars
             .attr("x", function(d) { return scales.xTime(new Date(d.date)); })
             .attr("y", function(d) { return scales.yLinear(d.value); })
-            .attr("height", function(d) { return config.height - scales.yLinear(d.value); })
+            .attr("height", function(d) { return dimensions.height - scales.yLinear(d.value); })
             .attr("width", barWidth);
     }
 
