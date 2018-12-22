@@ -1,4 +1,4 @@
-let bcdCirculation = function bcdCirculation(el) {
+let BcdCirculation = function bcdCirculation(el) {
 
     let svg = null;
     let layers = {};

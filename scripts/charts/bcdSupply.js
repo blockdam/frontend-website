@@ -1,4 +1,4 @@
-let bcdSupply = function bcdSupply(el) {
+let BcdSupply = function bcdSupply(el) {
 
     let svg = null;
     let layers = {};
