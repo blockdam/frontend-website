@@ -37,7 +37,7 @@ let bcdCirculation = function bcdCirculation(el) {
                 config = chartDimensions.get(config,element);
 
                 chartSVG.redraw(config);
-                scales = chartScales.reset(config);
+                scales = chartScales.reset(config,scales);
                 chartAxis.redrawXAxis(scales);
                 chartAxis.redrawYAxis(scales);
                 chartBar.redraw(config);
