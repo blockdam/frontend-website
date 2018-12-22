@@ -21,8 +21,6 @@ let bcdCirculation = function bcdCirculation(el) {
     const chartDimensions = ChartDimensions(element,config);
     dimensions = chartDimensions.get(dimensions);
 
-    console.log(dimensions);
-
     // create svg elements without data
     const chartSVG = ChartSVG(element,config,dimensions,svg);
     const chartScales = ChartScales(config,dimensions,scales);

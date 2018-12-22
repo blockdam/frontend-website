@@ -3,43 +3,57 @@ let bcdSupply = function bcdSupply(el) {
     let element = el,
         url = 'https://blockdam.nl/smc-api/token/balance';
 
-    let config = initConfig();
+    // create objects
+    const chartObjects = ChartObjects();
+    let config = chartObjects.config();
+    let dimensions = chartObjects.dimensions();
+    let svg = chartObjects.svg();
+    let scales = chartObjects.scales();
 
+    // configuration
     config.margin.bottom = 10;
     config.padding.bottom = 10;
     config.padding.right = 20;
-
-
-    config = getDimensions(config,element);
-
     config.yParameter = 'totalGrants';
     config.alignment = 'left';
+
+    // get dimensions from parent element
+    const chartDimensions = ChartDimensions(element,config);
+    dimensions = chartDimensions.get(dimensions);
+
+    // create svg elements without data
+    const chartSVG = ChartSVG(element,config,dimensions,svg);
+    const chartScales = ChartScales(config,dimensions,scales);
+    const chartAxis = ChartAxis(config,svg);
+    chartAxis.drawXAxis();
+    chartAxis.drawYAxis();
+    const chartBar = ChartBar(config,svg);
 
     axios.get(url)
         .then(function (response) {
 
-            function redrawBcdSupply() {
-
-                config = getDimensions(config,element);
-
-                redrawSVG(config);
-                resetScale(config,response.data);
-                redrawYAxis(config);
-                redrawXAxis(config);
-                redrawArea(config);
+            function redraw() {
+                // on redraw chart gets new dimensions
+                dimensions = chartDimensions.get(dimensions);
+                chartSVG.redraw(dimensions);
+                // new dimensions mean new scales
+                scales = chartScales.reset(dimensions,scales);
+                // new scales mean new axis
+                chartAxis.redrawXAxis(dimensions,scales);
+                chartAxis.redrawYAxis(scales);
+                // redraw data
+                chartArea.redraw(config);
                 // redrawLine(response.data,config);
             }
 
-            renderSVG(element,config);
-            renderLayers();
-            setScale(response.data, config);
-            renderYAxis(config);
-            renderXAxis(config);
-            drawArea(response.data,config);
-            // drawLine(response.data, config);
-            redrawBcdSupply();
-
-            window.addEventListener("resize", redrawBcdSupply, false);
+            // with data we can init scales
+            scales = chartScales.set(data);
+            // width data we can draw items
+            chartArea.draw(data);
+            // further drawing happens in function that can be repeated.
+            redraw();
+            // for example on window resize
+            window.addEventListener("resize", redraw,false);
 
             if (response.status !== 200) {
                 console.log('foutje bedankt')
