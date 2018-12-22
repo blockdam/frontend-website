@@ -5,16 +5,18 @@ let bcdCirculation = function bcdCirculation(el) {
 
     const chartObjects = ChartObjects();
 
+    let config = chartObjects.config();
+    let dimensions = chartObjects.dimensions();
     let svg = chartObjects.svg();
     let scales = chartObjects.scales();
-    let config = chartObjects.config();
+
     config.padding.bottom = 10;
     config.margin.bottom = 10;
     config.padding.right = 20;
 
-    const chartDimensions = ChartDimensions(element);
+    const chartDimensions = ChartDimensions(element,config);
     // make separate dimensions object?
-    config = chartDimensions.get(config,element);
+    dimensions = chartDimensions.get(dimensions);
 
     config.yParameter = 'value';
     config.alignment = 'left';
