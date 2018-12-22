@@ -137,7 +137,7 @@ var Charts = function charts() {
         redrawArea(data);
     }
 
-    let redrawArea = function redrawArea() {
+    let redrawArea = function redrawArea(data) {
 
         flow.data([data])
             .enter()
@@ -207,7 +207,7 @@ var Charts = function charts() {
                     resetScale(config);
                     redrawYAxis(config);
                     redrawXAxis(config);
-                    redrawArea();
+                    redrawArea(response.data);
                 }
 
                 renderSVG(element,config);
