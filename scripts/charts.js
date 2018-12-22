@@ -247,7 +247,7 @@ var Charts = function charts() {
         config = getDimensions(config,element);
 
         config.yParameter = 'value';
-        config.alignment = 'left';
+        config.alignment = 'right';
 
         // drawArea(data);
 
