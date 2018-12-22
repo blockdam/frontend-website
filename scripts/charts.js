@@ -40,7 +40,7 @@ var Charts = function charts() {
         return config;
     }
 
-    let getDimensions = function getDimensions(config) {
+    let getDimensions = function getDimensions(config,element) {
 
         config.containerWidth = d3.select(element).node().getBoundingClientRect().width;
         config.height = 120;
@@ -199,7 +199,7 @@ var Charts = function charts() {
         config.padding.right = 20;
 
 
-        config = getDimensions(config);
+        config = getDimensions(config,element);
 
         config.yParameter = 'totalGrants';
         config.alignment = 'right';
@@ -209,7 +209,7 @@ var Charts = function charts() {
 
                 function redrawBcdSupply() {
 
-                    config = getDimensions(config);
+                    config = getDimensions(config,element);
 
                     redrawSVG(config);
                     resetScale(config,response.data);
@@ -244,7 +244,7 @@ var Charts = function charts() {
         config.padding.bottom = 20;
         config.padding.right = 20;
 
-        config = getDimensions(config);
+        config = getDimensions(config,element);
 
         config.yParameter = 'value';
         config.alignment = 'left';
@@ -256,7 +256,7 @@ var Charts = function charts() {
 
                 function redrawBcdCirculation() {
 
-                    config = getDimensions(config);
+                    config = getDimensions(config,element);
 
                     redrawSVG(config);
                     resetScale(config,response.data);
