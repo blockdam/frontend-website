@@ -1,6 +1,6 @@
 let ChartObjects = function ChartObjects() {
 
-    config = function config() {
+    let config = function config() {
 
         return {
             margin: {
@@ -18,7 +18,7 @@ let ChartObjects = function ChartObjects() {
         };
     }
 
-    svg = function svg(){
+    let svg = function svg(){
 
         return {
             body : null,
@@ -35,7 +35,7 @@ let ChartObjects = function ChartObjects() {
         }
     }
 
-    scales = function scales() {
+    let scales = function scales() {
 
         return {
             xTime : null,
