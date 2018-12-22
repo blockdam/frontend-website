@@ -183,7 +183,7 @@ var Charts = function charts() {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("y", function(d) { return yScale(d.value); })
-            .attr("height", function(d) { return config.height - config.margin.bottom - yScale(d.value); });
+            .attr("height", function(d) { return config.height - yScale(d.value); });
     }
 
     let redrawBars = function redrawBars(config,data) {
