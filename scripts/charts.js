@@ -82,7 +82,7 @@ var Charts = function charts() {
 
 
     let renderXAxis = function renderXAxis(config) {
-        
+
         timeAxisGroup = layers.axis.append("g")
             .attr('class', 'time-axis')
             .attr("transform", "translate(" + 0 + "," + (config.height - config.margin.bottom) + ")");
@@ -119,7 +119,7 @@ var Charts = function charts() {
             .x0((d,i) => { return xScale(new Date(d.date))})
             .x1((d,i) => { return xScale(new Date(d.date))})
             .y0(yScale(0))
-            .y1((d) => {  return yScale(d[config.yParameter]); }); // console.log(d[config.yParameter]);
+            .y1((d) => {  console.log(d[config.yParameter]); return yScale(d[config.yParameter]); }); //
 
 
         flow = layers.data.selectAll('.flow')
@@ -132,6 +132,8 @@ var Charts = function charts() {
     }
 
     let redrawArea = function redrawArea() {
+
+        console.log('yo');
 
         flow.attr("d", area);
     }
