@@ -27,7 +27,7 @@ let bcdSupply = function bcdSupply(el) {
     const chartAxis = ChartAxis(config,svg);
     chartAxis.drawXAxis();
     chartAxis.drawYAxis();
-    const chartBar = ChartBar(config,svg);
+    const chartArea = ChartArea(config,svg);
 
     axios.get(url)
         .then(function (response) {
@@ -44,7 +44,7 @@ let bcdSupply = function bcdSupply(el) {
                 chartAxis.redrawXAxis(dimensions,scales);
                 chartAxis.redrawYAxis(scales);
                 // redraw data
-                chartArea.redraw(config);
+                chartArea.redraw(scales);
                 // redrawLine(response.data,config);
             }
 

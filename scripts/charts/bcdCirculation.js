@@ -54,7 +54,7 @@ let bcdCirculation = function bcdCirculation(el) {
             // further drawing happens in function that can be repeated.
             redraw();
             // for example on window resize
-            window.addEventListener("resize", redraw,false);
+            window.addEventListener("resize",redraw,false);
 
             if (response.status !== 200) {
                 console.log('foutje bedankt')

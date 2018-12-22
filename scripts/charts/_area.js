@@ -1,4 +1,4 @@
-let ChartArea = function ChartArea(config,svg,scales) {
+let ChartArea = function ChartArea(config,svg) {
 
     let draw = function draw(data){
 
@@ -11,7 +11,7 @@ let ChartArea = function ChartArea(config,svg,scales) {
 
     }
 
-    let redraw = function redraw(){
+    let redraw = function redraw(scales){
 
         svg.area = d3.area()
             .x0((d,i) => { return scales.xTime(new Date(d.date))})
