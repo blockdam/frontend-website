@@ -37,7 +37,6 @@ module.exports = function() {
             path.projectFolder + '/scripts/_loadJSON.js',
             path.projectFolder + '/scripts/detect.js',
             path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/charts/charts.js',
             path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/homepage.js',
             path.projectFolder + '/scripts/menu.js'
@@ -95,7 +94,27 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page, dao, token);
+        var charts = gulp.src([
+
+            path.projectFolder + '/scripts/charts/_init.js',
+            path.projectFolder + '/scripts/charts/_dimensions.js',
+            path.projectFolder + '/scripts/charts/_svg.js',
+            path.projectFolder + '/scripts/charts/_scales.js',
+            path.projectFolder + '/scripts/charts/_axis.js',
+            path.projectFolder + '/scripts/charts/_line.js',
+            path.projectFolder + '/scripts/charts/_bars.js',
+            path.projectFolder + '/scripts/charts/_area.js',
+            path.projectFolder + '/scripts/charts/bcdSupply.js',
+            path.projectFolder + '/scripts/charts/bcdCirculation.js',
+
+        ])
+            .pipe(concat('charts.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
+        return merge(post, homepage, page, dao, token, charts);
 
     });
 }
