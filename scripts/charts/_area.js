@@ -17,5 +17,5 @@ let redrawArea = function redrawArea(config) {
         .y0(chart.yScale(0))
         .y1((d) => {  return chart.yScale(d[config.yParameter]); });
 
-    chart.flow.attr("d", area);
+    chart.flow.attr("d", chart.area);
 }

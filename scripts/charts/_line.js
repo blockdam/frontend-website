@@ -12,5 +12,5 @@ let redrawLine = function redrawLine(data,config) {
         .y(function(d) { return chart.yScale(d[config.yParameter]); });
 
     chart.trend
-        .attr("d", line);
+        .attr("d", chart.line);
 }
