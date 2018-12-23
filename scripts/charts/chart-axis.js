@@ -2,7 +2,7 @@ let ChartAxis = function ChartAxis(config,svg) {
 
     let drawXAxis = function drawXAxis() {
 
-        svg.timeAxis = svg.layers.axes.append("g")
+        svg.xAxis = svg.layers.axes.append("g")
             .attr('class', 'time-axis');
 
     }
