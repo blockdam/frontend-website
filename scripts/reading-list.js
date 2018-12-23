@@ -19,7 +19,7 @@ class ReadingList {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
 
-                console.log(self.contract.linkCount(function(err,data) => {
+                self.contract.linkCount((err,data) =>  {
 
                     if(err) {
                         console.log(err);
