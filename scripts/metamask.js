@@ -42,21 +42,29 @@ class MetaMask {
             // user has the metaMask addon
             // create web3 object
             window.web3 = new Web3(ethereum);
-            ethereum.enable();
-            // check if user is connected to the correct network
-            if (web3.version.network  !== '4')  {
-                self.html.welcome.innerHTML = 'Hello, Our smart contracts are on the Rinkeby Testnet';
-                // check if metamask is not locked (private mode)
-            } else if (!web3.eth.accounts.length) {
-                self.html.welcome.innerHTML = 'Hello, Metamask may be locked'
-            } else {
-                // metaMask is functioning
-                // check if address of active metaMask account is on list of dao members
-                self.identify(web3.eth.accounts[0]);
 
-                // connect to smart contracts
-                self.getBCDToken();
-                self.getBCDBondingCurve()
+            try {
+                // connect to network
+                await ethereum.enable();
+                // check if user is connected to the correct network
+                if (web3.version.network  !== '4')  {
+                    self.html.welcome.innerHTML = 'Hello, Our smart contracts are on the Rinkeby Testnet';
+                    // check if metamask is not locked (private mode)
+                } else if (!web3.eth.accounts.length) {
+                    self.html.welcome.innerHTML = 'Hello, Metamask may be locked'
+                } else {
+                    // metaMask is functioning
+                    // check if address of active metaMask account is on list of dao members
+                    self.identify(web3.eth.accounts[0]);
+
+                    // connect to smart contracts
+                    self.getBCDToken();
+                    self.getBCDBondingCurve()
+                }
+            } catch (error) {
+
+                console.log(error);
+                self.html.welcome.innerHTML = 'Hello, Metamask failed to connect';
             }
         }
     }
