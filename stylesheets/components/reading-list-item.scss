@@ -41,6 +41,7 @@ a.recommendation {
   > span {
     @include uppercase();
     font-size: .725rem;
+    margin: .25rem 0;
   }
 
   input, button {
