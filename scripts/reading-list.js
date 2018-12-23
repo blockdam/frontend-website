@@ -3,6 +3,8 @@ class ReadingList {
     constructor() {
 
         this.contract = null;
+        this.slots = null;
+        this.linkCount = null;
     }
 
     init() {
@@ -17,9 +19,16 @@ class ReadingList {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
 
-                console.log(self.contract.linksCount());
-                console.log(self.contract.slots());
+                console.log(self.contract.linkCount(function(err,data) => {
 
+                    if(err) {
+                        console.log(err);
+                    } else {
+                        self.linkCount = data;
+                    }
+                });
+
+                console.log(self);
             });
     }
 }
