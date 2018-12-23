@@ -50,6 +50,11 @@ a.recommendation {
     display: none;
   }
 
+  button {
+    height: 1.5rem;
+    width: 4rem;
+  }
+
   &.open {
 
     > span {

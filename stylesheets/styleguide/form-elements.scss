@@ -51,6 +51,14 @@ input[type=text], input[type=email], input[type=password], input[type=tel], inpu
   &:-moz-placeholder { color: $black !important; } /* Firefox 18- */
   &::-moz-placeholder {  color: $black !important; } /* Firefox 19+ */
   &:-ms-input-placeholder { color: $black !important; }
+
+  .small {
+
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0 .25rem;
+    @include small-sans();
+  }
 }
 
 input[type=file] {
