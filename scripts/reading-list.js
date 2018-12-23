@@ -31,6 +31,16 @@ class ReadingList {
                 });
             });
     }
+
+    openForm() {
+
+
+    }
+
+    addLink() {
+
+
+    }
 }
 
 

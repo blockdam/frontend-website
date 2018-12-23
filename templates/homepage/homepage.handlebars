@@ -50,25 +50,9 @@
 
                     <h2 class="subheader" >Reading List</h2>
 
-                    <!--<span class="week">{{body.links.title.rendered}}</span>-->
-
                     {{#each body.links.recommendations as | link | }}
 
-                        <a href="{{link.url}}" target="_blank" class="recommendation">
-
-                            <div class="recommendation--tag">
-                                <!--<span>{{ indexBump @index }}</span>. -->
-                                {{link.tag}}
-                            </div>
-                            <div class="recommendation--title">
-                                {{link.title}}
-                            </div>
-                            <div class="recommendation--subtitle">
-                                {{link.subtitle}}
-                            </div>
-
-                        </a>
-
+                        {{> reading-list-item }}
 
                     {{/each}}
 
@@ -79,8 +63,6 @@
         </section>
 
         <section id="section-community" class="section-half">
-
-            <!--{{> dao-metamask }}-->
 
             {{> dao-bcd-token }}
 
