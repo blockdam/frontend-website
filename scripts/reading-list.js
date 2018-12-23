@@ -4,7 +4,6 @@ class ReadingList {
 
         this.contract = null;
         this.forms = [].slice.call(document.querySelectorAll('form.replaceLinkForm'));
-
     }
 
     init() {
@@ -21,20 +20,8 @@ class ReadingList {
                 console.log(self.contract);
 
                 self.forms.forEach((form) => {
-
-                        let index = form.getAttribute('data-item-id');
-
-                        form.querySelector('span').addEventListener('click', function() { self.openForm(index) }, false);
-                });
-
-                self.contract.slots.call(1,function (err, data) {
-                    if (err) {
-                        console.log(err)
-                    }
-                    if (data) {
-                        console.log(data);
-
-                    }
+                    let index = form.getAttribute('data-item-id');
+                    form.querySelector('span').addEventListener('click', function() { self.openForm(index) }, false);
                 });
             });
     }
@@ -49,14 +36,22 @@ class ReadingList {
                 console.log(errors);
             } else {
                 let url = self.forms[index].querySelector('input[type="text"]').value;
-                self.addLink(url)
+                self.addLink(url,index)
             }
         }, false);
     }
 
-    addLink(url) {
+    addLink(url,index) {
 
-        console.log(url);
+        let self = this;
+        self.contract.addLink(url, index, { from: web3.eth.coinbase }, function(err,receipt){
+            if (err) {
+                console.log(err)
+            }
+            if (receipt) {
+                console.log(receipt);
+            }
+        })
     }
 }
 
