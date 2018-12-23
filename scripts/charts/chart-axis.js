@@ -29,13 +29,13 @@ let ChartAxis = function ChartAxis(config,svg) {
 
     let redrawYAxis = function redrawYAxis(scales,axes) {
 
-        axis.yLinear = d3.axisRight(scales.yLinear);
+        axes.yLinear = d3.axisRight(scales.yLinear);
 
-        axis.yLinear
+        axes.yLinear
             .ticks(2);
 
         svg.yAxis
-            .call(axis.yLinear);
+            .call(axes.yLinear);
 
     }
 
