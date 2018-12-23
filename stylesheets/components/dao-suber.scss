@@ -17,6 +17,11 @@
     font-weight: 800;
     font-size: 1rem;
     width: 100%;
-    margin: .5rem 0 1.5rem;
+    margin: .5rem 0 0 0;
+  }
+
+  > span {
+    @include small-sans();
+    margin: 0 0 1.5rem;
   }
 }
