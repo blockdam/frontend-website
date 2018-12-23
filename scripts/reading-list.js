@@ -19,7 +19,7 @@ class ReadingList {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
 
-                self.bcdContract.slots.call(function (err, data) {
+                self.contract.slots.call(function (err, data) {
                     if (err) {
                         console.log(err)
                     }
