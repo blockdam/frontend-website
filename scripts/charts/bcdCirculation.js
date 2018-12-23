@@ -9,6 +9,8 @@ let bcdCirculation = function bcdCirculation(el) {
     let dimensions = chartObjects.dimensions();
     let svg = chartObjects.svg();
     let scales = chartObjects.scales();
+    let axes = chartObjects.axes();
+    let functions = chartObjects.functions();
 
     // configuration
     config.padding.bottom = 10;
@@ -41,8 +43,8 @@ let bcdCirculation = function bcdCirculation(el) {
                 // new dimensions mean new scales
                 scales = chartScales.reset(dimensions,scales);
                 // new scales mean new axis
-                chartAxis.redrawXAxis(dimensions,scales);
-                chartAxis.redrawYAxis(scales);
+                chartAxis.redrawXAxis(dimensions,scales,axes);
+                chartAxis.redrawYAxis(scales,axes);
                 // redraw data
                 chartBar.redraw(dimensions,scales,data);
             }
