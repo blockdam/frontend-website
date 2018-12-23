@@ -1,3 +1,39 @@
+> a.recommendation {
+
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: .5rem .5rem .5rem .5rem;
+  border-bottom: 1px solid $secondary;
+  text-decoration: none;
+  display: block;
+
+  .recommendation--tag {
+
+    @include uppercase();
+    font-size: .725rem;
+  }
+
+  .recommendation--title {
+
+    font-family: Mercury Display A,Mercury Display B;
+    font-size: 1.3rem;
+    line-height: 1.05;
+    margin: 0 0 .4rem 0;
+
+  }
+
+  .recommendation--subtitle {
+
+    @include small-sans();
+    line-height: 1.3;
+  }
+
+  &:hover {
+    background: $secondary;
+  }
+
+}
+
 #replaceLinkform {
 
   input, button {
