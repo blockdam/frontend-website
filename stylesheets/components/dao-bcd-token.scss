@@ -11,11 +11,16 @@
 
 
   h2 {
-    @include uppercase-large();
-    font-weight: 800;
+    //@include uppercase-large();
+    //font-weight: 800;
     font-size: 1rem;
     width: 100%;
     margin: .5rem 0 0rem;
+
+    font-family: Gotham Cond SSm A ,Gotham Cond SSm B;
+    font-size: 1rem;
+    line-height: .925;
+    font-weight: 400;
 
   }
 
