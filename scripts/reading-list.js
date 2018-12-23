@@ -19,18 +19,18 @@ class ReadingList {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
 
-                console.log(self.contract);
+                console.log(self.contract.slots(1));
 
-                self.contract.slots.call((err,data) =>  {
+                // self.contract.slots.call((err,data) =>  {
+                //
+                //     if(err) {
+                //         console.log(err);
+                //     } else {
+                //         self.slots = data;
+                //     }
+                // });
 
-                    if(err) {
-                        console.log(err);
-                    } else {
-                        self.slots = data;
-                    }
-                });
-
-                console.log(self);
+                // console.log(self);
             });
     }
 }
