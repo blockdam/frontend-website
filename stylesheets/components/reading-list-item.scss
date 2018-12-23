@@ -37,6 +37,7 @@ a.recommendation {
 .replaceLinkForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   > span {
     @include uppercase();
@@ -49,4 +50,14 @@ a.recommendation {
     display: none;
   }
 
+  &.open {
+
+    > span {
+      display: none;
+    }
+
+    input, button {
+      display: block;
+    }
+  }
 }

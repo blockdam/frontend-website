@@ -41,6 +41,10 @@ class ReadingList {
 
     openForm(index) {
 
+        let self = this;
+
+        self.forms[index].classList.add('open');
+
         console.log(index);
 
     }
