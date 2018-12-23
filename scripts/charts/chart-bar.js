@@ -2,7 +2,7 @@ let ChartBar = function ChartBar(config,svg) {
 
     let draw = function draw(data) {
 
-        svg.bars = svg.layers.data.selectAll(".bar")
+        svg.bar = svg.layers.data.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar");
@@ -13,7 +13,7 @@ let ChartBar = function ChartBar(config,svg) {
 
         let barWidth = ((dimensions.width - config.padding.left - config.padding.right) / data.length) - 2;
 
-        svg.bars
+        svg.bar
             .attr("x", function(d) { return scales.xTime(new Date(d.date)); })
             .attr("y", function(d) { return scales.yLinear(d.value); })
             .attr("height", function(d) { return dimensions.height - scales.yLinear(d.value); })

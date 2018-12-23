@@ -18,8 +18,8 @@ let ChartSVG = function ChartSVG(element,config,dimensions,svg) {
 
         svg.layers.data = svg.body.append('g')
             .attr('class', 'data');
-        svg.layers.axis = svg.body.append('g')
-            .attr('class', 'axis');
+        svg.layers.axes = svg.body.append('g')
+            .attr('class', 'axes');
     }
 
     render();

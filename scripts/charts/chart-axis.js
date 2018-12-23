@@ -2,40 +2,40 @@ let ChartAxis = function ChartAxis(config,svg) {
 
     let drawXAxis = function drawXAxis() {
 
-        svg.timeAxisGroup = svg.layers.axis.append("g")
+        svg.timeAxis = svg.layers.axes.append("g")
             .attr('class', 'time-axis');
 
     }
 
-    let redrawXAxis = function redrawXAxis(dimensions,scales) {
+    let redrawXAxis = function redrawXAxis(dimensions,scales,axes) {
 
-        svg.timeAxis = d3.axisBottom(scales.xTime);
+        axes.xTime = d3.axisBottom(scales.xTime);
 
-        svg.timeAxis
+        axes.xTime
             .ticks(d3.timeMonth.every(1))
             .tickFormat(d3.timeFormat("%b"));
 
-        svg.timeAxisGroup
+        svg.xAxis
             .attr("transform", "translate(" + 0 + "," + dimensions.height + ")")
-            .call(svg.timeAxis);
+            .call(axes.xTime);
     }
 
     let drawYAxis = function drawYAxis() {
 
-        svg.totalAxisGroup = svg.layers.axis.append("g")
+        svg.yAxis = svg.layers.axes.append("g")
             .attr('class', 'total-axis')
 
     }
 
-    let redrawYAxis = function redrawYAxis(scales) {
+    let redrawYAxis = function redrawYAxis(scales,axes) {
 
-        svg.totalAxis = d3.axisRight(scales.yLinear);
+        axis.yLinear = d3.axisRight(scales.yLinear);
 
-        svg.totalAxis
+        axis.yLinear
             .ticks(2);
 
-        svg.totalAxisGroup
-            .call(svg.totalAxis);
+        svg.yAxis
+            .call(axis.yLinear);
 
     }
 

@@ -9,6 +9,9 @@ let bcdSupply = function bcdSupply(el) {
     let dimensions = chartObjects.dimensions();
     let svg = chartObjects.svg();
     let scales = chartObjects.scales();
+    let axes = chartObjects.axes();
+    let functions = chartObjects.functions();
+
 
     // configuration
     config.margin.bottom = 10;
@@ -41,10 +44,10 @@ let bcdSupply = function bcdSupply(el) {
                 // new dimensions mean new scales
                 scales = chartScales.reset(dimensions,scales);
                 // new scales mean new axis
-                chartAxis.redrawXAxis(dimensions,scales);
-                chartAxis.redrawYAxis(scales);
+                chartAxis.redrawXAxis(dimensions,scales,axes);
+                chartAxis.redrawYAxis(scales,axes);
                 // redraw data
-                chartArea.redraw(scales);
+                chartArea.redraw(scales,functions);
                 // redrawLine(response.data,config);
             }
 

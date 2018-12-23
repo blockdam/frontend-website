@@ -35,15 +35,11 @@ let ChartObjects = function ChartObjects() {
         return {
             body : null,
             layers : {},
-            totalAxisGroup : null,
-            timeAxisGroup : null,
-            timeAxis : null,
-            totalAxis: null,
-            flow : null,
+            yAxis : null,
+            xAxis : null,
             area : null,
             line : null,
-            trend : null,
-            bars : null
+            bar : null
         }
     }
 
@@ -56,11 +52,31 @@ let ChartObjects = function ChartObjects() {
 
     }
 
+    let axes = function axis() {
+
+        return {
+            xTime : null,
+            yLinear : null,
+        }
+
+    }
+
+    let functions = function functions() {
+
+        return {
+            area: null,
+            line: null
+        }
+
+    }
+
     return {
         config : config,
         dimensions : dimensions,
         svg : svg,
-        scales : scales
+        scales : scales,
+        axes : axes,
+        functions : functions
 
     }
 }
