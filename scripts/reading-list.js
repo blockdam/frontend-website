@@ -54,7 +54,7 @@ class ReadingList {
         }, false);
     }
 
-    addLink() {
+    addLink(url) {
 
         console.log(url);
     }
