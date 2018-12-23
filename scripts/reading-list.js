@@ -43,7 +43,7 @@ class ReadingList {
 
         let self = this;
         self.forms[index].classList.add('open');
-        self.forms[index].addEventListener('submit', function() {
+        self.forms[index].addEventListener('submit', function(event, errors) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);
