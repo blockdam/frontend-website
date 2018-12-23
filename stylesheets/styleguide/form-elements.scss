@@ -21,7 +21,7 @@ button {
     outline: none;
   }
 
-  .small {
+  &.small {
     height: 1.5rem;
     line-height: 1.5rem;
   }
@@ -57,7 +57,7 @@ input[type=text], input[type=email], input[type=password], input[type=tel], inpu
   &::-moz-placeholder {  color: $black !important; } /* Firefox 19+ */
   &:-ms-input-placeholder { color: $black !important; }
 
-  .small {
+  &.small {
 
     height: 1.5rem;
     line-height: 1.5rem;
