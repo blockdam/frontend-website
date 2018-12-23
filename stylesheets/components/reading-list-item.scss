@@ -34,7 +34,7 @@ a.recommendation {
 
 }
 
-.replaceLinkform {
+.replaceLinkForm {
   display: flex;
   flex-direction: column;
 
@@ -42,6 +42,7 @@ a.recommendation {
     @include uppercase();
     font-size: .725rem;
     margin: .25rem 0;
+    cursor: pointer;
   }
 
   input, button {

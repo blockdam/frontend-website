@@ -3,8 +3,8 @@ class ReadingList {
     constructor() {
 
         this.contract = null;
-        this.slots = null;
-        this.linkCount = null;
+        this.forms = [].slice.call(document.querySelectorAll('form.replaceLinkForm'));
+
     }
 
     init() {
@@ -18,8 +18,13 @@ class ReadingList {
 
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
-
                 console.log(self.contract);
+
+                self.forms.forEach((form) => {
+
+                        console.log(form);
+
+                });
 
                 self.contract.slots.call(1,function (err, data) {
                     if (err) {
@@ -27,6 +32,7 @@ class ReadingList {
                     }
                     if (data) {
                         console.log(data);
+
                     }
                 });
             });
