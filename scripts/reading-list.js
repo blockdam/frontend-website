@@ -17,8 +17,8 @@ class ReadingList {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
 
-                console.log(self.contract.linksCount);
-                console.log(self.contract.slots);
+                console.log(self.contract.linksCount());
+                console.log(self.contract.slots());
 
             });
     }
