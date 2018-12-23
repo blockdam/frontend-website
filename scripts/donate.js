@@ -33,7 +33,7 @@ class Donate {
 
         this.tooltip.classList.add('visible');
 
-        this.form.addEventListener("submit", function(event,errors,address) {
+        this.form.addEventListener("submit", function(event, errors, address) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);

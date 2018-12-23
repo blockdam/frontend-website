@@ -43,8 +43,15 @@ class ReadingList {
 
         let self = this;
         self.forms[index].classList.add('open');
-        let url = self.forms[index].querySelector('input[type="text"]').value;
-        self.forms[index].querySelector('button').addEventListener('click', function() { self.addLink(url) }, false);
+        self.forms[index].addEventListener('submit', function() {
+            event.preventDefault();
+            if(errors) {
+                console.log(errors);
+            } else {
+                let url = self.forms[index].querySelector('input[type="text"]').value;
+                self.addLink(url)
+            }
+        }, false);
     }
 
     addLink() {
