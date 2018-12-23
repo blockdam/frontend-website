@@ -50,9 +50,12 @@ a.recommendation {
     display: none;
   }
 
+  input {
+    margin: .5rem 0;
+  }
+
   button {
     height: 1.5rem;
-    width: 4rem;
   }
 
   &.open {
