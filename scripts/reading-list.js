@@ -42,16 +42,14 @@ class ReadingList {
     openForm(index) {
 
         let self = this;
-
         self.forms[index].classList.add('open');
-
-        console.log(index);
-
+        let url = self.forms[index].querySelector('input[type="text"]').value;
+        self.forms[index].querySelector('button').addEventListener('click', function() { self.addLink(url) }, false);
     }
 
     addLink() {
 
-
+        console.log(url);
     }
 }
 
