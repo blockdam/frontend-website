@@ -45,7 +45,8 @@ class MetaMask {
 
             try {
                 // connect to network
-                await ethereum.enable();
+                ethereum.enable();
+               // await ethereum.enable();
                 // check if user is connected to the correct network
                 if (web3.version.network  !== '4')  {
                     self.html.welcome.innerHTML = 'Hello, Our smart contracts are on the Rinkeby Testnet';
