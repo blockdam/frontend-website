@@ -21,7 +21,7 @@ class ReadingList {
 
                 console.log(self.contract);
 
-                self.contract.slots((err,data) =>  {
+                self.contract.slots.call((err,data) =>  {
 
                     if(err) {
                         console.log(err);
