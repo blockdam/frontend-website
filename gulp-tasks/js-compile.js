@@ -17,14 +17,14 @@ module.exports = function() {
     gulp.task('js-compile', function() {
 
         var post = gulp.src([
-            path.projectFolder + '/scripts/_loadJSON.js',
-            path.projectFolder + '/scripts/detect.js',
-            path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/commenting.js',
-            path.projectFolder + '/scripts/appreciation.js',
-            path.projectFolder + '/scripts/donate.js'
+                path.projectFolder + '/scripts/_loadJSON.js',
+                path.projectFolder + '/scripts/detect.js',
+                path.projectFolder + '/scripts/metamask.js',
+                path.projectFolder + '/scripts/waypoints.js',
+                path.projectFolder + '/scripts/menu.js',
+                path.projectFolder + '/scripts/commenting.js',
+                path.projectFolder + '/scripts/appreciation.js',
+                path.projectFolder + '/scripts/donate.js'
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))
@@ -34,13 +34,13 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var homepage = gulp.src([
-            path.projectFolder + '/scripts/_loadJSON.js',
-            path.projectFolder + '/scripts/detect.js',
-            path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/homepage.js',
-            path.projectFolder + '/scripts/menu.js'
-
+                path.projectFolder + '/scripts/_loadJSON.js',
+                path.projectFolder + '/scripts/detect.js',
+                path.projectFolder + '/scripts/metamask.js',
+                path.projectFolder + '/scripts/waypoints.js',
+                path.projectFolder + '/scripts/homepage.js',
+                path.projectFolder + '/scripts/menu.js',
+                path.projectFolder + '/scripts/reading-list.js'
             ])
             // .pipe(plumber())
             .pipe(concat('homepage.js'))
@@ -50,14 +50,13 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var page = gulp.src([
-            path.projectFolder + '/scripts/_loadJSON.js',
-            path.projectFolder + '/scripts/detect.js',
-            path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/menu.js',
-            path.projectFolder + '/scripts/commenting.js',
-            path.projectFolder + '/scripts/appreciation.js'
-
+                path.projectFolder + '/scripts/_loadJSON.js',
+                path.projectFolder + '/scripts/detect.js',
+                path.projectFolder + '/scripts/metamask.js',
+                path.projectFolder + '/scripts/waypoints.js',
+                path.projectFolder + '/scripts/menu.js',
+                path.projectFolder + '/scripts/commenting.js',
+                path.projectFolder + '/scripts/appreciation.js'
             ])
             // .pipe(plumber())
             .pipe(concat('page.js'))
@@ -67,12 +66,12 @@ module.exports = function() {
             .pipe(gulp.dest(scriptsDir));
 
         var dao = gulp.src([
-            path.projectFolder + '/scripts/_loadJSON.js',
-            path.projectFolder + '/scripts/detect.js',
-            path.projectFolder + '/scripts/metamask.js',
-            path.projectFolder + '/scripts/waypoints.js',
-            path.projectFolder + '/scripts/dao.js'
-        ])
+                path.projectFolder + '/scripts/_loadJSON.js',
+                path.projectFolder + '/scripts/detect.js',
+                path.projectFolder + '/scripts/metamask.js',
+                path.projectFolder + '/scripts/waypoints.js',
+                path.projectFolder + '/scripts/dao.js'
+            ])
         // .pipe(plumber())
             .pipe(concat('dao.js'))
             .pipe(babel({

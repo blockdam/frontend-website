@@ -146,7 +146,6 @@ class MetaMask {
                 // connect to contract
                 let bcdBondingCurve = web3.eth.contract(response.data.abi).at(bcdBondingCurveAddress);
 
-                console.log(bcdBondingCurve);
             });
 
     }
