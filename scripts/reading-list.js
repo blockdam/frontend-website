@@ -22,8 +22,9 @@ class ReadingList {
 
                 self.forms.forEach((form) => {
 
-                        console.log(form);
+                        let index = form.getAttribute('data-item-id');
 
+                        form.querySelector('span').addEventListener('click', function() { self.openForm(index) }, false);
                 });
 
                 self.contract.slots.call(1,function (err, data) {
@@ -38,8 +39,9 @@ class ReadingList {
             });
     }
 
-    openForm() {
+    openForm(index) {
 
+        console.log(index);
 
     }
 
