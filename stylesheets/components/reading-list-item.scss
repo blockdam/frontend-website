@@ -35,6 +35,8 @@ a.recommendation {
 }
 
 #replaceLinkform {
+  display: flex;
+  flex-direction: column;
 
   > span {
     @include uppercase();
