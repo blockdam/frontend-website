@@ -10,15 +10,13 @@ class ReadingList {
 
         let self = this,
             url = 'https://blockdam.nl/assets/smartcontracts/ReadingList.json',
-            address = '0xefDb2303D3626490f00eA85C27879dDe1853e6e1';
+            address = '0xE481A0Cb345390E553af35168cE640C5fc93f543';
 
         axios.get(url)
             .then(function (response) {
-
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(address);
                 console.log(self.contract);
-
                 self.forms.forEach((form) => {
                     let index = form.getAttribute('data-item-id');
                     form.querySelector('span').addEventListener('click', function() { self.openForm(index) }, false);
