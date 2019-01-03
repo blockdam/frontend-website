@@ -10,7 +10,7 @@ class ReadingList {
 
         let self = this,
             url = 'https://blockdam.nl/assets/smartcontracts/ReadingList.json',
-            address = '0xe1cC0b4d806A7Eaa5032feF718A84964b7F24144';
+            address = '0x191e9F0Aeb7cdB089A5bE924cA430d6484c5e300';
 
         axios.get(url)
             .then(function (response) {
