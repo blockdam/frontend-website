@@ -42,6 +42,7 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this;
+        console.log(web3.eth.coinbase);
         self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 2100000 }, function(err,receipt){
             if (err) {
                 console.log(err)
