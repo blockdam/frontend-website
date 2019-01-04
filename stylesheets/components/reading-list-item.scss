@@ -80,9 +80,9 @@ a.recommendation {
     padding: 3rem 0;
     border-bottom: 1px solid $secondary;
 
-    //> span {
-    //  display: none;
-    //}
+    > svg {
+      display: none;
+    }
 
     input, button {
       display: block;
