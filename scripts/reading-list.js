@@ -44,15 +44,15 @@ class ReadingList {
 
         let self = this;
 
-        web3.eth.estimateGas({from: web3.eth.coinbase, to: self.address, amount: web3.toWei(1, "ether") }, function(err,receipt){
-            if (err) {
-                console.log(err)
-            }
-            if (receipt) {
-                console.log(receipt);
-            }
-        });
-        
+        // web3.eth.estimateGas({from: web3.eth.coinbase, to: self.address, amount: web3.toWei(1, "ether") }, function(err,receipt){
+        //     if (err) {
+        //         console.log(err)
+        //     }
+        //     if (receipt) {
+        //         console.log(receipt);
+        //     }
+        // });
+
 
         self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 8000000 }, function(err,receipt){
             if (err) {
