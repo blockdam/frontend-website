@@ -35,6 +35,7 @@ a.recommendation {
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: 100%;
 
   > span {
     @include uppercase();
