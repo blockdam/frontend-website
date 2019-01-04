@@ -8,22 +8,18 @@ a.recommendation {
   display: block;
 
   .recommendation--tag {
-
     @include uppercase();
     font-size: .725rem;
   }
 
   .recommendation--title {
-
     font-family: Mercury Display A,Mercury Display B;
     font-size: 1.3rem;
     line-height: 1.05;
     margin: 0 0 .4rem 0;
-
   }
 
   .recommendation--subtitle {
-
     @include small-sans();
     line-height: 1.3;
   }
@@ -38,12 +34,21 @@ a.recommendation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   > span {
     @include uppercase();
     font-size: .725rem;
     margin: .25rem 0;
     cursor: pointer;
+  }
+
+  > svg {
+    position: absolute;
+    top: -1.125rem;
+    right: -1.3rem;
+    width: 1rem;
+    height: auto;
   }
 
   input, button {
