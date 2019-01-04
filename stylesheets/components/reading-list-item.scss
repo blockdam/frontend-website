@@ -80,4 +80,10 @@ a.recommendation {
       display: block;
     }
   }
+
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
 }
