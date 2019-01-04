@@ -52,8 +52,7 @@ class ReadingList {
                 console.log(receipt);
             }
         });
-
-        console.log(estimatedGas);
+        
 
         self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 8000000 }, function(err,receipt){
             if (err) {
