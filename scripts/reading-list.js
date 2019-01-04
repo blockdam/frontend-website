@@ -43,9 +43,7 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this;
-
-        let callData = self.contract.addLink.getData();
-        let estimatedGas = web3.eth.estimateGas({from: web3.eth.coinbase, to:self.address, data:callData, gas:30000000, value: web3.toWei(msg.value,"ether")});
+        let estimatedGas = self.contract.addLink.estimateGas({from: web3.eth.coinbase});
 
         console.log(estimatedGas);
 
