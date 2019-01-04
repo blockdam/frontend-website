@@ -27,6 +27,15 @@ class ReadingList {
     openForm(index) {
 
         let self = this;
+
+        self.forms.forEach( (f) => {
+            f.classList.remove('open');
+        });
+        self.items.forEach( (f) => {
+            f.classList.remove('open');
+        });
+
+
         self.forms[index].classList.add('open');
         self.items[index].classList.add('hidden');
         self.forms[index].addEventListener('submit', function(event, errors) {
