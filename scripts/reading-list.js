@@ -20,7 +20,7 @@ class ReadingList {
                 console.log(self.contract);
                 self.forms.forEach((form) => {
                     let index = form.getAttribute('data-item-id');
-                    form.querySelector('span').addEventListener('click', function() { self.openForm(index) }, false);
+                    form.querySelector('svg.icon_replace').addEventListener('click', function() { self.openForm(index) }, false);
                 });
             });
     }
