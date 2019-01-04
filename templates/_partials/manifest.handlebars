@@ -5,7 +5,7 @@
         <div class="manifest-point">
 
             {{> icon-hash }}
-            <span>{{indexBump @index}}</span>
+           {{#ifMoreThan @index 0}}<span>{{@index}}</span>{{/ifMoreThan}}
             <div class="manifest-point-body">
                  <span class="manifest-point-heading">{{ point.heading }}</span>
                 <div class="manifest-point-text"> {{{ point.text }}}</div>
