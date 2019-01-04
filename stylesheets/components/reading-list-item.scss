@@ -45,8 +45,7 @@ a.recommendation {
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 3rem 0;
-  border-bottom: 1px solid $secondary;
+
 
   > span {
     @include uppercase();
@@ -78,9 +77,12 @@ a.recommendation {
 
   &.open {
 
-    > span {
-      display: none;
-    }
+    padding: 3rem 0;
+    border-bottom: 1px solid $secondary;
+
+    //> span {
+    //  display: none;
+    //}
 
     input, button {
       display: block;
