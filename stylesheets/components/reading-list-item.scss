@@ -33,6 +33,10 @@ a.recommendation {
     opacity: 1;
   }
 
+  &.hidden {
+    display: none;
+  }
+
 }
 
 .replaceLinkForm {
@@ -41,6 +45,8 @@ a.recommendation {
   align-items: center;
   position: relative;
   width: 100%;
+  padding: 3rem 0;
+  border-bottom: 1px solid $secondary;
 
   > span {
     @include uppercase();
