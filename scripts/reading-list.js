@@ -43,7 +43,7 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this;
-        let estimatedGas = self.contract.addLink.estimateGas({from: web3.eth.coinbase});
+        let estimatedGas = self.contract.addLink.estimateGas(url, index, {from: web3.eth.coinbase});
 
         console.log(estimatedGas);
 
