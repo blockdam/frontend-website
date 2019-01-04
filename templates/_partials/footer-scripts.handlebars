@@ -11,6 +11,15 @@
 
 {{/ifEquals}}
 
+{{#ifEquals body.type 'page' }}
+
+    <script>
+        var appreciation = new Appreciation();
+        appreciation.init({{../body._id}});
+    </script>
+
+{{/ifEquals}}
+
 {{#ifEquals body.type 'homepage' }}
 
     <script src="{{baseUrl}}/assets/scripts/d3.min.js"></script>
