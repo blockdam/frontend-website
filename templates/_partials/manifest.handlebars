@@ -4,8 +4,10 @@
 
         <div class="manifest-point">
 
-            {{> icon-hash }}
-           {{#ifMoreThan @index 0}}<span>{{@index}}</span>{{/ifMoreThan}}
+
+           {{#ifMoreThan @index 0}}
+               {{> icon-hash }}<span>{{@index}}</span>
+           {{/ifMoreThan}}
             <div class="manifest-point-body">
                  <span class="manifest-point-heading">{{ point.heading }}</span>
                 <div class="manifest-point-text"> {{{ point.text }}}</div>
