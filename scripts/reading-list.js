@@ -4,18 +4,19 @@ class ReadingList {
 
         this.contract = null;
         this.forms = [].slice.call(document.querySelectorAll('form.replaceLinkForm'));
+        this.address = '0xc6084eDcAE7e5B8Ac0Fa94859353061F3B9FA8d1';
     }
 
     init() {
 
         let self = this,
-            url = 'https://blockdam.nl/assets/smartcontracts/ReadingList.json',
-            address = '0xc6084eDcAE7e5B8Ac0Fa94859353061F3B9FA8d1';
+            url = 'https://blockdam.nl/assets/smartcontracts/ReadingList.json';
+
 
         axios.get(url)
             .then(function (response) {
                 // connect to contract
-                self.contract = web3.eth.contract(response.data.abi).at(address);
+                self.contract = web3.eth.contract(response.data.abi).at(self.address);
                 console.log(self.contract);
                 self.forms.forEach((form) => {
                     let index = form.getAttribute('data-item-id');
@@ -42,7 +43,12 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this;
-        console.log(web3.eth.coinbase);
+
+        let callData = self.contract.addLink.getData();
+        let estimatedGas = web3.eth.estimateGas({from: web3.eth.coinbase, to:self.address, data:callData, gas:30000000, value: web3.toWei(msg.value,"ether")});
+
+        console.log(estimatedGas);
+
         self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 8000000 }, function(err,receipt){
             if (err) {
                 console.log(err)
