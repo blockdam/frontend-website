@@ -26,6 +26,11 @@ a.recommendation {
 
   &:hover {
     background: $secondary;
+
+  }
+
+  &:hover + .replaceLinkForm svg {
+    opacity: 1;
   }
 
 }
@@ -45,9 +50,10 @@ a.recommendation {
   }
 
   > svg {
+    opacity: 0;
     position: absolute;
     top: -1.125rem;
-    right: -1.3rem;
+    right: 0; // -1.3rem;
     width: 1rem;
     height: auto;
   }
