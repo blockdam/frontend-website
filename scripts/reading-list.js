@@ -76,22 +76,6 @@ class ReadingList {
                 self.items[index].querySelector('a').appendChild(button);
 
             });
-        //
-
-
-
-
-
-        // signal sg to render
-
-        // self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
-        //     if (err) {
-        //         console.log(err)
-        //     }
-        //     if (receipt) {
-        //         console.log(receipt);
-        //     }
-        // })
     }
 
     saveLink(index,url,el) {
@@ -110,16 +94,23 @@ class ReadingList {
 
         //  store url/data   + return id   (where?)
         axios.put(api, { link : link })
-            .then(function (linkId) {
-
-                console.log(linkId);
-                // contract with limited slots (wil ik alleen een id aan toewijzen )
-                // betaling      // amount diminishes per day
-
+            .then(function (response) {
+                self.pay(response.data);
             });
+    }
 
-
-
+    pay(linkId) {
+        // contract with limited slots (wil ik alleen een id aan toewijzen )
+        // betaling      // amount diminishes per day
+        self.contract.addLink(linkId, index, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
+            if (err) {
+                console.log(err)
+            }
+            if (receipt) {
+                console.log(receipt);
+                // signal sg to render
+            }
+        })
     }
 }
 
