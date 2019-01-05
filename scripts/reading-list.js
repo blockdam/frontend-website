@@ -52,10 +52,10 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this,
-            api = 'https://blockdam.nl/smc-api/reading-list/?url=' + url;
+            api = 'https://blockdam.nl/smc-api/reading-list/?url=' + encodeURI(url);
 
         // get metadata
-        axios.post(api)
+        axios.get(api)
             .then(function (response) {
 
                 console.log(response);
