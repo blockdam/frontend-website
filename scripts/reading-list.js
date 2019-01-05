@@ -61,9 +61,11 @@ class ReadingList {
             .then(function (response) {
                 console.log(response.data);
                 self.forms[index].classList.remove('open');
-                self.items[index].querySelector('a').setAttribute("href","javascript:").classList.remove('hidden').
+                self.items[index].querySelector('a').setAttribute("href","javascript:");
+                self.items[index].querySelector('a').classList.remove('hidden');
 
-                self.items[index].querySelector('.recommendation--tag').setAttribute("contenteditable", true).innerHTML = response.data.author;
+                self.items[index].querySelector('.recommendation--tag').setAttribute("contenteditable", true);
+                self.items[index].querySelector('.recommendation--tag').innerHTML = response.data.author;
                 self.items[index].querySelector('.recommendation--title').setAttribute("contenteditable", true).innerHTML = response.data.title;
                 self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", true).innerHTML = response.data.description;
 
