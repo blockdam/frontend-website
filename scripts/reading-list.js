@@ -95,11 +95,11 @@ class ReadingList {
         //  store url/data   + return id   (where?)
         axios.put(api, { link : link })
             .then(function (response) {
-                self.pay(response.data);
+                self.pay(response.data,index);
             });
     }
 
-    pay(linkId) {
+    pay(linkId,index) {
 
         let self = this;
         // contract with limited slots (wil ik alleen een id aan toewijzen )
