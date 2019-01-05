@@ -3,7 +3,7 @@ class ReadingList {
     constructor() {
 
         this.contract = null;
-        this.items = [].slice.call(document.querySelectorAll('a.recommendation'));
+        this.items = [].slice.call(document.querySelectorAll('.recommendation'));
         this.forms = [].slice.call(document.querySelectorAll('form.replaceLinkForm'));
         this.address = '0xfc4ba82957df8b1d470afe8529117f502ace11d4';
     }
@@ -17,9 +17,9 @@ class ReadingList {
             .then(function (response) {
                 // connect to contract
                 self.contract = web3.eth.contract(response.data.abi).at(self.address);
-                self.forms.forEach((form) => {
-                    let index = form.getAttribute('data-item-id');
-                    form.querySelector('svg.icon_replace').addEventListener('click', function() { self.openForm(index) }, false);
+                self.items.forEach((item) => {
+                    let index = item.getAttribute('data-item-id');
+                    item.querySelector('svg.icon_replace').addEventListener('click', function() { self.openForm(index) }, false);
                 });
             });
     }
