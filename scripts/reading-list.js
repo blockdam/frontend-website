@@ -120,7 +120,7 @@ class ReadingList {
                             console.log(error);
                         }
                         if (result.blockNumber && result.blockNumber !== null) {
-                            self.confirm(receipt);
+                            self.confirm(receipt,index);
                             clearInterval(interval);
                         }
                     });
@@ -129,7 +129,7 @@ class ReadingList {
         })
     }
 
-    confirm(txHash){
+    confirm(txHash,index){
 
         let self = this;
         web3.eth.getTransactionReceipt(txHash, (err,receipt) => {
@@ -137,14 +137,14 @@ class ReadingList {
                 console.log(err);
             }
             if (receipt.status === "0x1") {
-                self.action();
+                self.action(index);
             } else {
-                self.errorHandler();
+                self.errorHandler(index);
             }
         });
     }
 
-    action() {
+    action(index) {
 
         let self = this;
         self.items[index].querySelector('.spinner').style.display = 'none';
@@ -154,7 +154,7 @@ class ReadingList {
         self.items[index].querySelector('a').classList.remove('hidden');
     }
 
-    errorHandler() {
+    errorHandler(index) {
 
         let self = this;
         self.items[index].querySelector('.spinner').style.display = 'none';
