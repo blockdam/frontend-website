@@ -100,6 +100,8 @@ class ReadingList {
     }
 
     pay(linkId) {
+
+        let self = this;
         // contract with limited slots (wil ik alleen een id aan toewijzen )
         // betaling      // amount diminishes per day
         self.contract.addLink(linkId, index, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
