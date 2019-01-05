@@ -53,10 +53,14 @@ class ReadingList {
         let self = this,
             api = 'https://blockdam.nl/smc-api/reading-list';
         console.log(api);
+
+
         // get metadata
         axios.post(api, { url : url })
             .then(function (response) {
                 console.log(response.data);
+                self.oldHTML = self.forms[index].innerHTML;
+
                 self.forms[index].classList.remove('open');
                 self.items[index].querySelector('a').setAttribute("href","javascript:");
                 self.items[index].querySelector('a').classList.remove('hidden');
@@ -118,7 +122,6 @@ class ReadingList {
                         if (result.blockNumber && result.blockNumber !== null) {
                             self.confirm(receipt);
                             clearInterval(interval);
-
                         }
                     });
                 },2000);
@@ -127,12 +130,36 @@ class ReadingList {
     }
 
     confirm(txHash){
+
+        let self = this;
         web3.eth.getTransactionReceipt(txHash, (err,receipt) => {
             if (err) {
                 console.log(err);
             }
-            console.log(receipt);
+            if (receipt.status === "0x1") {
+                self.action();
+            } else {
+                self.errorHandler();
+            }
         });
+    }
+
+    action() {
+
+        let self = this;
+        self.items[index].querySelector('.spinner').style.display = 'none';
+        self.items[index].querySelector('.recommendation--tag').setAttribute("contenteditable", false);
+        self.items[index].querySelector('.recommendation--title').setAttribute("contenteditable", false);
+        self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", false);
+        self.items[index].querySelector('a').classList.remove('hidden');
+    }
+
+    errorHandler() {
+
+        let self = this;
+        self.items[index].querySelector('.spinner').style.display = 'none';
+        self.forms[index].innerHTML = self.oldHTML;
+        self.items[index].querySelector('a').classList.remove('hidden');
     }
 }
 
