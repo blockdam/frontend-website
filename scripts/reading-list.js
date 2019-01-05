@@ -55,7 +55,7 @@ class ReadingList {
             api = 'https://blockdam.nl/smc-api/reading-list';
         console.log(api);
         // get metadata
-        axios.get(api, { url : url })
+        axios.post(api, { url : url })
             .then(function (response) {
                 console.log(response.data);
                 self.forms[index].classList.remove('open');
@@ -99,7 +99,7 @@ class ReadingList {
             api = 'https://blockdam.nl/smc-api/reading-list';
 
         //  store url/data   + return id   (where?)
-        axios.post(api, { url : url })
+        axios.put(api, { url : url })
             .then(function (linkId) {
 
                 // contract with limited slots (wil ik alleen een id aan toewijzen )
