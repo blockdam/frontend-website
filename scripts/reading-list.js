@@ -110,9 +110,19 @@ class ReadingList {
             }
             if (receipt) {
                 console.log(receipt);
-                web3.eth.filter("latest", function(error, result){
-                    if (!error)
-                        console.log(result);
+
+                let options = {
+                    fromBlock: '0x0',
+                    address: self.address
+                };
+
+                web3.eth.subscribe('logs', options, function (error, result) {
+                    if(error) {
+                        logger.info(error);
+                    }
+                }).on("data", function (log) {
+
+                    console.log(log);
                 });
             }
         })
