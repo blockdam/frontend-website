@@ -104,7 +104,7 @@ class ReadingList {
         let self = this;
         // contract with limited slots (wil ik alleen een id aan toewijzen )
         // betaling      // amount diminishes per day
-        self.contract.addLink(linkId, parseInt(index) + 10, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
+        self.contract.addLink(linkId, parseInt(index) + 1, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
