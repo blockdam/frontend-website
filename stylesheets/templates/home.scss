@@ -94,8 +94,13 @@
       justify-content: flex-start;
       align-items: center;
 
+      @media (min-width: $breakpoint-sm) {
+        padding: 0 1rem;
+      }
+
       @media (min-width: $breakpoint-md) {
         width: calc(40% - .5rem);
+        padding: 0;
       }
 
       .week {
