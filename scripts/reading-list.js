@@ -128,8 +128,8 @@ class ReadingList {
 
     confirm(txHash){
         web3.eth.getTransactionReceipt(txHash, (err,receipt) => {
-            if (error) {
-                console.log(error);
+            if (err) {
+                console.log(err);
             }
             console.log(receipt);
         });
