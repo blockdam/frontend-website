@@ -63,9 +63,9 @@ class ReadingList {
                 self.forms[index].classList.remove('open');
                 self.items[index].querySelector('a').classList.remove('hidden');
 
-                self.items[index].querySelector('.recommendation--tag').innerHTML = response.data.author;
-                self.items[index].querySelector('.recommendation--title').innerHTML = response.data.title;
-                self.items[index].querySelector('.recommendation--subtitle').innerHTML = response.data.description;
+                self.items[index].querySelector('.recommendation--tag').setAttribute("contenteditable", true).innerHTML = response.data.author;
+                self.items[index].querySelector('.recommendation--title').setAttribute("contenteditable", true).innerHTML = response.data.title;
+                self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", true).innerHTML = response.data.description;
 
             });
         // store url/data   + return id   (where?)
