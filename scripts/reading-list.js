@@ -32,12 +32,12 @@ class ReadingList {
             f.classList.remove('open');
         });
         self.items.forEach( (f) => {
-            f.classList.remove('open');
+            f.classList.remove('hidden');
         });
 
 
         self.forms[index].classList.add('open');
-        self.items[index].classList.add('hidden');
+        self.items[index].querySelector('a').classList.add('hidden');
         self.forms[index].addEventListener('submit', function(event, errors) {
             event.preventDefault();
             if(errors) {
