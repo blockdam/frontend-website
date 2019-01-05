@@ -73,6 +73,7 @@ class ReadingList {
                 button.addEventListener('click', function() {
                     self.saveLink(index,self.items[index]);
                 }, false);
+                self.items[index].querySelector('a').appendChild(button);
 
             });
         //
