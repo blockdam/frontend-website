@@ -52,7 +52,7 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this,
-            api = 'https://blockdam.nl/smc-api/reading-list/?url=' + encodeURI(url);
+            api = 'https://blockdam.nl/smc-api/reading-list/' + encodeURI(url);
 
 
         console.log(api);
