@@ -1,22 +1,29 @@
-<a href="{{link.url}}" target="_blank" class="recommendation">
+<div class="recommendation" data-item-id="{{ @index }}">
 
-    <div class="recommendation--tag">
-        <!--<span>{{ indexBump @index }}</span>. -->
-        {{link.tag}}
+    <a href="{{link.url}}" target="_blank" class="">
+        <div class="recommendation--tag">
+            <!--<span>{{ indexBump @index }}</span>. -->
+            {{link.tag}}
+        </div>
+        <div class="recommendation--title">
+            {{link.title}}
+        </div>
+        <div class="recommendation--subtitle">
+            {{link.subtitle}}
+        </div>
+    </a>
+    
+    <div class="action-strip">
+        {{> icon-replace}}
     </div>
-    <div class="recommendation--title">
-        {{link.title}}
-    </div>
-    <div class="recommendation--subtitle">
-        {{link.subtitle}}
-    </div>
 
-</a>
+    <form class="replaceLinkForm" data-item-id="{{ @index }}">
+        <input class="small" type="text"  placeholder="http://website.page">
+        <button class="small">replace</button>
+    </form>
 
-<form class="replaceLinkForm" data-item-id="{{ @index }}">
+    {{> spinner}}
 
-    {{> icon-replace}}
-    <input class="small" type="text"  placeholder="http://website.page">
-    <button class="small">replace</button>
+</div>
 
-</form>
+

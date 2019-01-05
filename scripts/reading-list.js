@@ -59,8 +59,7 @@ class ReadingList {
         // get metadata
         axios.post(api, { url : url })
             .then(function (response) {
-
-                console.log(response);
+                console.log(response.data);
             });
         // store url/data   + return id   (where?)
 
