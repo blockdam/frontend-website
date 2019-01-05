@@ -51,16 +51,34 @@ class ReadingList {
 
     addLink(url,index) {
 
-        let self = this;
+        let self = this,
+            api = 'https://blockdam.nl/smc-api/reading-list';
 
-        self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
-            if (err) {
-                console.log(err)
-            }
-            if (receipt) {
-                console.log(receipt);
-            }
-        })
+        // get metadata
+        axios.post(url)
+            .then(function (response) {
+
+                console.log(response);
+            });
+
+
+
+        // store url/data   + return id   (where?)
+
+        // betaling      // amount diminishes per day
+
+        // contract with limited slots (wil ik alleen een id aan toewijzen )
+
+        // signal sg to render
+
+        // self.contract.addLink(url, index, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
+        //     if (err) {
+        //         console.log(err)
+        //     }
+        //     if (receipt) {
+        //         console.log(receipt);
+        //     }
+        // })
     }
 }
 
