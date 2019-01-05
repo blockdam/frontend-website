@@ -106,6 +106,9 @@ class ReadingList {
                 subtitle: self.items[index].querySelector('.recommendation--subtitle').innerHTML
             };
 
+        self.items[index].querySelector('a').classList.add('hidden');
+        self.items[index].querySelector('.spinner').style.display = 'block';
+
         //  store url/data   + return id   (where?)
         axios.put(api, { link : link })
             .then(function (linkId) {
