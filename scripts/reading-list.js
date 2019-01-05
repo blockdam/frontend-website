@@ -115,7 +115,8 @@ class ReadingList {
                         if (error) {
                             console.log(error);
                         }
-                        if (result.blockNumber != null) {
+                        if (result.blockNumber && result.blockNumber !== null) {
+                            console.log('yo');
                             clearInterval(interval);
                         }
                     });
