@@ -35,7 +35,6 @@ class ReadingList {
             f.classList.remove('hidden');
         });
 
-
         self.forms[index].classList.add('open');
         self.items[index].querySelector('a').classList.add('hidden');
         self.forms[index].addEventListener('submit', function(event, errors) {
