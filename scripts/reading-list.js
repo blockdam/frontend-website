@@ -52,19 +52,16 @@ class ReadingList {
     addLink(url,index) {
 
         let self = this,
-            api = 'https://blockdam.nl/smc-api/reading-list/' + encodeURI(url);
+            api = 'https://blockdam.nl/smc-api/reading-list';
 
 
         console.log(api);
         // get metadata
-        axios.get(api)
+        axios.post(api, { url : url })
             .then(function (response) {
 
                 console.log(response);
             });
-
-
-
         // store url/data   + return id   (where?)
 
         // betaling      // amount diminishes per day
