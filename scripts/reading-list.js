@@ -110,19 +110,14 @@ class ReadingList {
             }
             if (receipt) {
                 console.log(receipt);
-
-                let options = {
-                    fromBlock: '0x0',
-                    address: self.address
-                };
-
-                web3.eth.subscribe('logs', options, function (error, result) {
-                    if(error) {
-                        logger.info(error);
-                    }
-                }).on("data", function (log) {
-                    console.log(log);
-                });
+                setInterval( () => {
+                    web3.eth.getTransactionByHash(receipt, function (error, result) {
+                        if (error) {
+                            console.log(error);
+                        }
+                        console.log(result);
+                    });
+                },2000);
             }
         })
     }
