@@ -57,7 +57,7 @@ class ReadingList {
 
         console.log(api);
         // get metadata
-        axios.post(api, { url : url })
+        axios.get(api, { url : url })
             .then(function (response) {
                 console.log(response.data);
                 self.forms[index].classList.remove('open');
@@ -71,12 +71,17 @@ class ReadingList {
                 self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", true);
                 self.items[index].querySelector('.recommendation--subtitle').innerHTML = response.data.description;
 
+                let button = document.createElement('button');
+                button.addEventListener('click', function() {
+                    self.saveLink(index,self.items[index]);
+                }, false);
+
             });
-        // store url/data   + return id   (where?)
+        //
 
-        // betaling      // amount diminishes per day
 
-        // contract with limited slots (wil ik alleen een id aan toewijzen )
+
+
 
         // signal sg to render
 
@@ -88,6 +93,23 @@ class ReadingList {
         //         console.log(receipt);
         //     }
         // })
+    }
+
+    saveLink(index,el) {
+
+        let self = this,
+            api = 'https://blockdam.nl/smc-api/reading-list';
+
+        axios.post(api, { url : url })
+            .then(function (response) {
+
+
+
+            }
+       //  store url/data   + return id   (where?)
+
+        // contract with limited slots (wil ik alleen een id aan toewijzen )
+        // betaling      // amount diminishes per day
     }
 }
 
