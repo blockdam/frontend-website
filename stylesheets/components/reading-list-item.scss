@@ -1,6 +1,7 @@
 .recommendation {
 
   //margin-bottom: 1rem;
+  position: relative;
   text-align: center;
   padding: .5rem .5rem .5rem .5rem;
   border-bottom: 1px solid $secondary;
@@ -47,18 +48,33 @@
   }
 
   .action-strip {
-    position: relative;
+    opacity: 0;
+    position: absolute;
+    right: -1.3rem;
+    top: 0;
+    height: 100%;
+    width: 1rem;
+
 
     > svg {
-      opacity: 0;
+     // opacity: 0;
       position: absolute;
       top: -1.125rem;
-      right: -1.3rem;
       width: 1rem;
       height: auto;
     }
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
+  &:hover {
+
+    .action-strip {
+      opacity: 1;
+    }
+  }
 }
 
 .replaceLinkForm {
