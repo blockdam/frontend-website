@@ -111,7 +111,7 @@ class ReadingList {
             if (receipt) {
                 console.log(receipt);
                 setInterval( () => {
-                    self.contract.getTransactionByHash(receipt, function (error, result) {
+                    web3.eth.getTransaction(receipt, function (error, result) {
                         if (error) {
                             console.log(error);
                         }
