@@ -70,8 +70,9 @@ class ReadingList {
                 self.items[index].querySelector('.recommendation--subtitle').innerHTML = response.data.description;
 
                 let button = document.createElement('button');
+                button.innerHTML = 'Pay';
                 button.addEventListener('click', function() {
-                    self.saveLink(index,self.items[index]);
+                    self.saveLink(index,url,self.items[index]);
                 }, false);
                 self.items[index].querySelector('a').appendChild(button);
 
@@ -94,15 +95,22 @@ class ReadingList {
         // })
     }
 
-    saveLink(index,el) {
+    saveLink(index,url,el) {
 
         let self = this,
-            api = 'https://blockdam.nl/smc-api/reading-list';
+            api = 'https://blockdam.nl/smc-api/reading-list',
+            link = {
+                url: url,
+                author: self.items[index].querySelector('.recommendation--tag').innerHTML,
+                title: self.items[index].querySelector('.recommendation--title').innerHTML,
+                subtitle: self.items[index].querySelector('.recommendation--subtitle').innerHTML
+            };
 
         //  store url/data   + return id   (where?)
-        axios.put(api, { url : url })
+        axios.put(api, { link : link })
             .then(function (linkId) {
 
+                console.log(linkId);
                 // contract with limited slots (wil ik alleen een id aan toewijzen )
                 // betaling      // amount diminishes per day
 
