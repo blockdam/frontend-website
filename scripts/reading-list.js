@@ -115,14 +115,24 @@ class ReadingList {
                         if (error) {
                             console.log(error);
                         }
-                        console.log(result);
                         if (result.blockNumber && result.blockNumber !== null) {
+                            self.confirm(receipt);
                             clearInterval(interval);
+
                         }
                     });
                 },2000);
             }
         })
+    }
+
+    confirm(txHash){
+        web3.eth.getTransactionReceipt(txHash, (err,receipt) => {
+            if (error) {
+                console.log(error);
+            }
+            console.log(receipt);
+        });
     }
 }
 
