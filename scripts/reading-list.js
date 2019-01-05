@@ -121,7 +121,6 @@ class ReadingList {
                         logger.info(error);
                     }
                 }).on("data", function (log) {
-
                     console.log(log);
                 });
             }
