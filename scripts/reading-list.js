@@ -110,7 +110,10 @@ class ReadingList {
             }
             if (receipt) {
                 console.log(receipt);
-                // signal sg to render
+                web3.eth.filter("latest", function(error, result){
+                    if (!error)
+                        console.log(result);
+                });
             }
         })
     }
