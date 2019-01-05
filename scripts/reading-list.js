@@ -5,7 +5,7 @@ class ReadingList {
         this.contract = null;
         this.items = [].slice.call(document.querySelectorAll('.recommendation'));
         this.forms = [].slice.call(document.querySelectorAll('form.replaceLinkForm'));
-        this.address = '0xfc4ba82957df8b1d470afe8529117f502ace11d4';
+        this.address = '0x6415225aaa1373e8a4294c348ee9a8c90b307edd';
     }
 
     init() {
