@@ -54,6 +54,8 @@ class ReadingList {
         let self = this,
             api = 'https://blockdam.nl/smc-api/reading-list/?url=' + encodeURI(url);
 
+
+        console.log(api);
         // get metadata
         axios.get(api)
             .then(function (response) {
