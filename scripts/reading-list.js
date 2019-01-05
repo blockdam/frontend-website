@@ -53,8 +53,6 @@ class ReadingList {
 
         let self = this,
             api = 'https://blockdam.nl/smc-api/reading-list';
-
-
         console.log(api);
         // get metadata
         axios.get(api, { url : url })
@@ -100,16 +98,17 @@ class ReadingList {
         let self = this,
             api = 'https://blockdam.nl/smc-api/reading-list';
 
+        //  store url/data   + return id   (where?)
         axios.post(api, { url : url })
-            .then(function (response) {
+            .then(function (linkId) {
+
+                // contract with limited slots (wil ik alleen een id aan toewijzen )
+                // betaling      // amount diminishes per day
+
+            });
 
 
 
-            }
-       //  store url/data   + return id   (where?)
-
-        // contract with limited slots (wil ik alleen een id aan toewijzen )
-        // betaling      // amount diminishes per day
     }
 }
 
