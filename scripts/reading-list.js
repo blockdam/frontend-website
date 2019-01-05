@@ -148,6 +148,8 @@ class ReadingList {
 
         let self = this;
         self.items[index].querySelector('.spinner').style.display = 'none';
+        let button = self.items[index].querySelector('button');
+        button.parentNode.removeChild(button);
         self.items[index].querySelector('.recommendation--tag').setAttribute("contenteditable", false);
         self.items[index].querySelector('.recommendation--title').setAttribute("contenteditable", false);
         self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", false);
