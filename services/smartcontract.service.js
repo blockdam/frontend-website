@@ -1,7 +1,7 @@
 'use strict';
 
-const SmartConractHubConnector = require('../../connectors/smartcontracthub.connector');
-const db = require('../../connectors/mongodb.connector');
+const SmartConractHubConnector = require('../connectors/smartcontracthub.connector');
+const db = require('../connectors/mongodb.connector');
 
 
 class SmartContractService {
