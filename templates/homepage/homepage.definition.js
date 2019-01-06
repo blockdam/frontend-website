@@ -62,12 +62,12 @@ module.exports = {
             let getDiscussion = discussionService.get();
             let getReadingList = smartContractService.getReadingList();
 
-            // getReadingList
-			Promise.all([findPosts,findActivities,getDiscussion]).then(values => {
+
+			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
 
 				data.posts = values[0];
                 data.activities = values[1];
-				//data.links = values[3];
+				data.links = values[3];
                 data.discussion = values[2];
 
 				logger.info('Get template data', correlationId)
