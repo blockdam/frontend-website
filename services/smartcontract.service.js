@@ -8,7 +8,7 @@ class SmartContractService {
 
     getReadingList() {
 
-        let smartContractHubConnector = new SmartConractHubConnector();
+        let smartContractHubConnector = new SmartContractHubConnector();
 
         return new Promise((resolve, reject) => {
 
