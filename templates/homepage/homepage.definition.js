@@ -48,7 +48,7 @@ module.exports = {
                 "sort": {"date":-1},
                 "limit": 6
             };
-            
+
             let linkRecommendationOptions = {
                 query : {
                     "type":"link-recommendations"
@@ -62,12 +62,12 @@ module.exports = {
             let getDiscussion = discussionService.get();
             let getReadingList = smartContractService.getReadingList();
 
-
-			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
+            // getReadingList
+			Promise.all([findPosts,findActivities,getDiscussion]).then(values => {
 
 				data.posts = values[0];
                 data.activities = values[1];
-				data.links = values[3];
+				//data.links = values[3];
                 data.discussion = values[2];
 
 				logger.info('Get template data', correlationId)
