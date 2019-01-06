@@ -12,7 +12,7 @@ class SmartContractService {
 
         return new Promise((resolve, reject) => {
 
-            smartConractHubConnector.getReadingList( (array) => {
+            smartContractHubConnector.getReadingList( (array) => {
                 db.getLinksCollection()
                 .then((collection) => {
                     return collection.find({'_id' : array }).toArray();
