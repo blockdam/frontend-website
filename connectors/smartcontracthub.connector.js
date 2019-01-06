@@ -17,7 +17,7 @@ class SmartContractHubConnector {
             resolve();
             return requestify.get(url, {redirect: true, timeout: 120000})
             .then(response => {
-                resolve(response);
+                resolve(response.getBody());
             })
             .catch( (err) => {
                 reject(err);
