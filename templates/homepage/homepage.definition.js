@@ -1,6 +1,8 @@
 const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
 const DiscussionService = require('../../services/discussion.service');
+const SmartContractService = require('../../services/smartcontract.service');
+
 const logger = require('../../../services/logger.service');
 
 const moment = require('moment');
@@ -56,16 +58,17 @@ module.exports = {
 
             let findPosts = pagePersistence.find(postOptions);
             let findActivities = pagePersistence.find(activityOptions);
-            let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
+          //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
             let getDiscussion = discussionService.get();
+            let getReadingList = smartContractService.getList();
 
 
-			Promise.all([findPosts,findActivities,linkRecommendations,getDiscussion]).then(values => {
+			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
 
 				data.posts = values[0];
                 data.activities = values[1];
-				data.links = values[2][0];
-                data.discussion = values[3];
+				data.links = values[3];
+                data.discussion = values[2];
 
 				logger.info('Get template data', correlationId)
 				resolve(data)

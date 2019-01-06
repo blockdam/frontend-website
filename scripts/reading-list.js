@@ -154,6 +154,18 @@ class ReadingList {
         self.items[index].querySelector('.recommendation--title').setAttribute("contenteditable", false);
         self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", false);
         self.items[index].querySelector('a').classList.remove('hidden');
+
+        let api = 'https://blockdam.nl/sg-api/content',
+
+        axios.post(api)
+        .then(function(response){
+            if (response.status !== 200) {
+                console.log('foutje bedankt')
+            }
+            console.log(response);
+        });
+
+
     }
 
     errorHandler(index) {
