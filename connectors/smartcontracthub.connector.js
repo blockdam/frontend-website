@@ -11,8 +11,7 @@ class SmartContractHubConnector {
 
     getReadingList() {
 
-        let self = this,
-            url = 'https://blockdam.nl/smc-api/reading-list';
+        let url = 'https://blockdam.nl/smc-api/reading-list';
 
         return new Promise((resolve, reject) => {
             resolve();
