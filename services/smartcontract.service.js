@@ -22,7 +22,7 @@ class SmartContractService {
                 })
                 .then((collection) => {
                     logger.info(IdList);
-                    return collection.find({'_id' : IdList }).toArray();
+                    return collection.find({'_id' : IdList[0] }).toArray();
                 })
                 .then((result) => {
                     logger.info(result);
