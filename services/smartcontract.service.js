@@ -31,7 +31,6 @@ class SmartContractService {
                     reject(err);
                 });
             });
-        });
     }
 }
 
