@@ -18,7 +18,7 @@ class SmartContractService {
             smartContractHubConnector.getReadingList()
                 .then( array => {
 
-                    IdList = array.map( id => 'ObjectId(' + id + ')');
+                    IdList = array.map( id => ObjectId(' + id + '));
                     return db.getLinksCollection()
                 })
                 .then((collection) => {
