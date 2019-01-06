@@ -30,7 +30,7 @@ module.exports = {
 
             let pagePersistence = new PagePersistence();
             let discussionService = new DiscussionService();
-            let smartContractService = new SmartContractService
+            let smartContractService = new SmartContractService();
 
 
             let postOptions = {
