@@ -11,16 +11,17 @@ class SmartContractService {
     getReadingList() {
 
         let smartContractHubConnector = new SmartContractHubConnector();
+        let IdList;
 
         return new Promise((resolve, reject) => {
 
-            return smartContractHubConnector.getReadingList(array => {
-             //   logger.info(array);
-                resolve();
-
-                db.getLinksCollection()
+            smartContractHubConnector.getReadingList()
+                .then( array => {
+                    IdList = array;
+                    return db.getLinksCollection()
+                })
                 .then((collection) => {
-                    return collection.find({'_id' : array }).toArray();
+                    return collection.find({'_id' : IdList }).toArray();
                 })
                 .then((result) => {
                     logger.info(result);

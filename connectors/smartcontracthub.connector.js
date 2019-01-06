@@ -1,8 +1,7 @@
 'use strict';
+
 const Promise = require('bluebird');
 const requestify = require('requestify');
-const logger = require('../../services/logger.service');
-const config = require('../../config/index');
 
 
 class SmartContractHubConnector {
@@ -11,12 +10,10 @@ class SmartContractHubConnector {
 
     getReadingList() {
 
-        let url = 'https://blockdam.nl/smc-api/reading-list';
-
         return new Promise((resolve, reject) => {
-            resolve();
-            return requestify.get(url, {redirect: true, timeout: 120000})
-            .then(response => {
+
+            requestify.get('https://blockdam.nl/smc-api/reading-list')
+            .then( response => {
                 resolve(response.getBody());
             })
             .catch( (err) => {
