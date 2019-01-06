@@ -26,7 +26,7 @@ class DiscussionService {
 
             pagePersistence.find(postOptions)
                 .then( (content) => {
-                    logger.info(content);
+                    // logger.info(content);
                     resolve(content);
                 });
         });

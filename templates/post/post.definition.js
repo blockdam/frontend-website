@@ -42,7 +42,7 @@ module.exports = {
             Promise.all([findPosts]).then(values => {
 
                 data.related_posts = values[0];
-                logger.info('Get template data', correlationId)
+                // logger.info('Get template data', correlationId)
                 resolve(data)
 
             });

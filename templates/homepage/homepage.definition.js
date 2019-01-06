@@ -72,7 +72,7 @@ module.exports = {
 
                 // logger.info(data.links);
 
-				logger.info('Get template data', correlationId)
+				// logger.info('Get template data', correlationId)
 				resolve(data)
 			})
         })

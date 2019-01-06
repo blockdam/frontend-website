@@ -23,7 +23,7 @@ module.exports = {
      */
     getTemplateData: (data, correlationId) => {
         return new Promise((resolve, reject) => {
-            logger.info('Get template data', correlationId);
+            // logger.info('Get template data', correlationId);
             resolve(data);
         })
     },

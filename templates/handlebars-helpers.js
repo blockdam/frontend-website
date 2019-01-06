@@ -116,11 +116,6 @@ module.exports = [{
         name: 'imageFormat',
         helper: (index,count,orientation) => {
 
-            logger.info('hi');
-            logger.info(index);
-            logger.info(count);
-
-
             if (count === 'single') {
 
                 return 'camera';
