@@ -48,8 +48,7 @@ module.exports = {
                 "sort": {"date":-1},
                 "limit": 6
             };
-
-
+            
             let linkRecommendationOptions = {
                 query : {
                     "type":"link-recommendations"
