@@ -1,6 +1,5 @@
 'use strict';
 
-const PagePersistence = require('../persistence/page.persistence');
 const SmartConractHubConnector = require('../connectors/smartcontracthub.connector');
 const db = require('../connectors/mongodb.connector');
 
