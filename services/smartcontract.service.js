@@ -2,6 +2,8 @@
 
 const SmartContractHubConnector = require('../../connectors/smartcontracthub.connector');
 const db = require('../../connectors/mongodb.connector');
+const logger = require('../../services/logger.service');
+
 
 
 class SmartContractService {
