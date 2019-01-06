@@ -23,11 +23,13 @@ class SmartContractHubConnector {
             url = 'https://blockdam.nl/smc-api/reading-list/';
 
         return new Promise((resolve, reject) => {
-
             requestify.get(url, {redirect: true, timeout: 120000})
-                .then(response => {
-                    resolve(response);
-                });
+            .then(response => {
+                resolve(response);
+            })
+            .catch( (err) => {
+                reject(err);
+            });
         });
     }
 }
