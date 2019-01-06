@@ -15,7 +15,7 @@ class SmartContractService {
         return new Promise((resolve, reject) => {
 
             return smartContractHubConnector.getReadingList(array => {
-                logger.info(array);
+             //   logger.info(array);
                 resolve();
 
                 db.getLinksCollection()
