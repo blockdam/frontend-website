@@ -14,10 +14,11 @@ class SmartContractService {
 
         return new Promise((resolve, reject) => {
 
-            resolve();
 
-            smartContractHubConnector.getReadingList( (array) => {
+
+            return smartContractHubConnector.getReadingList( (array) => {
                 logger.info(array);
+                resolve();
 
                 db.getLinksCollection()
                 .then((collection) => {
