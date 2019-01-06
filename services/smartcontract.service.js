@@ -1,6 +1,6 @@
 'use strict';
 
-const SmartContractHubConnector = require('../../connectors/smartcontracthub.connector');
+const SmartContractHubConnector = require('../connectors/smartcontracthub.connector');
 const db = require('../../connectors/mongodb.connector');
 const logger = require('../../services/logger.service');
 
@@ -23,6 +23,9 @@ class SmartContractService {
                 .then((result) => {
                     logger.info(result);
                     resolve(result);
+                })
+                .catch( (err) => {
+                    reject(err);
                 });
             });
         });
