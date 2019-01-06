@@ -12,13 +12,14 @@ class SmartContractService {
 
         let smartContractHubConnector = new SmartContractHubConnector();
         let IdList;
+        let ObjectId;
 
         return new Promise((resolve, reject) => {
 
             smartContractHubConnector.getReadingList()
                 .then( array => {
 
-                    IdList = array.map( id => new ObjectId(' + id + '));
+                    IdList = array.map( id => ObjectId(' + id + '));
                     return db.getLinksCollection()
                 })
                 .then((collection) => {
