@@ -27,7 +27,7 @@ class SmartContractService {
                         '_id': {
                             $in: IdList
                         }
-                    }); // .toArray();
+                    }).toArray();
                 })
                 .then((result) => {
                     logger.info(result);
