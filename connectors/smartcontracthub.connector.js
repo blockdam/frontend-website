@@ -9,21 +9,15 @@ const _ = require('lodash');
 
 class SmartContractHubConnector {
 
-    constructor() {
-
-        // this.concatenatedResponse = [];
-        // this.page = 0;
-        this.results = []
-
-    }
+    constructor() {}
 
     getReadingList() {
 
         let self = this,
-            url = 'https://blockdam.nl/smc-api/reading-list/';
+            url = 'https://blockdam.nl/smc-api/reading-list';
 
         return new Promise((resolve, reject) => {
-            requestify.get(url, {redirect: true, timeout: 120000})
+            return requestify.get(url, {redirect: true, timeout: 120000})
             .then(response => {
                 resolve(response);
             })
