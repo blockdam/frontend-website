@@ -21,6 +21,7 @@ class SmartContractService {
                     return db.getLinksCollection()
                 })
                 .then((collection) => {
+                    logger.info(IdList);
                     return collection.find({'_id' : IdList }).toArray();
                 })
                 .then((result) => {
