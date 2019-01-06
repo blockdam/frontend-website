@@ -70,6 +70,8 @@ module.exports = {
 				data.links = values[3];
                 data.discussion = values[2];
 
+                logger.info(data.links);
+
 				logger.info('Get template data', correlationId)
 				resolve(data)
 			})
