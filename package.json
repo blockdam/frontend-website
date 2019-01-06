@@ -31,6 +31,7 @@
     "gulp4": "^4.0.2",
     "merge-stream": "^1.0.1",
     "moment": "^2.19.2",
+    "requestify": "^0.2.5",
     "web3": "^1.0.0-beta.36"
   },
   "devDependencies": {
