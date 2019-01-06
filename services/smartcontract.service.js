@@ -18,11 +18,18 @@ class SmartContractService {
             smartContractHubConnector.getReadingList()
                 .then( array => {
                     IdList = array;
+                    IdList.map( id => {
+                        return 'ObjectId(' + id + ')';
+                    });
                     return db.getLinksCollection()
                 })
                 .then((collection) => {
                     logger.info(IdList);
-                    return collection.find({'_id' : IdList[0] }).toArray();
+                    return collection.find({
+                        _id: {
+                            $in: IdList
+                        }
+                    }).toArray();
                 })
                 .then((result) => {
                     logger.info(result);
