@@ -1,18 +1,18 @@
 'use strict';
 
-const SmartConractHubConnector = require('../../connectors/smartcontracthub.connector');
+const SmartContractHubConnector = require('../../connectors/smartcontracthub.connector');
 const db = require('../../connectors/mongodb.connector');
 
 
 class SmartContractService {
 
-    getList() {
+    getReadingList() {
 
-        let smartConractHubConnector = new SmartConractHubConnector();
+        let smartContractHubConnector = new SmartConractHubConnector();
 
         return new Promise((resolve, reject) => {
 
-            smartConractHubConnector.getList( (array) => {
+            smartConractHubConnector.getReadingList( (array) => {
                 db.getLinksCollection()
                 .then((collection) => {
                     return collection.find({'_id' : array }).toArray();

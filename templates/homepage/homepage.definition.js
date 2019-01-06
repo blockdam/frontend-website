@@ -61,7 +61,7 @@ module.exports = {
             let findActivities = pagePersistence.find(activityOptions);
           //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
             let getDiscussion = discussionService.get();
-            let getReadingList = smartContractService.getList();
+            let getReadingList = smartContractService.getReadingList();
 
 
 			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
