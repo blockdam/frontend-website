@@ -9,7 +9,7 @@
     <meta property="og:url"content="{{or body.url 'http://blockdam.publikaan.nl/'}}" />
     <meta property="og:title"content="{{or body.title.rendered 'BLOCKDAM'}}" />
     <meta property="og:image"content="https://ucarecdn.com/{{or body.main_image.external_id body.homeContent.main_image.external_id}}/-/resize/600x/{{or body.main_image.filename body.homeContent.main_image.filename}}" />
-    <meta property="og:description" content="{{excerpt body.content}}" />
+    <meta property="og:description" content="{{excerpt body.content.rendered}}" />
     <meta property="og:type" content="article" />
 
     <meta name="twitter:card" content="summary_large_image">
