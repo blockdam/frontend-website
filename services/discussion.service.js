@@ -17,7 +17,7 @@ class DiscussionService {
             let postOptions = {
                 query : {
 
-                    'type' :  { $in : ['post','activity']},
+                    'type' :  { $in : ['post','page','activity']},
                     'interaction.comment_count' : { $ne: '0' }
                 },
                 sort: {"interaction.last_comment_date": -1},
