@@ -144,7 +144,7 @@ module.exports = [{
     {
         name: 'excerpt',
         helper: (content) => {
-            if (content !== null && content !== undefined) {
+            if (content !== null && content !== undefined && content !== "") {
                 let strippedFromHtml = content.toString().replace(/(&nbsp;|<([^>]+)>)/ig, "");
                 let sentences = strippedFromHtml.split(".");
                 let newContent;
