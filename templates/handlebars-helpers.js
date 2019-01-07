@@ -16,7 +16,12 @@ module.exports = [{
     {
         name: 'or',
         helper: (first, second) => {
-            return first || second;
+
+            if(first && first !== '') {
+                return first;
+            } else {
+                return second;
+            }
         }
     },
     {
