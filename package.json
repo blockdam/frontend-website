@@ -28,7 +28,6 @@
     "gulp-postcss": "^7.0.5",
     "gulp-sass": "^4.0.2",
     "gulp-task-loader": "^1.5.0",
-    "gulp4": "^4.0.2",
     "merge-stream": "^1.0.1",
     "moment": "^2.19.2",
     "requestify": "^0.2.5",
