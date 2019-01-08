@@ -23,5 +23,4 @@ class SmartContractHubConnector {
     }
 }
 
-
 module.exports = SmartContractHubConnector;
