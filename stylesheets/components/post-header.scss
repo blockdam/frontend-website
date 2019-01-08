@@ -5,9 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-
   @media (min-width: $breakpoint-sm) {
-
     flex-direction: row;
     align-items: center;
   }
@@ -22,7 +20,6 @@
     margin-right: 10px;
 
     @media (min-width: $breakpoint-sm) {
-
       flex-direction: column;
     }
 
@@ -73,7 +70,9 @@
 
  .post-intro--title {
 
-   width: calc(100% - 60px);
+   @media (min-width: $breakpoint-sm) {
+     width: calc(100% - 60px);
+   }
 
 
    .taxonomy-tab {
