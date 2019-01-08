@@ -6,7 +6,7 @@
 
 module.exports = function() {
 
-    let gulp = require('gulp'),
+    let gulp = require('gulp4'),
         server = require('gulp-server-livereload');
 
     return gulp.src('dist')

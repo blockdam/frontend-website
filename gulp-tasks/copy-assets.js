@@ -6,7 +6,7 @@
 
 module.exports = function() {
 
-    let gulp = require('gulp');
+    let gulp = require('gulp4');
     var copy = require('gulp-contrib-copy');
     let path = require('../local-path')();
 
