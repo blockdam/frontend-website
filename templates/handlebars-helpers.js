@@ -295,7 +295,6 @@ module.exports = [{
             else {
                 return '';
             }
-
         }
     },
     {
