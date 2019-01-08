@@ -2,6 +2,9 @@
 class Menu {
 
     constructor() {
+
+        this.hamburger = document.querySelector('svg.icon-hamburger');
+        this.nav = document.querySelector('nav');
     }
 
     init() {
@@ -10,13 +13,19 @@ class Menu {
 
         let self = this;
 
-        if(detect.ie()) {
-            self.skip();
-        } else if (!internal && (window.location.pathname === '' || window.location.pathname === '/' )) {
-            self.intro();
-        } else {
-            self.skip();
-        }
+        // if(detect.ie()) {
+        //     self.skip();
+        // } else if (!internal && (window.location.pathname === '' || window.location.pathname === '/' )) {
+        //     self.intro();
+        // } else {
+        //     self.skip();
+        // }
+
+        self.hamburger.addEventListener('click', function() {
+
+            self.nav.classList.add('open');
+
+        },false);
 
     }
 
