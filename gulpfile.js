@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp = require('gulp4'),
-    gulpTaskLoader = require('gulp-task-loader')();
+const gulp = require('gulp');
+const gulpTaskLoader = require('gulp-task-loader')('./gulp-tasks'); // load tasks from other files. Allows to write each gulp task into a separate file
 
+let build = gulp.parallel('scss-compile');
 
-    // configure which files to watch and what tasks to use on file changes
-
+gulp.task('default', build);
