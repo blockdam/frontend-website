@@ -5,8 +5,6 @@ const ObjectId = require('mongodb').ObjectID;
 const db = require('../../connectors/mongodb.connector');
 const logger = require('../../services/logger.service');
 
-
-
 class SmartContractService {
 
     getReadingList() {
