@@ -5,7 +5,7 @@
  */
 module.exports = function() {
 
-    let gulp = require('gulp4'),
+    let gulp = require('gulp'),
         babel = require('gulp-babel'),
         plumber = require('gulp-plumber'),
         concat = require('gulp-concat'),
