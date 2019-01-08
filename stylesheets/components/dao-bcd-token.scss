@@ -3,11 +3,16 @@
   margin-bottom: 1rem;
   background: $grey;
   display: flex;
+
   padding: 1rem 1rem .5rem 1rem;
   justify-content: space-between;
 
   width : calc(100% - 2rem);
-  //min-height: 300px;
+
+
+  @media(max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 
 
   h2 {
