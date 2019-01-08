@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'),
+var gulp = require('gulp4'),
     gulpTaskLoader = require('gulp-task-loader')();
 
 
