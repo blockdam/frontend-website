@@ -5,11 +5,14 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 120px;
+  height: 80px;
   display: block;
   background: $creme;
-
   transition: all 500ms ease;
+
+  @media (min-width: $breakpoint-sm) {
+    height: 120px;
+  }
 
   #header-container {
 
@@ -39,7 +42,6 @@ header {
       @media (min-width: $breakpoint-sm) {
         font-size: 4rem;
       }
-
   }
 
   h2 {
@@ -65,7 +67,7 @@ header {
 
     display: block;
     position: absolute;
-    top: 1.25rem;
+    top: 0rem;
     right: -1rem;
     width: 5rem;
     height: auto;

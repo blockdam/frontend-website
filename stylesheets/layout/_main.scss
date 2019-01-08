@@ -3,7 +3,11 @@ main {
   position: relative;
   z-index: 2;
 
-  transform: translateY(120px);
+  transform: translateY(80px);
+
+  @media (min-width: $breakpoint-sm) {
+    transform: translateY(120px);
+  }
 
   transition: all 1s ease-out;
   padding: 0;
