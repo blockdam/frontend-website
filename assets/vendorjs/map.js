@@ -253,7 +253,7 @@ var Directions = function () {
 
     Directions.prototype.draw = function draw(session) {
 
-        console.log(session);
+        // console.log(session);
 
         var self = this;
         self._map.addSource('address', {
