@@ -14,7 +14,6 @@ let gulp = require('gulp'),
     cssnano = require('cssnano'),
     path = require('../local-path')();
 
-
     var processors = [
         autoprefixer,
         cssnano
