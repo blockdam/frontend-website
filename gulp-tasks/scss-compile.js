@@ -6,7 +6,7 @@
 
 module.exports = function() {
 
-let gulp = require('gulp'),
+let gulp = require('gulp4'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
     postcss = require('gulp-postcss'),
