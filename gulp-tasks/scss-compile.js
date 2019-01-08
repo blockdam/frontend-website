@@ -24,5 +24,4 @@ let gulp = require('gulp'),
        .pipe(sass().on('error', sass.logError))
        .pipe(postcss(processors))
         .pipe(gulp.dest(path.distFolder + 'assets/css/'));
-
 };
