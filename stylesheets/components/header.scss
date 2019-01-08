@@ -71,6 +71,20 @@ header {
     }
   }
 
+  .icon-hamburger {
+
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    height: auto;
+
+    @media(min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
   nav ul {
     display: none;
     flex-direction: row;
