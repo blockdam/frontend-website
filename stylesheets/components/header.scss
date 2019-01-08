@@ -86,9 +86,14 @@ header {
       width: 100vw;
       top: 0;
       left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       li a {
         color: $creme;
+        font-size: 2rem;
       }
     }
   }
