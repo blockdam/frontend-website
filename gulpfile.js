@@ -5,6 +5,6 @@ const gulpTaskLoader = require('gulp-task-loader')('./gulp-tasks'); // load task
 
 let build = gulp.parallel('scss-compile', function() {
     // default task code here
-}));
+});
 
 gulp.task('default', build);
