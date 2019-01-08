@@ -91,9 +91,19 @@ header {
       justify-content: center;
       align-items: center;
 
+      ul {
+        display : block;
+      }
+
       li a {
         color: $creme;
         font-size: 2rem;
+        line-height: 2;
+        text-align: center;
+      }
+
+      svg {
+        display: none;
       }
     }
   }
