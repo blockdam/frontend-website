@@ -339,7 +339,6 @@ module.exports = [{
                     ret += block.fn(context[i]);
                 }
             }
-
             return ret;
         }
     },
