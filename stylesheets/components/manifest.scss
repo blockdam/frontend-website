@@ -1,5 +1,10 @@
-#manifest {
+#manifest.container-small {
   margin-top: 4rem;
+
+  @media(max-width: $breakpoint-md) {
+    width : calc(100% - 8rem);
+  }
+
 }
 
 .manifest-point {
