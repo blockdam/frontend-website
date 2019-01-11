@@ -31,7 +31,10 @@
       width : 4rem;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-end;
+      padding: 0;
+
+      border: none;
 
       span {
         background: $dark-grey;
@@ -40,6 +43,7 @@
 
         &:first-child {
           font-size: 2rem;
+          line-height: .85;
         }
       }
 
