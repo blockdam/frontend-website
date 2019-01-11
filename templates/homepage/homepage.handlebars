@@ -76,8 +76,11 @@
 
                     {{#each ../body.activities as |activity|}}
 
-                        <h2>{{activity.title}}</h2>
-                       
+
+                        <a href="{{activity.url}}">
+                            <h2>{{activity.title}}</h2>
+
+                        </a>
                     {{/each}}
 
                 {{/ifLongerThan}}
