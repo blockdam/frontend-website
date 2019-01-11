@@ -36,7 +36,7 @@
 
         <div class="post-intro container-small">
 
-            {{ json body.sessions.[0] }}
+            {{ body.sessions.[0].location.name }} - {{ body.sessions.[0].location.submitted_address }}
 
             {{{body.content }}}
         </div>
