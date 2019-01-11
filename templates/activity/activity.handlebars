@@ -42,12 +42,18 @@
         {{> sections }}
 
 
-        <div class="container-small">
+        <div class="event-info" class="container-small">
 
             <h3>Locatie:</h3>
 
             {{ body.sessions.[0].location.name }}<br/>
             {{ body.sessions.[0].location.submitted_address }}
+
+
+            <h3>Tijd:</h3>
+
+            {{ formatDate body.sessions.[0].calendar.startDate.date 'DD MMMM'}}<br/>
+            {{ json body.sessions.[0] }}
 
         </div>
 

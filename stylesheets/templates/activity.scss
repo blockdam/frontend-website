@@ -1,0 +1,6 @@
+.event-info {
+
+  h3 {
+    @include condensed-header();
+  }
+}
