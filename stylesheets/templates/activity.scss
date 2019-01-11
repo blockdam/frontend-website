@@ -1,6 +1,14 @@
 .event-info {
 
+  background: $grey;
+  padding: 2rem;
+
   h3 {
     @include condensed-header();
+    margin-top : 1.77rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 }
