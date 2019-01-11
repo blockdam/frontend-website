@@ -36,15 +36,23 @@
 
         <div class="post-intro container-small">
 
-            {{ body.sessions.[0].location.name }} - {{ body.sessions.[0].location.submitted_address }}
-
             {{{body.content }}}
         </div>
 
         {{> sections }}
 
 
-        {{> comment-section}}
+        <div class="container-small">
+
+            <h3>Locatie:</h3>
+
+            {{ body.sessions.[0].location.name }}<br/>
+            {{ body.sessions.[0].location.submitted_address }}
+
+        </div>
+
+
+            {{> comment-section}}
 
 
     </article>
