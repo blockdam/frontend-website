@@ -15,6 +15,11 @@
             <div class="post-header">
 
                 <div class="post-intro--stats">
+                    <div>
+                        <span class="date">{{formatDate body.calendar.startDate.date 'DD'}}</span>
+                        <span class="date">{{formatDate body.calendar.startDate.date 'MMM'}}</span>
+                    </div>
+
                     <div class="post-intro--stats--votes--up">{{>icon-thumbs-up}}<span>{{body.interaction.appreciation.positive_count}}</span></div>
                     <div class="post-intro--stats--votes--down">{{>icon-thumbs-up}}<span>{{body.interaction.appreciation.negative_count}}</span></div>
                     <div class="post-intro--stats--commentcount">{{> icon-comments }}{{body.interaction.comment_count}}</div>
@@ -22,7 +27,7 @@
 
                 <div class="post-intro--title">
                     <h2 class="">{{{body.title }}}</h2>
-                    <div class="date">Last iupdated at {{formatDate body.modified 'D MMMM YYYY'}}</div>
+                    <div class="date">Last updated at {{formatDate body.modified 'D MMMM YYYY'}}</div>
 
                 </div>
 
