@@ -154,6 +154,11 @@
             span {
               background: black;
               color: white;
+              padding: .125rem .25rem;
+
+              &:first-child {
+                font-size: 2rem;
+              }
             }
           }
 
