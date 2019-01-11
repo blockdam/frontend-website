@@ -152,7 +152,7 @@
             align-items: flex-start;
 
             span {
-              background: black;
+              background: $dark-grey;
               color: white;
               padding: .125rem .25rem;
 
@@ -166,8 +166,10 @@
             font-family: Gotham Cond SSm A,Gotham Cond SSm B;
             font-weight: 400;
             font-size: 2.4rem;
-            line-height: 1.05;
-            margin: 0 0 .4rem 1rem;
+            line-height: .925;
+            font-weight: 400;
+            margin: .275rem 1rem;
+            letter-spacing: .5px;
           }
 
       }
