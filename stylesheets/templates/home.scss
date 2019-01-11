@@ -179,14 +179,9 @@
           }
 
           h2 {
-            font-family: Gotham Cond SSm A,Gotham Cond SSm B;
-            font-weight: 600;
-            line-height: 1;
-            font-size: 1.8rem;
-            margin: 0rem;
-            letter-spacing: .5px;
-            width : calc(100%);
-            color: $dark-grey;
+            @include condensed-header();
+            width : 100%;
+
           }
 
           &:first-of-type {
