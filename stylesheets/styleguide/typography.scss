@@ -114,6 +114,7 @@
 body {
 
     @include bodyText();
+    color: $dark-grey;
 }
 
 .cursor_pointer {
