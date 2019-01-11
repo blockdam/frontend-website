@@ -150,26 +150,26 @@
             width : 4rem;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
             margin-right: 1rem;
 
             span {
               background: $dark-grey;
               color: white;
               padding: .125rem .25rem;
-              font-size: 1.2rem;
-              line-height: 1.2;
+              font-size: 1rem;
+              line-height: 1.125;
               letter-spacing: 0;
 
               &:first-child {
-                font-size: 2.2rem;
+                font-size: 1.85rem;
                 line-height: 1;
                 position: relative;
                 z-index: 3;
               }
 
               &:last-child {
-                transform : translateY(-4px);
+                transform : translateY(-2px);
                 position: relative;
                 z-index: 2;
               }
@@ -181,7 +181,7 @@
             font-weight: 600;
             line-height: 1;
             font-size: 1.8rem;
-            margin: .275rem 0rem .275rem 0rem;
+            margin: 0rem;
             letter-spacing: .5px;
             width : calc(100%);
             color: $dark-grey;
