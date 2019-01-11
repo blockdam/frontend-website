@@ -45,7 +45,7 @@ module.exports = {
                 query : {
                     "type":"activity"
                 },
-                "sort": {"date":-1},
+                "sort": {"eventDate":-1},
                 "limit": 6
             };
 
