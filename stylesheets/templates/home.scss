@@ -193,6 +193,7 @@
 
             h2 {
               @include condensed-header();
+              margin: .125rem 0;
               line-height: 1.05;
               width : 100%;
 
