@@ -42,13 +42,19 @@
 
         color: white;
         padding: .125rem .25rem;
-        ont-size: 1.125rem;
+        font-size: 1.125rem;
         line-height: 1;
 
 
         &:first-child {
           font-size: 3rem;
           line-height: 1;
+        }
+
+        &:last-child {
+          transform : translateY(-4px);
+          position: relative;
+          z-index: 2;
         }
       }
 
