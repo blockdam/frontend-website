@@ -76,8 +76,11 @@
 
                     {{#each ../body.activities as |activity|}}
 
-                        <a href="{{activity.url}}">
-                            <span class="date">{{formatDate activity.calendar.startDate.date 'DD MMMM'}}</span>
+                        <a class="event" href="{{activity.url}}">
+                            <div>
+                                <span class="date">{{formatDate activity.calendar.startDate.date 'DD'}}</span>
+                                <span class="date">{{formatDate activity.calendar.startDate.date 'MMM'}}</span>
+                            </div>
                             <h2>{{activity.title}}</h2>
                         </a>
                     {{/each}}

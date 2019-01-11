@@ -136,6 +136,30 @@
           margin-bottom: 1px;
         }
 
+      .event {
+
+          display : flex;
+          flex-direction: row;
+
+          > div {
+
+            width : 4rem;
+
+            span {
+              background: black;
+              color: white;
+            }
+          }
+
+          h2 {
+            font-family: Mercury Display A,Mercury Display B;
+            font-size: 1.3rem;
+            line-height: 1.05;
+            margin: 0 0 .4rem;
+          }
+
+      }
+
         .comment {
           width: calc(100% - 2rem);
           border: 1px solid $secondary;
