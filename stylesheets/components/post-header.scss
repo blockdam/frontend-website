@@ -26,6 +26,25 @@
       flex-direction: column;
     }
 
+    .event-date {
+
+      width : 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      span {
+        background: $dark-grey;
+        color: white;
+        padding: .125rem .25rem;
+
+        &:first-child {
+          font-size: 2rem;
+        }
+      }
+
+    }
+
 
     > div {
 
