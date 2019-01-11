@@ -145,6 +145,7 @@
           width : 100%;
           cursor: pointer;
           align-items: flex-start;
+          justify-content: flex-start;
 
           > div.data-combo {
 
@@ -178,15 +179,27 @@
             }
           }
 
-          span.location {
-            @include uppercase-small();
+          > div {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            span.location {
+              @include uppercase-small();
+              line-height: 1.05;
+            }
+
+            h2 {
+              @include condensed-header();
+              line-height: 1.05;
+              width : 100%;
+
+            }
           }
 
-          h2 {
-            @include condensed-header();
-            width : 100%;
 
-          }
 
           &:first-of-type {
             margin-top: 1rem;
