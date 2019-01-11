@@ -75,11 +75,10 @@
                         <h2 class="subheader">Calendar</h2>
 
                     {{#each ../body.activities as |activity|}}
-
-
+                        
                         <a href="{{activity.url}}">
+                            <span class="date">{{formatDate activity.calendar.startDate.date 'DD MMMM'}}</span>
                             <h2>{{activity.title}}</h2>
-
                         </a>
                     {{/each}}
 
