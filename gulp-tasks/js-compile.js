@@ -65,6 +65,23 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
+        var activity = gulp.src([
+            path.projectFolder + '/scripts/_loadJSON.js',
+            path.projectFolder + '/scripts/detect.js',
+            path.projectFolder + '/scripts/metamask.js',
+            path.projectFolder + '/scripts/waypoints.js',
+            path.projectFolder + '/scripts/menu.js',
+            path.projectFolder + '/scripts/commenting.js',
+            path.projectFolder + '/scripts/appreciation.js'
+        ])
+        // .pipe(plumber())
+            .pipe(concat('activity.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
+
         var dao = gulp.src([
                 path.projectFolder + '/scripts/_loadJSON.js',
                 path.projectFolder + '/scripts/detect.js',
@@ -113,7 +130,7 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page, dao, token, charts);
+        return merge(post, homepage, page, activity, dao, token, charts);
 
     });
 }
