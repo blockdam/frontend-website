@@ -152,8 +152,8 @@ class Respond extends Commenting {
 
         let self = this;
         let tempComment = self.commentTemplateNew.cloneNode(true);
-        tempComment.querySelector('.datetime').innerHTML = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
-        tempComment.querySelector('#commment-template-text').innerHTML = this.response.content;
+        tempComment.querySelector('.datetime').text = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
+        tempComment.querySelector('#commment-template-text').text = this.response.content;
         tempComment.removeAttribute('id');
         this.commentsWrapper.insertBefore(tempComment, this.commentsWrapper.firstChild);
         this.onFocusOut();
@@ -168,8 +168,8 @@ class Respond extends Commenting {
 
         let self = this;
         let tempComment = self.commentTemplateReply.cloneNode(true);
-        tempComment.querySelector('.datetime').innerHTML = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
-        tempComment.querySelector('#commment-template-text').innerHTML = this.response.content;
+        tempComment.querySelector('.datetime').text = this.response.author + ' | ' + moment().format('D MMMM YYYY | HH:mm');
+        tempComment.querySelector('#commment-template-text').text = this.response.content;
         tempComment.style.display = 'flex';
         // return respondForm to top
         let newForm = self.respondForm.cloneNode(true);
