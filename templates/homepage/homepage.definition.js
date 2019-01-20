@@ -35,6 +35,7 @@ module.exports = {
             let now = moment();
             let tomorrow = moment(now.add(1, 'day'));
 
+            logger.info(now.unix());
 
             let postOptions = {
                 query : {
@@ -46,7 +47,8 @@ module.exports = {
 
             let activityOptions = {
                 query : {
-                    "type":"activity"
+                    "type":"activity",
+                    "eventDate" : { "$gte": now.unix() }
                 },
                 "sort": {"eventDate":1},
                 "limit": 6
