@@ -47,9 +47,9 @@ module.exports = {
             let activityOptions = {
                 query : {
                     "type":"activity",
-                    "eventDate" : { "$gte": tomorrow.toISOString() }
+                    "event.date.unixstartTim" : { "$gte": tomorrow.toISOString() }
                 },
-                "sort": {"eventDate":1},
+                "sort": {"event.date.startTime":1},
                 "limit": 6
             };
 
