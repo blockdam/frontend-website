@@ -101,16 +101,13 @@ module.exports = {
                 modified: data.modified,
                 author: data.author,
                 main_image: data.main_image,
-                location: data.location,
                 sections: data.sections,
                 sessions: data.sessions,
                 interaction: data.interaction,
                 taxonomies: data.taxonomies,
                 eventIds: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.id }) : [],
                 eventSlugs: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.slug }) : [],
-                contact : data.contact,
-                eventDate: data.sessions[0].date.date,
-                calendar: data.calendar
+                event: data.event,
 
             };
 
