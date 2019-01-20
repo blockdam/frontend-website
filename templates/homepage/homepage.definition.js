@@ -32,6 +32,9 @@ module.exports = {
             let discussionService = new DiscussionService();
             let smartContractService = new SmartContractService();
 
+            let now = moment();
+            let tomorrow = new Date(now.add(1, 'day'));
+
 
             let postOptions = {
                 query : {
@@ -43,7 +46,8 @@ module.exports = {
 
             let activityOptions = {
                 query : {
-                    "type":"activity"
+                    "type":"activity",
+                    "eventDate" : { "$hte": tomorrow.toISOString() }
                 },
                 "sort": {"eventDate":1},
                 "limit": 6
