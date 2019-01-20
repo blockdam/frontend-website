@@ -3,6 +3,7 @@ class RSVP {
     constructor() {
 
         this.meetupApiKey = "36567d847437b42c29337351433b7a";
+        this.meetupUrlName = "Permissionless-Society";
         this.eventInfoBlock = document.querySelector('.event-info');
     }
 
@@ -10,11 +11,10 @@ class RSVP {
 
         let self = this;
         self.meetupID = self.eventInfoBlock.getAttribute('data-meetup-id');
-        console.log(self.meetupID);
 
-        let url = self.addCallback("https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=hsbcqqyzcbdc&page=20");
+        let eventUrl = self.addCallback("https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=" + self.meetupID + "&page=20");
 
-        jsonpClient(url, function (err, data) {
+        jsonpClient(eventUrl, function (err, data) {
             if(err) {
                 console.log(err);
             }
@@ -23,13 +23,16 @@ class RSVP {
             console.log(data.results[0].waitlist_count);
         });
 
-        // axios.get(url)
-        //     .then(function(response){
-        //         if (response.status !== 200) {
-        //             console.log('foutje bedankt')
-        //         }
-        //         console.log(response);
-        //     });
+        let rsvpUrl = self.addCallback("https://api.meetup.com/3/" + self.meetupUrlName + "/events/" + self.meetupID + "/rsvps");
+
+        jsonpClient(rsvpUrl, function (err, data) {
+            if(err) {
+                console.log(err);
+            }
+            console.log(data);
+        });
+
+
 
 
     }
