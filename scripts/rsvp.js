@@ -14,7 +14,7 @@ class RSVP {
 
         let url = "https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=hsbcqqyzcbdc&page=20";
 
-        axios.post(url)
+        axios.get(url)
             .then(function(response){
                 if (response.status !== 200) {
                     console.log('foutje bedankt')
