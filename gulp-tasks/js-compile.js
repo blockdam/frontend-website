@@ -72,7 +72,8 @@ module.exports = function() {
             path.projectFolder + '/scripts/waypoints.js',
             path.projectFolder + '/scripts/menu.js',
             path.projectFolder + '/scripts/commenting.js',
-            path.projectFolder + '/scripts/appreciation.js'
+            path.projectFolder + '/scripts/appreciation.js',
+            path.projectFolder + '/scripts/rsvp.js'
         ])
         // .pipe(plumber())
             .pipe(concat('activity.js'))
