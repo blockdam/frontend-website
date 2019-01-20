@@ -52,6 +52,8 @@
 
             <h3>Tijd:</h3>
 
+            {{json body.event }}
+
             {{ formatDate body.event.date.startDate 'DD MMMM'}}<br/>
             {{ body.event.date.startDate }} - {{ body.event.date.endDate }}
 
