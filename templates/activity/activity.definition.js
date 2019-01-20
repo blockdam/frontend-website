@@ -51,7 +51,7 @@ module.exports = {
      */
     getPath: (data, correlationId) => { // path generator for path/url of the page
         return new Promise((resolve, reject) => {
-            const year = moment(data.event.date.startDate, 'YYYY').format('YYYY');
+            const year = moment(data.event.date.startDate).format('YYYY');
             const pathService = new PathService();
             const translationService = new TranslationService();
             let path = translationService.path(data.language.code,'calendar/' + year + '/' + pathService.cleanString(data.slug));
