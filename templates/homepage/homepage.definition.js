@@ -35,8 +35,6 @@ module.exports = {
             let now = moment();
             let tomorrow = moment(now.add(1, 'day'));
 
-            logger.info(now.unix());
-
             let postOptions = {
                 query : {
                     "type":"post"
