@@ -23,7 +23,7 @@ class RSVP {
         //     console.log(data.results[0].waitlist_count);
         // });
 
-        let rsvpUrl = self.addCallback("https://api.meetup.com/3/" + self.meetupUrlName + "/events/" + self.meetupID + "/rsvps");
+        let rsvpUrl = self.addCallback("https://api.meetup.com/" + self.meetupUrlName + "/events/" + self.meetupID + "/rsvps");
 
         jsonpClient(rsvpUrl, function (err, data) {
             if(err) {
