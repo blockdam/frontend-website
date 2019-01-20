@@ -48,13 +48,13 @@
 
             {{ body.event.location.name }}<br/>
             {{ body.event.location.submitted_address }}
-            
+
 
             <h3>Sessions</h3>
 
             <ul>
 
-                <li> {{ formatDate body.event.date.startTime 'HH:mm'}}  </li>
+                <li> {{ formatDate body.event.date.startTime 'HH:mm'}} : open </li>
 
             {{#each body.sessions as |session| }}
 
@@ -66,7 +66,7 @@
 
             {{/each}}
 
-                <li> {{ formatDate body.event.date.endTime 'HH:mm'}}  </li>
+                <li> {{ formatDate body.event.date.endTime 'HH:mm'}} : close </li>
 
             </ul>
 
