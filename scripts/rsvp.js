@@ -14,13 +14,20 @@ class RSVP {
 
         let url = "https://api.meetup.com/2/events?key=36567d847437b42c29337351433b7a&group_urlname=ny-techsign=true";
 
-        axios.get(url)
-            .then(function(response){
-                if (response.status !== 200) {
-                    console.log('foutje bedankt')
-                }
-                console.log(response);
-            });
+        jsonpClient(url, function (err, data) {
+            if(err) {
+                console.log(err);
+            }
+            console.log(data);
+        });
+
+        // axios.get(url)
+        //     .then(function(response){
+        //         if (response.status !== 200) {
+        //             console.log('foutje bedankt')
+        //         }
+        //         console.log(response);
+        //     });
 
 
     }
