@@ -38,13 +38,13 @@ class RSVP {
                 if (rsvp.response === 'yes') {
 
                     let span = document.createElement('span');
-                    span.innerText(rsvp.member.name);
+                    span.innerText = rsvp.member.name;
                     self.rsvpList.appendChild(span);
 
                 } else if (rsvp.response === 'waitlist') {
 
                     let span = document.createElement('span');
-                    span.innerText(rsvp.member.name);
+                    span.innerText = rsvp.member.name;
                     self.waitList.appendChild(span);
                 }
 
