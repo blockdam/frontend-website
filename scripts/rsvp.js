@@ -32,7 +32,6 @@ class RSVP {
             if(err) {
                 console.log(err);
             }
-            console.log(response.data);
 
             response.data.forEach( (rsvp) => {
 
