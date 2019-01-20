@@ -54,8 +54,8 @@
 
             {{json body.event }}
 
-            {{ formatDate body.event.date.startDate 'DD MMMM'}}<br/>
-            {{ body.event.date.startDate }} - {{ body.event.date.endDate }}
+            {{ formatDate body.event.date.startTime 'DD MMMM'}}<br/>
+            {{ formatDate body.event.date.startTime 'hh:mm'}} - {{ formatDate body.event.date.endTime 'hh:mm'}}
 
         </div>
 
