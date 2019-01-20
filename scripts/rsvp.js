@@ -18,7 +18,7 @@ class RSVP {
             if(err) {
                 console.log(err);
             }
-            console.log(data);
+            console.log(data.results[0]);
         });
 
         // axios.get(url)
