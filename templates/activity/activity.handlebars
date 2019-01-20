@@ -46,14 +46,14 @@
 
             <h3>Locatie:</h3>
 
-            {{ body.sessions.[0].location.name }}<br/>
-            {{ body.sessions.[0].location.submitted_address }}
+            {{ body.event.location.name }}<br/>
+            {{ body.event.location.submitted_address }}
 
 
             <h3>Tijd:</h3>
 
-            {{ formatDate body.sessions.[0].calendar.startDate.date 'DD MMMM'}}<br/>
-            {{ body.sessions.[0].start_time }} - {{ body.sessions.[0].end_time }}
+            {{ formatDate body.event.date.startDate 'DD MMMM'}}<br/>
+            {{ body.event.date.startDate }} - {{ body.event.date.endDate }}
 
         </div>
 
