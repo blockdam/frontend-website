@@ -11,6 +11,18 @@ class RSVP {
         let self = this;
         self.meetupID = self.eventInfoBlock.getAttribute('data-meetup-id');
         console.log(self.meetupID);
+
+        let url = "https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=hsbcqqyzcbdc&page=20";
+
+        axios.post(url)
+            .then(function(response){
+                if (response.status !== 200) {
+                    console.log('foutje bedankt')
+                }
+                console.log(response);
+            });
+
+
     }
 
 
