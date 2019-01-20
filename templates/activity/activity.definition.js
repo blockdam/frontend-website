@@ -52,6 +52,7 @@ module.exports = {
     getPath: (data, correlationId) => { // path generator for path/url of the page
         return new Promise((resolve, reject) => {
 
+            logger.info(data);
             const year = moment(data.event.date.startDate, 'YYYY').format('YYYY');
             const pathService = new PathService();
             const translationService = new TranslationService();
@@ -107,7 +108,7 @@ module.exports = {
                 taxonomies: data.taxonomies,
                 eventIds: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.id }) : [],
                 eventSlugs: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.slug }) : [],
-                event: data.event,
+                event: data.event
 
             };
 
