@@ -12,7 +12,7 @@ class RSVP {
         self.meetupID = self.eventInfoBlock.getAttribute('data-meetup-id');
         console.log(self.meetupID);
 
-        let url = "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&event_id=hsbcqqyzcbdc&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming&sign=true&key=36567d847437b42c29337351433b7a";
+        let url = "https://api.meetup.com/2/events?key=36567d847437b42c29337351433b7a&group_urlname=ny-techsign=true";
 
         axios.get(url)
             .then(function(response){
