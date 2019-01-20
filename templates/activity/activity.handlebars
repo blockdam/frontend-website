@@ -57,7 +57,19 @@
 
             <h3>Sessions</h3>
 
-            {{json body.sessions }}
+            <ul>
+
+            {{#each body.sessions as |session| }}
+
+                <li>
+
+                    {{session.start_time}} - {{session.end_time}} : {{session.name}}
+
+                </li>
+
+            {{/each}}
+
+            </ul>
 
         </div>
 
