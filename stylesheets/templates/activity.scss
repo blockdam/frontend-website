@@ -15,4 +15,14 @@
   ul {
     list-style-type: none;
   }
+
+  .tab {
+
+    background: $dark-grey;
+    color: $creme;
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+
+    @include uppercase-small();
+  }
 }
