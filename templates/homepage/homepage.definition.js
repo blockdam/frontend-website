@@ -47,7 +47,7 @@ module.exports = {
             let activityOptions = {
                 query : {
                     "type":"activity",
-                    event.date.unix_startTime : { "$lte": now.unix() }
+                    "eventDate" : { "$lte": now.unix() }
                 },
                 "sort": {"event.date.unix_startTime":1},
                 "limit": 6
