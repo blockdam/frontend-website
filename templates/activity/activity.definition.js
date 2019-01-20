@@ -107,7 +107,7 @@ module.exports = {
                 eventIds: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.id }) : [],
                 eventSlugs: (data.taxonomies && data.taxonomies.events) ? data.taxonomies.events.map( c => { return c.slug }) : [],
                 event: data.event,
-                eventDate : data.event.date.unix_startTime
+                eventDate : parseInt(data.event.date.unix_startTime)
 
             };
 
