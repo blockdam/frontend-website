@@ -13,17 +13,20 @@ class RSVP {
 
         let self = this;
         self.meetupID = self.eventInfoBlock.getAttribute('data-meetup-id');
+        self.seatsToMeetID = self.eventInfoBlock.getAttribute('data-seatstomeet-id');
 
-        // let eventUrl = self.addCallback("https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=" + self.meetupID + "&page=20");
-        //
-        // jsonpClient(eventUrl, function (err, data) {
-        //     if(err) {
-        //         console.log(err);
-        //     }
-        //     console.log(data.results[0].rsvp_limit);
-        //     console.log(data.results[0].yes_rsvp_count);
-        //     console.log(data.results[0].waitlist_count);
-        // });
+        let eventUrl = self.addCallback("https://api.meetup.com/2/events?&sign=true&photo-host=public&event_id=" + self.meetupID + "&page=20");
+
+        jsonpClient(eventUrl, function (err, data) {
+            if(err) {
+                console.log(err);
+            }
+            console.log(data.results[0].rsvp_limit);
+            console.log(data.results[0].yes_rsvp_count);
+            console.log(data.results[0].waitlist_count);
+        });
+
+        console.log(self.seatsToMeetID);
 
 
         let rsvpUrl = self.addCallback("https://api.meetup.com/" + self.meetupUrlName + "/events/" + self.meetupID + "/rsvps?&sign=true&photo-host=public");
