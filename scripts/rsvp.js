@@ -26,11 +26,16 @@ class RSVP {
 
         let rsvpUrl = self.addCallback("https://api.meetup.com/" + self.meetupUrlName + "/events/" + self.meetupID + "/rsvps?&sign=true&photo-host=public");
 
-        jsonpClient(rsvpUrl, function (err, data) {
+        jsonpClient(rsvpUrl, function (err, response) {
             if(err) {
                 console.log(err);
             }
-            console.log(data);
+            console.log(response.data);
+
+            response.data.forEach( (rsvp) => {
+
+                console.log(rsvp.member.name + ' ' + rsvp.response);
+            });
         });
 
 
