@@ -18,7 +18,9 @@ class RSVP {
             if(err) {
                 console.log(err);
             }
-            console.log(data.results[0]);
+            console.log(data.results[0].rsvp_limit);
+            console.log(data.results[0].yes_rsvp_count);
+            console.log(data.results[0].waitlist_count);
         });
 
         // axios.get(url)
