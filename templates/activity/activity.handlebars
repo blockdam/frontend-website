@@ -44,16 +44,20 @@
 
         <div class="event-info container-small">
 
-            <h3>Locatie:</h3>
+            <h3>Location:</h3>
 
             {{ body.event.location.name }}<br/>
             {{ body.event.location.submitted_address }}
 
 
-            <h3>Tijd:</h3>
+            <h3>Time:</h3>
 
             {{ formatDate body.event.date.startTime 'DD MMMM'}}<br/>
             {{ formatDate body.event.date.startTime 'HH:mm'}} - {{ formatDate body.event.date.endTime 'HH:mm'}}
+
+            <h3>Sessions</h3>
+
+            {{json body.sessions }}
 
         </div>
 
