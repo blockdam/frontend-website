@@ -47,7 +47,7 @@ module.exports = {
             let activityOptions = {
                 query : {
                     "type":"activity",
-                    "event.date.unix_startTime" : { "$gte": tomorrow.unix() }
+                    // "event.date.unix_startTime" : { "$gte": tomorrow.unix() }
                 },
                 "sort": {"event.date.unix_startTime":1},
                 "limit": 6
