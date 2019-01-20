@@ -46,6 +46,8 @@ class RSVP {
 
                     let span = document.createElement('span');
                     span.innerText = rsvp.member.name;
+                    span.classList.add("tab");
+                    span.classList.add("creme");
                     self.waitList.appendChild(span);
                 }
 
