@@ -5,6 +5,8 @@ class RSVP {
         this.meetupApiKey = "36567d847437b42c29337351433b7a";
         this.meetupUrlName = "Permissionless-Society";
         this.eventInfoBlock = document.querySelector('.event-info');
+        this.rsvpList = document.querySelector('#rsvp-list');
+        this.waitList = document.querySelector('#wait-list');
     }
 
     init() {
@@ -34,7 +36,19 @@ class RSVP {
 
             response.data.forEach( (rsvp) => {
 
-                console.log(rsvp.member.name + ' ' + rsvp.response);
+                if (rsvp.response === 'yes') {
+
+                    let span = document.createElement('span');
+                    span.innerText(rsvp.member.name);
+                    self.rsvpList.appendChild(span);
+
+                } else if (rsvp.response === 'waitlist') {
+
+                    let span = document.createElement('span');
+                    span.innerText(rsvp.member.name);
+                    self.waitList.appendChild(span);
+                }
+
             });
         });
 
