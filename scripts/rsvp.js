@@ -12,7 +12,7 @@ class RSVP {
         self.meetupID = self.eventInfoBlock.getAttribute('data-meetup-id');
         console.log(self.meetupID);
 
-        let url = addCallback("https://api.meetup.com/2/events?key=36567d847437b42c29337351433b7a&group_urlname=ny-techsign=true");
+        let url = self.addCallback("https://api.meetup.com/2/events?key=36567d847437b42c29337351433b7a&group_urlname=ny-techsign=true");
 
         jsonpClient(url, function (err, data) {
             if(err) {
