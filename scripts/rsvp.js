@@ -40,10 +40,11 @@ class RSVP {
 
                 if (rsvp.response === 'yes') {
 
-                    let span = document.createElement('span');
-                    span.classList.add("tab");
-                    span.innerText = rsvp.member.name;
-                    self.rsvpList.appendChild(span);
+                    let a = document.createElement('a');
+                    a.classList.add("tab");
+                    a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + /profile;
+                    a.innerText = rsvp.member.name;
+                    self.rsvpList.appendChild(a);
 
                 } else if (rsvp.response === 'waitlist') {
 
