@@ -43,6 +43,7 @@ class RSVP {
                     let a = document.createElement('a');
                     a.classList.add("tab");
                     a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + "/profile";
+                    a.target = "_blank";
                     a.innerText = rsvp.member.name;
                     self.rsvpList.appendChild(a);
 
