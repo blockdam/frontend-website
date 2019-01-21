@@ -42,7 +42,7 @@ class RSVP {
 
                     let a = document.createElement('a');
                     a.classList.add("tab");
-                    a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + /profile;
+                    a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + "/profile";
                     a.innerText = rsvp.member.name;
                     self.rsvpList.appendChild(a);
 
