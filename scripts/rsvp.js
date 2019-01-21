@@ -49,11 +49,12 @@ class RSVP {
 
                 } else if (rsvp.response === 'waitlist') {
 
-                    let span = document.createElement('span');
-                    span.innerText = rsvp.member.name;
-                    span.classList.add("tab");
-                    span.classList.add("creme");
-                    self.waitList.appendChild(span);
+                    let span = document.createElement('a');
+                    a.innerText = rsvp.member.name;
+                    a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + "/profile";
+                    a.classList.add("tab");
+                    a.classList.add("creme");
+                    self.waitList.appendChild(a);
                 }
 
             });
