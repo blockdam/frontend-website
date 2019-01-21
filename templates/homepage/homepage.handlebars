@@ -78,11 +78,11 @@
 
                         <a class="event" href="{{activity.url}}">
                             <div class="data-combo">
-                                <span class="date">{{formatDate activity.calendar.startDate.date 'DD'}}</span>
-                                <span class="date">{{formatDate activity.calendar.startDate.date 'MMM'}}</span>
+                                <span class="date">{{formatDate activity.event.date.startTime 'DD'}}</span>
+                                <span class="date">{{formatDate activity.event.date.startTime 'MMM'}}</span>
                             </div>
                             <div>
-                                <span class="location">{{ activity.sessions.[0].location.name }}</span>
+                                <span class="location">{{ activity.sessions.event.location.name }}</span>
                                 <h2>{{activity.title}}</h2>
                             </div>
                         </a>
