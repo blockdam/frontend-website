@@ -49,7 +49,7 @@ class RSVP {
 
                 } else if (rsvp.response === 'waitlist') {
 
-                    let span = document.createElement('a');
+                    let a = document.createElement('a');
                     a.innerText = rsvp.member.name;
                     a.href = "http://meetup.com/Permissionless-Society/members/" + rsvp.member.id + "/profile";
                     a.classList.add("tab");
