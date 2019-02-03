@@ -16,8 +16,8 @@
 
                 <div class="post-intro--stats">
                     <div class="event-date">
-                        <span class="date">{{formatDate body.calendar.startDate.date 'DD'}}</span>
-                        <span class="date">{{formatDate body.calendar.startDate.date 'MMM'}}</span>
+                        <span class="date">{{formatDate body.event.date.startTime 'DD'}}</span>
+                        <span class="date">{{formatDate body.event.date.startTime 'MMM'}}</span>
                     </div>
 
                     <div class="post-intro--stats--votes--up">{{>icon-thumbs-up}}<span>{{body.interaction.appreciation.positive_count}}</span></div>
