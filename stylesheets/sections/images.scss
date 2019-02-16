@@ -52,6 +52,14 @@
     display: flex;
     flex-direction: column;
 
+    > img-container . img {
+      filter: grayscale(1);
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+
     > .image-item-overlay {
 
       position: absolute;
