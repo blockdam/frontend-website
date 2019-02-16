@@ -106,6 +106,7 @@ module.exports = {
                 interaction: data.interaction,
                 sections: data.sections,
                 main_image: data.main_image,
+                source: data.source
 
 
             };
