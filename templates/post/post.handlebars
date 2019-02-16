@@ -27,6 +27,10 @@
                         <h2 class="">{{{body.title.rendered}}}</h2>
                         <div class="date">{{formatDate body.date 'D MMMM YYYY'}}</div>
 
+                        {{#if body.source.source_url }}
+                            <div class="source"><a href="{{body.source.source_url}}">{{body.source.source_description}}</a></div>
+                        {{/if}}
+
                     </div>
 
                 </div>
