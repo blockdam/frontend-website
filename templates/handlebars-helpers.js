@@ -109,7 +109,7 @@ module.exports = [{
             if (type === 'image-full-width' || type === 'images-duo-full-width' || type === 'documents') {
                 return 'full-width';
             } else if (type === 'image-single-large' || type === 'images-trio' || type === 'image-single-left' || type === 'image-single-right') {
-                return 'container-large';
+                return 'container-small';
             } else if (type === 'streamer') {
                 return 'container-small';
             } else if (type === 'video' || type === 'paragraph' || type === 'images-duo' || type === 'tweet' || type === 'paragraph-plus' || type === 'quote' || type === 'story') {
