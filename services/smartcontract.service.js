@@ -24,7 +24,7 @@ class SmartContractService {
 
                         return collection.find({
                             '_id': {
-                                $in : [IdList]
+                                $in : []
                             }
                         });
                 })
