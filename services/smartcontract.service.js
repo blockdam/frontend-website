@@ -26,16 +26,14 @@ class SmartContractService {
 
                     let promises = [];
 
-                    IdList.forEach( (id) => {
+                    IdList.forEach( (item) => {
 
-                        promises.push(
-                            collection.find({
-                                '_id': id
-                            })
-                        );
+                        item = collection.find({
+                                '_id': item.id
+                            });
                     });
 
-                    return promises; // []; // Promise.all(promises);
+                    return IdList; // []; // Promise.all(promises);
                 })
                 .then((result) => {
                     logger.info(result);
