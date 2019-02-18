@@ -35,7 +35,7 @@ class SmartContractService {
                         );
                     });
 
-                    return Promise.all(promises);
+                    return promises; // []; // Promise.all(promises);
                 })
                 .then((result) => {
                     logger.info(result);
