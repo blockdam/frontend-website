@@ -28,8 +28,6 @@ class ReadingList {
 
         let self = this;
 
-        console.log(index);
-
         self.forms.forEach( (f) => {
             f.classList.remove('open');
         });
@@ -110,7 +108,6 @@ class ReadingList {
         // contract with limited slots (wil ik alleen een id aan toewijzen )
         // betaling      // amount diminishes per day
         let contractIndex = parseInt(index) + 1;
-        console.log(contractIndex);
         self.contract.addLink(linkId, contractIndex, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
             if (err) {
                 console.log(err)
