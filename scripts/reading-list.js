@@ -54,7 +54,6 @@ class ReadingList {
 
         let self = this,
             api = 'https://blockdam.nl/smc-api/reading-list';
-        console.log(api);
 
 
         // get metadata
@@ -110,7 +109,9 @@ class ReadingList {
         let self = this;
         // contract with limited slots (wil ik alleen een id aan toewijzen )
         // betaling      // amount diminishes per day
-        self.contract.addLink(linkId, parseInt(index) + 1, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
+        let contractIndex = parseInt(index) + 1;
+        console.log(contractIndex);
+        self.contract.addLink(linkId, contractIndex, { from: web3.eth.coinbase, gas: 800000 }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
