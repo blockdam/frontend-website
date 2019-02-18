@@ -24,9 +24,9 @@ class SmartContractService {
 
                         return collection.find({
                             '_id': {
-                                $in : []
+                                $in : IdList
                             }
-                        });
+                        }).toArray();
                 })
                 .then((result) => {
                     resolve(result);
