@@ -155,9 +155,9 @@ class ReadingList {
         self.items[index].querySelector('.recommendation--subtitle').setAttribute("contenteditable", false);
         self.items[index].querySelector('a').classList.remove('hidden');
 
-        let api = 'https://blockdam.nl/sg-api/content';
+        let api = 'https://blockdam.nl/sg-api/render/homepage';
 
-        axios.post(api)
+        axios.get(api)
         .then(function(response){
             if (response.status !== 200) {
                 console.log('foutje bedankt')
