@@ -28,6 +28,12 @@ class SmartContractService {
                     }).toArray();
                 })
                 .then((result) => {
+
+                    // let orderedArray = [];
+                    // IdList.forEach( () => {
+                    //
+                    //
+                    // });
                     resolve(result);
                 })
                 .catch( (err) => {

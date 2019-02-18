@@ -28,6 +28,8 @@ class ReadingList {
 
         let self = this;
 
+        console.log(index);
+
         self.forms.forEach( (f) => {
             f.classList.remove('open');
         });
