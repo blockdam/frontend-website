@@ -18,7 +18,7 @@ class SmartContractService {
                 .then( array => {
 
                     IdList = array.map( id => ObjectId(id));
-                    logger.info(IdList);
+
                     return db.getLinksCollection()
                 })
                 .then((collection) => {
@@ -29,6 +29,8 @@ class SmartContractService {
                     }).toArray();
                 })
                 .then((result) => {
+
+                    logger.info(IdList);
                     resolve(result);
                 })
                 .catch( (err) => {
