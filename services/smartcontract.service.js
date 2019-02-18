@@ -27,18 +27,17 @@ class SmartContractService {
                     let promises = [];
 
                     IdList.forEach( (item) => {
-
-                        let it = collection.find({
+                        promises.push(
+                            return collection.find({
                                 '_id': item.id
-                            });
-
-                        logger.info(it);
+                            })
+                        );
                     });
 
-                    return IdList; // []; // Promise.all(promises);
+                    return Promise.all(promises);
                 })
                 .then((result) => {
-
+                    logger.info(result);
                     resolve(result);
                 })
                 .catch( (err) => {
