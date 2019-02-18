@@ -11,7 +11,6 @@ class SmartContractService {
 
         let smartContractHubConnector = new SmartContractHubConnector();
         let IdList;
-        let
 
         return new Promise((resolve, reject) => {
 
