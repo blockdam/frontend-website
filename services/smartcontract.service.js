@@ -11,7 +11,7 @@ class SmartContractService {
 
         let smartContractHubConnector = new SmartContractHubConnector();
         let IdList;
-        let Linkarray = []
+        let
 
         return new Promise((resolve, reject) => {
 
@@ -24,20 +24,13 @@ class SmartContractService {
                 })
                 .then((collection) => {
 
-                    let promises = [];
-
-                    IdList.forEach( (item) => {
-                        promises.push(
-                            return collection.find({
-                                '_id': item.id
-                            })
-                        );
-                    });
-
-                    return Promise.all(promises);
+                        return collection.find({
+                            '_id': {
+                                $in : IdList
+                            }
+                        });
                 })
                 .then((result) => {
-                    logger.info(result);
                     resolve(result);
                 })
                 .catch( (err) => {
