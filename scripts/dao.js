@@ -55,7 +55,7 @@ class Dao {
     checkPermissions(userAddress) {
 
         let self = this,
-            url = 'https://blockdam.nl/smc-api/permissions';
+            url = 'https://blockdam.nl/smc-api/dao/permissions';
 
         axios.post(url,{
             userAddress: userAddress
