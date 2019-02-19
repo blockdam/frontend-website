@@ -4,6 +4,7 @@ class Dao {
     constructor() {
 
         this.container = document.querySelector('#content-container');
+        this.permissions = {};
     }
 
     init() {
@@ -11,7 +12,7 @@ class Dao {
 
         // getAddress()
 
-        console.log(metaMask.userAddress);
+        this.permissions = this.checkPermissions(metaMask.userAddress);
 
         let self = this,
             url = 'https://blockdam.nl/smc-api/members';
@@ -51,11 +52,25 @@ class Dao {
         this.container.appendChild(table);
     }
 
-    isMinter() {
+    checkPermissions(userAddress) {
 
+        let self = this,
+            url = 'https://blockdam.nl/smc-api/permissions';
 
+        axios.post(url,{
+            userAddress: userAddress
+        })
+            .then(function (response) {
+                console.log(response.data);
+
+                // is minter
+                // return no of vouchers
+
+            });
 
     }
+
+
 
 }
 
