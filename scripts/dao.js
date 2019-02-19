@@ -95,14 +95,32 @@ class Dao {
                 console.log(errors);
             } else {
                 let address = form.querySelector("#address").value;
-                let amount = form.querySelector("input[type='number']").value;
-                self.mint(address,amount);
+                let amount = parseInt(form.querySelector("input[type='number']").value);
+                if (address && amount > 0) {
+                    self.mint(address, amount);
+                }
             }
         });
     }
 
     mint(address,amount) {
 
+        let self = this,
+            url = 'https://blockdam.nl/smc-api/dao/mint';
+
+        return new Promise((resolve, reject) => {
+
+            axios.post(url, {
+                'ethAddress': address,
+                'vouchers': amount
+            })
+            .then(function (response) {
+                resolve(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        });
     }
 
     createVoucher(permissions) {
