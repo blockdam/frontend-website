@@ -58,6 +58,7 @@ class MetaMask {
                     // check if address of active metaMask account is on list of dao members
                     self.userAddress = web3.eth.accounts[0];
                     self.identify(web3.eth.accounts[0]);
+                    console.log(self.userAddress);
 
                     // connect to smart contracts
                     self.getBCDToken();
