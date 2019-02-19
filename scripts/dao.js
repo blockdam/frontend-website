@@ -15,15 +15,15 @@ class Dao {
 
         this.checkPermissions(metaMask.userAddress).then( permissions => {
 
-            if (permissions.minter) {
-                self.createMinter(permissions);
-            }
-
-            self.createVoucher(permissions);
-
-        }).catch(function (error) {
-                console.log(error);
-            });
+            // if (permissions.minter) {
+            //     self.createMinter(permissions);
+            // }
+            //
+            // self.createVoucher(permissions);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
     createMemberList(members) {
