@@ -13,7 +13,7 @@ class Dao {
         let self = this,
             url = 'https://blockdam.nl/smc-api/members';
 
-        this.checkPermissions(metaMask.userAddress).then( (permissions) => {
+        this.checkPermissions(metaMask.userAddress).then( permissions => {
 
             if (permissions.minter) {
                 self.createMinter();
@@ -22,7 +22,7 @@ class Dao {
             self.createVoucher(permissions.vouchers);
 
         })
-        
+
         axios.get(url)
             .then(function (response) {
                 self.createMemberList(response.data);
@@ -63,17 +63,18 @@ class Dao {
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/permissions';
 
-        axios.post(url,{
-            userAddress: userAddress
-        })
-        .then(function (response) {
+        return new Promise((res, rej) => {
 
-            return response.data;
-        })
-        .catch(function (error) {
-            console.log(error);
+            axios.post(url, {
+                userAddress: userAddress
+            })
+                .then(function (response) {
+                    res(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         });
-
     }
 
     createMinter() {
