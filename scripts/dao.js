@@ -63,13 +63,13 @@ class Dao {
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/permissions';
 
-        return new Promise((res, rej) => {
+        return new Promise((resolve, reject) => {
 
             axios.post(url, {
                 userAddress: userAddress
             })
                 .then(function (response) {
-                    res(response.data);
+                    resolve(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
