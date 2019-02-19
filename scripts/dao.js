@@ -108,19 +108,18 @@ class Dao {
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/mint';
 
-        return new Promise((resolve, reject) => {
 
-            axios.post(url, {
-                'ethAddress': address,
-                'vouchers': amount
-            })
-            .then(function (response) {
-                resolve(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        axios.post(url, {
+            'ethAddress': address,
+            'vouchers': amount
+        })
+        .then(function (response) {
+            resolve(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
         });
+
     }
 
     createVoucher(permissions) {
