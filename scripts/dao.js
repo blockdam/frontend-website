@@ -16,10 +16,10 @@ class Dao {
         this.checkPermissions(metaMask.userAddress).then( permissions => {
 
             if (permissions.minter) {
-                self.createMinter();
+                self.createMinter(permissions);
             }
 
-            self.createVoucher(permissions.vouchers);
+            self.createVoucher(permissions);
 
         })
 
