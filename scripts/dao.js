@@ -114,7 +114,7 @@ class Dao {
             'vouchers': amount
         })
         .then(function (response) {
-            resolve(response.data);
+            console.log(response.data);
         })
         .catch(function (error) {
             console.log(error);
