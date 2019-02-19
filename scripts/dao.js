@@ -54,6 +54,8 @@ class Dao {
 
     checkPermissions(userAddress) {
 
+        console.log(userAddress);
+
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/permissions';
 
