@@ -23,13 +23,6 @@
 
       @include uppercase();
       font-size: .725rem;
-
-      &:last-of-type {
-
-        padding-bottom: .5rem;
-        border-bottom: 1px solid $grey;
-        margin-bottom: .5rem;
-      }
     }
 
     form {
@@ -57,6 +50,19 @@
       button {
         width: 100%;
         margin: 1rem 0;
+      }
+    }
+  }
+
+  #minter {
+
+    > div {
+
+      &:last-of-type {
+
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $grey;
+        margin-bottom: .5rem;
       }
     }
   }
