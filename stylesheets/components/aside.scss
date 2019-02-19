@@ -1,0 +1,24 @@
+aside {
+
+  > div  {
+    margin: 1rem 3rem;
+
+    h3  {
+      @include uppercase();
+      font-size: 1rem;
+      line-height: 1.8;
+      background: $dark-grey;
+      color: #fff;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      width: calc(100% - 2rem);
+      text-align: center;
+    }
+    > div  {
+
+      @include uppercase();
+      font-size: .725rem;
+
+    }
+  }
+}

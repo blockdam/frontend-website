@@ -94,6 +94,7 @@ class Dao {
         let minter = document.createElement('div');
         minter.id = 'minter';
 
+
         minter.appendChild(header);
         minter.appendChild(period);
         minter.appendChild(budget);
