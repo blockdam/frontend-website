@@ -66,8 +66,13 @@
     align-items: center;
 
     .amount {
-
       font-size: 8rem;
+      line-height: 1;
     }
+
+    label {
+      font-size: 2rem;
+    }
+
   }
 }
