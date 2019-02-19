@@ -109,16 +109,16 @@ class Dao {
             url = 'https://blockdam.nl/smc-api/dao/mint';
 
 
-        axios.post(url, {
-            'ethAddress': address,
-            'vouchers': amount
-        })
-        .then(function (response) {
-            console.log(response.data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        // axios.post(url, {
+        //     'ethAddress': address,
+        //     'vouchers': amount
+        // })
+        // .then(function (response) {
+        //     console.log(response.data);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // });
 
     }
 
