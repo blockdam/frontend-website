@@ -82,6 +82,8 @@ class Dao {
         let self = this,
             minter = document.querySelector('#minter');
 
+        minter.style.display = 'flex';
+
         minter.querySelector('.period').innerText = 'Mandated till ' + moment(permissions.minter.period).format('DD-MM-YYYY');
         minter.querySelector('.budget').innerText = 'Budget: ' + permissions.minter.budget;
 
