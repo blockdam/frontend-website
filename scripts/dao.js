@@ -101,11 +101,16 @@ class Dao {
         });
     }
 
-    mint(address,amout) {
+    mint(address,amount) {
 
     }
 
     createVoucher() {
+
+        let self = this,
+            voter = document.querySelector('#voter');
+
+        voter.style.display = 'flex';
 
     }
 }
