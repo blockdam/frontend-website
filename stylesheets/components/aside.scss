@@ -28,6 +28,8 @@
 
     form {
 
+      position: relative;
+
       > div {
         display: flex;
         flex-direction: column;
@@ -43,9 +45,11 @@
             height: 1.5rem;
             line-height: 1.5rem;
           }
-          button {
-            width: 100%;
-          }
+
+      }
+
+      button {
+        width: 100%;
       }
     }
   }
