@@ -85,7 +85,7 @@ class Dao {
         header.innerText = 'You are a minter';
 
         let period = document.createElement('div');
-        period.innerText = 'Mandated till ' + new Date(permissions.minter.period).format('DD-MM-YYYY');
+        period.innerText = 'Mandated till ' + moment(permissions.minter.period).format('DD-MM-YYYY');
         let budget = document.createElement('div');
         budget.innerText = 'Budget: ' + permissions.minter.budget
 
