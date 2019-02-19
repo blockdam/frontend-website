@@ -33,7 +33,7 @@ module.exports = {
             let smartContractService = new SmartContractService();
 
             let now = moment();
-            let tomorrow = moment(now.add(1, 'day'));
+            let tomorrow = moment(now.subtract(1, 'day'));
 
             let postOptions = {
                 query : {
