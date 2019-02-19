@@ -8,6 +8,11 @@ class Dao {
 
     init() {
 
+
+        // getAddress()
+
+        console.log(metaMask.userAddress);
+
         let self = this,
             url = 'https://blockdam.nl/smc-api/members';
 
@@ -17,9 +22,9 @@ class Dao {
             });
     }
 
-    createHTML(transactions) {
+    createHTML(members) {
 
-        transactions.sort(function(a, b){
+        members.sort(function(a, b){
             if(a.nickName < b.nickName) { return 1; }
             if(a.nickName > b.nickName) { return -1; }
             return 0;
@@ -28,7 +33,7 @@ class Dao {
         let table = document.createElement('table');
         table.classList.add('default');
 
-        transactions.reverse().forEach((m) => {
+        members.reverse().forEach((m) => {
 
             let tr = document.createElement('tr');
 
@@ -44,6 +49,12 @@ class Dao {
         });
 
         this.container.appendChild(table);
+    }
+
+    isMinter() {
+
+
+
     }
 
 }
