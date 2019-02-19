@@ -21,6 +21,30 @@ aside {
       @include uppercase();
       font-size: .725rem;
 
+
+
+    form {
+
+      > div {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          @include uppercase();
+          font-size: .725rem;
+        }
+
+        input {
+
+          height: 2rem;
+          line-height: 2rem;
+        }
+        button {
+          width: 100%;
+        }
+      }
+
+      }
     }
   }
 }
