@@ -81,17 +81,24 @@ class Dao {
 
         let self = this;
 
+
+
         let header = document.createElement('h3');
-        header.innerText = 'You are a minter';
+        header.innerText = 'Minter';
 
         let period = document.createElement('div');
         period.innerText = 'Mandated till ' + moment(permissions.minter.period).format('DD-MM-YYYY');
         let budget = document.createElement('div');
-        budget.innerText = 'Budget: ' + permissions.minter.budget
+        budget.innerText = 'Budget: ' + permissions.minter.budget;
 
-        self.aside.appendChild(header);
-        self.aside.appendChild(period);
-        self.aside.appendChild(budget);
+        let minter = document.createElement('div');
+        minter.id = 'minter';
+
+        minter.appendChild(header);
+        minter.appendChild(period);
+        minter.appendChild(budget);
+
+        self.aside.appendChild(minter);
 
     }
 
