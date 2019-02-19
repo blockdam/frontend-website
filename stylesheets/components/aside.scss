@@ -9,6 +9,7 @@
     flex-direction: column;
 
     h3  {
+      position: relative;
       @include uppercase();
       font-size: 1rem;
       line-height: 1.8;
