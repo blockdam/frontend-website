@@ -10,21 +10,19 @@ class Dao {
 
     init() {
 
-
-        // getAddress()
-
-        this.permissions = this.checkPermissions(metaMask.userAddress);
-
-        if (this.permissions.minter) {
-            this.createMinter();
-        }
-
-        this.createVoucher(this.permissions.vouchers);
-
-
         let self = this,
             url = 'https://blockdam.nl/smc-api/members';
 
+        this.checkPermissions(metaMask.userAddress).then( (permissions) => {
+
+            if (permissions.minter) {
+                self.createMinter();
+            }
+
+            self.createVoucher(permissions.vouchers);
+
+        })
+        
         axios.get(url)
             .then(function (response) {
                 self.createMemberList(response.data);
