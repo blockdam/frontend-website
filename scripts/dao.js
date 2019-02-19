@@ -93,12 +93,6 @@ class Dao {
     createVoucher() {
 
     }
-
-
-}
-
-
-
 }
 
 var members = new Dao();
