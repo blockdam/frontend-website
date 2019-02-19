@@ -82,6 +82,8 @@ class Dao {
 
         let self = this;
 
+        console.log('hi');
+
         let header = document.createElement('h3');
         header.innerText('You are a minter');
         self.aside.appendChild(header);
