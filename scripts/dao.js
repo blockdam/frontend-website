@@ -93,7 +93,7 @@ class Dao {
             } else {
                 let address = form.querySelector("#address").value;
                 let amount = parseInt(form.querySelector("input[type='number']").value);
-                if (address && metaMask.web3.utils.isAddress(address) && amount > 0) {
+                if (address && amount > 0) {
                     self.mint(address, amount);
                 }
             }
