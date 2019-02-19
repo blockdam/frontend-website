@@ -3,6 +3,7 @@ aside {
   > div  {
     margin: 1rem 3rem;
     display: none;
+    flex-direction: column;
 
     h3  {
       @include uppercase();
