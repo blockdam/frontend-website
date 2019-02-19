@@ -79,27 +79,27 @@ class Dao {
 
     createMinter(permissions) {
 
-        let self = this;
+        let self = this,
+            minter = document.querySelector('#minter');
 
+        minter.querySelector('.period').innerText = 'Mandated till ' + moment(permissions.minter.period).format('DD-MM-YYYY');
+        minter.querySelector('.budget').innerText = 'Budget: ' + permissions.minter.budget;
 
+        let form = minter.querySelector('form');
 
-        let header = document.createElement('h3');
-        header.innerText = 'Minter';
+        form.addEventListener("submit", function(event, errors) {
+            event.preventDefault();
+            if(errors) {
+                console.log(errors);
+            } else {
+                let address = form.querySelector("#address").value;
+                let amount = form.querySelector("input[type='number']").value;
+                self.mint(address,amount);
+            }
+        });
+    }
 
-        let period = document.createElement('div');
-        period.innerText = 'Mandated till ' + moment(permissions.minter.period).format('DD-MM-YYYY');
-        let budget = document.createElement('div');
-        budget.innerText = 'Budget: ' + permissions.minter.budget;
-
-        let minter = document.createElement('div');
-        minter.id = 'minter';
-
-
-        minter.appendChild(header);
-        minter.appendChild(period);
-        minter.appendChild(budget);
-
-        self.aside.appendChild(minter);
+    mint(address,amout) {
 
     }
 

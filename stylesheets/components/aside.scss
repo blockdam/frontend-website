@@ -2,6 +2,7 @@ aside {
 
   > div  {
     margin: 1rem 3rem;
+    display: none;
 
     h3  {
       @include uppercase();
