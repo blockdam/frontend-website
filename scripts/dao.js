@@ -60,13 +60,13 @@ class Dao {
         axios.post(url,{
             userAddress: userAddress
         })
-            .then(function (response) {
-                console.log(response.data);
-
-                // is minter
-                // return no of vouchers
-
-            });
+        .then(function (response) {
+            console.log(response.data);
+            // returns object with permissions
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 
     }
 
