@@ -108,9 +108,12 @@ class Dao {
     createVoucher(permissions) {
 
         let self = this,
-            voter = document.querySelector('#voter');
+            voter = document.querySelector('#voter'),
+            proposal = document.querySelector('#proposal');
 
         voter.style.display = 'flex';
+        proposal.style.display = 'flex';
+
         voter.querySelector('.amount').innerText = permissions.vouchers;
 
 
