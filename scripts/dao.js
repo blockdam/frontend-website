@@ -77,15 +77,21 @@ class Dao {
         });
     }
 
-    createMinter() {
+    createMinter(permissions) {
 
         let self = this;
 
-        console.log('hi');
-
         let header = document.createElement('h3');
-        header.innerText = 'You have the power to mint';
+        header.innerText = 'You are a minter';
+
+        let period = document.createElement('div');
+        period.innerText = 'Mandate untill ' + permissions.minter.period;
+        let budget = document.createElement('div');
+        budget.innerText = 'Budget: ' + permissions.minter.budget
+
         self.aside.appendChild(header);
+        self.aside.appendChild(period);
+        self.aside.appendChild(budget);
 
     }
 
