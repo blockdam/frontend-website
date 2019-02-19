@@ -41,7 +41,7 @@ class MetaMask {
         } else {
             // user has the metaMask addon
             // create web3 object
-            window.web3 = new Web3(ethereum);
+            self.web3 = window.web3 = new Web3(ethereum);
 
             try {
                 // connect to network
