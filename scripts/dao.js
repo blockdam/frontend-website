@@ -105,12 +105,14 @@ class Dao {
 
     }
 
-    createVoucher() {
+    createVoucher(permissions) {
 
         let self = this,
             voter = document.querySelector('#voter');
 
         voter.style.display = 'flex';
+        voter.querySelector('.amount').innerText = permissions.vouchers;
+
 
     }
 }
