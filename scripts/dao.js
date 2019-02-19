@@ -84,7 +84,7 @@ class Dao {
         console.log('hi');
 
         let header = document.createElement('h3');
-        header.innerText = 'You are a minter';
+        header.innerText = 'You have the power to mint';
         self.aside.appendChild(header);
 
     }
