@@ -31,6 +31,7 @@
       > div {
         display: flex;
         flex-direction: column;
+        margin: .25rem 0;
 
           label {
             @include uppercase();
@@ -39,8 +40,8 @@
 
           input {
 
-            height: 2rem;
-            line-height: 2rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
           }
           button {
             width: 100%;
