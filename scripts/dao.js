@@ -116,7 +116,6 @@ class Dao {
         .catch(function (error) {
             console.log(error);
         });
-
     }
 
     createVoucher(permissions) {
