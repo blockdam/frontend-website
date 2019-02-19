@@ -105,7 +105,6 @@ class Dao {
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/mint';
 
-
         axios.post(url, {
             'ethAddress': address,
             'vouchers': amount
