@@ -102,6 +102,8 @@ class Dao {
 
     mint(address,amount) {
 
+        console.log(address);
+
         let self = this,
             url = 'https://blockdam.nl/smc-api/dao/mint';
 
