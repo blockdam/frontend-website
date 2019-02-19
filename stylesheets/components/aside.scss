@@ -1,6 +1,6 @@
 #dao aside {
 
-  padding-top: 9rem;
+  padding-top: 12rem;
   justify-content: flex-start;
 
   > div  {
@@ -23,9 +23,7 @@
 
       @include uppercase();
       font-size: .725rem;
-
-
-
+      
     form {
 
       > div {
