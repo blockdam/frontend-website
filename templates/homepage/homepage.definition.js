@@ -1,7 +1,7 @@
 const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
-const DiscussionService = require('../../services/discussion.service');
-const SmartContractService = require('../../services/smartcontract.service');
+// const DiscussionService = require('../../services/discussion.service');
+// const SmartContractService = require('../../services/smartcontract.service');
 
 const logger = require('../../../services/logger.service');
 
@@ -29,55 +29,55 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             let pagePersistence = new PagePersistence();
-            let discussionService = new DiscussionService();
-            let smartContractService = new SmartContractService();
+          //   let discussionService = new DiscussionService();
+          //   let smartContractService = new SmartContractService();
+          //
+          //   let now = moment();
+          //   let tomorrow = moment(now.subtract(1, 'day'));
+          //
+          //   let postOptions = {
+          //       query : {
+          //           "type":"post"
+          //       },
+          //       "sort": {"date":-1},
+          //       "limit": 6
+          //   };
+          //
+          //   let activityOptions = {
+          //       query : {
+          //           "type":"activity",
+          //           "eventDate" : { "$gte": now.unix() }
+          //       },
+          //       "sort": {"eventDate":1},
+          //       "limit": 6
+          //   };
+          //
+          //   let linkRecommendationOptions = {
+          //       query : {
+          //           "type":"link-recommendations"
+          //       },
+          //       "sort": {"date":-1}
+          //   };
+          //
+          //   let findPosts = pagePersistence.find(postOptions);
+          //   let findActivities = pagePersistence.find(activityOptions);
+          // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
+          //   let getDiscussion = discussionService.get();
+          //   let getReadingList = smartContractService.getReadingList();
 
-            let now = moment();
-            let tomorrow = moment(now.subtract(1, 'day'));
 
-            let postOptions = {
-                query : {
-                    "type":"post"
-                },
-                "sort": {"date":-1},
-                "limit": 6
-            };
-
-            let activityOptions = {
-                query : {
-                    "type":"activity",
-                    "eventDate" : { "$gte": now.unix() }
-                },
-                "sort": {"eventDate":1},
-                "limit": 6
-            };
-
-            let linkRecommendationOptions = {
-                query : {
-                    "type":"link-recommendations"
-                },
-                "sort": {"date":-1}
-            };
-
-            let findPosts = pagePersistence.find(postOptions);
-            let findActivities = pagePersistence.find(activityOptions);
-          //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
-            let getDiscussion = discussionService.get();
-            let getReadingList = smartContractService.getReadingList();
-
-
-			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
-
-				data.posts = values[0];
-                data.activities = values[1];
-				data.links = values[3];
-                data.discussion = values[2];
-
-                logger.info(values[3]);
-
-				// logger.info('Get template data', correlationId)
-				resolve(data)
-			})
+			// Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
+            //
+			// 	data.posts = values[0];
+             //    data.activities = values[1];
+			// 	data.links = values[3];
+             //    data.discussion = values[2];
+            //
+             //    logger.info(values[3]);
+            //
+			// 	// logger.info('Get template data', correlationId)
+			// 	resolve(data)
+			// })
         })
     },
 
