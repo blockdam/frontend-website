@@ -29,8 +29,8 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             let pagePersistence = new PagePersistence();
-          //   let discussionService = new DiscussionService();
-          //   let smartContractService = new SmartContractService();
+            let discussionService = new DiscussionService();
+            let smartContractService = new SmartContractService();
           //
             let now = moment();
             let tomorrow = moment(now.subtract(1, 'day'));
@@ -62,7 +62,7 @@ module.exports = {
             let findPosts = pagePersistence.find(postOptions);
             let findActivities = pagePersistence.find(activityOptions);
           // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
-          //   let getDiscussion = discussionService.get();
+            let getDiscussion = discussionService.get();
           //   let getReadingList = smartContractService.getReadingList();
 
 
