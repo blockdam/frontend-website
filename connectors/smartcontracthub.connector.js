@@ -14,6 +14,7 @@ class SmartContractHubConnector {
 
             requestify.get('https://blockdam.nl/smc-api/reading-list')
             .then( response => {
+                logger.info(response);
                 resolve(response.getBody());
             })
             .catch( (err) => {
