@@ -1,7 +1,7 @@
 const PagePersistence = require('../../../persistence/page.persistence');
 const PathService = require('../../../services/path.service');
 const DiscussionService = require('../../services/discussion.service');
-// const SmartContractService = require('../../services/smartcontract.service');
+const SmartContractService = require('../../services/smartcontract.service');
 
 const logger = require('../../../services/logger.service');
 
@@ -30,7 +30,7 @@ module.exports = {
 
             let pagePersistence = new PagePersistence();
             let discussionService = new DiscussionService();
-            let smartContractService = new SmartContractService();
+           // let smartContractService = new SmartContractService();
           //
             let now = moment();
             let tomorrow = moment(now.subtract(1, 'day'));
