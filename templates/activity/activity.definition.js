@@ -55,7 +55,7 @@ module.exports = {
             const pathService = new PathService();
             const translationService = new TranslationService();
             let path = translationService.path(data.language.code,'calendar/' + year + '/' + pathService.cleanString(data.slug));
-            logger.info(path);
+            // logger.info(path);
             resolve(path);
         })
     },
