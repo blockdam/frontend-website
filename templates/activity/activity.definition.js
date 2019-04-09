@@ -39,7 +39,6 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             // let pagePersistence = new PagePersistence();
-
             resolve(data);
         })
     },
