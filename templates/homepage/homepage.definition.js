@@ -30,7 +30,7 @@ module.exports = {
 
             let pagePersistence = new PagePersistence();
             let discussionService = new DiscussionService();
-           // let smartContractService = new SmartContractService();
+            let smartContractService = new SmartContractService();
           //
             let now = moment();
             let tomorrow = moment(now.subtract(1, 'day'));
@@ -63,7 +63,7 @@ module.exports = {
             let findActivities = pagePersistence.find(activityOptions);
           // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
             let getDiscussion = discussionService.get();
-          //   let getReadingList = smartContractService.getReadingList();
+            let getReadingList = smartContractService.getReadingList();
 
 
 			Promise.all([findPosts,findActivities,getDiscussion]).then(values => {   // ,getReadingList
