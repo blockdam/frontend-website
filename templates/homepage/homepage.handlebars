@@ -50,11 +50,11 @@
 
                     <h2 class="subheader" >Reading List</h2>
 
-                    <!--{{#each body.links as | link | }}-->
+                    {{#each body.links as | link | }}
 
-                        <!--{{> reading-list-item link=link }}-->
+                        {{> reading-list-item link=link }}
 
-                    <!--{{/each}}-->
+                    {{/each}}
 
                 </div>
 
@@ -74,19 +74,19 @@
 
                         <h2 class="subheader">Calendar</h2>
 
-                    <!--{{#each ../body.activities as |activity|}}-->
+                    {{#each ../body.activities as |activity|}}
 
-                        <!--<a class="event" href="{{activity.url}}">-->
-                            <!--<div class="data-combo">-->
-                                <!--<span class="date">{{formatDate activity.event.date.startTime 'DD'}}</span>-->
-                                <!--<span class="date">{{formatDate activity.event.date.startTime 'MMM'}}</span>-->
-                            <!--</div>-->
-                            <!--<div>-->
-                                <!--<span class="location">{{ activity.event.location.name }}</span>-->
-                                <!--<h2>{{activity.title}}</h2>-->
-                            <!--</div>-->
-                        <!--</a>-->
-                    <!--{{/each}}-->
+                        <a class="event" href="{{activity.url}}">
+                            <div class="data-combo">
+                                <span class="date">{{formatDate activity.event.date.startTime 'DD'}}</span>
+                                <span class="date">{{formatDate activity.event.date.startTime 'MMM'}}</span>
+                            </div>
+                            <div>
+                                <span class="location">{{ activity.event.location.name }}</span>
+                                <h2>{{activity.title}}</h2>
+                            </div>
+                        </a>
+                    {{/each}}
 
                 {{/ifLongerThan}}
 
@@ -94,29 +94,29 @@
 
                 <h2 class="subheader">Discussion</h2>
 
-                <!--{{#each ../body.discussion as |blog|}}-->
+                {{#each ../body.discussion as |blog|}}
 
-                    <!--<article class="{{#ifEquals @index 0}}active{{/ifEquals}}">-->
+                    <article class="{{#ifEquals @index 0}}active{{/ifEquals}}">
 
-                        <!--<div class="discussion-comments">-->
-                            <!--&lt;!&ndash;<span class="blog-comment-count smallerfont">Reacties op dit artikel ({{blog.interaction.comment_count}})</span>&ndash;&gt;-->
-                            <!--<div class="scrolltainer">-->
-                                <!--{{#each blog.interaction.nested_comments as |thread| }}-->
-                                    <!--{{#each thread as |comment| }}-->
-                                        <!--<div class="comment {{#ifEquals @index 0}}threadhead{{/ifEquals}}">-->
-                                            <!--<span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }} <span class='rating-value'>{{#ifMoreThan rating 0}} | +{{../rating}}{{/ifMoreThan}}</span></span>-->
+                        <div class="discussion-comments">
+                            <!--<span class="blog-comment-count smallerfont">Reacties op dit artikel ({{blog.interaction.comment_count}})</span>-->
+                            <div class="scrolltainer">
+                                {{#each blog.interaction.nested_comments as |thread| }}
+                                    {{#each thread as |comment| }}
+                                        <div class="comment {{#ifEquals @index 0}}threadhead{{/ifEquals}}">
+                                            <span class='date'> {{comment.name}} | {{formatDate comment.date 'comment' }} <span class='rating-value'>{{#ifMoreThan rating 0}} | +{{../rating}}{{/ifMoreThan}}</span></span>
 
-                                            <!--<div class="comment-text">-->
-                                                <!--{{{ comment.content}}}-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--{{/each}}-->
-                                <!--{{/each}}-->
-                            <!--</div>-->
-                        <!--</div>-->
+                                            <div class="comment-text">
+                                                {{{ comment.content}}}
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                {{/each}}
+                            </div>
+                        </div>
 
-                    <!--</article>-->
-                <!--{{/each}}-->
+                    </article>
+                {{/each}}
 
                 {{/ifLongerThan}}
 

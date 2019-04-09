@@ -69,9 +69,9 @@ module.exports = {
 			Promise.all([findPosts]).then(values => {   // ,findActivities,getDiscussion,getReadingList
 
 				data.posts = values[0];
-                // data.activities = values[1];
-                // data.links = values[3];
-                // data.discussion = values[2];
+                data.activities = []; //values[1];
+                data.links = []; // values[3];
+                data.discussion = []; //values[2];
 
 				// logger.info('Get template data', correlationId)
 				resolve(data)
