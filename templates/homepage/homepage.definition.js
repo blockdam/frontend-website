@@ -66,7 +66,7 @@ module.exports = {
             let getReadingList = smartContractService.getReadingList();
 
 
-			Promise.all([findPosts,findActivities,getDiscussion]).then(values => {   // ,getReadingList
+			Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {   //
 
 				data.posts = values[0];
                 data.activities = values[1];
