@@ -42,15 +42,15 @@ module.exports = {
                 "sort": {"date":-1},
                 "limit": 6
             };
-          //
-          //   let activityOptions = {
-          //       query : {
-          //           "type":"activity",
-          //           "eventDate" : { "$gte": now.unix() }
-          //       },
-          //       "sort": {"eventDate":1},
-          //       "limit": 6
-          //   };
+
+            let activityOptions = {
+                query : {
+                    "type":"activity",
+                    "eventDate" : { "$gte": now.unix() }
+                },
+                "sort": {"eventDate":1},
+                "limit": 6
+            };
           //
           //   let linkRecommendationOptions = {
           //       query : {
@@ -60,18 +60,18 @@ module.exports = {
           //   };
           //
             let findPosts = pagePersistence.find(postOptions);
-          //   let findActivities = pagePersistence.find(activityOptions);
+            let findActivities = pagePersistence.find(activityOptions);
           // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
           //   let getDiscussion = discussionService.get();
           //   let getReadingList = smartContractService.getReadingList();
 
 
-			Promise.all([findPosts]).then(values => {   // ,findActivities,getDiscussion,getReadingList
+			Promise.all([findPosts,findActivities,getDiscussion]).then(values => {   // ,getReadingList
 
 				data.posts = values[0];
-                data.activities = []; //values[1];
+                data.activities = values[1];
                 data.links = []; // values[3];
-                data.discussion = []; //values[2];
+                data.discussion = values[2];
 
 				// logger.info('Get template data', correlationId)
 				resolve(data)
