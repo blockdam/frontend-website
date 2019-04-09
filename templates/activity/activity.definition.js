@@ -71,7 +71,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             resolve([
-                {template: 'homepage', data: null}
+                // {template: 'homepage', data: null}
             ]);
         })
     },
