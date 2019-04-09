@@ -32,16 +32,16 @@ module.exports = {
           //   let discussionService = new DiscussionService();
           //   let smartContractService = new SmartContractService();
           //
-          //   let now = moment();
-          //   let tomorrow = moment(now.subtract(1, 'day'));
-          //
-          //   let postOptions = {
-          //       query : {
-          //           "type":"post"
-          //       },
-          //       "sort": {"date":-1},
-          //       "limit": 6
-          //   };
+            let now = moment();
+            let tomorrow = moment(now.subtract(1, 'day'));
+
+            let postOptions = {
+                query : {
+                    "type":"post"
+                },
+                "sort": {"date":-1},
+                "limit": 6
+            };
           //
           //   let activityOptions = {
           //       query : {
@@ -59,25 +59,23 @@ module.exports = {
           //       "sort": {"date":-1}
           //   };
           //
-          //   let findPosts = pagePersistence.find(postOptions);
+            let findPosts = pagePersistence.find(postOptions);
           //   let findActivities = pagePersistence.find(activityOptions);
           // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
           //   let getDiscussion = discussionService.get();
           //   let getReadingList = smartContractService.getReadingList();
 
 
-			// Promise.all([findPosts,findActivities,getDiscussion,getReadingList]).then(values => {
-            //
-			// 	data.posts = values[0];
-             //    data.activities = values[1];
-			// 	data.links = values[3];
-             //    data.discussion = values[2];
-            //
-             //    logger.info(values[3]);
-            //
-			// 	// logger.info('Get template data', correlationId)
+			Promise.all([findPosts]).then(values => {   // ,findActivities,getDiscussion,getReadingList
+
+				data.posts = values[0];
+                // data.activities = values[1];
+                // data.links = values[3];
+                // data.discussion = values[2];
+
+				// logger.info('Get template data', correlationId)
 				resolve(data)
-			// })
+			})
         })
     },
 
