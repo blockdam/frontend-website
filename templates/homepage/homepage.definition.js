@@ -52,16 +52,16 @@ module.exports = {
                 "limit": 6
             };
           //
-          //   let linkRecommendationOptions = {
-          //       query : {
-          //           "type":"link-recommendations"
-          //       },
-          //       "sort": {"date":-1}
-          //   };
+            let linkRecommendationOptions = {
+                query : {
+                    "type":"link-recommendations"
+                },
+                "sort": {"date":-1}
+            };
           //
             let findPosts = pagePersistence.find(postOptions);
             let findActivities = pagePersistence.find(activityOptions);
-          // //  let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
+            let linkRecommendations = pagePersistence.find(linkRecommendationOptions);
             let getDiscussion = discussionService.get();
             let getReadingList = smartContractService.getReadingList();
 
@@ -70,7 +70,7 @@ module.exports = {
 
 				data.posts = values[0];
                 data.activities = values[1];
-                data.links = []; // values[3];
+                data.links = values[3];
                 data.discussion = values[2];
 
 				// logger.info('Get template data', correlationId)
