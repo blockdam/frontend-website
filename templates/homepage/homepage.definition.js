@@ -76,7 +76,7 @@ module.exports = {
              //    logger.info(values[3]);
             //
 			// 	// logger.info('Get template data', correlationId)
-			// 	resolve(data)
+				resolve(data)
 			// })
         })
     },
