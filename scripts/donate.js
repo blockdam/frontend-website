@@ -49,9 +49,6 @@ class Donate {
 
         let self = this;
 
-        console.log('hi');
-        console.log(amount);
-
         metaMask.bcdContract.transfer.sendTransaction(self.address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
