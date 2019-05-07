@@ -110,6 +110,10 @@ module.exports = {
 
 
             };
+
+            if (page.source.url === 0 || page.source.url === '0' ) {
+                page.source.url = false;
+            }
             // logger.info('Mapped post fields', correlationId);
             resolve(page);
         })
