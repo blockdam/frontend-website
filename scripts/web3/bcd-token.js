@@ -46,6 +46,8 @@ let BCDToken = function BCDToken() {
         // request personal balance
         let data = await bcdContract.balanceOf(web3.eth.coinbase).call();
 
+        console.log(data);
+
         if (data) {
             return data.toNumber() / bcdRatio;
         }
