@@ -19,12 +19,13 @@ module.exports = function() {
         var post = gulp.src([
                 path.projectFolder + '/scripts/_loadJSON.js',
                 path.projectFolder + '/scripts/detect.js',
+                path.projectFolder + '/scripts/donate.js',
                 path.projectFolder + '/scripts/metamask.js',
                 path.projectFolder + '/scripts/waypoints.js',
                 path.projectFolder + '/scripts/menu.js',
                 path.projectFolder + '/scripts/commenting.js',
-                path.projectFolder + '/scripts/appreciation.js',
-                path.projectFolder + '/scripts/donate.js'
+                path.projectFolder + '/scripts/appreciation.js'
+
             ])
             .pipe(plumber())
             .pipe(concat('post.js'))

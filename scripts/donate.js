@@ -61,4 +61,4 @@ class Donate {
 }
 
 var donate = new Donate();
-donate.init();
+//
