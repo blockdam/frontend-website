@@ -130,7 +130,7 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        var web3 = gulp.src([
+        var webThree = gulp.src([
 
             path.projectFolder + '/scripts/web3/donate.js',
             path.projectFolder + '/scripts/web3/metamask.js'
@@ -141,7 +141,7 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page, activity, dao, token, charts, web3);
+        return merge(post, homepage, page, activity, dao, token, charts, webThree);
 
     });
 }
