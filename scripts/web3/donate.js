@@ -1,64 +1,67 @@
 
-class Donate {
+let Donate = function Donate() {
 
-    constructor() {
 
-        this.container = document.querySelector('#donation_button_container');
-        this.button = this.container.querySelector('svg');
-        this.tooltip = this.container.querySelector('.tooltip');
-        this.form = this.container.querySelector('form');
+    const container = document.querySelector('#donation_button_container');
 
-        this.address = null;
+    if (container) {
+        const button = this.container.querySelector('svg');
+        const tooltip = this.container.querySelector('.tooltip');
+        const form = this.container.querySelector('form');
     }
 
-    init() {
+    let metaMask = null;
+    let address = null;
 
-        let self = this,
-            authorId = this.container.getAttribute('data-author-id'),
-            url = 'https://blockdam.nl/smc-api/members/' + authorId;
+    let init = function init(metaMask) {
+
+        metaMask = metaMask;
+
+        let url = 'https://blockdam.nl/smc-api/members/' + container.getAttribute('data-author-id');
 
         axios.get(url)
             .then(function (response) {
 
-                self.address = response.data.ethAddress;
-                self.button.addEventListener('click', function() {
-                   self.openForm()
+                address = response.data.ethAddress;
+                button.addEventListener('click', function() {
+                   openForm()
                },false)
             });
     }
 
-    openForm() {
+    let openForm = function openForm() {
 
-        let self = this;
+        tooltip.classList.add('visible');
 
-        this.tooltip.classList.add('visible');
-
-        this.form.addEventListener("submit", function(event, errors) {
+        form.addEventListener("submit", function(event, errors) {
             event.preventDefault();
             if(errors) {
                 console.log(errors);
             } else {
-                let amount = parseInt(self.form.querySelector("input[type='number']").value) * 1000000000000000000;
+                let amount = parseInt(form.querySelector("input[type='number']").value) * 1000000000000000000;
 
-                self.donate(amount);
+                donate(amount);
             }
         });
     }
 
-    donate(amount) {
+    let donate = function donate(amount) {
 
-        let self = this;
-
-        metaMask.bcdContract.transfer.sendTransaction(self.address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
             }
             if (receipt) {
-                self.tooltip.classList.remove('visible');
+                tooltip.classList.remove('visible');
             }
         })
     }
+
+    return {
+
+        init: init,
+        openForm: openForm,
+        donate: donate
+    }
 }
 
-const donate = new Donate();
-//
