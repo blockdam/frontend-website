@@ -57,6 +57,7 @@ let BCDToken = function BCDToken() {
     return {
         getContract : getContract,
         getBCDBondingCurve : getBCDBondingCurve,
-        getSupply : getSupply
+        getSupply : getSupply,
+        getBalance : getBalance
     }
 }
