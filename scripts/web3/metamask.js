@@ -65,13 +65,21 @@ let MetaMask = function MetaMask() {
             html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
         }
 
-        bcdToken.getBalance(bcdContract).then( (balance) => {
-
-            html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
-
-            if(balance > 0) {
-                donate.init();
+        bcdContract.balanceOf(window.web3.eth.coinbase, async function (err, data) {
+            if (err) {
+                console.log(err)
             }
+            if (data) {
+
+                let balance = data.toNumber() / bcdRatio;
+                html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
+
+                if (balance > 0) {
+                    donate.init();
+                }
+
+            }
+
         });
 
        // let curve = await BCDToken.getBCDBondingCurve()

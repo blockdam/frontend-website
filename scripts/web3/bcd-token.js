@@ -58,7 +58,7 @@ let BCDToken = function BCDToken() {
 
             }
         });
-        
+
     }
 
     return {
