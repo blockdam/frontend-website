@@ -60,5 +60,5 @@ class Donate {
     }
 }
 
-var donate = new Donate();
+const donate = new Donate();
 //

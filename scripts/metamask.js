@@ -133,7 +133,7 @@ class MetaMask {
                         self.html.balance.innerHTML = 'Your member address holds ' + val + ' BCD tokens';
 
                         // init donation function when tokens are identified with user
-                        if(val > 0) {
+                        if(donate && val > 0) {
                             donate.init();
                         }
                     }
