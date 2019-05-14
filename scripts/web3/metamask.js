@@ -63,6 +63,8 @@ let MetaMask = function MetaMask() {
 
         bcdContract = await bcdToken.getContract();
 
+        console.log(bcdContract);
+
         if(html.totalSupply) {
             html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
         }

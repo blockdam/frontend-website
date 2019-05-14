@@ -15,9 +15,9 @@ let BCDToken = function BCDToken() {
         let url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
 
         await axios.get(url)
-            .then( async (response) => {
+            .then(  (response) => {
 
-                return await web3.eth.contract(response.data.abi).at(bcdTokenAddress);
+                return web3.eth.contract(response.data.abi).at(bcdTokenAddress);
             });
     }
 
