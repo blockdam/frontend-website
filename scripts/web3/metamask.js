@@ -4,7 +4,7 @@ let MetaMask = function MetaMask() {
     const SMCAPIURL = 'https://blockdam.nl/smc-api/';
 
     const donate = Donate();
-    const BCDToken = BCDToken();
+    const bcdToken = BCDToken();
 
     // elements
     let html = {};
@@ -60,13 +60,13 @@ let MetaMask = function MetaMask() {
 
     const tokenActions = function tokenActions() {
 
-        BCDToken.getContrect()
+        bcdToken.getContrect()
             .then( function(contract) {
 
                 bcdContract = contract;
 
                 if(html.totalSupply) {
-                    BCDToken.getSupply(bcdContract)
+                    bcdToken.getSupply(bcdContract)
                         .then( function(supply) {
                             if(supply) {
                                 html.totalSupply.innerText = supply;
@@ -74,7 +74,7 @@ let MetaMask = function MetaMask() {
                         });
                 }
 
-                BCDToken.getBalance(bcdContract)
+                bcdToken.getBalance(bcdContract)
                     .then( function (balance) {
                         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
