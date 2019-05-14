@@ -76,13 +76,13 @@ let MetaMask = function MetaMask() {
 
                 BCDToken.getBalance(bcdContract)
                     .then( function (balance) {
-
                         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
-                    }
 
-                if(val > 0) {
-                    donate.init();
-                }
+                        if(balance > 0) {
+                            donate.init();
+                        }
+                    });
+
             });
 
         // BCDToken.getBCDBondingCurve()
