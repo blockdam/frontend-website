@@ -3,12 +3,8 @@ let Donate = function Donate() {
 
     const container = document.querySelector('#donation_button_container');
 
-    if (container) {
-        const button = container.querySelector('svg');
-        const tooltip = container.querySelector('.tooltip');
-        const form = container.querySelector('form');
-    }
 
+    let button, tooltip, form;
     let metaMask = null;
     let address = null;
 
@@ -17,6 +13,10 @@ let Donate = function Donate() {
         metaMask = metaMask;
 
         if (container) {
+
+            let button = container.querySelector('svg');
+            let tooltip = container.querySelector('.tooltip');
+            let form = container.querySelector('form');
 
             let url = 'https://blockdam.nl/smc-api/members/' + container.getAttribute('data-author-id');
 
@@ -30,7 +30,7 @@ let Donate = function Donate() {
                 });
         }
     }
-    
+
     let donate = function donate(amount) {
 
         metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
