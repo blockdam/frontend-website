@@ -39,14 +39,20 @@ let BCDToken = function BCDToken() {
             } else {
                 return false;
             }
+
         });
+
     }
 
     const getBalance = async function getBalance(bcdContract) {
         // request personal balance
-        await bcdContract.balanceOf(window.web3.eth.coinbase).call().then(function (data) {
-            console.log(data);
-            return data.toNumber() / bcdRatio;
+        bcdContract.balanceOf(window.web3.eth.coinbase, function (err, data) {
+            if (err) {
+                console.log(err)
+            }
+            if (data) {
+                return data.toNumber() / bcdRatio;
+            }
         });
     }
 
