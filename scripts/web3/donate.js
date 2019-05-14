@@ -1,7 +1,6 @@
 
 let Donate = function Donate() {
 
-
     const container = document.querySelector('#donation_button_container');
 
     if (container) {
@@ -31,6 +30,18 @@ let Donate = function Donate() {
                 });
         }
     }
+    
+    let donate = function donate(amount) {
+
+        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+            if (err) {
+                console.log(err)
+            }
+            if (receipt) {
+                tooltip.classList.remove('visible');
+            }
+        })
+    }
 
     let openForm = function openForm() {
 
@@ -46,18 +57,6 @@ let Donate = function Donate() {
                 donate(amount);
             }
         });
-    }
-
-    let donate = function donate(amount) {
-
-        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
-            if (err) {
-                console.log(err)
-            }
-            if (receipt) {
-                tooltip.classList.remove('visible');
-            }
-        })
     }
 
     return {
