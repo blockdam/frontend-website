@@ -51,6 +51,7 @@ let BCDToken = function BCDToken() {
                 console.log(err)
             }
             if (data) {
+                console.log(data);
                 return await data.toNumber() / bcdRatio;
             }
         });
