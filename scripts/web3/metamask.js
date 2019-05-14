@@ -57,40 +57,25 @@ let MetaMask = function MetaMask() {
         }
     }
 
-    const tokenActions = function tokenActions() {
+    const tokenActions = async function tokenActions() {
 
         console.log(bcdToken);
 
-        bcdToken.getContract()
-            .then( function(contract) {
+        bcdContract = await bcdToken.getContract()
 
-                bcdContract = contract;
+        if(html.totalSupply) {
+            html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
+        }
 
-                // if(html.totalSupply) {
-                //     bcdToken.getSupply(bcdContract)
-                //         .then( function(supply) {
-                //             if(supply) {
-                //                 html.totalSupply.innerText = supply;
-                //             }
-                //         });
-                // }
-                //
-                // bcdToken.getBalance(bcdContract)
-                //     .then( function (balance) {
-                //         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
-                //
-                //         if(balance > 0) {
-                //             donate.init();
-                //         }
-                //     });
+        let balance = await bcdToken.getBalance(bcdContract);
 
-            });
+        html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
-        // BCDToken.getBCDBondingCurve()
-        //     .then( function(curve) {
-        //
-        //         // tsja .. wat moet je met zo'n curve
-        //     });
+        if(balance > 0) {
+            donate.init();
+        }
+
+       // let curve = await BCDToken.getBCDBondingCurve()
 
     }
 

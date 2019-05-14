@@ -10,7 +10,7 @@ let BCDToken = function BCDToken() {
 
 
 
-    const getContract = function getContract() {
+    const getContract = async function getContract() {
 
         let url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
 
@@ -21,7 +21,7 @@ let BCDToken = function BCDToken() {
             });
     }
 
-    const getBCDBondingCurve = function getBCDBondingCurve() {
+    const getBCDBondingCurve = async function getBCDBondingCurve() {
 
         axios.get('https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json')
             .then(function (response) {
@@ -29,7 +29,7 @@ let BCDToken = function BCDToken() {
             });
     }
 
-    const getSupply = function getSupply(bcdContract) {
+    const getSupply = async function getSupply(bcdContract) {
 
         bcdContract.totalSupply.call(function (err, data) {
             if (err) {
