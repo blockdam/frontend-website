@@ -61,7 +61,7 @@ let MetaMask = function MetaMask() {
 
     const tokenActions = function tokenActions() {
 
-        bcdToken.getContrect()
+        bcdToken.getContract()
             .then( function(contract) {
 
                 bcdContract = contract;
