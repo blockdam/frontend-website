@@ -59,17 +59,13 @@ let MetaMask = function MetaMask() {
 
     const tokenActions = async function tokenActions() {
 
-        console.log(bcdToken);
-
         bcdContract = await bcdToken.getContract();
-
-        console.log(bcdContract);
 
         if(html.totalSupply) {
             html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
         }
 
-        let balance = await bcdToken.getBalance(web3,bcdContract);
+        let balance = await bcdToken.getBalance(bcdContract);
 
         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
