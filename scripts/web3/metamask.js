@@ -104,7 +104,7 @@ let MetaMask = function MetaMask() {
 
     const identify = function identify(address) {
 
-        axios.get(SMCAPIURL + address)
+        axios.get(SMCAPIURL + '/members/' + address)
             .then(function (response) {
 
                 userName = response.data.nickName;
