@@ -4,13 +4,13 @@ let Donate = function Donate() {
     const container = document.querySelector('#donation_button_container');
 
 
-    let button, tooltip, form;
-    let metaMask = null;
+    let button, tooltip, form, bcdContract;
+  //  let metaMask = null;
     let address = null;
 
-    let init = function init(metaMask) {
+    let init = function init(bcdContract) {
 
-        metaMask = metaMask;
+        bcdContract = bcdContract;
 
         if (container) {
 
@@ -33,7 +33,7 @@ let Donate = function Donate() {
 
     let donate = function donate(amount) {
 
-        metaMask.bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
+        bcdContract.transfer.sendTransaction(address, amount,{ from: web3.eth.coinbase }, function(err,receipt){
             if (err) {
                 console.log(err)
             }

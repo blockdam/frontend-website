@@ -86,7 +86,7 @@ let MetaMask = function MetaMask() {
                 html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
                 if (balance > 0) {
-                    donate.init();
+                    donate.init(bcdContract);
                 }
 
             }
