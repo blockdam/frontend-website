@@ -19,8 +19,7 @@ module.exports = function() {
         var post = gulp.src([
                 path.projectFolder + '/scripts/_loadJSON.js',
                 path.projectFolder + '/scripts/detect.js',
-                path.projectFolder + '/scripts/donate.js',
-                path.projectFolder + '/scripts/metamask.js',
+
                 path.projectFolder + '/scripts/waypoints.js',
                 path.projectFolder + '/scripts/menu.js',
                 path.projectFolder + '/scripts/commenting.js',
@@ -37,7 +36,6 @@ module.exports = function() {
         var homepage = gulp.src([
                 path.projectFolder + '/scripts/_loadJSON.js',
                 path.projectFolder + '/scripts/detect.js',
-                path.projectFolder + '/scripts/metamask.js',
                 path.projectFolder + '/scripts/waypoints.js',
                 path.projectFolder + '/scripts/homepage.js',
                 path.projectFolder + '/scripts/menu.js',
@@ -132,7 +130,18 @@ module.exports = function() {
             }))
             .pipe(gulp.dest(scriptsDir));
 
-        return merge(post, homepage, page, activity, dao, token, charts);
+        var web3 = gulp.src([
+
+            path.projectFolder + '/scripts/donate.js',
+            path.projectFolder + '/scripts/metamask.js'
+        ])
+            .pipe(concat('web3.js'))
+            .pipe(babel({
+                presets: ['es2015']
+            }))
+            .pipe(gulp.dest(scriptsDir));
+
+        return merge(post, homepage, page, activity, dao, token, charts, web3);
 
     });
 }
