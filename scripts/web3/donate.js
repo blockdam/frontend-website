@@ -5,9 +5,9 @@ let Donate = function Donate() {
     const container = document.querySelector('#donation_button_container');
 
     if (container) {
-        const button = this.container.querySelector('svg');
-        const tooltip = this.container.querySelector('.tooltip');
-        const form = this.container.querySelector('form');
+        const button = container.querySelector('svg');
+        const tooltip = container.querySelector('.tooltip');
+        const form = container.querySelector('form');
     }
 
     let metaMask = null;
