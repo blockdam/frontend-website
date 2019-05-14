@@ -42,7 +42,7 @@ let BCDToken = function BCDToken() {
         });
     }
 
-    const getBalance = async function getBalance(web3,bcdContract) {
+    const getBalance = async function getBalance(bcdContract) {
         // request personal balance
         let data = await bcdContract.methods.balanceOf(window.web3.eth.coinbase).call();
 
