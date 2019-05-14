@@ -22,7 +22,7 @@ let MetaMask = function MetaMask() {
     let bcdContract = null;
     let bcdBondingCurve = null;
 
-    _verifyMetaMask();
+    verifyMetaMask();
 
     // show tooltip with welcome message for several seconds. Will also hide when user scrolls
     setTimeout( () => {
@@ -33,7 +33,7 @@ let MetaMask = function MetaMask() {
     },9000);
 
 
-    const _verifyMetaMask = function _verifyMetaMask() {
+    const verifyMetaMask = function verifyMetaMask() {
 
         if (!window.ethereum) {  // when user has the metamask addon, the browser tab has a global ethereum object
             // user does not have the metaMask addon
@@ -153,6 +153,7 @@ let MetaMask = function MetaMask() {
     return {
 
         init: init,
+        verifyMetaMask: verifyMetaMask,
         identify: identify,
         getBCDToken: getBCDToken,
         getBCDBondingCurve: getBCDBondingCurve
