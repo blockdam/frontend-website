@@ -1,7 +1,8 @@
+const SMCAPIURL = 'https://blockdam.nl/smc-api/';
 
 let MetaMask = function MetaMask() {
 
-    const SMCAPIURL = 'https://blockdam.nl/smc-api/';
+
 
     const donate = Donate();
     const bcdToken = BCDToken();
@@ -130,9 +131,8 @@ let MetaMask = function MetaMask() {
 
     return {
 
-        init: init,
         identify: identify,
-        tokenActions: tokenActions,
+        tokenActions: tokenActions
 
     }
 }
