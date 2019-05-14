@@ -19,6 +19,10 @@ let MetaMask = function MetaMask() {
     let userAddress = null;
     let userName = null;
 
+    const bcdRatio = 1000000000000000000;
+    const bcdBondingCurveAddress = '0x307963cb5fce3bfceb30944bf0a65f7a2fe42b7e';
+    const bcdTokenAddress = '0xA2F071aFe85e8F3ec51bD9ae5284Bf53204Df1b9';
+
 
     const _verifyMetaMask = function _verifyMetaMask() {
 
