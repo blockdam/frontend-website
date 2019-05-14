@@ -132,8 +132,8 @@ module.exports = function() {
 
         var web3 = gulp.src([
 
-            path.projectFolder + '/scripts/donate.js',
-            path.projectFolder + '/scripts/metamask.js'
+            path.projectFolder + '/scripts/web3/donate.js',
+            path.projectFolder + '/scripts/web3/metamask.js'
         ])
             .pipe(concat('web3.js'))
             .pipe(babel({
