@@ -16,7 +16,7 @@
     @include condensed-title();
   }
 
-  > span {
+  > span, a {
     @include small-sans();
     margin: 0 0 1.5rem;
   }
