@@ -22,7 +22,7 @@ let MetaMask = function MetaMask() {
     let bcdContract = null;
     let bcdBondingCurve = null;
 
-    const verifyMetaMask = function verifyMetaMask() {
+    const _verifyMetaMask = function _verifyMetaMask() {
 
         if (!window.ethereum) {  // when user has the metamask addon, the browser tab has a global ethereum object
             // user does not have the metaMask addon
@@ -49,16 +49,16 @@ let MetaMask = function MetaMask() {
                     // check if address of active metaMask account is on list of dao members
                     userAddress = web3.eth.accounts[0];
                     identify(web3.eth.accounts[0]);
-                    console.log(self.userAddress);
+                    console.log(userAddress);
 
                     // connect to smart contracts
-                    self.getBCDToken();
-                    self.getBCDBondingCurve()
+                    getBCDToken();
+                    getBCDBondingCurve()
                 }
             } catch (error) {
 
                 console.log(error);
-                self.html.welcome.innerHTML = 'Hello, Metamask failed to connect';
+                html.welcome.innerHTML = 'Hello, Metamask failed to connect';
             }
         }
     }
@@ -139,7 +139,7 @@ let MetaMask = function MetaMask() {
             });
     }
 
-    verifyMetaMask();
+    _verifyMetaMask();
 
     // show tooltip with welcome message for several seconds. Will also hide when user scrolls
     setTimeout( () => {
