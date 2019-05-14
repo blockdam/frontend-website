@@ -2,8 +2,6 @@ const SMCAPIURL = 'https://blockdam.nl/smc-api/';
 
 let MetaMask = function MetaMask() {
 
-
-
     const donate = Donate();
     const bcdToken = BCDToken();
 
@@ -60,6 +58,8 @@ let MetaMask = function MetaMask() {
     }
 
     const tokenActions = function tokenActions() {
+
+        console.log(bcdToken);
 
         bcdToken.getContract()
             .then( function(contract) {
