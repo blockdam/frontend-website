@@ -54,6 +54,7 @@ let BCDToken = function BCDToken() {
 
                 let balance = data.toNumber() / bcdRatio;
                 console.log(balance);
+                return balance;
 
             }
         });
