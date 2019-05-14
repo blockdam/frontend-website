@@ -10,7 +10,7 @@ let BCDToken = function BCDToken() {
 
 
 
-    const getContrect = function getContrect() {
+    const getContract = function getContract() {
 
         let url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
 
@@ -58,7 +58,7 @@ let BCDToken = function BCDToken() {
     }
 
     return {
-        getContrect : getContrect,
+        getContract : getContract,
         getBCDBondingCurve : getBCDBondingCurve,
         getSupply : getSupply
     }
