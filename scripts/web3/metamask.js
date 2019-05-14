@@ -1,12 +1,10 @@
 
 let MetaMask = function MetaMask() {
 
-    const donate = Donate();
+    const SMCAPIURL = 'https://blockdam.nl/smc-api/';
 
-    // constants
-    const bcdRatio = 1000000000000000000;
-    const bcdBondingCurveAddress = '0x307963cb5fce3bfceb30944bf0a65f7a2fe42b7e';
-    const bcdTokenAddress = '0xA2F071aFe85e8F3ec51bD9ae5284Bf53204Df1b9';
+    const donate = Donate();
+    const BCDToken = BCDToken();
 
     // elements
     let html = {};
@@ -18,9 +16,10 @@ let MetaMask = function MetaMask() {
 
     // objects
     let web3 = null;
-    let userAddress = null;
     let bcdContract = null;
-    let bcdBondingCurve = null;
+    let userAddress = null;
+    let userName = null;
+
 
     const _verifyMetaMask = function _verifyMetaMask() {
 
@@ -49,11 +48,7 @@ let MetaMask = function MetaMask() {
                     // check if address of active metaMask account is on list of dao members
                     userAddress = web3.eth.accounts[0];
                     identify(web3.eth.accounts[0]);
-                    console.log(userAddress);
-
-                    // connect to smart contracts
-                    getBCDToken();
-                    getBCDBondingCurve()
+                    tokenActions();
                 }
             } catch (error) {
 
@@ -61,6 +56,41 @@ let MetaMask = function MetaMask() {
                 html.welcome.innerHTML = 'Hello, Metamask failed to connect';
             }
         }
+    }
+
+    const tokenActions = function tokenActions() {
+
+        BCDToken.getContrect()
+            .then( function(contract) {
+
+                bcdContract = contract;
+
+                if(html.totalSupply) {
+                    BCDToken.getSupply(bcdContract)
+                        .then( function(supply) {
+                            if(supply) {
+                                html.totalSupply.innerText = supply;
+                            }
+                        });
+                }
+
+                BCDToken.getBalance(bcdContract)
+                    .then( function (balance) {
+
+                        html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
+                    }
+
+                if(val > 0) {
+                    donate.init();
+                }
+            });
+
+        // BCDToken.getBCDBondingCurve()
+        //     .then( function(curve) {
+        //
+        //         // tsja .. wat moet je met zo'n curve
+        //     });
+
     }
 
     const _showTooltip = function _showTooltip() {
@@ -73,71 +103,20 @@ let MetaMask = function MetaMask() {
 
     const identify = function identify(address) {
 
-        let self = this,
-            url = 'https://blockdam.nl/smc-api/members/' + address;
-
-        axios.get(url)
+        axios.get(SMCAPIURL + address)
             .then(function (response) {
 
+                userName = response.data.nickName;
+
                 if(response.data !== null) {
-                    html.welcome.innerHTML = 'Hello ' + response.data.nickName + '! The DAO welcomes you back.';
+                    html.welcome.innerHTML = 'Hello ' + userName + '! The DAO welcomes you back.';
                 } else {
                     html.welcome.innerHTML = 'Hello! The DAO welcomes you back.';
                 }
-
                 _showTooltip();
             });
     }
 
-
-    const getBCDToken = function getBCDToken() {
-
-
-        let url = 'https://blockdam.nl/assets/smartcontracts/bcdToken.json';
-
-        axios.get(url)
-            .then(function (response) {
-
-                // connect to contract
-                bcdContract = web3.eth.contract(response.data.abi).at(bcdTokenAddress);
-
-                // request total supply
-                if(html.totalSupply) {
-                    bcdContract.totalSupply.call(function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        }
-                        if (data) {
-                            html.totalSupply.innerHTML = data.toNumber() / self.bcdRatio;
-                        }
-                    });
-                }
-
-                // request personal balance
-                bcdContract.balanceOf(web3.eth.coinbase, function (err, data) {
-                    if (err) {
-                        console.log(err)
-                    }
-                    if (data) {
-                        let val = data.toNumber() / bcdRatio;
-                        html.balance.innerHTML = 'Your member address holds ' + val + ' BCD tokens';
-
-                        // init donation function when tokens are identified with user
-                        if(val > 0) {
-                            donate.init();
-                        }
-                    }
-                });
-            });
-    }
-
-    const getBCDBondingCurve = function getBCDBondingCurve() {
-
-        axios.get('https://blockdam.nl/assets/smartcontracts/bcdBondingCurve.json')
-            .then(function (response) {
-                bcdBondingCurve = web3.eth.contract(response.data.abi).at(bcdBondingCurveAddress);
-            });
-    }
 
     _verifyMetaMask();
 
@@ -153,12 +132,9 @@ let MetaMask = function MetaMask() {
 
         init: init,
         identify: identify,
-        getBCDToken: getBCDToken,
-        getBCDBondingCurve: getBCDBondingCurve
+        tokenActions: tokenActions,
 
     }
 }
 
-// var metaMask = new MetaMask();
-// metaMask.init();
 
