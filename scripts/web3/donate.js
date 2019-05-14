@@ -14,9 +14,9 @@ let Donate = function Donate() {
 
         if (container) {
 
-            let button = container.querySelector('svg');
-            let tooltip = container.querySelector('.tooltip');
-            let form = container.querySelector('form');
+            button = container.querySelector('svg');
+            tooltip = container.querySelector('.tooltip');
+            form = container.querySelector('form');
 
             let url = 'https://blockdam.nl/smc-api/members/' + container.getAttribute('data-author-id');
 
