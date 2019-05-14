@@ -65,14 +65,16 @@ let MetaMask = function MetaMask() {
             html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
         }
 
-        let balance = await bcdToken.getBalance(bcdContract);
+        bcdToken.getBalance(bcdContract).then( (balance) => {
 
-        html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
+            html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
-        if(balance > 0) {
-            donate.init();
-        }
+            if(balance > 0) {
+                donate.init();
+            }
 
+        })
+        
        // let curve = await BCDToken.getBCDBondingCurve()
 
     }
