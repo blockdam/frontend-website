@@ -72,9 +72,8 @@ let MetaMask = function MetaMask() {
             if(balance > 0) {
                 donate.init();
             }
+        });
 
-        })
-        
        // let curve = await BCDToken.getBCDBondingCurve()
 
     }
