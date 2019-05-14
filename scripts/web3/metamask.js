@@ -66,7 +66,14 @@ let MetaMask = function MetaMask() {
         bcdContract = await bcdToken.getContract();
 
         if(html.totalSupply) {
-            html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
+            bcdContract.totalSupply.call(function (err, data) {
+                if (err) {
+                    console.log(err)
+                }
+                if (data) {
+                    html.totalSupply.innerText = data.toNumber() / bcdRatio;
+                }
+            });
         }
 
         bcdContract.balanceOf(window.web3.eth.coinbase, async function (err, data) {
