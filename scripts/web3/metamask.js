@@ -69,7 +69,7 @@ let MetaMask = function MetaMask() {
             html.totalSupply.innerText = await bcdToken.getSupply(bcdContract)
         }
 
-        let balance = await bcdToken.getBalance(bcdContract);
+        let balance = await bcdToken.getBalance(web3,bcdContract);
 
         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
