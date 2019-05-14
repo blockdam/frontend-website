@@ -46,7 +46,7 @@ let BCDToken = function BCDToken() {
 
     const getBalance = async function getBalance(bcdContract) {
         // request personal balance
-        await bcdContract.balanceOf(window.web3.eth.coinbase, async function (err, data) {
+        return await bcdContract.balanceOf(window.web3.eth.coinbase, async function (err, data) {
             if (err) {
                 console.log(err)
             }
