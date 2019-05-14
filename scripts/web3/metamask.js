@@ -66,23 +66,23 @@ let MetaMask = function MetaMask() {
 
                 bcdContract = contract;
 
-                if(html.totalSupply) {
-                    bcdToken.getSupply(bcdContract)
-                        .then( function(supply) {
-                            if(supply) {
-                                html.totalSupply.innerText = supply;
-                            }
-                        });
-                }
-
-                bcdToken.getBalance(bcdContract)
-                    .then( function (balance) {
-                        html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
-
-                        if(balance > 0) {
-                            donate.init();
-                        }
-                    });
+                // if(html.totalSupply) {
+                //     bcdToken.getSupply(bcdContract)
+                //         .then( function(supply) {
+                //             if(supply) {
+                //                 html.totalSupply.innerText = supply;
+                //             }
+                //         });
+                // }
+                //
+                // bcdToken.getBalance(bcdContract)
+                //     .then( function (balance) {
+                //         html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
+                //
+                //         if(balance > 0) {
+                //             donate.init();
+                //         }
+                //     });
 
             });
 
