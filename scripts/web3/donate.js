@@ -17,16 +17,19 @@ let Donate = function Donate() {
 
         metaMask = metaMask;
 
-        let url = 'https://blockdam.nl/smc-api/members/' + container.getAttribute('data-author-id');
+        if (container) {
 
-        axios.get(url)
-            .then(function (response) {
+            let url = 'https://blockdam.nl/smc-api/members/' + container.getAttribute('data-author-id');
 
-                address = response.data.ethAddress;
-                button.addEventListener('click', function() {
-                   openForm()
-               },false)
-            });
+            axios.get(url)
+                .then(function (response) {
+
+                    address = response.data.ethAddress;
+                    button.addEventListener('click', function () {
+                        openForm()
+                    }, false)
+                });
+        }
     }
 
     let openForm = function openForm() {
