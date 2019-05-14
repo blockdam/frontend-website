@@ -51,8 +51,10 @@ let BCDToken = function BCDToken() {
                 console.log(err)
             }
             if (data) {
-                console.log(data);
-                return await data.toNumber() / bcdRatio;
+
+                let balance = await data.toNumber() / bcdRatio;
+                console.log(balance);
+                return balance;
             }
         });
     }
