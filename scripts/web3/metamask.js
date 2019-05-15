@@ -64,7 +64,7 @@ let MetaMask = function MetaMask() {
 
         bcdContract = await bcdToken.getContract();
 
-        const donate = Donate();
+        const donate = Donate(bcdContract);
 
         if(html.totalSupply) {
             bcdContract.totalSupply.call(function (err, data) {
