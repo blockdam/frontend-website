@@ -77,7 +77,7 @@ let MetaMask = function MetaMask() {
             });
         }
 
-        bcdContract.balanceOf(window.web3.eth.coinbase, async function (err, data) {
+        bcdContract.balanceOf(window.web3.eth.coinbase, function (err, data) {
             if (err) {
                 console.log(err)
             }
