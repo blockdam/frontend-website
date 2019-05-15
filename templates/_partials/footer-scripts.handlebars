@@ -1,9 +1,10 @@
 <!-- page specific script -->
 
 <script src="{{baseUrl}}/assets/scripts/web3.js"></script>
+<script>MetaMask();</script>
 <script src="{{baseUrl}}/assets/scripts/{{{body.type}}}.js"></script>
 
-<script>MetaMask();</script>
+
 
 
 {{#ifEquals body.type 'post' }}

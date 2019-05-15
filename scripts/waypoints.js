@@ -12,7 +12,7 @@ class Header {
 
         const metaMask = MetaMask();
     }
-        
+
     init() {
 
 
