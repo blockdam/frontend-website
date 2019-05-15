@@ -50,7 +50,7 @@ let MetaMask = function MetaMask() {
                     // check if address of active metaMask account is on list of dao members
                     userAddress = web3.eth.accounts[0];
                     identify(web3.eth.accounts[0]);
-                    tokenActions();
+                    initToken();
                 }
             } catch (error) {
 
@@ -60,7 +60,7 @@ let MetaMask = function MetaMask() {
         }
     }
 
-    const tokenActions = async function tokenActions() {
+    const initToken = async function initToken() {
 
         bcdContract = await bcdToken.getContract();
 
@@ -137,7 +137,7 @@ let MetaMask = function MetaMask() {
     return {
 
         identify: identify,
-        tokenActions: tokenActions
+        initToken: initToken
 
     }
 }

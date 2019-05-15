@@ -9,6 +9,8 @@ class Header {
         this.main = document.getElementsByTagName('main')[0];
         this.aside = document.getElementsByTagName('aside')[0];
         this.commentSection = document.getElementById('comment-section');
+
+        const metaMask = MetaMask;
     }
 
     init() {
