@@ -31,7 +31,7 @@ class Header {
             handler: function(direction) {
                 if(direction === 'down') {
                     const metaMask = MetaMask();
-                    metaMask.html.tooltip.classList.remove('visible');
+                    metaMask.hideTooltip();
                 }
             },
             offset : -10

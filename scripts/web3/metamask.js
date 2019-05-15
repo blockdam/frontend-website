@@ -99,11 +99,11 @@ let MetaMask = function MetaMask() {
 
     }
 
-    const _showTooltip = function _showTooltip() {
+    const showTooltip = function showTooltip() {
         html.tooltip.classList.add('visible');
     }
 
-    const _hideTooltip = function _hideTooltip() {
+    const hideTooltip = function hideTooltip() {
         html.tooltip.classList.remove('visible');
     }
 
@@ -119,7 +119,7 @@ let MetaMask = function MetaMask() {
                 } else {
                     html.welcome.innerHTML = 'Hello! The DAO welcomes you back.';
                 }
-                _showTooltip();
+                showTooltip();
             });
     }
 
@@ -128,16 +128,18 @@ let MetaMask = function MetaMask() {
 
     // show tooltip with welcome message for several seconds. Will also hide when user scrolls
     setTimeout( () => {
-        _showTooltip();
+        showTooltip();
     },1000);
     setTimeout( () => {
-        _hideTooltip()
+        hideTooltip()
     },9000);
 
     return {
 
         identify: identify,
-        initToken: initToken
+        initToken: initToken,
+        showTooltip: showTooltip,
+        hideTooltip: hideTooltip
 
     }
 }
