@@ -30,7 +30,7 @@ class Header {
             element: self.main,
             handler: function(direction) {
                 if(direction === 'down') {
-                    const metaMask = MetaMask();
+                  //  const metaMask = MetaMask();
                     metaMask.hideTooltip();
                 }
             },
