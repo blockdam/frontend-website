@@ -1,14 +1,12 @@
 
-let Donate = function Donate() {
+let Donate = function Donate(bcdContract) {
 
     const container = document.querySelector('#donation_button_container');
-    let button, tooltip, form, bcdContract;
+    let button, tooltip, form;
   //  let metaMask = null;
     let address = null;
 
-    let init = function init(bcdContract) {
-
-        bcdContract = bcdContract;
+    let init = function init() {
 
         if (container) {
 

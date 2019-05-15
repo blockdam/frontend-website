@@ -2,7 +2,6 @@ const SMCAPIURL = 'https://blockdam.nl/smc-api/';
 
 let MetaMask = function MetaMask() {
 
-    const donate = Donate();
     const bcdToken = BCDToken();
 
     // elements
@@ -65,6 +64,8 @@ let MetaMask = function MetaMask() {
 
         bcdContract = await bcdToken.getContract();
 
+        const donate = Donate();
+
         if(html.totalSupply) {
             bcdContract.totalSupply.call(function (err, data) {
                 if (err) {
@@ -86,6 +87,7 @@ let MetaMask = function MetaMask() {
                 html.balance.innerText = 'Your member address holds ' + balance + ' BCD tokens';
 
                 if (balance > 0) {
+
                     donate.init(bcdContract);
                 }
 
