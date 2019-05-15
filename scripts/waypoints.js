@@ -10,7 +10,7 @@ class Header {
         this.aside = document.getElementsByTagName('aside')[0];
         this.commentSection = document.getElementById('comment-section');
 
-        const metaMask = MetaMask();
+
     }
 
     init() {
@@ -30,6 +30,7 @@ class Header {
             element: self.main,
             handler: function(direction) {
                 if(direction === 'down') {
+                    const metaMask = MetaMask();
                     metaMask.html.tooltip.classList.remove('visible');
                 }
             },
