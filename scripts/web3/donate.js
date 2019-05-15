@@ -2,8 +2,6 @@
 let Donate = function Donate() {
 
     const container = document.querySelector('#donation_button_container');
-
-
     let button, tooltip, form, bcdContract;
   //  let metaMask = null;
     let address = null;
